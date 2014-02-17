@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def classes(request):
+    return render(request, "classes.html")
+
+
+def students(request, class_name):
+    pass
