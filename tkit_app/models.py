@@ -4,6 +4,7 @@ from django.db import models
 class Classes(models.Model):
     name = models.CharField(max_length=20)
     school = models.CharField(max_length=20)
+    description = models.TextField()
 
 
 class Students(models.Model):
@@ -16,12 +17,24 @@ class Students(models.Model):
 
 
 class Attendance(models.Model):
-    pass
+    date = models.DateField()
+    type = models.CharField(max_length=30)
+    student = models.ForeignKey(Students)
 
 
 class Notes(models.Model):
-    pass
+    date = models.DateField()
+    comment = models.TextField()
+    student = models.ForeignKey(Students)
 
 
 class Grades(models.Model):
-    pass
+    subject = models.CharField(max_length=20)
+    grade = models.IntegerField()
+    type = models.CharField(max_length=20)
+
+
+class Lessons(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.TextField()
+    date = models.DateField()
