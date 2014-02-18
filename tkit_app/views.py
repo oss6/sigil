@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from models import *
 
 
 def classes(request):
@@ -6,4 +7,8 @@ def classes(request):
 
 
 def students(request, class_name):
+    pass
+
+
+def my_lessons(request):
     pass
