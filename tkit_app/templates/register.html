@@ -1,0 +1,37 @@
+{% extends "index.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <form role="form" method="post" action=".">{% csrf_token %}
+        <p>
+            <label for="id_username">Username:</label>
+            <input id="id_username" class="form-control" maxlength="30" name="username" type="text" />
+            <span class="helptext">Required. 30 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+        </p>
+        <p>
+            <label for="id_email">Email:</label>
+            <input id="id_email" class="form-control" name="email" type="text" />
+        </p>
+        <p>
+            <label for="id_password1">Password:</label>
+            <input id="id_password1" class="form-control" name="password1" type="password" />
+        </p>
+        <p>
+            <label for="id_password2">Password confirmation:</label>
+            <input id="id_password2" class="form-control" name="password2" type="password" />
+            <span class="helptext">Enter the same password as above, for verification.</span>
+        </p>
+        <p>
+            <label for="id_first_name">First name:</label>
+            <input id="id_first_name" class="form-control" name="first_name" type="text" />
+        </p>
+        <p>
+            <label for="id_last_name">Last name:</label>
+            <input id="id_last_name" class="form-control" name="last_name" type="text" />
+        </p>
+
+        <input type="hidden" name="next" value="/" />
+        <button type="submit" class="btn btn-lg btn-primary">Sign up</button>
+    </form>
+{% endblock %}
