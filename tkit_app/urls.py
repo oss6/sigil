@@ -17,5 +17,6 @@ urlpatterns = patterns('',
     url(r'^logout/$', logout),
 
     url(r'^classes/$', views.classes),
+    url(r'^classes/add/$', views.classes),
     url(r'^classes/(?P<class_name>[a-z])/students/$', views.students),
 )

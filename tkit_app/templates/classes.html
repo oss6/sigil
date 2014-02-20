@@ -3,5 +3,36 @@
 {% block title %}Gestione classi{% endblock %}
 
 {% block content %}
-        
+        {% if not classes %}
+            <h1>There are no classes</h1>
+        {% else %}
+            <h1>iosdis</h1>
+        {% endif %}
+        <button type="button" data-toggle="modal" data-target="#addClassModal" class="btn btn-primary btn-lg" onclick="javascript:openDialog();">
+            <span class="glyphicon glyphicon-plus"></span> Add class
+        </button>
+
+        <!-- Add class modal -->
+        <div class="modal fade" id="addClassModal" tabindex="-1" role="dialog" aria-labelledby="addClassModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="addClassModalLabel">Add class</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h4>Class name</h4>
+                        <input type="text" class="form-control" id="class_name">
+                        <h4>School</h4>
+                        <input type="text" class="form-control" id="school">
+                        <h4>Description</h4>
+                        <textarea class="form-control" id="description"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="add_class">Apply changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
