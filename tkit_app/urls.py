@@ -10,7 +10,7 @@ urlpatterns = patterns('',
 
     # Sign up
     url(r'^signup/$', views.register),
-    url(r'^signup-success/$', TemplateView.as_view(template_name="signup_success.html")),
+    url(r'^signup-success/$', TemplateView.as_view(template_name="registration/signup_success.html")),
 
     # Login - Logout
     url(r'^login/$', login),
