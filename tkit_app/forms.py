@@ -28,3 +28,12 @@ class AddClassForm(forms.Form):
     name = forms.CharField(max_length=20)
     school = forms.CharField(max_length=20)
     description = forms.CharField(max_length=100)
+
+
+class AddStudentForm(forms.Form):
+    first_name = forms.CharField(max_length=30)
+    last_name = forms.CharField(max_length=30)
+    email = forms.EmailField(required=False)
+    parent = forms.CharField(max_length=30)
+    parent_email = forms.EmailField()
+    photo = forms.ImageField(required=False)

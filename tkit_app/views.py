@@ -2,8 +2,8 @@ from django.shortcuts import render, render_to_response, redirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 # from django.contrib import auth
-from forms import RegistrationForm, AddClassForm
 from django.template import RequestContext
+from forms import *
 from models import *
 
 
@@ -64,9 +64,35 @@ def remove_class(request, class_name):
 @login_required(login_url='/login/')
 def students(request, class_name):
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
-    ss = Students().objects.all().filter(s_class=cl)
+    ss = Students.objects.all().filter(s_class=cl)
+
+    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)})
 
 
+@login_required(login_url='/login/')
+def add_student(request, class_name):
+    if request.method == "POST":
+        form = AddStudentForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            first_name = form.cleaned_data["first_name"]
+            last_name = form.cleaned_data["last_name"]
+            email = form.cleaned_data["email"]
+            parent = form.cleaned_data["parent"]
+            parent_email = form.cleaned_data["parent_email"]
+            photo = form.cleaned_data["photo"]
+
+            # Save student into db
+            c = Classes.objects.get(name=class_name)
+            s = Students(first_name=first_name, last_name=last_name,
+                         email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
+            s.save()
+
+            return redirect('/classes/' + class_name + '/students/')
+    else:
+        form = AddStudentForm()
+
+    return render_to_response('add-class.html', {"form": form}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')

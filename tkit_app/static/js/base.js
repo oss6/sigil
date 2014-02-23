@@ -6,3 +6,7 @@ function removeClass(class_name) {
         console.log(data);
     });
 }
+
+function removeStudent() {
+
+}

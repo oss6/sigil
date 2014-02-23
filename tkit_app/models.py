@@ -9,13 +9,17 @@ class Classes(models.Model):
     teacher = models.ForeignKey(User)
 
 
+#def upload_to(instance, filename):
+#    return '/static/img/%s/%s' % (instance.user.user.username, filename)
+
+
 class Students(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(blank=True, null=True)
     parent = models.CharField(max_length=30)
     parent_email = models.EmailField()
-    photo = models.ImageField(upload_to='/', blank=True, null=True)
+    photo = models.ImageField(upload_to="/static/img/", blank=True, null=True)
     s_class = models.ForeignKey(Classes)
 
 
