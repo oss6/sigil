@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+
+{% block title %}Gestione classi{% endblock %}
+
+{% block content %}
+        <form action="." method="post">{% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Apply" class="btn btn-primary" />
+        </form>
+{% endblock %}

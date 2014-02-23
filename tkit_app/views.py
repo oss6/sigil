@@ -1,22 +1,17 @@
 from django.shortcuts import render, render_to_response, redirect
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
-from django.contrib import auth
-from forms import RegistrationForm
+# from django.contrib import auth
+from forms import RegistrationForm, AddClassForm
+from django.template import RequestContext
 from models import *
-
-
-def add_teacher(username, first_name, last_name, email):
-    t = Teachers(username=username, first_name=first_name, last_name=last_name, email=email)
-    t.save()
 
 
 def register(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
-            u = form.save()
-            add_teacher(u.username, u.first_name, u.last_name, u.email)
+            form.save()
             return redirect('/signup-success/')
     args = {}
     args.update(csrf(request))
@@ -26,32 +21,54 @@ def register(request):
 
 
 @login_required(login_url='/login/')
+def disable_account(request):
+    u = request.user
+    u.is_active = False
+
+
+@login_required(login_url='/login/')
 def classes(request):
-    cls = []
-
-    if request.user.is_authenticated():
-        cls = Classes.objects.all().filter(teacher=request.user.username)
-
+    cls = Classes.objects.all().filter(teacher=request.user)
     return render_to_response("classes.html", {"classes": cls})
 
 
 @login_required(login_url='/login/')
 def add_class(request):
-    cl_name = request.cleaned_data['class_name']
-    school = request.cleaned_data['school']
-    desc = request.cleaned_data['desc']
+    if request.method == "POST":
+        form = AddClassForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            cl_name = form.cleaned_data["name"]
+            school = form.cleaned_data["school"]
+            desc = form.cleaned_data["description"]
 
-    cl = Classes(name=cl_name, school=school, description=desc, teacher=request.user.username)
-    cl.save()
+            # Save class into db
+            cl = Classes(name=cl_name, school=school, description=desc, teacher=request.user)
+            cl.save()
 
-    return render_to_response("classes.html")
+            return redirect('/classes/')
+    else:
+        form = AddClassForm()
+
+    return render_to_response('add-class.html', {"form": form}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def remove_class(request, class_name):
+    c = Classes.objects.get(name=class_name)
+    c.delete()
+
+    return redirect('/classes/')
 
 
 @login_required(login_url='/login/')
 def students(request, class_name):
-    pass
+    cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
+    ss = Students().objects.all().filter(s_class=cl)
+
+
 
 
 @login_required(login_url='/login/')
-def my_lessons(request):
+def lessons(request):
     pass

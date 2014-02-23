@@ -22,3 +22,9 @@ class RegistrationForm(UserCreationForm):
             user.save()
 
         return user
+
+
+class AddClassForm(forms.Form):
+    name = forms.CharField(max_length=20)
+    school = forms.CharField(max_length=20)
+    description = forms.CharField(max_length=100)

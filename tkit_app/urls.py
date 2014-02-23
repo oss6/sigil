@@ -11,12 +11,14 @@ urlpatterns = patterns('',
     # Sign up
     url(r'^signup/$', views.register),
     url(r'^signup-success/$', TemplateView.as_view(template_name="registration/signup_success.html")),
+    #url(r'^disable-account/$', views),
 
     # Login - Logout
     url(r'^login/$', login),
-    url(r'^logout/$', logout),
+    url(r'^logout/$', logout, {'next_page': '/'}),
 
     url(r'^classes/$', views.classes),
-    url(r'^classes/add/$', views.classes),
-    url(r'^classes/(?P<class_name>[a-z])/students/$', views.students),
+    url(r'^classes/add/$', views.add_class),
+    url(r'^classes/remove/(?P<class_name>\w+)/$', views.remove_class),
+    url(r'^classes/(?P<class_name>\w+)/students/$', views.students),
 )
