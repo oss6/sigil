@@ -27,7 +27,7 @@ class RegistrationForm(UserCreationForm):
 class AddClassForm(forms.Form):
     name = forms.CharField(max_length=20)
     school = forms.CharField(max_length=20)
-    description = forms.CharField(max_length=100)
+    description = forms.CharField(max_length=300)
 
 
 class AddStudentForm(forms.Form):

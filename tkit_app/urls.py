@@ -22,4 +22,8 @@ urlpatterns = patterns('',
     url(r'^classes/remove/(?P<class_name>\w+)/$', views.remove_class),
     url(r'^classes/(?P<class_name>\w+)/students/$', views.students),
     url(r'^classes/(?P<class_name>\w+)/students/add/$', views.add_student),
+
+    #/classes/{{ class.name }}/gradebook/
+    url(r'^classes/(?P<class_name>\w+)/gradebook/$', views),
+    url(r'^classes/(?P<class_name>\w+)/attendance/$', views)
 )

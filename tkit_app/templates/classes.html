@@ -3,10 +3,36 @@
 {% block title %}Gestione classi{% endblock %}
 
 {% block content %}
+        <!-- Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Help</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>
+                                  In the class management section you can add a class.
+                                  A class is an entity with the following properties:
+                                  name, school and a small description.
+                                  You can also remove a class by clicking on the white
+                                  cross on the top right of the class header.
+                              </p>
+                              <p>
+                                  By clicking on the name of the class a new page will be visualized.
+                                  This page contains the students of the class. In addition you can
+                                  also update the properties of each class.
+                              </p>
+                          </div>
+                    </div>
+              </div>
+        </div>
+
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>Class manager <small>add, delete and modify your classes</small></h1>
+                    <h1>Class manager <small>add, delete and modify your classes - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
                 </div>
                 {% if not classes %}
                     <h1>There are no classes</h1>

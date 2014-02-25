@@ -95,6 +95,17 @@ def add_student(request, class_name):
     return render_to_response('add-student.html', {"form": form}, context_instance=RequestContext(request))
 
 
+def grade_book(request, class_name):
+    cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
+    ss = Students.objects.all().filter(s_class=cl)
+
+    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)})
+
+
+def attendance(request, class_name):
+    pass
+
+
 @login_required(login_url='/login/')
 def lessons(request):
     pass

@@ -8,7 +8,13 @@
             <h1>Add class</h1>
             <form action="." method="post">{% csrf_token %}
                 {{ form|bootstrap }}
-                <input type="submit" value="Apply" class="btn btn-primary" />
+                <a href="/classes/" class="btn btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to classes
+                </a>
+                <button type="submit" value="Apply" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Apply
+                </button>
             </form>
+
         </div>
 {% endblock %}
