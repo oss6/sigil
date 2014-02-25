@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 {% load url from future %}
+{% load bootstrap %}
 
 {% block title %}Login{% endblock %}
 
@@ -7,12 +8,12 @@
     {% if form.errors %}
         <p class="error">Sorry, that's not a valid username or password</p>
     {% endif %}
-    <form action='.' method='post'>{% csrf_token %}
-        <label for="username">User name:</label>
-        <input type="text" name="username" value="" class="form-control" id="username">
-        <label for="password">Password:</label>
-        <input type="password" name="password" value="" class="form-control" id="password">
-        <button type="submit" class="btn btn-lg btn-primary">Login</button>
-        <input type="hidden" name="next" value="/" />
-    </form>
+        <div class="span4 center">
+            <h1>Login</h1>
+            <form action='.' method='post'>{% csrf_token %}
+                {{ form|bootstrap }}
+                <button type="submit" class="btn btn-lg btn-primary">Login</button>
+                <input type="hidden" name="next" value="/" />
+            </form>
+        </div>
 {% endblock %}
