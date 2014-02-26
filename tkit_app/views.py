@@ -98,8 +98,33 @@ def add_student(request, class_name):
 def grade_book(request, class_name):
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
     ss = Students.objects.all().filter(s_class=cl)
+    grades = Grades.objects.all().filter(student__in=[student for student in ss])
 
-    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)})
+    return render_to_response("grade-book.html", {"students": ss, "class": cl, "grades": grades})
+
+
+def add_gradable_item(request, class_name):
+    if request.method == "POST":
+        form = AddGradableItemForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            subject = form.cleaned_data["subject"]
+            date = form.cleaned_data["date"]
+            ty = form.cleaned_data["type"]
+
+            # Save student into db
+            cl = Classes.objects.get(name=class_name)
+            ss = Students.objects.all().filter(s_class=cl)
+
+            for student in ss:
+                g = Grades(subject=subject, date=date, grade=None, type=ty, student=student)
+                g.save()
+
+            return redirect('/classes/' + class_name + '/gradebook/')
+    else:
+        form = AddGradableItemForm()
+
+    return render_to_response('add-gradable.html', {"form": form}, context_instance=RequestContext(request))
 
 
 def attendance(request, class_name):

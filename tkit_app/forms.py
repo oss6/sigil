@@ -37,3 +37,13 @@ class AddStudentForm(forms.Form):
     parent = forms.CharField(max_length=30)
     parent_email = forms.EmailField()
     photo = forms.ImageField(required=False)
+
+
+class AddGradableItemForm(forms.Form):
+    subject = forms.CharField(max_length=20)
+    date = forms.DateField()
+    type = forms.CharField(max_length=20)
+
+
+class AddStudentGrade(forms.Form):
+    pass

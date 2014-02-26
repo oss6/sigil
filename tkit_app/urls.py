@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<class_name>\w+)/students/$', views.students),
     url(r'^classes/(?P<class_name>\w+)/students/add/$', views.add_student),
 
-    #/classes/{{ class.name }}/gradebook/
-    url(r'^classes/(?P<class_name>\w+)/gradebook/$', views),
-    url(r'^classes/(?P<class_name>\w+)/attendance/$', views)
+    url(r'^classes/(?P<class_name>\w+)/gradebook/$', views.grade_book),
+    url(r'^classes/(?P<class_name>\w+)/gradebook/add/$', views.add_gradable_item),
+    url(r'^classes/(?P<class_name>\w+)/attendance/$', views.attendance)
 )

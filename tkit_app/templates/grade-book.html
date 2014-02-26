@@ -1,0 +1,83 @@
+{% extends "index.html" %}
+
+{% block title %}Gestione classi{% endblock %}
+
+{% block content %}
+        <!-- Modal -->
+        <div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                    <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Help</h4>
+                          </div>
+                          <div class="modal-body">
+                              <p>
+                                  In the class management section you can add a class.
+                                  A class is an entity with the following properties:
+                                  name, school and a small description.
+                                  You can also remove a class by clicking on the white
+                                  cross on the top right of the class header.
+                              </p>
+                              <p>
+                                  By clicking on the name of the class a new page will be visualized.
+                                  This page contains the students of the class. In addition you can
+                                  also update the properties of each class.
+                              </p>
+                          </div>
+                    </div>
+              </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>{{ class.name }} Grade book <small> - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
+                </div>
+
+                <!--subject = models.CharField(max_length=20)
+                    date = models.DateField()
+                    grade = models.IntegerField(blank=True, null=True)
+                    type = models.CharField(max_length=20)
+                    student = models.ForeignKey(Students)-->
+
+                {% if not grades %}
+                    <h1>There are no grades</h1>
+                {% else %}
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <!--<td>Student</td>-->
+                                    {% for grade in grades %}
+                                        <td>{{ grade.subject }}</td>
+                                    {% endfor %}
+                                    <td>Date</td>
+                                    <td>Type</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for grade in grades %}
+                                    <tr>
+                                        <td>{{ grade.grade }}</td>
+                                        <td>{{ grade.date }}</td>
+                                        <td>{{ grade.type }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/classes/{{ class.name }}/students/" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to {{ class.name }}
+                </a>
+                <a href="/classes/{{ class.name }}/gradebook/add/" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon-plus"></span> Add
+                </a>
+            </div>
+        </div>
+{% endblock %}

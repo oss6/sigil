@@ -37,7 +37,8 @@ class Notes(models.Model):
 
 class Grades(models.Model):
     subject = models.CharField(max_length=20)
-    grade = models.IntegerField()
+    date = models.DateField()
+    grade = models.IntegerField(blank=True, null=True)
     type = models.CharField(max_length=20)
     student = models.ForeignKey(Students)
 
