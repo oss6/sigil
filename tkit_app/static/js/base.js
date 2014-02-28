@@ -7,6 +7,11 @@ function removeClass(class_name) {
     });
 }
 
-function removeStudent() {
-
+function removeStudent(class_name, id_student) {
+    $.ajax({
+        url: "/classes/" + class_name + "/students/remove/" + id_student +"/"
+    })
+    .done(function(data) {
+        console.log(data);
+    });
 }

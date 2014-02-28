@@ -19,9 +19,10 @@ urlpatterns = patterns('',
 
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
-    url(r'^classes/remove/(?P<class_name>\w+)/$', views.remove_class),
+    url(r'^classes/remove/(?P<id_class>\w+)/$', views.remove_class),
     url(r'^classes/(?P<class_name>\w+)/students/$', views.students),
     url(r'^classes/(?P<class_name>\w+)/students/add/$', views.add_student),
+    url(r'^classes/(?P<class_name>\w+)/students/remove/(?P<id_student>\w+)/$', views.remove_student),
 
     url(r'^classes/(?P<class_name>\w+)/gradebook/$', views.grade_book),
     url(r'^classes/(?P<class_name>\w+)/gradebook/add/$', views.add_gradable_item),

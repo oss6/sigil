@@ -54,9 +54,12 @@ def add_class(request):
 
 
 @login_required(login_url='/login/')
-def remove_class(request, class_name):
-    c = Classes.objects.get(name=class_name)
-    c.delete()
+def remove_class(request, id_class):
+    if request.is_ajax():
+        c = Classes.objects.get(pk=id_class)
+        c.delete()
+
+        return redirect('/classes/')
 
     return redirect('/classes/')
 
@@ -93,6 +96,18 @@ def add_student(request, class_name):
         form = AddStudentForm()
 
     return render_to_response('add-student.html', {"form": form}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def remove_student(request, class_name, id_student):
+    if request.is_ajax():
+        c = Classes.objects.filter(name=class_name)
+        s = Students.objects.filter(s_class=c).get(pk=int(id_student))
+        s.delete()
+
+        return redirect('/classes/')
+
+    return redirect('/classes/')
 
 
 def grade_book(request, class_name):

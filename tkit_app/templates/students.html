@@ -46,7 +46,7 @@
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
                                             <a href="javascript:;" data-toggle="modal" data-target="#studentModal">{{ student.first_name }} {{ student.last_name }}</a>
-                                            <button id="remove-class" type="button" style="float: right;" class="btn btn-xs btn-danger">
+                                            <button id="remove-student" onclick="removeStudent('{{ class.name }}', '{{ student.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
                                                 <span class="glyphicon glyphicon-remove"></span>
                                             </button>
                                         </h3>
