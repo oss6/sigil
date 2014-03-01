@@ -110,6 +110,7 @@ def remove_student(request, class_name, id_student):
     return redirect('/classes/')
 
 
+@login_required(login_url='/login/')
 def grade_book(request, class_name):
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
     ss = Students.objects.all().filter(s_class=cl)
@@ -118,6 +119,7 @@ def grade_book(request, class_name):
     return render_to_response("grade-book.html", {"students": ss, "class": cl, "grades": grades})
 
 
+@login_required(login_url='/login/')
 def add_gradable_item(request, class_name):
     if request.method == "POST":
         form = AddGradableItemForm(request.POST)
@@ -142,6 +144,7 @@ def add_gradable_item(request, class_name):
     return render_to_response('add-gradable.html', {"form": form}, context_instance=RequestContext(request))
 
 
+@login_required(login_url='/login/')
 def attendance(request, class_name):
     pass
 

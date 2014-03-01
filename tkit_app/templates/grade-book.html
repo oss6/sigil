@@ -53,7 +53,9 @@
                                 {% for grade in grades %}
                                     <tr>
                                         <td>{{ grade.subject }}</td>
-                                        <td>{{ grade.grade }}</td>
+                                        <td>
+                                            <input class="form-control" type="text" value="{{ grade.grade }}" />
+                                        </td>
                                         <td>{{ grade.date }}</td>
                                         <td>{{ grade.type }}</td>
                                     </tr>
@@ -72,6 +74,9 @@
                 <a href="/classes/{{ class.name }}/gradebook/add/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-plus"></span> Add
                 </a>
+                <button type="submit" value="Apply" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Apply
+                </button>
             </div>
         </div>
 {% endblock %}
