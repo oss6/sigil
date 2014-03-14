@@ -129,7 +129,7 @@ def add_gradable_item(request, class_name):
             date = form.cleaned_data["date"]
             ty = form.cleaned_data["type"]
 
-            # Save student into db
+            # Save gradable item into db
             cl = Classes.objects.get(name=class_name)
             ss = Students.objects.all().filter(s_class=cl)
 
@@ -151,4 +151,27 @@ def attendance(request, class_name):
 
 @login_required(login_url='/login/')
 def lessons(request):
-    pass
+    cls = Lessons.objects.all().filter(teacher=request.user)
+    return render_to_response("lessons.html", {"lessons": cls})
+
+
+@login_required(login_url='/login/')
+def add_lesson(request):
+    if request.method == "POST":
+        form = AddLessonForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            title = form.cleaned_data["title"]
+            desc = form.cleaned_data["description"]
+            date = form.cleaned_data["date"]
+            # teacher=request.user
+
+            # Save lesson into db
+            l = Lessons(title=title, description=desc, date=date, teacher=request.user)
+            l.save()
+
+            return redirect('/lessons/')
+    else:
+        form = AddStudentForm()
+
+    return render_to_response('add-lesson.html', {"form": form}, context_instance=RequestContext(request))

@@ -47,3 +47,9 @@ class AddGradableItemForm(forms.Form):
 
 class AddStudentGrade(forms.Form):
     pass
+
+
+class AddLessonForm(forms.Form):
+    title = forms.CharField(max_length=50)
+    description = forms.Textarea()
+    date = forms.DateField()

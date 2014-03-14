@@ -17,14 +17,24 @@ urlpatterns = patterns('',
     url(r'^login/$', login),
     url(r'^logout/$', logout, {'next_page': '/'}),
 
+    # Classes
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
-    url(r'^classes/remove/(?P<id_class>\w+)/$', views.remove_class),
-    url(r'^classes/(?P<class_name>\w+)/students/$', views.students),
-    url(r'^classes/(?P<class_name>\w+)/students/add/$', views.add_student),
+    url(r'^classes/remove/(?P<id_class>[\w|\W]+)/$', views.remove_class),
+
+    # Students
+    url(r'^classes/(?P<class_name>[\w|\W]+)/students/$', views.students),
+    url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>\w+)/$', views.remove_student),
 
-    url(r'^classes/(?P<class_name>\w+)/gradebook/$', views.grade_book),
-    url(r'^classes/(?P<class_name>\w+)/gradebook/add/$', views.add_gradable_item),
-    url(r'^classes/(?P<class_name>\w+)/attendance/$', views.attendance)
+    # Gradebook
+    url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),
+    url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/add/$', views.add_gradable_item),
+
+    # Attendance
+    url(r'^classes/(?P<class_name>[\w|\W]+)/attendance/$', views.attendance),
+
+    # Lessons
+    url(r'^lessons/$', views.lessons),
+    url(r'^lessons/add/$', )
 )
