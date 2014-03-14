@@ -46,5 +46,5 @@ class Grades(models.Model):
 class Lessons(models.Model):
     title = models.CharField(max_length=50)
     description = models.TextField()
-    date = models.DateField()
+    date = models.DateField(blank=True, null=True, auto_now_add=True)
     teacher = models.ForeignKey(User)

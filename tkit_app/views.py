@@ -164,7 +164,6 @@ def add_lesson(request):
             title = form.cleaned_data["title"]
             desc = form.cleaned_data["description"]
             date = form.cleaned_data["date"]
-            # teacher=request.user
 
             # Save lesson into db
             l = Lessons(title=title, description=desc, date=date, teacher=request.user)
@@ -172,6 +171,6 @@ def add_lesson(request):
 
             return redirect('/lessons/')
     else:
-        form = AddStudentForm()
+        form = AddLessonForm()
 
     return render_to_response('add-lesson.html', {"form": form}, context_instance=RequestContext(request))

@@ -36,5 +36,5 @@ urlpatterns = patterns('',
 
     # Lessons
     url(r'^lessons/$', views.lessons),
-    url(r'^lessons/add/$', )
+    url(r'^lessons/add/$', views.add_lesson)
 )

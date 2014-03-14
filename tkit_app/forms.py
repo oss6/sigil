@@ -51,5 +51,5 @@ class AddStudentGrade(forms.Form):
 
 class AddLessonForm(forms.Form):
     title = forms.CharField(max_length=50)
-    description = forms.Textarea()
+    description = forms.CharField(max_length=500)
     date = forms.DateField()

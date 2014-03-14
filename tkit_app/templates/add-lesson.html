@@ -1,9 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
+{% extends "index.html" %}
+{% load bootstrap %}
 
-</body>
-</html>
+{% block title %}Gestione lezioni{% endblock %}
+
+{% block content %}
+        <div class="span4 center">
+            <h1>Add lesson</h1>
+            <form action="." method="post">{% csrf_token %}
+                {{ form|bootstrap }}
+                <a href="/lessons/" class="btn btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to lessons
+                </a>
+                <button type="submit" value="Apply" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Apply
+                </button>
+            </form>
+
+        </div>
+{% endblock %}
