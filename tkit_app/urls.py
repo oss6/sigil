@@ -25,16 +25,22 @@ urlpatterns = patterns('',
     # Students
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/$', views.students),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>\w+)/$', views.remove_student),
+    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>[\w|\W]+)/$', views.remove_student),
+    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/all/$', views.remove_student),
+    url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
+    url(r'^students/(?P<id_student>[\w|\W]+)/$', views.student_info),
 
     # Gradebook
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/add/$', views.add_gradable_item),
+    url(r'^gradebook/update/'
+        r'(?P<id_grade>[\w|\W]+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
     # Attendance
     url(r'^classes/(?P<class_name>[\w|\W]+)/attendance/$', views.attendance),
 
     # Lessons
     url(r'^lessons/$', views.lessons),
-    url(r'^lessons/add/$', views.add_lesson)
+    url(r'^lessons/add/$', views.add_lesson),
+    url(r'^lessons/remove/(?P<id_lesson>[\w|\W]+)/$', views.remove_lesson)
 )

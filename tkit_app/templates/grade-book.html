@@ -42,22 +42,29 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <!--<td>Student</td>-->
+                                    <td>Student</td>
                                     <td>Subject</td>
                                     <td>Grade</td>
                                     <td>Date</td>
                                     <td>Type</td>
+                                    <td>Apply changes</td>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for grade in grades %}
                                     <tr>
+                                        <td>{{ grade.student.first_name }}</td>
                                         <td>{{ grade.subject }}</td>
                                         <td>
-                                            <input class="form-control" type="text" value="{{ grade.grade }}" />
+                                            <input id="grade-value-{{ forloop.counter }}" class="form-control" type="text" value="{{ grade.grade }}" />
                                         </td>
                                         <td>{{ grade.date }}</td>
                                         <td>{{ grade.type }}</td>
+                                        <td>
+                                            <button onclick="applyGrade('{{ class.name }}', '{{ grade.pk }}', $('#grade-value-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
+                                                <span class="glyphicon glyphicon-ok"></span> Apply
+                                            </button>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
@@ -74,9 +81,9 @@
                 <a href="/classes/{{ class.name }}/gradebook/add/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-plus"></span> Add
                 </a>
-                <button type="submit" value="Apply" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-ok"></span> Apply
-                </button>
+                <a href="/gradebook/remove/all/" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon-minus"></span> Remove all
+                </a>
             </div>
         </div>
 {% endblock %}

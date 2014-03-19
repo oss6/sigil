@@ -1,10 +1,23 @@
 from django.shortcuts import render, render_to_response, redirect
+from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
-# from django.contrib import auth
 from django.template import RequestContext
 from forms import *
 from models import *
+import json
+import datetime
+
+
+def ajax_resp(message):
+    tm = datetime.datetime.now().time()
+
+    j = json.dumps({
+        "success": True,
+        "message": message,
+        "time": str(tm.hour) + ":" + str(tm.minute) + ":" + str(tm.second)
+    })
+    return HttpResponse(content=j, content_type="application/json")
 
 
 def register(request):
@@ -29,7 +42,7 @@ def disable_account(request):
 @login_required(login_url='/login/')
 def classes(request):
     cls = Classes.objects.all().filter(teacher=request.user)
-    return render_to_response("classes.html", {"classes": cls})
+    return render_to_response("classes.html", {"classes": cls}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
@@ -59,9 +72,7 @@ def remove_class(request, id_class):
         c = Classes.objects.get(pk=id_class)
         c.delete()
 
-        return redirect('/classes/')
-
-    return redirect('/classes/')
+    return ajax_resp("Class removed")
 
 
 @login_required(login_url='/login/')
@@ -69,7 +80,8 @@ def students(request, class_name):
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
     ss = Students.objects.all().filter(s_class=cl)
 
-    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)})
+    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)},
+                              context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
@@ -86,7 +98,7 @@ def add_student(request, class_name):
             photo = form.cleaned_data["photo"]
 
             # Save student into db
-            c = Classes.objects.get(name=class_name)
+            c = Classes.objects.get(name=class_name)  # TODO: Multiple classes!!!!
             s = Students(first_name=first_name, last_name=last_name,
                          email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
             s.save()
@@ -102,21 +114,43 @@ def add_student(request, class_name):
 def remove_student(request, class_name, id_student):
     if request.is_ajax():
         c = Classes.objects.filter(name=class_name)
-        s = Students.objects.filter(s_class=c).get(pk=int(id_student))
+        s = Students.objects.filter(s_class=c).get(pk=id_student)
         s.delete()
 
-        return redirect('/classes/')
+    return ajax_resp("Student removed")
 
-    return redirect('/classes/')
+
+@login_required(login_url='/login/')
+def student_info(request, id_student):
+    student = Students.objects.get(pk=id_student)
+    return render_to_response("student-report.html", {"student": student}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def grades_chart(request, id_student):
+    student = Students.objects.get(pk=id_student)
+    grades = Grades.objects.filter(student=student)
+    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades]
+
+    j = json.dumps({
+        "cols": [
+            {"id": "", "label": "Subject", "pattern": "", "type": "string"},
+            {"id": "", "label": "Grade", "pattern": "", "type": "number"}
+        ],
+        "rows": rows
+    })
+    return HttpResponse(content=j, content_type="application/json")
 
 
 @login_required(login_url='/login/')
 def grade_book(request, class_name):
+    # TODO: Multiple classes!!!!
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
     ss = Students.objects.all().filter(s_class=cl)
     grades = Grades.objects.all().filter(student__in=[student for student in ss])
 
-    return render_to_response("grade-book.html", {"students": ss, "class": cl, "grades": grades})
+    return render_to_response("grade-book.html", {"students": ss, "class": cl, "grades": grades},
+                              context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
@@ -145,6 +179,16 @@ def add_gradable_item(request, class_name):
 
 
 @login_required(login_url='/login/')
+def update_grade(request, id_grade, grade):
+    if request.is_ajax():
+        g = Grades.objects.get(pk=id_grade)
+        g.grade = grade
+        g.save()
+
+    return ajax_resp("Grade updated")
+
+
+@login_required(login_url='/login/')
 def attendance(request, class_name):
     pass
 
@@ -152,7 +196,7 @@ def attendance(request, class_name):
 @login_required(login_url='/login/')
 def lessons(request):
     cls = Lessons.objects.all().filter(teacher=request.user)
-    return render_to_response("lessons.html", {"lessons": cls})
+    return render_to_response("lessons.html", {"lessons": cls}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
@@ -174,3 +218,12 @@ def add_lesson(request):
         form = AddLessonForm()
 
     return render_to_response('add-lesson.html', {"form": form}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def remove_lesson(request, id_lesson):
+    if request.is_ajax():
+        l = Lessons.objects.get(pk=id_lesson)
+        l.delete()
+
+    return ajax_resp("Lesson removed")

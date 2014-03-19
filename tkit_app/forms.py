@@ -25,24 +25,24 @@ class RegistrationForm(UserCreationForm):
 
 
 class AddClassForm(forms.Form):
-    name = forms.CharField(max_length=20)
-    school = forms.CharField(max_length=20)
-    description = forms.CharField(max_length=300)
+    name = forms.CharField()
+    school = forms.CharField()
+    description = forms.CharField()
 
 
 class AddStudentForm(forms.Form):
-    first_name = forms.CharField(max_length=30)
-    last_name = forms.CharField(max_length=30)
+    first_name = forms.CharField()
+    last_name = forms.CharField()
     email = forms.EmailField(required=False)
-    parent = forms.CharField(max_length=30)
+    parent = forms.CharField()
     parent_email = forms.EmailField()
     photo = forms.ImageField(required=False)
 
 
 class AddGradableItemForm(forms.Form):
-    subject = forms.CharField(max_length=20)
-    date = forms.DateField()
-    type = forms.CharField(max_length=20)
+    subject = forms.CharField()
+    date = forms.DateField(required=False)
+    type = forms.CharField()
 
 
 class AddStudentGrade(forms.Form):
@@ -50,6 +50,6 @@ class AddStudentGrade(forms.Form):
 
 
 class AddLessonForm(forms.Form):
-    title = forms.CharField(max_length=50)
-    description = forms.CharField(max_length=500)
-    date = forms.DateField()
+    title = forms.CharField()
+    description = forms.CharField()
+    date = forms.DateField(required=False)

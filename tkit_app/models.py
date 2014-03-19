@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Classes(models.Model):
-    name = models.CharField(max_length=20)
-    school = models.CharField(max_length=20)
+    name = models.CharField(max_length=200)
+    school = models.CharField(max_length=200)
     description = models.TextField()
     teacher = models.ForeignKey(User)
 
@@ -14,10 +14,10 @@ class Classes(models.Model):
 
 
 class Students(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     email = models.EmailField(blank=True, null=True)
-    parent = models.CharField(max_length=30)
+    parent = models.CharField(max_length=100)
     parent_email = models.EmailField()
     photo = models.ImageField(upload_to="/static/img/", blank=True, null=True)
     s_class = models.ForeignKey(Classes)
@@ -25,7 +25,7 @@ class Students(models.Model):
 
 class Attendance(models.Model):
     date = models.DateField()
-    type = models.CharField(max_length=30)
+    type = models.CharField(max_length=50)
     student = models.ForeignKey(Students)
 
 
@@ -36,15 +36,15 @@ class Notes(models.Model):
 
 
 class Grades(models.Model):
-    subject = models.CharField(max_length=20)
-    date = models.DateField()
-    grade = models.IntegerField(blank=True, null=True)
-    type = models.CharField(max_length=20)
+    subject = models.CharField(max_length=50)
+    date = models.DateField(blank=True, null=True, auto_now_add=True)
+    grade = models.FloatField(blank=True, null=True)
+    type = models.CharField(max_length=50)
     student = models.ForeignKey(Students)
 
 
 class Lessons(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
     description = models.TextField()
     date = models.DateField(blank=True, null=True, auto_now_add=True)
     teacher = models.ForeignKey(User)

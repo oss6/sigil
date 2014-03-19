@@ -23,29 +23,11 @@
                 {% else %}
                     <div class="row">
                         {% for student in students %}
-                            <!-- Modal -->
-                            <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="studentModalLabel">Student Info</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h2>{{ student.first_name }} {{ student.last_name }}</h2>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 draggable">
                                 <div class="panel panel-danger">
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
-                                            <a href="javascript:;" data-toggle="modal" data-target="#studentModal">{{ student.first_name }} {{ student.last_name }}</a>
+                                            <a href="/students/{{ student.pk }}/">{{ student.first_name }} {{ student.last_name }}</a>
                                             <button id="remove-student" onclick="removeStudent('{{ class.name }}', '{{ student.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
                                                 <span class="glyphicon glyphicon-remove"></span>
                                             </button>
