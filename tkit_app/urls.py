@@ -25,7 +25,7 @@ urlpatterns = patterns('',
     # Students
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/$', views.students),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>[\w|\W]+)/$', views.remove_student),
+    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
@@ -35,7 +35,7 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/add/$', views.add_gradable_item),
     url(r'^gradebook/update/'
-        r'(?P<id_grade>[\w|\W]+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
+        r'(?P<id_grade>\d+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
     # Attendance
     url(r'^classes/(?P<class_name>[\w|\W]+)/attendance/$', views.attendance),

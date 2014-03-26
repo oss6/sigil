@@ -43,14 +43,6 @@ function applyGrade(cls, id_grade, grade_value) {
     });
 }
 
-$(document).ready(function() {
-    $('.draggable').draggable();
-});
-
-google.load('visualization', '1.0', {'packages':['corechart']});
-google.setOnLoadCallback(drawGradesChart);
-google.setOnLoadCallback(drawNotesChart);
-
 function drawGradesChart() {
     var jsonData = $.ajax({
         url: "grades-chart/",
@@ -79,3 +71,13 @@ function drawNotesChart() {
     var chart = new google.visualization.PieChart(document.getElementById('notes-chart'));
     chart.draw(data, options);
 }
+
+/*if (location.href.match(//)) {
+    google.load('visualization', '1.0', {'packages':['corechart']});
+    google.setOnLoadCallback(drawGradesChart);
+    google.setOnLoadCallback(drawNotesChart);
+}*/
+
+$(document).ready(function() {
+    $('.draggable').draggable();
+});
