@@ -227,3 +227,19 @@ def remove_lesson(request, id_lesson):
         l.delete()
 
     return ajax_resp("Lesson removed")
+
+
+@login_required(login_url='/login/')
+def homework(request, id_class):
+    assm = Assignments.objects.all().filter()
+    return render_to_response("classes.html", {"assignments": assm}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def add_homework(request):
+    pass
+
+
+@login_required(login_url='/login/')
+def remove_homework(request):
+    pass

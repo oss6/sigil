@@ -48,3 +48,7 @@ class Lessons(models.Model):
     description = models.TextField()
     date = models.DateField(blank=True, null=True, auto_now_add=True)
     teacher = models.ForeignKey(User)
+
+
+class Assignments(models.Model):
+    title = models.CharField(max_length=100)

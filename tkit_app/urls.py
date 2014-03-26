@@ -20,13 +20,12 @@ urlpatterns = patterns('',
     # Classes
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
-    url(r'^classes/remove/(?P<id_class>[\w|\W]+)/$', views.remove_class),
+    url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
 
     # Students
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/$', views.students),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>[\w|\W]+)/$', views.remove_student),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/all/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
     url(r'^students/(?P<id_student>[\w|\W]+)/$', views.student_info),
 
@@ -42,5 +41,10 @@ urlpatterns = patterns('',
     # Lessons
     url(r'^lessons/$', views.lessons),
     url(r'^lessons/add/$', views.add_lesson),
-    url(r'^lessons/remove/(?P<id_lesson>[\w|\W]+)/$', views.remove_lesson)
+    url(r'^lessons/remove/(?P<id_lesson>[\w|\W]+)/$', views.remove_lesson),
+
+    # Homework
+    url(r'^classes/(?P<id_class>\d+)/homework/', views.homework),
+    url(r'^classes/(?P<id_class>\d+)/homework/add/$', views.add_homework),
+    url(r'^classes/(?P<id_class>\d+)/homework/remove/(?P<id_homework>\d+)/', views.remove_homework),
 )
