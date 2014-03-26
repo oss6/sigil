@@ -48,10 +48,10 @@ $(document).ready(function() {
 });
 
 google.load('visualization', '1.0', {'packages':['corechart']});
-google.setOnLoadCallback(drawChart);
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(drawGradesChart);
+google.setOnLoadCallback(drawNotesChart);
 
-function drawChart() {
+function drawGradesChart() {
     var jsonData = $.ajax({
         url: "grades-chart/",
         dataType:"json",
@@ -72,7 +72,7 @@ function drawNotesChart() {
 
     var data = new google.visualization.DataTable(jsonData);
     var options = {
-        title: 'My Daily Activities',
+        title: 'Notes',
         pieHole: 0.4,
     };
 

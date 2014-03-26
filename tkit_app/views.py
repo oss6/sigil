@@ -154,8 +154,8 @@ def notes_chart(request, id_student):
             {"id": "", "label": "Frequency", "pattern": "", "type": "number"}
         ],
         "rows": [
-            {"c": [{"v": "Positive", "f": None}, {"v": nnotes.count('P'), "f": None}]},
-            {"c": [{"v": "Negative", "f": None}, {"v": nnotes.count('N'), "f": None}]}
+            {"c": [{"v": "Positive", "f": None}, {"v": nnotes.count(True), "f": None}]},
+            {"c": [{"v": "Negative", "f": None}, {"v": nnotes.count(False), "f": None}]}
         ]
     })
     return HttpResponse(content=j, content_type="application/json")
@@ -167,7 +167,7 @@ def add_note(request, id_student):
         form = AddNoteForm(request.POST)
         if form.is_valid():
             # Retrieve data from request
-            n_type = form.cleaned_data["n_type"]
+            n_type = form.cleaned_data["positive"]
             date = form.cleaned_data["date"]
             comment = form.cleaned_data["comment"]
 

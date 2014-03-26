@@ -59,6 +59,6 @@ class AddAssignmentForm(forms.Form):
 
 
 class AddNoteForm(forms.Form):
-    n_type = forms.CharField(max_length=1)
+    positive = forms.BooleanField(required=False)
     date = forms.DateField()
     comment = forms.CharField()

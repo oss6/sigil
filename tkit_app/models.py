@@ -30,8 +30,8 @@ class Attendance(models.Model):
 
 
 class Notes(models.Model):
-    n_type = models.CharField(max_length=1)
-    date = models.DateField()
+    n_type = models.BooleanField()
+    date = models.DateField(blank=True, null=True, auto_now_add=True)
     comment = models.TextField()
     student = models.ForeignKey(Students)
 
