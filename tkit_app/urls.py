@@ -45,6 +45,6 @@ urlpatterns = patterns('',
 
     # Homework
     url(r'^classes/(?P<id_class>\d+)/homework/', views.homework),
-    url(r'^classes/(?P<id_class>\d+)/homework/add/$', views.add_homework),
-    url(r'^classes/(?P<id_class>\d+)/homework/remove/(?P<id_homework>\d+)/', views.remove_homework),
+    url(r'^classes/(?P<id_class>\d+)/homework/add/$', views.add_assignment),
+    url(r'^classes/(?P<id_class>\d+)/homework/remove/(?P<id_homework>\d+)/', views.remove_assignment),
 )

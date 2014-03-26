@@ -53,3 +53,10 @@ class AddLessonForm(forms.Form):
     title = forms.CharField()
     description = forms.CharField()
     date = forms.DateField(required=False)
+
+
+class AddAssignmentForm(forms.Form):
+    title = forms.CharField()
+    description = forms.CharField()
+    date_begin = forms.DateField(required=False)
+    date_end = forms.DateField()

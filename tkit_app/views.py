@@ -231,15 +231,34 @@ def remove_lesson(request, id_lesson):
 
 @login_required(login_url='/login/')
 def homework(request, id_class):
-    assm = Assignments.objects.all().filter()
-    return render_to_response("classes.html", {"assignments": assm}, context_instance=RequestContext(request))
+    cl = Classes.objects.get(pk=id_class)
+    assm = Assignments.objects.all().filter(a_class=cl)
+    return render_to_response("assignments.html", {"assignments": assm, "class": cl}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
-def add_homework(request):
-    pass
+def add_assignment(request, id_class):
+    if request.method == "POST":
+        form = AddAssignmentForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            title = form.cleaned_data["title"]
+            desc = form.cleaned_data["description"]
+            begin = form.cleaned_data["date_begin"]
+            end = form.cleaned_data["date_end"]
+
+            # Save class into db
+            cl = Classes.objects.get(pk=id_class)
+            assm = Assignments(title=title, description=desc, date_begin=begin, date_end=end, a_class=cl)
+            assm.save()
+
+            return redirect('/classes/' + str(id_class) + '/homework/')
+    else:
+        form = AddAssignmentForm()
+
+    return render_to_response('add-assignment.html', {"form": form}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
-def remove_homework(request):
+def remove_assignment(request):
     pass

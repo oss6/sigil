@@ -38,7 +38,7 @@ $(document).ready(function() {
     $('.draggable').draggable();
 });
 
-google.load('visualization', '1.0', {'packages':['corechart']});
+/*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(drawChart);
 
 function drawChart() {
@@ -51,4 +51,4 @@ function drawChart() {
     var data = new google.visualization.DataTable(jsonData);
     var chart = new google.visualization.ColumnChart(document.getElementById('grades-chart'));
     chart.draw(data, {width: 400, height: 240});
-}
+}*/
