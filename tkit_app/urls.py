@@ -29,6 +29,9 @@ urlpatterns = patterns('',
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
     url(r'^students/(?P<id_student>[\w|\W]+)/$', views.student_info),
 
+    # Notes
+
+
     # Gradebook
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/add/$', views.add_gradable_item),
