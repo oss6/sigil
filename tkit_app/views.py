@@ -143,6 +143,47 @@ def grades_chart(request, id_student):
 
 
 @login_required(login_url='/login/')
+def notes_chart(request, id_student):
+    student = Students.objects.get(pk=id_student)
+    notes = Notes.objects.filter(student=student)
+    nnotes = [note.n_type for note in notes]
+
+    j = json.dumps({
+        "cols": [
+            {"id": "", "label": "Type", "pattern": "", "type": "string"},
+            {"id": "", "label": "Frequency", "pattern": "", "type": "number"}
+        ],
+        "rows": [
+            {"c": [{"v": "Positive", "f": None}, {"v": nnotes.count('P'), "f": None}]},
+            {"c": [{"v": "Negative", "f": None}, {"v": nnotes.count('N'), "f": None}]}
+        ]
+    })
+    return HttpResponse(content=j, content_type="application/json")
+
+
+@login_required(login_url='/login/')
+def add_note(request, id_student):
+    if request.method == "POST":
+        form = AddNoteForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            n_type = form.cleaned_data["n_type"]
+            date = form.cleaned_data["date"]
+            comment = form.cleaned_data["comment"]
+
+            # Save student into db
+            s = Students.objects.get(pk=id_student)
+            n = Notes(n_type=n_type, date=date, comment=comment, student=s)
+            n.save()
+
+            return redirect('/students/' + id_student + '/')
+    else:
+        form = AddNoteForm()
+
+    return render_to_response('add-note.html', {"form": form}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
 def grade_book(request, class_name):
     # TODO: Multiple classes!!!!
     cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]

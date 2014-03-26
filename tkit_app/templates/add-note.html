@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% load bootstrap %}
+
+{% block title %}Gestione classi{% endblock %}
+
+{% block content %}
+        <div class="span4 center">
+            <h1>Add note</h1>
+            <form action="." method="post">{% csrf_token %}
+                {{ form|bootstrap }}
+                <a href="/classes/" class="btn btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to classes
+                </a>
+                <button type="submit" value="Apply" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Apply
+                </button>
+            </form>
+
+        </div>
+{% endblock %}

@@ -27,10 +27,9 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
     url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>[\w|\W]+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
-    url(r'^students/(?P<id_student>[\w|\W]+)/$', views.student_info),
-
-    # Notes
-
+    url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
+    url(r'^students/(?P<id_student>\d+)/$', views.student_info),
+    url(r'^students/(?P<id_student>\d+)/notes/add/', views.add_note),
 
     # Gradebook
     url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),

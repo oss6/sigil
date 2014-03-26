@@ -47,7 +47,8 @@ $(document).ready(function() {
     $('.draggable').draggable();
 });
 
-/*google.load('visualization', '1.0', {'packages':['corechart']});
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawChart);
 google.setOnLoadCallback(drawChart);
 
 function drawChart() {
@@ -60,4 +61,21 @@ function drawChart() {
     var data = new google.visualization.DataTable(jsonData);
     var chart = new google.visualization.ColumnChart(document.getElementById('grades-chart'));
     chart.draw(data, {width: 400, height: 240});
-}*/
+}
+
+function drawNotesChart() {
+    var jsonData = $.ajax({
+        url: "notes-chart/",
+        dataType:"json",
+        async: false
+    }).responseText;
+
+    var data = new google.visualization.DataTable(jsonData);
+    var options = {
+        title: 'My Daily Activities',
+        pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('notes-chart'));
+    chart.draw(data, options);
+}

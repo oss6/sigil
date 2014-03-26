@@ -45,10 +45,6 @@ class AddGradableItemForm(forms.Form):
     type = forms.CharField()
 
 
-class AddStudentGrade(forms.Form):
-    pass
-
-
 class AddLessonForm(forms.Form):
     title = forms.CharField()
     description = forms.CharField()
@@ -60,3 +56,9 @@ class AddAssignmentForm(forms.Form):
     description = forms.CharField()
     date_begin = forms.DateField(required=False)
     date_end = forms.DateField()
+
+
+class AddNoteForm(forms.Form):
+    n_type = forms.CharField(max_length=1)
+    date = forms.DateField()
+    comment = forms.CharField()
