@@ -260,5 +260,10 @@ def add_assignment(request, id_class):
 
 
 @login_required(login_url='/login/')
-def remove_assignment(request):
-    pass
+def remove_assignment(request, id_class, id_assignment):
+    if request.is_ajax():
+        cl = Classes.objects.get(pk=id_class)
+        assm = Assignments.objects.get(pk=id_assignment, a_class=cl)
+        assm.delete()
+
+    return ajax_resp("Assignment removed")

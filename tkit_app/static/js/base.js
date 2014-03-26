@@ -25,6 +25,15 @@ function removeLesson(id_lesson) {
     });
 }
 
+function removeAssignment(id_class, id_assm) {
+    $.ajax({
+        url: "/classes/" + id_class + "/homework/remove/" + id_assm + "/"
+    })
+    .done(function(data) {
+        location.href = "/classes/" + id_class + "/homework/";
+    });
+}
+
 function applyGrade(cls, id_grade, grade_value) {
     $.ajax({
         url: "/gradebook/update/" + id_grade + "/" + grade_value + "/"

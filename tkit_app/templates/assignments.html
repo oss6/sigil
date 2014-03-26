@@ -44,22 +44,25 @@
                               <div class="panel-heading">
                                 <h3 class="panel-title">
                                     <a href="#">{{ assm.title }}</a>
-                                    <button onclick="removeClass('{{ class.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
+                                    <button onclick="removeAssignment('{{ class.pk }}', '{{ assm.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
                                         <span class="glyphicon glyphicon-remove"></span>
                                     </button>
                                 </h3>
 
                               </div>
                               <div class="panel-body">
-                                  <p>{{ assm.description }}</p>
-                                  <p>{{ assm.date_begin }}</p>
-                                  <p>{{ assm.date_end }}</p>
+                                  <p><b>Description:</b> {{ assm.description }}</p>
+                                  <p><b>Begin date:</b> {{ assm.date_begin }}</p>
+                                  <p><b>End date:</b> {{ assm.date_end }}</p>
                               </div>
                             </div>
                         </div>
                     {% endfor %}
                     </div>
                 {% endif %}
+                <a href="/classes/{{ class.name }}/students/" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to {{ class.name }}
+                </a>
                 <a href="/classes/{{ class.pk }}/homework/add/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-plus"></span> Add
                 </a>
