@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}Gestione classi{% endblock %}
+{% block title %}Valutazioni{% endblock %}
 
 {% block content %}
         <!-- Modal -->
@@ -32,22 +32,22 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>{{ class.name }} Grade book <small> - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
+                    <h1>Valutazioni classe {{ class.name }}<small> - <a href="#" data-toggle="modal" data-target="#helpModal">info</a></small></h1>
                 </div>
 
                 {% if not grades %}
-                    <h1>There are no grades</h1>
+                    <h1>Non ci sono valutazioni</h1>
                 {% else %}
                     <div class="row">
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <td>Student</td>
-                                    <td>Subject</td>
-                                    <td>Grade</td>
-                                    <td>Date</td>
-                                    <td>Type</td>
-                                    <td>Apply changes</td>
+                                    <td>Studente</td>
+                                    <td>Argomento</td>
+                                    <td>Voto</td>
+                                    <td>Data</td>
+                                    <td>Tipo</td>
+                                    <td>Applica cambiamenti</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -62,7 +62,7 @@
                                         <td>{{ grade.type }}</td>
                                         <td>
                                             <button onclick="applyGrade('{{ class.name }}', '{{ grade.pk }}', $('#grade-value-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
-                                                <span class="glyphicon glyphicon-ok"></span> Apply
+                                                <span class="glyphicon glyphicon-ok"></span> OK
                                             </button>
                                         </td>
                                     </tr>
@@ -76,10 +76,10 @@
         <div class="row">
             <div class="col-md-12">
                 <a href="/classes/{{ class.name }}/students/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to {{ class.name }}
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                 </a>
                 <a href="/classes/{{ class.name }}/gradebook/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Add
+                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
             </div>
         </div>

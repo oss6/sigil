@@ -1,6 +1,6 @@
 {% extends "index.html" %}
 
-{% block title %}Gestione classi{% endblock %}
+{% block title %}Gestione lezioni{% endblock %}
 
 {% block content %}
         <!-- Modal -->
@@ -32,10 +32,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>Lessons manager <small>add, delete and modify your lessons - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
+                    <h1>Gestione lezioni <small>aggiungi, elimina e modifica le tue lezioni - <a href="#" data-toggle="modal" data-target="#helpModal">info</a></small></h1>
                 </div>
                 {% if not lessons %}
-                    <h1>There are no lessons</h1>
+                    <h1>Non ci sono lezioni</h1>
                 {% else %}
                     <div class="row">
                     {% for lesson in lessons %}
@@ -60,7 +60,7 @@
                     </div>
                 {% endif %}
                 <a href="/lessons/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Add
+                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
             </div>
         </div>

@@ -32,10 +32,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>Class manager <small>add, delete and modify your classes - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
+                    <h1>Gestione classi <small>aggiungi, elimina e modifica le tue classi - <a href="#" data-toggle="modal" data-target="#helpModal">info</a></small></h1>
                 </div>
                 {% if not classes %}
-                    <h1>There are no classes</h1>
+                    <h1>Non ci sono classi</h1>
                 {% else %}
                     <div class="row">
                     {% for class in classes %}
@@ -59,7 +59,7 @@
                     </div>
                 {% endif %}
                 <a href="/classes/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Add
+                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
             </div>
         </div>
