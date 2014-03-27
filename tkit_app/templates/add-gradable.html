@@ -1,18 +1,18 @@
 {% extends "index.html" %}
 {% load bootstrap %}
 
-{% block title %}Gestione studenti{% endblock %}
+{% block title %}Aggiungi valutazione{% endblock %}
 
 {% block content %}
         <div class="span4 center">
-            <h1>Add gradable item</h1>
+            <h1>Aggiungi valutazione</h1>
             <form action="." method="post">{% csrf_token %}
                 {{ form|bootstrap }}
                 <a href="/classes/" class="btn btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to classes
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Classi
                 </a>
                 <button type="submit" value="Apply" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-ok"></span> Apply
+                    <span class="glyphicon glyphicon-ok"></span> Applica
                 </button>
             </form>
         </div>
