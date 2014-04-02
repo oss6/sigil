@@ -98,7 +98,7 @@ def add_student(request, id_class):
             photo = form.cleaned_data["photo"]
 
             # Save student into db
-            c = Classes.objects.get(pk=id_class)  # TODO: Multiple classes!!!!
+            c = Classes.objects.get(pk=id_class)
             s = Students(first_name=first_name, last_name=last_name,
                          email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
             s.save()
@@ -185,7 +185,6 @@ def add_note(request, id_student):
 
 @login_required(login_url='/login/')
 def grade_book(request, id_class):
-    # TODO: Multiple classes!!!!
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
     grades = Grades.objects.all().filter(student__in=[student for student in ss])
