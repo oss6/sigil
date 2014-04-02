@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 
 {% block title %}Gestione classi{% endblock %}
 
@@ -32,10 +32,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <h1>Homework manager <small>add, delete and modify homework - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
+                    <h1>Gestione compiti <small>add, delete and modify homework - <a href="#" data-toggle="modal" data-target="#helpModal">help</a></small></h1>
                 </div>
                 {% if not assignments %}
-                    <h1>There are no assignments</h1>
+                    <h1>Non ci sono compiti assegnati</h1>
                 {% else %}
                     <div class="row">
                     {% for assm in assignments %}
@@ -51,20 +51,20 @@
 
                               </div>
                               <div class="panel-body">
-                                  <p><b>Description:</b> {{ assm.description }}</p>
-                                  <p><b>Begin date:</b> {{ assm.date_begin }}</p>
-                                  <p><b>End date:</b> {{ assm.date_end }}</p>
+                                  <p><b>Descrizione:</b> {{ assm.description }}</p>
+                                  <p><b>Data inizio:</b> {{ assm.date_begin }}</p>
+                                  <p><b>Data fine:</b> {{ assm.date_end }}</p>
                               </div>
                             </div>
                         </div>
                     {% endfor %}
                     </div>
                 {% endif %}
-                <a href="/classes/{{ class.name }}/students/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Back to {{ class.name }}
+                <a href="/classes/{{ class.pk }}/students/" class="btn btn-lg btn-primary">
+                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                 </a>
                 <a href="/classes/{{ class.pk }}/homework/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Add
+                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
             </div>
         </div>

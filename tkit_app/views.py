@@ -111,10 +111,9 @@ def add_student(request, id_class):
 
 
 @login_required(login_url='/login/')
-def remove_student(request, class_name, id_student):
+def remove_student(request, id_class, id_student):
     if request.is_ajax():
-        c = Classes.objects.filter(name=class_name)
-        s = Students.objects.filter(s_class=c).get(pk=id_student)
+        s = Students.objects.get(pk=id_student)
         s.delete()
 
     return ajax_resp("Student removed")
