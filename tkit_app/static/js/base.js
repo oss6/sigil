@@ -55,6 +55,29 @@ function drawGradesChart() {
     chart.draw(data, {width: 400, height: 240});
 }
 
+function drawPerformance() {
+    var jsonData = $.ajax({
+        url: "grades-performance-chart/",
+        dataType:"json",
+        async: false
+    }).responseText;
+
+    /*var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+    ]);*/
+
+    var options = {
+        title: 'Student Performance'
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('performance-chart'));
+    chart.draw(data, options);
+}
+
 function drawNotesChart() {
     var jsonData = $.ajax({
         url: "notes-chart/",
@@ -64,7 +87,7 @@ function drawNotesChart() {
 
     var data = new google.visualization.DataTable(jsonData);
     var options = {
-        title: 'Notes',
+        title: 'Note',
         pieHole: 0.4,
     };
 
@@ -72,11 +95,10 @@ function drawNotesChart() {
     chart.draw(data, options);
 }
 
-/*if (location.href.match(//)) {
-    google.load('visualization', '1.0', {'packages':['corechart']});
-    google.setOnLoadCallback(drawGradesChart);
-    google.setOnLoadCallback(drawNotesChart);
-}*/
+google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(drawGradesChart);
+google.setOnLoadCallback(drawNotesChart);
+//google.setOnLoadCallback(drawPerformance);
 
 $(document).ready(function() {
     $('.draggable').draggable();

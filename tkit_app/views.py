@@ -142,6 +142,22 @@ def grades_chart(request, id_student):
 
 
 @login_required(login_url='/login/')
+def grades_performance_chart(request, id_student):
+    student = Students.objects.get(pk=id_student)
+    grades = Grades.objects.filter(student=student)
+    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades]
+
+    j = json.dumps({
+        "cols": [
+            {"id": "", "label": "Subject", "pattern": "", "type": "string"},
+            {"id": "", "label": "Grade", "pattern": "", "type": "number"}
+        ],
+        "rows": rows
+    })
+    return HttpResponse(content=j, content_type="application/json")
+
+
+@login_required(login_url='/login/')
 def notes_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
