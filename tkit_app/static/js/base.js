@@ -7,12 +7,12 @@ function removeClass(id_class) {
     });
 }
 
-function removeStudent(class_name, id_student) {
+function removeStudent(id_class, id_student) {
     $.ajax({
-        url: "/classes/" + class_name + "/students/remove/" + id_student +"/"
+        url: "/classes/" + id_class + "/students/remove/" + id_student +"/"
     })
     .done(function(data) {
-        location.href = "/classes/" + class_name + "/students/";
+        location.href = "/classes/" + id_class + "/students/";
     });
 }
 
@@ -34,12 +34,12 @@ function removeAssignment(id_class, id_assm) {
     });
 }
 
-function applyGrade(cls, id_grade, grade_value) {
+function applyGrade(id_class, id_grade, grade_value) {
     $.ajax({
         url: "/gradebook/update/" + id_grade + "/" + grade_value + "/"
     })
     .done(function(data) {
-        location.href = "/classes/" + cls + "/gradebook/";
+        location.href = "/classes/" + id_class + "/gradebook/";
     });
 }
 

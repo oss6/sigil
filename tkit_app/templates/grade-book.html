@@ -47,7 +47,7 @@
                                     <td>Voto</td>
                                     <td>Data</td>
                                     <td>Tipo</td>
-                                    <td>Applica cambiamenti</td>
+                                    <td>Applica modifiche</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,7 +61,7 @@
                                         <td>{{ grade.date }}</td>
                                         <td>{{ grade.type }}</td>
                                         <td>
-                                            <button onclick="applyGrade('{{ class.name }}', '{{ grade.pk }}', $('#grade-value-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
+                                            <button onclick="applyGrade('{{ class.pk }}', '{{ grade.pk }}', $('#grade-value-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
                                                 <span class="glyphicon glyphicon-ok"></span> OK
                                             </button>
                                         </td>
@@ -75,10 +75,10 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <a href="/classes/{{ class.name }}/students/" class="btn btn-lg btn-primary">
+                <a href="/classes/{{ class.pk }}/students/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                 </a>
-                <a href="/classes/{{ class.name }}/gradebook/add/" class="btn btn-lg btn-primary">
+                <a href="/classes/{{ class.pk }}/gradebook/add/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
             </div>

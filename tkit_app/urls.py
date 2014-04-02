@@ -23,22 +23,22 @@ urlpatterns = patterns('',
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
 
     # Students
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/$', views.students),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/add/$', views.add_student),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
+    url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
+    url(r'^classes/(?P<id_class>\d+)/students/add/$', views.add_student),
+    url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
     url(r'^students/(?P<id_student>\d+)/notes/add/', views.add_note),
 
     # Gradebook
-    url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/$', views.grade_book),
-    url(r'^classes/(?P<class_name>[\w|\W]+)/gradebook/add/$', views.add_gradable_item),
+    url(r'^classes/(?P<id_class>\d+)/gradebook/$', views.grade_book),
+    url(r'^classes/(?P<id_class>\d+)/gradebook/add/$', views.add_gradable_item),
     url(r'^gradebook/update/'
         r'(?P<id_grade>\d+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
     # Attendance
-    url(r'^classes/(?P<class_name>[\w|\W]+)/attendance/$', views.attendance),
+    url(r'^classes/(?P<id_class>\d+)/attendance/$', views.attendance),
 
     # Lessons
     url(r'^lessons/$', views.lessons),

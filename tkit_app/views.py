@@ -76,8 +76,8 @@ def remove_class(request, id_class):
 
 
 @login_required(login_url='/login/')
-def students(request, class_name):
-    cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
+def students(request, id_class):
+    cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
 
     return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)},
@@ -85,7 +85,7 @@ def students(request, class_name):
 
 
 @login_required(login_url='/login/')
-def add_student(request, class_name):
+def add_student(request, id_class):
     if request.method == "POST":
         form = AddStudentForm(request.POST)
         if form.is_valid():
@@ -98,12 +98,12 @@ def add_student(request, class_name):
             photo = form.cleaned_data["photo"]
 
             # Save student into db
-            c = Classes.objects.get(name=class_name)  # TODO: Multiple classes!!!!
+            c = Classes.objects.get(pk=id_class)  # TODO: Multiple classes!!!!
             s = Students(first_name=first_name, last_name=last_name,
                          email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
             s.save()
 
-            return redirect('/classes/' + class_name + '/students/')
+            return redirect('/classes/' + id_class + '/students/')
     else:
         form = AddStudentForm()
 
@@ -184,9 +184,9 @@ def add_note(request, id_student):
 
 
 @login_required(login_url='/login/')
-def grade_book(request, class_name):
+def grade_book(request, id_class):
     # TODO: Multiple classes!!!!
-    cl = Classes.objects.all().filter(name__exact=class_name, teacher__exact=request.user)[0]
+    cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
     grades = Grades.objects.all().filter(student__in=[student for student in ss])
 
@@ -195,7 +195,7 @@ def grade_book(request, class_name):
 
 
 @login_required(login_url='/login/')
-def add_gradable_item(request, class_name):
+def add_gradable_item(request, id_class):
     if request.method == "POST":
         form = AddGradableItemForm(request.POST)
         if form.is_valid():
@@ -205,14 +205,14 @@ def add_gradable_item(request, class_name):
             ty = form.cleaned_data["type"]
 
             # Save gradable item into db
-            cl = Classes.objects.get(name=class_name)
+            cl = Classes.objects.get(pk=id_class)
             ss = Students.objects.all().filter(s_class=cl)
 
             for student in ss:
                 g = Grades(subject=subject, date=date, grade=None, type=ty, student=student)
                 g.save()
 
-            return redirect('/classes/' + class_name + '/gradebook/')
+            return redirect('/classes/' + id_class + '/gradebook/')
     else:
         form = AddGradableItemForm()
 

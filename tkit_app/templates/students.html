@@ -28,7 +28,7 @@
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
                                             <a href="/students/{{ student.pk }}/">{{ student.first_name }} {{ student.last_name }}</a>
-                                            <button id="remove-student" onclick="removeStudent('{{ class.name }}', '{{ student.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
+                                            <button id="remove-student" onclick="removeStudent('{{ class.pk }}', '{{ student.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
                                                 <span class="glyphicon glyphicon-remove"></span>
                                             </button>
                                         </h3>
@@ -53,13 +53,13 @@
                 <a href="/classes/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Gestione classi
                 </a>
-                <a href="/classes/{{ class.name }}/students/add/" class="btn btn-lg btn-primary">
+                <a href="/classes/{{ class.pk }}/students/add/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-plus"></span> Aggiungi
                 </a>
-                <a href="/classes/{{ class.name }}/gradebook/" class="btn btn-lg btn-primary">
+                <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-book"></span> Valutazioni
                 </a>
-                <a href="/classes/{{ class.name }}/attendance/" class="btn btn-lg btn-primary">
+                <a href="/classes/{{ class.pk }}/attendance/" class="btn btn-lg btn-primary">
                     <span class="glyphicon glyphicon-eye-open"></span> Frequenza
                 </a>
                 <a href="/classes/{{ class.pk }}/homework/" class="btn btn-lg btn-primary">
