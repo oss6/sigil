@@ -76,6 +76,11 @@ def remove_class(request, id_class):
 
 
 @login_required(login_url='/login/')
+def class_report(request, id_class):
+    pass
+
+
+@login_required(login_url='/login/')
 def students(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)

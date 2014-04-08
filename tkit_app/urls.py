@@ -21,12 +21,14 @@ urlpatterns = patterns('',
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
+    url(r'^classes/(?P<id_class>\d+)/report/$'),
 
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
     url(r'^classes/(?P<id_class>\d+)/students/add/$', views.add_student),
     url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
+    # TODO: todooooo!
     url(r'^students/(?P<id_student>\d+)/grades-performance-chart/', views.grades_performance_chart),
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
@@ -39,7 +41,7 @@ urlpatterns = patterns('',
         r'(?P<id_grade>\d+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
     # Attendance
-    url(r'^classes/(?P<id_class>\d+)/attendance/$', views.attendance),
+    url(r'^classes/(?P<id_class>\d+)/attendance/$', views.attendance), # TODO: todooooo!
 
     # Lessons
     url(r'^lessons/$', views.lessons),
