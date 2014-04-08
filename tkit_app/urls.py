@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
-    url(r'^classes/(?P<id_class>\d+)/report/$'),
+    url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
 
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),

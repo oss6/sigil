@@ -3,8 +3,10 @@ from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+from django.db.models import Min, Max
 from forms import *
 from models import *
+from datetime import timedelta
 import json
 import datetime
 
@@ -75,6 +77,7 @@ def remove_class(request, id_class):
     return ajax_resp("Class removed")
 
 
+# TODO: CLASS REPORT!
 @login_required(login_url='/login/')
 def class_report(request, id_class):
     pass
@@ -146,11 +149,21 @@ def grades_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
+"""def daterange(start_date, end_date):
+    for n in range(int((end_date - start_date).days)):
+        yield start_date + timedelta(n)"""
+
+
 @login_required(login_url='/login/')
 def grades_performance_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
-    grades = Grades.objects.filter(student=student)
-    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades]
+    #grades = Grades.objects.filter(student=student)
+    oldest_date = Grades.objects.aggregate(Min('date'))['date__min']
+    newest_date = Grades.objects.aggregate(Max('date'))['date__max']
+    grades_ranges = []
+    grades_range = Grades.objects.filter(date__range=["2011-01-01", "2011-01-31"])
+
+    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades_range]
 
     j = json.dumps({
         "cols": [
