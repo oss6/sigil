@@ -5,5 +5,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^', include('tkit_app.urls')),
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^forum/', include('pybb.urls', namespace='pybb')),
+    url(r'^admin/', include(admin.site.urls))
 )

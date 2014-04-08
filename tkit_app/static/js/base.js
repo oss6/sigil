@@ -95,9 +95,9 @@ function drawNotesChart() {
     chart.draw(data, options);
 }
 
-google.load('visualization', '1.0', {'packages':['corechart']});
+/*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(drawGradesChart);
-google.setOnLoadCallback(drawNotesChart);
+google.setOnLoadCallback(drawNotesChart);*/
 //google.setOnLoadCallback(drawPerformance);
 
 $(document).ready(function() {
