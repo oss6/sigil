@@ -24,6 +24,10 @@
                     <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                     </a>
+                    <input type="text" class="form-control" data-date-format="yyyy-mm-dd" id="attendance-date">
+                    <a id="change-att-date" class="btn btn-sm btn-primary" href="/classes/{{ class.pk }}/attendance//">
+                        Data
+                    </a>
                 </div>
                 <table class="table table-hover table-bordered">
                     <thead>

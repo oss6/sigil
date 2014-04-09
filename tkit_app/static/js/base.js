@@ -111,4 +111,5 @@ google.setOnLoadCallback(drawNotesChart);*/
 
 $(document).ready(function() {
     $('.draggable').draggable();
+    $("#attendance-date").datepicker();
 });
