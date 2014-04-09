@@ -7,6 +7,23 @@
             <div class="col-md-12">
                 <div class="page-header">
                     <h1>{{ student.first_name }} {{ student.last_name }} <small> scheda informativa</small></h1>
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a href="/classes/{{ student.s_class.pk }}/students/" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ student.s_class.name }}
+                    </a>
                 </div>
             </div>
         </div>
@@ -63,13 +80,6 @@
                         </a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <a href="/classes/{{ student.s_class.pk }}/students/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ student.s_class.name }}
-                </a>
             </div>
         </div>
 {% endblock %}

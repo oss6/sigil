@@ -17,6 +17,38 @@
                             {% endif %}
                         </small>
                     </h1>
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <div class="btn-group">
+                        <a href="/classes/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Gestione classi
+                        </a>
+                        <a href="/classes/{{ class.pk }}/students/add/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-plus"></span> Aggiungi
+                        </a>
+                        <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-book"></span> Valutazioni
+                        </a>
+                        <a href="/classes/{{ class.pk }}/homework/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span> Compiti
+                        </a>
+                        <a href="/classes/{{ class.pk }}/homework/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-stats"></span> Andamento classe
+                        </a>
+                    </div>
+
                 </div>
                 {% if not students %}
                     <h1>Non ci sono studenti</h1>
@@ -46,25 +78,6 @@
                         {% endfor %}
                     </div>
                 {% endif %}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <a href="/classes/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Gestione classi
-                </a>
-                <a href="/classes/{{ class.pk }}/students/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
-                </a>
-                <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-book"></span> Valutazioni
-                </a>
-                <a href="/classes/{{ class.pk }}/homework/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Compiti
-                </a>
-                <a href="/classes/{{ class.pk }}/homework/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Andamento classe
-                </a>
             </div>
         </div>
 {% endblock %}
