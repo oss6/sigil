@@ -219,8 +219,7 @@ def add_note(request, id_student):
 def grade_book(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
-    #grades = Grades.objects.all().filter(student__in=[student for student in ss])
-    #grades = [{Students.objects.get(pk=s): Grades.objects.filter(student__pk=s)} for s in ss]
+    # Student-grades dictionary
     grades = dict((Students.objects.get(pk=s), Grades.objects.filter(student__pk=s)) for s in ss)
     subs = Grades.objects.values('subject').distinct()
 
