@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}Gestione classi{% endblock %}
 
@@ -33,6 +33,9 @@
             <div class="col-md-12">
                 <div class="page-header">
                     <h1>Gestione classi <small>aggiungi, elimina e modifica le tue classi - <a href="#" data-toggle="modal" data-target="#helpModal">info</a></small></h1>
+                    <a href="/classes/add/" class="btn btn-sx btn-success">
+                        <span class="glyphicon glyphicon-plus"></span> Aggiungi
+                    </a>
                 </div>
                 {% if not classes %}
                     <h1>Non ci sono classi</h1>
@@ -58,9 +61,7 @@
                     {% endfor %}
                     </div>
                 {% endif %}
-                <a href="/classes/add/" class="btn btn-lg btn-primary">
-                    <span class="glyphicon glyphicon-plus"></span> Aggiungi
-                </a>
+
             </div>
         </div>
 {% endblock %}
