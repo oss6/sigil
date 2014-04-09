@@ -35,32 +35,35 @@
                     <h1>Non ci sono valutazioni</h1>
                 {% else %}
                     <div class="row">
-                        <table class="table">
+                        <table class="table table-hover table-bordered">
                             <thead>
-                                <tr>
-                                    <td>Studente</td>
+                                <tr class="success">
+                                    <!--<td>Studente</td>
                                     <td>Argomento</td>
                                     <td>Voto</td>
                                     <td>Data</td>
                                     <td>Tipo</td>
-                                    <td>Applica modifiche</td>
+                                    <td>Applica modifiche</td>-->
+                                    <td>Studente</td>
+                                    {% for sub in subs %}
+                                        <td>{{ sub.subject }}</td>
+                                    {% endfor %}
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for grade in grades %}
+                                {% for s, g in grades.items %}
                                     <tr>
-                                        <td>{{ grade.student.first_name }}</td>
-                                        <td>{{ grade.subject }}</td>
                                         <td>
-                                            <input id="grade-value-{{ forloop.counter }}" class="form-control" type="text" value="{{ grade.grade }}" />
+                                            {{ s.first_name }} {{ s.last_name }}
                                         </td>
-                                        <td>{{ grade.date }}</td>
-                                        <td>{{ grade.type }}</td>
-                                        <td>
-                                            <button onclick="applyGrade('{{ class.pk }}', '{{ grade.pk }}', $('#grade-value-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
-                                                <span class="glyphicon glyphicon-ok"></span> OK
-                                            </button>
-                                        </td>
+                                        {% for n in g %}
+                                            <td>
+                                                <input id="grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" class="form-control" type="text" value="{{ n.grade }}" />
+                                                <button onclick="applyGrade('{{ class.pk }}', '{{ n.pk }}', $('#grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
+                                                    <span class="glyphicon glyphicon-ok"></span> OK
+                                                </button>
+                                            </td>
+                                        {% endfor %}
                                     </tr>
                                 {% endfor %}
                             </tbody>

@@ -149,13 +149,12 @@ def grades_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
-"""def daterange(start_date, end_date):
+@login_required(login_url='/login/')
+def grades_performance_chart(request, id_student):
+    """def daterange(start_date, end_date):
     for n in range(int((end_date - start_date).days)):
         yield start_date + timedelta(n)"""
 
-
-@login_required(login_url='/login/')
-def grades_performance_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     #grades = Grades.objects.filter(student=student)
     oldest_date = Grades.objects.aggregate(Min('date'))['date__min']
@@ -219,10 +218,13 @@ def add_note(request, id_student):
 @login_required(login_url='/login/')
 def grade_book(request, id_class):
     cl = Classes.objects.get(pk=id_class)
-    ss = Students.objects.all().filter(s_class=cl)
-    grades = Grades.objects.all().filter(student__in=[student for student in ss])
+    ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
+    #grades = Grades.objects.all().filter(student__in=[student for student in ss])
+    #grades = [{Students.objects.get(pk=s): Grades.objects.filter(student__pk=s)} for s in ss]
+    grades = dict((Students.objects.get(pk=s), Grades.objects.filter(student__pk=s)) for s in ss)
+    subs = Grades.objects.values('subject').distinct()
 
-    return render_to_response("grade-book.html", {"students": ss, "class": cl, "grades": grades},
+    return render_to_response("grade-book.html", {"subs": subs, "class": cl, "grades": grades},
                               context_instance=RequestContext(request))
 
 
