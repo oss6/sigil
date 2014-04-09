@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <h1>{{ class.name }} - registro, {{ date }}</h1>
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
+                    </a>
+                </div>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="success">
+                            <td>Studente</td>
+                            <td>Tipo</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in att %}
+                            <tr>
+                                <td>{{ a.student.first_name }} {{ a.student.last_name }}</td>
+                                <td>
+                                    <input id="att-type-{{ forloop.counter }}" class="form-control" type="text" value="{{ a.type }}" />
+                                    <button onclick="applyAttendance('{{ class.pk }}', '{{ date }}', '{{ a.pk }}', $('#att-type-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
+                                        <span class="glyphicon glyphicon-ok"></span> OK
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+{% endblock %}

@@ -41,7 +41,8 @@ urlpatterns = patterns('',
         r'(?P<id_grade>\d+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
     # Attendance
-    url(r'^classes/(?P<id_class>\d+)/attendance/$', views.attendance), # TODO: todooooo!
+    url(r'^classes/(?P<id_class>\d+)/attendance/(?P<date>[\w|\W]+)/$', views.attendance),
+    url(r'^attendance/update/(?P<id_att>\d+)/(?P<att_type>[\w|\W]+)/$', views.update_attendance_type),
 
     # Lessons
     url(r'^lessons/$', views.lessons),

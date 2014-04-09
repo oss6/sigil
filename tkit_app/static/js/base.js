@@ -43,6 +43,15 @@ function applyGrade(id_class, id_grade, grade_value) {
     });
 }
 
+function applyAttendance(id_class, date, id_att, att_type) {
+    $.ajax({
+        url: "/attendance/update/" + id_att + "/" + att_type + "/"
+    })
+    .done(function(data) {
+        location.href = "/classes/" + id_class + "/attendance/" + date + "/";
+    });
+}
+
 function drawGradesChart() {
     var jsonData = $.ajax({
         url: "grades-chart/",

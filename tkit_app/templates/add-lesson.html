@@ -8,13 +8,14 @@
             <h1>Aggiungi lezione</h1>
             <form action="." method="post">{% csrf_token %}
                 {{ form|bootstrap }}
-                <a href="/lessons/" class="btn btn-primary">
-                    <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Lezioni
-                </a>
-                <button type="submit" value="Apply" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-ok"></span> Applica
-                </button>
+                <div class="btn-group">
+                    <a href="/lessons/" class="btn btn-primary">
+                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> Lezioni
+                    </a>
+                    <button type="submit" value="Apply" class="btn btn-primary">
+                        <span class="glyphicon glyphicon-ok"></span> Applica
+                    </button>
+                </div>
             </form>
-
         </div>
 {% endblock %}

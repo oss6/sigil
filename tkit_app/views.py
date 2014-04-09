@@ -263,8 +263,29 @@ def update_grade(request, id_grade, grade):
 
 
 @login_required(login_url='/login/')
-def attendance(request, class_name):
-    pass
+def attendance(request, id_class, date):
+    cl = Classes.objects.get(pk=id_class)
+    ss = Students.objects.filter(s_class=cl)
+    att = Attendance.objects.filter(student__in=[s for s in ss], date=date)
+
+    if not att:
+        for student in ss:
+            a = Attendance(date=date, type='NA', student=student)
+            a.save()
+        att = Attendance.objects.filter(student__in=[s for s in ss], date=date)
+
+    return render_to_response("attendance.html", {"date": date, "att": att, "class": cl},
+                              context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def update_attendance_type(request, id_att, att_type):
+    if request.is_ajax():
+        a = Attendance.objects.get(pk=id_att)
+        a.type = att_type
+        a.save()
+
+    return ajax_resp("Attendance type updated")
 
 
 @login_required(login_url='/login/')

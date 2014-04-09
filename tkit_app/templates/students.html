@@ -41,6 +41,10 @@
                         <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-book"></span> Valutazioni
                         </a>
+                        <!-- TODO: REPLACE WITH NOW()!! -->
+                        <a href='/classes/{{ class.pk }}/attendance/{% now "Y-m-d" %}/' class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-pencil"></span> Registro
+                        </a>
                         <a href="/classes/{{ class.pk }}/homework/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-pencil"></span> Compiti
                         </a>
