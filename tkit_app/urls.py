@@ -31,6 +31,7 @@ urlpatterns = patterns('',
     # TODO: todooooo!
     url(r'^students/(?P<id_student>\d+)/grades-performance-chart/', views.grades_performance_chart),
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
+    url(r'^students/(?P<id_student>\d+)/attendance-chart/', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
     url(r'^students/(?P<id_student>\d+)/notes/add/', views.add_note),
 

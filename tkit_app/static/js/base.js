@@ -52,6 +52,10 @@ function applyAttendance(id_class, date, id_att, att_type) {
     });
 }
 
+function changeDateAtt(id_class, date) {
+    location.href = "/classes/" + id_class + "/attendance/" + date + "/";
+}
+
 function drawGradesChart() {
     var jsonData = $.ajax({
         url: "grades-chart/",
@@ -104,9 +108,27 @@ function drawNotesChart() {
     chart.draw(data, options);
 }
 
+function drawAttendanceChart() {
+    var jsonData = $.ajax({
+        url: "attendance-chart/",
+        dataType:"json",
+        async: false
+    }).responseText;
+
+    var data = new google.visualization.DataTable(jsonData);
+    var options = {
+        title: 'Attendance',
+        pieHole: 0.4,
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById('attendance-chart'));
+    chart.draw(data, options);
+}
+
 /*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(drawGradesChart);
-google.setOnLoadCallback(drawNotesChart);*/
+google.setOnLoadCallback(drawNotesChart);
+google.setOnLoadCallback(drawAttendanceChart);*/
 //google.setOnLoadCallback(drawPerformance);
 
 $(document).ready(function() {

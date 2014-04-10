@@ -289,6 +289,25 @@ def update_attendance_type(request, id_att, att_type):
 
 
 @login_required(login_url='/login/')
+def attendance_chart(request, id_student):
+    student = Students.objects.get(pk=id_student)
+    atts = Attendance.objects.filter(student=student)
+    aatts = [att.type for att in atts]
+
+    j = json.dumps({
+        "cols": [
+            {"id": "", "label": "Type", "pattern": "", "type": "string"},
+            {"id": "", "label": "Frequency", "pattern": "", "type": "number"}
+        ],
+        "rows": [
+            {"c": [{"v": "Presenze", "f": None}, {"v": aatts.count("Presente"), "f": None}]},
+            {"c": [{"v": "Assenze", "f": None}, {"v": aatts.count("Assente"), "f": None}]}
+        ]
+    })
+    return HttpResponse(content=j, content_type="application/json")
+
+
+@login_required(login_url='/login/')
 def lessons(request):
     cls = Lessons.objects.all().filter(teacher=request.user)
     return render_to_response("lessons.html", {"lessons": cls}, context_instance=RequestContext(request))

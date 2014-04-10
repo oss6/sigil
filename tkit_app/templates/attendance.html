@@ -24,10 +24,12 @@
                     <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                     </a>
-                    <input type="text" class="form-control" data-date-format="yyyy-mm-dd" id="attendance-date">
-                    <a id="change-att-date" class="btn btn-sm btn-primary" href="/classes/{{ class.pk }}/attendance//">
-                        Data
-                    </a>
+                    <div class="col-md-3 well">
+                        <input type="text" id="attendance-date" class="form-control" data-date-format="yyyy-mm-dd" value="{{ date }}" >
+                        <a id="change-att-date" onclick="changeDateAtt('{{ class.pk }}', $('#attendance-date').val());" class="btn btn-sm btn-primary" href="javascript:;">
+                            Data
+                        </a>
+                    </div>
                 </div>
                 <table class="table table-hover table-bordered">
                     <thead>
@@ -41,7 +43,12 @@
                             <tr>
                                 <td>{{ a.student.first_name }} {{ a.student.last_name }}</td>
                                 <td>
-                                    <input id="att-type-{{ forloop.counter }}" class="form-control" type="text" value="{{ a.type }}" />
+                                    <select id="att-type-{{ forloop.counter }}" class="form-control">
+                                        <option {% if a.type == "NA" %} selected {% endif %}>NA</option>
+                                        <option {% if a.type == "Presente" %} selected {% endif %}>Presente</option>
+                                        <option {% if a.type == "Assente" %} selected {% endif %}>Assente</option>
+                                    </select>
+                                    <!--<input id="att-type-{{ forloop.counter }}" class="form-control" type="text" value="{{ a.type }}" />-->
                                     <button onclick="applyAttendance('{{ class.pk }}', '{{ date }}', '{{ a.pk }}', $('#att-type-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
                                         <span class="glyphicon glyphicon-ok"></span> OK
                                     </button>
