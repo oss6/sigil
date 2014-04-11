@@ -43,8 +43,13 @@
                     <li><a href="/classes/">Classi</a></li>
                     <li><a href="/lessons/">Lezioni</a></li>
                     <li><a href="/forum/">Forum</a></li>
-                    <li><a href="/documentation/dev/">Documentazione sviluppatori</a></li>
-                    <li><a href="/documentation/users/">Documentazione utenti</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentazione <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/documentation/dev/">Sviluppatori</a></li>
+                            <li><a href="/documentation/users/">Utenti</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}

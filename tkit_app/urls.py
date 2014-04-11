@@ -5,7 +5,7 @@ from tkit_app import views
 
 urlpatterns = patterns('',
     # Static pages
-    url(r'^$', TemplateView.as_view(template_name="index.html")),
+    url(r'^$', TemplateView.as_view(template_name="base.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
