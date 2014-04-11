@@ -7,7 +7,8 @@ urlpatterns = patterns('',
     # Static pages
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
-    url(r'^documentation/$', TemplateView.as_view(template_name="documentation.html")),
+    url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
+    url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
 
     # Sign up
     url(r'^signup/$', views.register),
@@ -24,13 +25,22 @@ urlpatterns = patterns('',
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
     url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
 
+    # TODO
+    url(r'^classes/(?P<id_class>\d+)/modify/$', views.mod_class),
+
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
     url(r'^classes/(?P<id_class>\d+)/students/add/$', views.add_student),
     url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
+
+    # TODO
+    url(r'^classes/(?P<id_class>\d+)/students/modify/(?P<id_student>\d+)/$', views.mod_student),
+
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
-    # TODO: todooooo!
+
+    # TODO
     url(r'^students/(?P<id_student>\d+)/grades-performance-chart/', views.grades_performance_chart),
+
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/attendance-chart/', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),

@@ -77,7 +77,11 @@ def remove_class(request, id_class):
     return ajax_resp("Class removed")
 
 
-# TODO: CLASS REPORT!
+@login_required(login_url='/login/')
+def mod_class(request, id_class=None):
+    pass
+
+
 @login_required(login_url='/login/')
 def class_report(request, id_class):
     pass
@@ -125,6 +129,11 @@ def remove_student(request, id_class, id_student):
         s.delete()
 
     return ajax_resp("Student removed")
+
+
+@login_required(login_url='/login/')
+def mod_student(request, id_class, id_student):
+    pass
 
 
 @login_required(login_url='/login/')
@@ -221,7 +230,7 @@ def grade_book(request, id_class):
     ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
     # Student-grades dictionary
     grades = dict((Students.objects.get(pk=s), Grades.objects.filter(student__pk=s)) for s in ss)
-    subs = Grades.objects.values('subject').distinct()
+    subs = Grades.objects.values('subject').distinct()  # TODO: not only subject
 
     return render_to_response("grade-book.html", {"subs": subs, "class": cl, "grades": grades},
                               context_instance=RequestContext(request))

@@ -57,3 +57,10 @@ class Assignments(models.Model):
     date_begin = models.DateField(blank=True, null=True, auto_now_add=True)
     date_end = models.DateField()
     a_class = models.ForeignKey(Classes)
+
+
+class Settings(models.Model):
+    absence_limit = models.IntegerField()
+    spc_limit = models.IntegerField()  # students per class
+    negative_notes_limit = models.IntegerField()
+    teacher = models.ForeignKey(User)
