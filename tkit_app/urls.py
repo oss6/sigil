@@ -7,6 +7,7 @@ urlpatterns = patterns('',
     # Static pages
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
+    url(r'^documentation/$', TemplateView.as_view(template_name="documentation.html")),
 
     # Sign up
     url(r'^signup/$', views.register),

@@ -38,9 +38,5 @@
 }
 
 .jumbotron {
-	box-shadow: 0px 1px 8px #121234;
+	box-shadow: 0px 1px 5px #121234;
 }
-
-/*.feature {
-	background: #000;
-}*/
