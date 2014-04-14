@@ -128,10 +128,30 @@ function drawAttendanceChart() {
 /*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(drawGradesChart);
 google.setOnLoadCallback(drawNotesChart);
-google.setOnLoadCallback(drawAttendanceChart);*/
-//google.setOnLoadCallback(drawPerformance);
+google.setOnLoadCallback(drawAttendanceChart);
+//google.setOnLoadCallback(drawPerformance);*/
+
+function postData(url, data, redirect) {
+    $.post("/lessons/add/", data, function() {
+        location.href = redirect;
+    }, 'html');
+}
 
 $(document).ready(function() {
     $('.draggable').draggable();
     $("#attendance-date").datepicker();
+
+    $("#addLesson").click(function() {
+        $('#addLessonModal').modal('show');
+        return false;
+    });
+
+    $("#addLessonModalSave").click(function() {
+        postData("/lessons/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            title: $("#title").val(),
+            description: $("#desc").val(),
+            date: $("#date").val()
+        }, "/lessons/");
+    });
 });

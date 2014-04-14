@@ -40,3 +40,11 @@
 .jumbotron {
 	box-shadow: 0px 1px 5px #121234;
 }
+
+#main-container {
+	margin-top: 80px;
+}
+
+.navbar-brand {
+	font-size: 35px;
+}
