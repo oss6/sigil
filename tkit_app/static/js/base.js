@@ -138,8 +138,7 @@ function postData(url, data, redirect) {
 }
 
 $(document).ready(function() {
-    $('.draggable').draggable();
-    $("#attendance-date").datepicker();
+    //$("#attendance-date").datepicker();
 
     $("#addLesson").click(function() {
         $('#addLessonModal').modal('show');
