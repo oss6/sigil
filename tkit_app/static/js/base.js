@@ -153,4 +153,17 @@ $(document).ready(function() {
             date: $("#date").val()
         }, "/lessons/");
     });
+
+    $("#addListItem").click(function() {
+        $("#addListItemModal").modal("show");
+        return false;
+    });
+
+    $("#addListItemModalSave").click(function() {
+        postData("/todolist/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            title: $("#title").val(),
+            date_exp: $("#date").val()
+        }, "/todolist/");
+    });
 });

@@ -65,4 +65,9 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<id_class>\d+)/homework/$', views.homework),
     url(r'^classes/(?P<id_class>\d+)/homework/add/$', views.add_assignment),
     url(r'^classes/(?P<id_class>\d+)/homework/remove/(?P<id_assignment>\d+)/$', views.remove_assignment),
+
+    # To do list
+    url(r'^todolist/', views.to_do_list),
+    url(r'^todolist/add/$', views.add_todolist_item),
+    url(r'^todolist/remove/(?P<id_item>[\w|\W]+)/$', views.remove_lesson),
 )

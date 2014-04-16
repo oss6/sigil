@@ -62,3 +62,8 @@ class AddNoteForm(forms.Form):
     positive = forms.BooleanField(required=False)
     date = forms.DateField()
     comment = forms.CharField()
+
+
+class AddListItemForm(forms.Form):
+    title = forms.CharField()
+    date_exp = forms.DateField()

@@ -64,3 +64,9 @@ class Settings(models.Model):
     spc_limit = models.IntegerField()  # students per class
     negative_notes_limit = models.IntegerField()
     teacher = models.ForeignKey(User)
+
+
+class ToDoList(models.Model):
+    title = models.CharField(max_length=60)
+    date_exp = models.DateField()
+    teacher = models.ForeignKey(User)

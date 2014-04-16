@@ -407,3 +407,34 @@ def remove_assignment(request, id_class, id_assignment):
         assm.delete()
 
     return ajax_resp("Assignment removed")
+
+
+@login_required(login_url='/login/')
+def to_do_list(request):
+    ls = ToDoList.objects.all().filter(teacher=request.user)
+    return render_to_response("todolist.html", {"list": ls}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def add_todolist_item(request):
+    if request.method == "POST":
+        form = AddListItemForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            title = form.cleaned_data["title"]
+            date = form.cleaned_data["date_exp"]
+
+            # Save lesson into db
+            ls = ToDoList(title=title, date_exp=date, teacher=request.user)
+            ls.save()
+
+    return redirect('/todolist/')
+
+
+@login_required(login_url='/login/')
+def remove_todolist_item(request, id_item):
+    if request.is_ajax():
+        l = Lessons.objects.get(pk=id_item)
+        l.delete()
+
+    return ajax_resp("Lesson removed")
