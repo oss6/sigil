@@ -6,10 +6,10 @@ from django.template import RequestContext
 from django.db.models import Min, Max
 from forms import *
 from models import *
-from datetime import timedelta
+from django_messages.models import *
 import json
 import datetime
-
+#from datetime import timedelta
 
 def ajax_resp(message):
     tm = datetime.datetime.now().time()
@@ -434,7 +434,32 @@ def add_todolist_item(request):
 @login_required(login_url='/login/')
 def remove_todolist_item(request, id_item):
     if request.is_ajax():
-        l = Lessons.objects.get(pk=id_item)
-        l.delete()
+        ls = ToDoList.objects.get(pk=id_item)
+        ls.delete()
 
-    return ajax_resp("Lesson removed")
+    return ajax_resp("Item removed")
+
+
+@login_required(login_url='/login/')
+def mailbox_inbox(request):
+    message_list = Message.objects.inbox_for(request.user)
+
+    return render_to_response("mailbox_inbox.html", {
+        'message_list': message_list
+    }, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def mailbox_outbox(request):
+    message_list = Message.objects.outbox_for(request.user)
+    return render_to_response("mailbox_outbox.html", {
+        'message_list': message_list,
+    }, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def mailbox_trash(request):
+    message_list = Message.objects.trash_for(request.user)
+    return render_to_response("mailbox_trash.html", {
+        'message_list': message_list,
+    }, context_instance=RequestContext(request))

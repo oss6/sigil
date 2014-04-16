@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}About{% endblock %}
+
+{% block header-title %}Mailbox{% endblock %}
+{% block content %}
+<!-- MAILBOX BEGIN -->
+<div class="mailbox row">
+    <div class="col-xs-12">
+        <div class="box box-solid">
+            <div class="box-body">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <!-- BOXES are complex enough to move the .box-header around.
+                             This is an example of having the box header within the box body -->
+                        <div class="box-header">
+                            {% block mailbox_header %}
+                            <i class="fa fa-inbox"></i>
+                            <h3 class="box-title">RICEVUTI</h3>
+                            {% endblock %}
+                        </div>
+                        <!-- compose message btn -->
+                        <a href="/mailbox/compose/" class="btn btn-block btn-primary">
+                            <i class="fa fa-pencil"></i> Nuovo messaggio
+                        </a>
+                        <!-- Navigation - folders-->
+                        <div style="margin-top: 15px;">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="header">Folders</li>
+                                <li><a href="/mailbox/inbox/"><i class="fa fa-inbox"></i> Inbox ({{ messages_inbox_count }})</a></li>
+                                <li><a href="/mailbox/outbox/"><i class="fa fa-mail-forward"></i> Outbox</a></li>
+                                <li><a href="/mailbox/trash/"><i class="fa fa-trash-o"></i> Cestino</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /.col (LEFT) -->
+                    <div class="col-md-9 col-sm-8">
+                        {% block mailbox_content %}
+                        {% if message_list %}
+                        <div class="table-responsive">
+                            <!-- THE MESSAGES -->
+                            <table class="table table-mailbox">
+                                {% for message in message_list %}
+                                <tr class="{% if message.new %}unread{% endif %}">
+                                    <td class="name">
+                                        <a href="/mailbox/view/{{ message.id }}/">{{ message.sender }}</a>
+                                    </td>
+                                    <td class="subject"><a href="#">{{ message.subject }}</a></td>
+                                    <td class="time">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+                                    <td><a href="{% url 'messages_delete' message.id %}?next=/mailbox/inbox/">Rimuovi</a></td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+                        </div>
+                        {% else %}
+                            <h2>Non ci sono messaggi</h2>
+                        {% endif %}
+                        <!-- /.table-responsive -->
+                        {% endblock %}
+                    </div>
+                    <!-- /.col (RIGHT) -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+    </div>
+    <!-- /.col (MAIN) -->
+</div>
+<!-- MAILBOX END -->
+{% endblock %}

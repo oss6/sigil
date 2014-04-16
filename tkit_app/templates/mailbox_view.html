@@ -1,0 +1,32 @@
+{% extends "mailbox_inbox.html" %}
+{% load bootstrap %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}Componi messaggio{% endblock %}
+{% block mailbox_header %}
+    <i class="fa fa-edit"></i>
+    <h3 class="box-title">MESSAGGIO</h3>
+{% endblock %}
+
+{% block mailbox_content %}
+        <h4>Oggetto</h4>
+        <p>{{ message.subject }}</p>
+
+        <h4>Mittente</h4>
+        <p>{{ message.sender }}</p>
+
+        <h4>Data</h4>
+        <p>{{ message.sent_at|date:_("DATETIME_FORMAT")}}</p>
+
+        <h4>Destinatario</h4>
+        <p>{{ message.recipient }}</p>
+
+        <h4>Messagio</h4>
+        {{ message.body|linebreaksbr }}<br /><br />
+
+        {% ifequal message.recipient.pk user.pk %}
+        <a href="/mailbox/reply/{{ message.id }}/">Rispondi</a>
+        {% endifequal %}
+        <a href="{% url 'messages_delete' message.id %}?next=/mailbox/inbox/">Rimuovi</a>
+{% endblock %}

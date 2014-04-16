@@ -2,6 +2,7 @@ from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
 from tkit_app import views
+from django_messages import views as dmv
 
 urlpatterns = patterns('',
     # Static pages
@@ -70,4 +71,13 @@ urlpatterns = patterns('',
     url(r'^todolist/', views.to_do_list),
     url(r'^todolist/add/$', views.add_todolist_item),
     url(r'^todolist/remove/(?P<id_item>[\w|\W]+)/$', views.remove_lesson),
+
+    # Mailbox entry
+    url(r'^mailbox/inbox/', views.mailbox_inbox),
+    url(r'^mailbox/outbox/', views.mailbox_outbox),
+    url(r'^mailbox/trash/', views.mailbox_trash),
+    url(r'^mailbox/compose/', dmv.compose, {'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'}),
+    url(r'^mailbox/view/(?P<message_id>[\d]+)/$', dmv.view, {'template_name': 'mailbox_view.html'}),
+    url(r'^mailbox/reply/(?P<message_id>[\d]+)/', dmv.reply, {'template_name': 'mailbox_compose.html',
+                                                              'success_url': '/mailbox/inbox/'})
 )

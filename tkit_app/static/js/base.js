@@ -132,7 +132,7 @@ google.setOnLoadCallback(drawAttendanceChart);
 //google.setOnLoadCallback(drawPerformance);*/
 
 function postData(url, data, redirect) {
-    $.post("/lessons/add/", data, function() {
+    $.post(url, data, function() {
         location.href = redirect;
     }, 'html');
 }
@@ -140,6 +140,7 @@ function postData(url, data, redirect) {
 $(document).ready(function() {
     //$("#attendance-date").datepicker();
 
+    // LESSONS
     $("#addLesson").click(function() {
         $('#addLessonModal').modal('show');
         return false;
@@ -154,6 +155,7 @@ $(document).ready(function() {
         }, "/lessons/");
     });
 
+    // LIST ITEMS
     $("#addListItem").click(function() {
         $("#addListItemModal").modal("show");
         return false;

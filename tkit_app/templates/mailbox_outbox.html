@@ -1,0 +1,30 @@
+{% extends "mailbox_inbox.html" %}
+{% load bootstrap %}
+
+{% block title %}Inviati{% endblock %}
+{% block mailbox_header %}
+    <i class="fa fa-mail-forward"></i>
+    <h3 class="box-title">INVIATI</h3>
+{% endblock %}
+
+{% block mailbox_content %}
+{% if message_list %}
+<div class="table-responsive">
+    <!-- THE MESSAGES -->
+    <table class="table table-mailbox">
+        {% for message in message_list %}
+        <tr class="unread">
+            <td class="name">
+                <a href="/mailbox/view/{{ message.id }}/">{{ message.recipient }}</a>
+            </td>
+            <td class="subject">{{ message.subject }}</td>
+            <td class="time">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
+            <td><a href="{% url 'messages_delete' message.id %}?next=/mailbox/outbox/">Rimuovi</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% else %}
+<h2>Non ci sono messaggi</h2>
+{% endif %}
+{% endblock %}

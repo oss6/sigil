@@ -40,121 +40,10 @@
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
                         <li class="dropdown messages-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="/messages/">
                                 <i class="fa fa-envelope"></i>
-                                <span class="label label-success">4</span>
+                                <span class="label label-success">{{ messages_inbox_count }}</span>
                             </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 4 messages</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li><!-- start message -->
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar3.png" class="img-circle" alt="User Image"/>
-                                                </div>
-                                                <h4>
-                                                    Support Team
-                                                    <small><i class="fa fa-clock-o"></i> 5 mins</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li><!-- end message -->
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    AdminLTE Design Team
-                                                    <small><i class="fa fa-clock-o"></i> 2 hours</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Developers
-                                                    <small><i class="fa fa-clock-o"></i> Today</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar2.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Sales Department
-                                                    <small><i class="fa fa-clock-o"></i> Yesterday</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <div class="pull-left">
-                                                    <img src="img/avatar.png" class="img-circle" alt="user image"/>
-                                                </div>
-                                                <h4>
-                                                    Reviewers
-                                                    <small><i class="fa fa-clock-o"></i> 2 days</small>
-                                                </h4>
-                                                <p>Why not buy a new awesome theme?</p>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">See All Messages</a></li>
-                            </ul>
-                        </li>
-                        <!-- Notifications: style can be found in dropdown.less -->
-                        <li class="dropdown notifications-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="fa fa-warning"></i>
-                                <span class="label label-warning">10</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li class="header">You have 10 notifications</li>
-                                <li>
-                                    <!-- inner menu: contains the actual data -->
-                                    <ul class="menu">
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-people info"></i> 5 new members joined today
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-warning danger"></i> Very long description here that may not fit into the page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="fa fa-users warning"></i> 5 new members joined
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-cart success"></i> 25 sales made
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <i class="ion ion-ios7-person danger"></i> You changed your username
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="footer"><a href="#">View all</a></li>
-                            </ul>
                         </li>
                         <!-- Tasks: style can be found in dropdown.less -->
                         <li class="dropdown tasks-menu">
@@ -228,17 +117,18 @@
                         </li>
                         <!-- User Account -->
                         <li class="user user-menu">
-                            <a href="javascript:;">
-                                <span>
-                                    {% if user.is_authenticated %}
+                            {% if user.is_authenticated %}
+                                <a href="/logout/">
+                                    <span>
                                         <i class="glyphicon glyphicon-user"></i>
-                                        {{ user.first_name }} {{ user.last_name }}, <a href="/logout/">Log out</a>
-                                    {% else %}
-                                        <a href="/login/">Login</a>
-                                        <a href="/signup/">Registrati</a>
-                                    {% endif %}
-                                </span>
-                            </a>
+                                        {{ user.first_name }} {{ user.last_name }}, logout
+                                    </span>
+                                </a>
+                            {% else %}
+                                <a href="/login/">
+                                    Login
+                                </a>
+                            {% endif %}
                         </li>
                     </ul>
                 </div>
@@ -284,28 +174,20 @@
                         </li>
                         <li>
                             <a href="/todolist/">
-                                <i class="fa fa-th"></i> <span>Lista tasks</span>
+                                <i class="fa fa-edit"></i> <span>Lista tasks</span>
                             </a>
                         </li>
                         <li>
                             <a href="/forum/">
-                                <i class="fa fa-th"></i> <span>Forum</span>
+                                <i class="fa fa-comments"></i> <span>Forum</span>
                             </a>
                         </li>
-                        <!--<li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-laptop"></i>
-                                <span>UI Elements</span>
-                                <i class="fa fa-angle-left pull-right"></i>
+                        <li>
+                            <a href="/mailbox/inbox/">
+                                <i class="fa fa-envelope"></i> <span>Messaggi privati</span>
+                                <small class="badge pull-right bg-red">{{ messages_inbox_count }}</small>
                             </a>
-                            <ul class="treeview-menu">
-                                <li><a href="pages/UI/general.html"><i class="fa fa-angle-double-right"></i> General</a></li>
-                                <li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
-                                <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
-                                <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
-                                <li><a href="pages/UI/timeline.html"><i class="fa fa-angle-double-right"></i> Timeline</a></li>
-                            </ul>
-                        </li>-->
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -316,9 +198,9 @@
 
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
+                    <h1 class="text-center">
                         {% block header-title %}
-                        Home
+                        Tkit - web app per insegnanti
                         {% endblock %}
                     </h1>
                 </section>
@@ -327,7 +209,6 @@
                 <section class="content">
                 <!-- ABOUT/CONTATTI E DOCUMENTAZIONE LINK -->
                 {% block content %}
-                    <h1>Tkit - web app per insegnanti</h1>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Deserunt eligendi minima nemo numquam quisquam tempora voluptatibus.

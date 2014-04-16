@@ -110,7 +110,8 @@ WSGI_APPLICATION = 'tkit.wsgi.application'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
-    'pybb.context_processors.processor'
+    'pybb.context_processors.processor',
+    'django_messages.context_processors.inbox'
 )
 
 TEMPLATE_DIRS = (
@@ -129,6 +130,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'bootstrapform',
     'pybb',
+    'django_messages',
     'tkit_app'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',

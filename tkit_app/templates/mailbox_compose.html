@@ -1,0 +1,15 @@
+{% extends "mailbox_inbox.html" %}
+{% load bootstrap %}
+
+{% block title %}Componi messaggio{% endblock %}
+{% block mailbox_header %}
+    <i class="fa fa-edit"></i>
+    <h3 class="box-title">COMPOSIZIONE MESSAGGIO</h3>
+{% endblock %}
+
+{% block mailbox_content %}
+<form action="." method="post">{% csrf_token %}
+    {{ form|bootstrap }}
+    <input class="btn btn-primary" type="submit" value="Invia"/>
+</form>
+{% endblock %}
