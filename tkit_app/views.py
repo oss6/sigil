@@ -428,6 +428,7 @@ def add_todolist_item(request):
             # Save lesson into db
             ls = ToDoList(title=title, date_exp=date, teacher=request.user)
             ls.save()"""
+
     title = request.POST["title"]
     date = request.POST["date_exp"]
 
@@ -435,7 +436,8 @@ def add_todolist_item(request):
     ls = ToDoList(title=title, date_exp=date, teacher=request.user)
     ls.save()
 
-    return redirect('/todolist/')
+    #return to_do_list(request)
+    return ajax_resp(title + " " + date + " " + request.user.username)
 
 
 @login_required(login_url='/login/')

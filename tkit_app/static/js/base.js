@@ -132,6 +132,15 @@ google.setOnLoadCallback(drawAttendanceChart);
 //google.setOnLoadCallback(drawPerformance);*/
 
 function postData(url, data, redirect) {
+    /*$.ajax({
+        type: "POST",
+        url: url,
+        data: data
+    })
+    .done(function( msg ) {
+        console.log(msg);
+    });*/
+
     $.post(url, data, function() {
         location.href = redirect;
     }, 'html');
