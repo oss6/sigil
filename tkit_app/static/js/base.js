@@ -166,6 +166,21 @@ $(document).ready(function() {
         }, "/classes/" + $(this).attr("data-class") + "/gradebook/");
     });
 
+    // NOTES
+    $("#addNote").click(function() {
+        $('#addNoteModal').modal('show');
+        return false;
+    });
+
+    $("#addNoteModalSave").click(function() {
+        utils.postData("/students/" + $(this).attr("data-student") + "/notes/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            positive: $("#positive").val(),
+            date: $("#date").val(),
+            comment: $("#comment").val(),
+        }, "/students/" + $(this).attr("data-student") + "/");
+    });
+
     // LESSONS
     $("#addLesson").click(function() {
         $('#addLessonModal').modal('show');
@@ -212,8 +227,8 @@ $(document).ready(function() {
     });
 });
 
-/*google.load('visualization', '1.0', {'packages':['corechart']});
+google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(mgrade.drawGradesChart);
 google.setOnLoadCallback(mnote.drawNotesChart);
 google.setOnLoadCallback(mattendance.drawAttendanceChart);
-//google.setOnLoadCallback(mgrade.drawPerformance);*/
+//google.setOnLoadCallback(mgrade.drawPerformance);

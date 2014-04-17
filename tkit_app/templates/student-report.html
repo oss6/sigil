@@ -62,7 +62,7 @@
                     </div>
                     <div class="panel-body">
                         <div id="notes-chart"></div>
-                        <a href="/students/{{ student.pk }}/notes/add/" class="btn btn-sx btn-primary">
+                        <a id="addNote" href="javascript:;" class="btn btn-sx btn-primary">
                             <span class="glyphicon glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                     </div>
@@ -75,6 +75,34 @@
                     </div>
                     <div class="panel-body">
                         <div id="attendance-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addNoteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi nota</h2>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="." method="post">{% csrf_token %}
+                            <label>Positiva</label>
+                            <input id="positive" type="checkbox">
+                            <label>Data</label>
+                            <input id="date" type="text" class="date form-control">
+                            <label>Commento</label>
+                            <textarea id="comment" class="form-control"></textarea>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <button id="addNoteModalSave" data-student="{{ student.pk }}" type="button" class="btn btn-primary">Salva</button>
                     </div>
                 </div>
             </div>

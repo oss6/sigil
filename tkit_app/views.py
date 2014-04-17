@@ -208,11 +208,7 @@ def add_note(request, id_student):
             n = Notes(n_type=n_type, date=date, comment=comment, student=s)
             n.save()
 
-            return redirect('/students/' + id_student + '/')
-    else:
-        form = AddNoteForm()
-
-    return render_to_response('add-note.html', {"form": form}, context_instance=RequestContext(request))
+    return redirect('/students/' + id_student + '/')
 
 
 @login_required(login_url='/login/')
