@@ -30,7 +30,7 @@
                         <a href="/classes/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-edit"></span> Modifica
                         </a>
-                        <a href="/classes/{{ class.pk }}/students/add/" class="btn btn-sm btn-primary">
+                        <a id="addStudent" href="javascript:;" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                         <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-sm btn-primary">
@@ -58,9 +58,9 @@
                                     <div class="panel-heading">
                                         <h3 class="panel-title">
                                             <a href="/students/{{ student.pk }}/">{{ student.first_name }} {{ student.last_name }}</a>
-                                            <button id="remove-student" onclick="removeStudent('{{ class.pk }}', '{{ student.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
+                                            <a href="/classes/{{ class.pk }}/students/remove/{{ student.pk }}/" style="float: right;" class="btn btn-xs btn-danger">
                                                 <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
+                                            </a>
                                         </h3>
 
                                     </div>
@@ -76,6 +76,39 @@
                         {% endfor %}
                     </div>
                 {% endif %}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form action="." method="post">{% csrf_token %}
+                            <label>Nome</label>
+                            <input id="first_name" type="text" class="form-control">
+                            <label>Cognome</label>
+                            <input id="last_name" type="text" class="form-control">
+                            <label>Email</label>
+                            <input id="email" type="text" class="form-control">
+                            <label>Nome/Cognome genitore</label>
+                            <input id="parent" type="text" class="form-control">
+                            <label>Email genitore</label>
+                            <input id="parent_email" type="text" class="form-control">
+                            <label>Foto</label>
+                            <input id="photo" type="file" class="form-control">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <button id="addStudentModalSave" data-class="{{ class.pk }}" type="button" class="btn btn-primary">Salva</button>
+                    </div>
+                </div>
             </div>
         </div>
 {% endblock %}

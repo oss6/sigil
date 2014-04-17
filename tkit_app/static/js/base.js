@@ -1,153 +1,170 @@
-function removeClass(id_class) {
-    $.ajax({
-        url: "/classes/remove/" + id_class + "/"
-    })
-    .done(function(data) {
-        location.href = "/classes/";
-    });
-}
+var mitem = {
+    removeItem: function(id_item) {
+       $.ajax({
+            url: "/todolist/remove/" + id_item + "/"
+       })
+       .done(function(data) {
+            location.href = "/todolist/";
+       });
+    }
+};
 
-function removeStudent(id_class, id_student) {
-    $.ajax({
-        url: "/classes/" + id_class + "/students/remove/" + id_student +"/"
-    })
-    .done(function(data) {
-        location.href = "/classes/" + id_class + "/students/";
-    });
-}
+var mgrade = {
+    applyGrade: function(id_class, id_grade, grade_value) {
+        $.ajax({
+            url: "/gradebook/update/" + id_grade + "/" + grade_value + "/"
+        })
+        .done(function(data) {
+            location.href = "/classes/" + id_class + "/gradebook/";
+        });
+    },
 
-function removeLesson(id_lesson) {
-    $.ajax({
-        url: "/lessons/remove/" + id_lesson + "/"
-    })
-    .done(function(data) {
-        location.href = "/lessons/";
-    });
-}
+    drawGradesChart: function() {
+        var jsonData = $.ajax({
+            url: "grades-chart/",
+            dataType:"json",
+            async: false
+        }).responseText;
 
-function removeAssignment(id_class, id_assm) {
-    $.ajax({
-        url: "/classes/" + id_class + "/homework/remove/" + id_assm + "/"
-    })
-    .done(function(data) {
-        location.href = "/classes/" + id_class + "/homework/";
-    });
-}
+        var data = new google.visualization.DataTable(jsonData);
+        var chart = new google.visualization.ColumnChart(document.getElementById('grades-chart'));
+        chart.draw(data, {width: 400, height: 240});
+    },
 
-function removeItem(id_item) {
-    $.ajax({
-        url: "/todolist/remove/" + id_item + "/"
-    })
-    .done(function(data) {
-        location.href = "/todolist/";
-    });
-}
+    drawPerformance: function() {
+        var jsonData = $.ajax({
+            url: "grades-performance-chart/",
+            dataType:"json",
+            async: false
+        }).responseText;
 
-function applyGrade(id_class, id_grade, grade_value) {
-    $.ajax({
-        url: "/gradebook/update/" + id_grade + "/" + grade_value + "/"
-    })
-    .done(function(data) {
-        location.href = "/classes/" + id_class + "/gradebook/";
-    });
-}
+        /*var data = google.visualization.arrayToDataTable([
+              ['Year', 'Sales', 'Expenses'],
+              ['2004',  1000,      400],
+              ['2005',  1170,      460],
+              ['2006',  660,       1120],
+              ['2007',  1030,      540]
+        ]);*/
 
-function applyAttendance(id_class, date, id_att, att_type) {
-    $.ajax({
-        url: "/attendance/update/" + id_att + "/" + att_type + "/"
-    })
-    .done(function(data) {
+        var options = {
+            title: 'Student Performance'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('performance-chart'));
+        chart.draw(data, options);
+    }
+};
+
+var mattendance = {
+    applyAttendance: function(id_class, date, id_att, att_type) {
+        $.ajax({
+            url: "/attendance/update/" + id_att + "/" + att_type + "/"
+        })
+        .done(function(data) {
+            location.href = "/classes/" + id_class + "/attendance/" + date + "/";
+        });
+    },
+
+    changeDateAtt: function(id_class, date) {
         location.href = "/classes/" + id_class + "/attendance/" + date + "/";
-    });
-}
+    },
 
-function changeDateAtt(id_class, date) {
-    location.href = "/classes/" + id_class + "/attendance/" + date + "/";
-}
+    drawAttendanceChart: function() {
+        var jsonData = $.ajax({
+            url: "attendance-chart/",
+            dataType:"json",
+            async: false
+        }).responseText;
 
-function drawGradesChart() {
-    var jsonData = $.ajax({
-        url: "grades-chart/",
-        dataType:"json",
-        async: false
-    }).responseText;
+        var data = new google.visualization.DataTable(jsonData);
+        var options = {
+            title: 'Attendance',
+            pieHole: 0.4,
+        };
 
-    var data = new google.visualization.DataTable(jsonData);
-    var chart = new google.visualization.ColumnChart(document.getElementById('grades-chart'));
-    chart.draw(data, {width: 400, height: 240});
-}
+        var chart = new google.visualization.PieChart(document.getElementById('attendance-chart'));
+        chart.draw(data, options);
+    }
+};
 
-function drawPerformance() {
-    var jsonData = $.ajax({
-        url: "grades-performance-chart/",
-        dataType:"json",
-        async: false
-    }).responseText;
+var mnote = {
+    drawNotesChart: function() {
+        var jsonData = $.ajax({
+            url: "notes-chart/",
+            dataType:"json",
+            async: false
+        }).responseText;
 
-    /*var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales', 'Expenses'],
-          ['2004',  1000,      400],
-          ['2005',  1170,      460],
-          ['2006',  660,       1120],
-          ['2007',  1030,      540]
-    ]);*/
+        var data = new google.visualization.DataTable(jsonData);
+        var options = {
+            title: 'Note',
+            pieHole: 0.4,
+        };
 
-    var options = {
-        title: 'Student Performance'
-    };
+        var chart = new google.visualization.PieChart(document.getElementById('notes-chart'));
+        chart.draw(data, options);
+    }
+};
 
-    var chart = new google.visualization.LineChart(document.getElementById('performance-chart'));
-    chart.draw(data, options);
-}
-
-function drawNotesChart() {
-    var jsonData = $.ajax({
-        url: "notes-chart/",
-        dataType:"json",
-        async: false
-    }).responseText;
-
-    var data = new google.visualization.DataTable(jsonData);
-    var options = {
-        title: 'Note',
-        pieHole: 0.4,
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('notes-chart'));
-    chart.draw(data, options);
-}
-
-function drawAttendanceChart() {
-    var jsonData = $.ajax({
-        url: "attendance-chart/",
-        dataType:"json",
-        async: false
-    }).responseText;
-
-    var data = new google.visualization.DataTable(jsonData);
-    var options = {
-        title: 'Attendance',
-        pieHole: 0.4,
-    };
-
-    var chart = new google.visualization.PieChart(document.getElementById('attendance-chart'));
-    chart.draw(data, options);
-}
-
-/*google.load('visualization', '1.0', {'packages':['corechart']});
-google.setOnLoadCallback(drawGradesChart);
-google.setOnLoadCallback(drawNotesChart);
-google.setOnLoadCallback(drawAttendanceChart);
-//google.setOnLoadCallback(drawPerformance);*/
-
-function postData(url, data, redirect) {
-    $.post(url, data, function() {
-        location.href = redirect;
-    }, 'html');
-}
+var utils = {
+    postData: function(url, data, redirect) {
+        $.post(url, data, function() {
+            location.href = redirect;
+        }, 'html');
+    }
+};
 
 $(document).ready(function() {
-    //$("#attendance-date").datepicker();
+    $(".date").datepicker();
+
+    // CLASSES
+    $("#addClass").click(function() {
+        $('#addClassModal').modal('show');
+        return false;
+    });
+
+    $("#addClassModalSave").click(function() {
+        utils.postData("/classes/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            name: $("#name").val(),
+            school: $("#school").val(),
+            description: $("#desc").val(),
+        }, "/classes/");
+    });
+
+    // STUDENTS
+    $("#addStudent").click(function() {
+        $('#addStudentModal').modal('show');
+        return false;
+    });
+
+    $("#addStudentModalSave").click(function() {
+        utils.postData("/classes/" + $(this).attr("data-class") + "/students/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            first_name: $("#first_name").val(),
+            last_name: $("#last_name").val(),
+            email: $("#email").val(),
+            parent: $("#parent").val(),
+            parent_email: $("#parent_email").val(),
+            photo: $("#photo").val(),
+        }, "/classes/" + $(this).attr("data-class") + "/students/");
+    });
+
+    // GRADE BOOK
+    $("#addGrade").click(function() {
+        $('#addGradeModal').modal('show');
+        return false;
+    });
+
+    $("#addGradeModalSave").click(function() {
+        utils.postData("/classes/" + $(this).attr("data-class") + "/gradebook/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            title: $("#title").val(),
+            description: $("#description").val(),
+            date_begin: $("#date_begin").val(),
+            date_end: $("#date_end").val(),
+        }, "/classes/" + $(this).attr("data-class") + "/gradebook/");
+    });
 
     // LESSONS
     $("#addLesson").click(function() {
@@ -156,12 +173,27 @@ $(document).ready(function() {
     });
 
     $("#addLessonModalSave").click(function() {
-        postData("/lessons/add/", {
+        utils.postData("/lessons/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
             description: $("#desc").val(),
             date: $("#date").val()
         }, "/lessons/");
+    });
+
+    // ASSIGNMENTS
+    $("#addAssignment").click(function() {
+        $('#addAssignmentModal').modal('show');
+        return false;
+    });
+
+    $("#addAssignmentModalSave").click(function() {
+        utils.postData("/classes/" + $(this).attr("data-class") + "/gradebook/add/", {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            subject: $("#subject").val(),
+            date: $("#date").val(),
+            type: $("#type").val(),
+        }, "/classes/" + $(this).attr("data-class") + "/gradebook/");
     });
 
     // LIST ITEMS
@@ -171,7 +203,7 @@ $(document).ready(function() {
     });
 
     $("#addListItemModalSave").click(function() {
-        postData("/todolist/add/", {
+        utils.postData("/todolist/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
             date_exp: $("#date").val(),
@@ -179,3 +211,9 @@ $(document).ready(function() {
         }, "/todolist/");
     });
 });
+
+/*google.load('visualization', '1.0', {'packages':['corechart']});
+google.setOnLoadCallback(mgrade.drawGradesChart);
+google.setOnLoadCallback(mnote.drawNotesChart);
+google.setOnLoadCallback(mattendance.drawAttendanceChart);
+//google.setOnLoadCallback(mgrade.drawPerformance);*/

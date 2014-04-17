@@ -16,5 +16,5 @@ def first_five_tasks(request):
 
 def color_scheme(request):
     return {
-        'color_scheme': 0 #Settings.objects.get(teacher=request.user).color_scheme
+        'color_scheme': 'skin-blue' #Settings.objects.get(teacher=request.user).color_scheme
     }

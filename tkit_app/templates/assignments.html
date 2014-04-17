@@ -25,7 +25,7 @@
                         <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                         </a>
-                        <a href="/classes/{{ class.pk }}/homework/add/" class="btn btn-sm btn-primary">
+                        <a id="addAssignment" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                     </div>
@@ -40,9 +40,10 @@
                               <div class="panel-heading">
                                 <h3 class="panel-title">
                                     <a href="#">{{ assm.title }}</a>
-                                    <button onclick="removeAssignment('{{ class.pk }}', '{{ assm.pk }}')" type="button" style="float: right;" class="btn btn-xs btn-danger">
+                                    <a href="/classes/{{ class.pk }}/homework/remove/{{ assm.pk }}/"
+                                       style="float: right;" class="btn btn-xs btn-danger">
                                         <span class="glyphicon glyphicon-remove"></span>
-                                    </button>
+                                    </a>
                                 </h3>
 
                               </div>
@@ -56,6 +57,35 @@
                     {% endfor %}
                     </div>
                 {% endif %}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addAssignmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form action="." method="post">{% csrf_token %}
+                            <label>Titolo</label>
+                            <input id="title" type="text" class="form-control">
+                            <label>Descrizione</label>
+                            <textarea id="description" class="form-control"></textarea>
+                            <label>Data inizio</label>
+                            <input id="date_begin" type="text" class="date form-control">
+                            <label>Data fine</label>
+                            <input id="date_end" type="text" class="date form-control">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <button id="addAssignmentModalSave" data-class="{{ class.pk }}" type="button" class="btn btn-primary">Salva</button>
+                    </div>
+                </div>
             </div>
         </div>
 {% endblock %}

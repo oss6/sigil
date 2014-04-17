@@ -62,20 +62,15 @@ def add_class(request):
             cl = Classes(name=cl_name, school=school, description=desc, teacher=request.user)
             cl.save()
 
-            return redirect('/classes/')
-    else:
-        form = AddClassForm()
-
-    return render_to_response('add-class.html', {"form": form}, context_instance=RequestContext(request))
+    return redirect('/classes/')
 
 
 @login_required(login_url='/login/')
 def remove_class(request, id_class):
-    if request.is_ajax():
-        c = Classes.objects.get(pk=id_class)
-        c.delete()
+    c = Classes.objects.get(pk=id_class)
+    c.delete()
 
-    return ajax_resp("Class removed")
+    return redirect("/classes/")
 
 
 @login_required(login_url='/login/')
@@ -116,20 +111,15 @@ def add_student(request, id_class):
                          email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
             s.save()
 
-            return redirect('/classes/' + id_class + '/students/')
-    else:
-        form = AddStudentForm()
-
-    return render_to_response('add-student.html', {"form": form}, context_instance=RequestContext(request))
+    return redirect('/classes/' + id_class + '/students/')
 
 
 @login_required(login_url='/login/')
 def remove_student(request, id_class, id_student):
-    if request.is_ajax():
-        s = Students.objects.get(pk=id_student)
-        s.delete()
+    s = Students.objects.get(pk=id_student)
+    s.delete()
 
-    return ajax_resp("Student removed")
+    return redirect("/classes/" + id_class + "/students/")
 
 
 @login_required(login_url='/login/')
@@ -325,23 +315,6 @@ def lessons(request):
 
 @login_required(login_url='/login/')
 def add_lesson(request):
-    """if request.method == "POST":
-        form = AddLessonForm(request.POST)
-        if form.is_valid():
-            # Retrieve data from request
-            title = form.cleaned_data["title"]
-            desc = form.cleaned_data["description"]
-            date = form.cleaned_data["date"]
-
-            # Save lesson into db
-            l = Lessons(title=title, description=desc, date=date, teacher=request.user)
-            l.save()
-
-            return redirect('/lessons/')
-    else:
-        form = AddLessonForm()
-
-    return render_to_response('add-lesson.html', {"form": form}, context_instance=RequestContext(request))"""
     if request.method == "POST":
         form = AddLessonForm(request.POST)
         if form.is_valid():
@@ -354,20 +327,15 @@ def add_lesson(request):
             l = Lessons(title=title, description=desc, date=date, teacher=request.user)
             l.save()
 
-            return redirect('/lessons/')
-        else:
-            return redirect('/classes/')
-    else:
-        return redirect('/')
+    return redirect("/lessons/")
 
 
 @login_required(login_url='/login/')
 def remove_lesson(request, id_lesson):
-    if request.is_ajax():
-        l = Lessons.objects.get(pk=id_lesson)
-        l.delete()
+    l = Lessons.objects.get(pk=id_lesson)
+    l.delete()
 
-    return ajax_resp("Lesson removed")
+    return redirect("/lessons/")
 
 
 @login_required(login_url='/login/')
@@ -402,12 +370,11 @@ def add_assignment(request, id_class):
 
 @login_required(login_url='/login/')
 def remove_assignment(request, id_class, id_assignment):
-    if request.is_ajax():
-        cl = Classes.objects.get(pk=id_class)
-        assm = Assignments.objects.get(pk=id_assignment, a_class=cl)
-        assm.delete()
+    cl = Classes.objects.get(pk=id_class)
+    assm = Assignments.objects.get(pk=id_assignment, a_class=cl)
+    assm.delete()
 
-    return ajax_resp("Assignment removed")
+    return redirect("/classes/" + id_class + "/homework/")
 
 
 @login_required(login_url='/login/')

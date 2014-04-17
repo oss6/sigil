@@ -25,7 +25,7 @@
                         <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                         </a>
-                        <a href="/classes/{{ class.pk }}/gradebook/add/" class="btn btn-sm btn-primary">
+                        <a id="addGrade" href="javascript:;" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                     </div>
@@ -53,7 +53,7 @@
                                         {% for n in g %}
                                             <td>
                                                 <input id="grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" class="form-control" type="text" value="{{ n.grade }}" />
-                                                <button onclick="applyGrade('{{ class.pk }}', '{{ n.pk }}', $('#grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
+                                                <button onclick="mgrade.applyGrade('{{ class.pk }}', '{{ n.pk }}', $('#grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
                                                     <span class="glyphicon glyphicon-ok"></span> OK
                                                 </button>
                                             </td>
@@ -64,6 +64,34 @@
                         </table>
                     </div>
                 {% endif %}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addGradeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                    </div>
+
+                    <div class="modal-body">
+                        <form action="." method="post">{% csrf_token %}
+                            <label>Argomento/Materia</label>
+                            <input id="subject" type="text" class="form-control">
+                            <label>Data</label>
+                            <input id="date" type="text" class="date form-control">
+                            <label>Tipo</label>
+                            <input id="type" type="text" class="form-control">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <button id="addGradeModalSave" data-class="{{ class.pk }}" type="button" class="btn btn-primary">Salva</button>
+                    </div>
+                </div>
             </div>
         </div>
 {% endblock %}
