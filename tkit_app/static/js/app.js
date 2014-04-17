@@ -220,10 +220,21 @@ function fix_sidebar() {
 function change_layout() {
     $("body").toggleClass("fixed");
     fix_sidebar();
+
+    // Update settings on db
+
 }
 function change_skin(cls) {
     $("body").removeClass("skin-blue skin-black");
     $("body").addClass(cls);
+
+    // Update settings on db
+    /*$.ajax({
+        url: "/settings/update/skin/" + id_att + "/"
+    })
+    .done(function(data) {
+        location.href = "/classes/" + id_class + "/attendance/" + date + "/";
+    });*/
 }
 /*END DEMO*/
 $(window).load(function() {

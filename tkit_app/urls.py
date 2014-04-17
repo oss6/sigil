@@ -6,10 +6,13 @@ from django_messages import views as dmv
 
 urlpatterns = patterns('',
     # Static pages
-    url(r'^$', TemplateView.as_view(template_name="base.html")),
+    url(r'^dashboard/$', TemplateView.as_view(template_name="base.html")),
     url(r'^about/$', TemplateView.as_view(template_name="about.html")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
+
+    # TODO
+    url(r'^lockscreen/$', TemplateView.as_view(template_name="lockscreen.html")),
 
     # Sign up
     url(r'^signup/$', views.register),
@@ -17,6 +20,7 @@ urlpatterns = patterns('',
     #url(r'^disable-account/$', views),
 
     # Login - Logout
+    url(r'^$', login),
     url(r'^login/$', login),
     url(r'^logout/$', logout, {'next_page': '/'}),
 

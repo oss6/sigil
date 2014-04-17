@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Tkit - {% block title %}Home{% endblock %}</title>
+        <title>{% if messages_inbox_count != 0 %}({{ messages_inbox_count }}){% endif %} Tkit - {% block title %}Home{% endblock %}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -23,7 +23,7 @@
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
         <header class="header">
-            <a href="/" class="logo">
+            <a href="/dashboard/" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Tkit
             </a>
@@ -39,8 +39,8 @@
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
                         <!-- Messages: style can be found in dropdown.less-->
-                        <li class="dropdown messages-menu">
-                            <a href="/messages/">
+                        <li>
+                            <a href="/mailbox/inbox/">
                                 <i class="fa fa-envelope"></i>
                                 <span class="label label-success">{{ messages_inbox_count }}</span>
                             </a>
@@ -115,6 +115,11 @@
                                 </li>
                             </ul>
                         </li>
+                        <li>
+                            <a href="/lockscreen/">
+                                <i class="fa fa-lock"></i>
+                            </a>
+                        </li>
                         <!-- User Account -->
                         <li class="user user-menu">
                             {% if user.is_authenticated %}
@@ -153,7 +158,7 @@
                     <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
-                            <a href="/">
+                            <a href="/dashboard/">
                                 <i class="fa fa-home"></i> <span>Home</span>
                             </a>
                         </li>
@@ -221,15 +226,7 @@
                         Adipisci, alias animi, culpa delectus dicta laborum necessitatibus quia quidem recusandae, vel
                         voluptatem voluptatibus.
                     </p>
-                    <p><a class="btn btn-primary btn-lg" role="button">Continua</a></p>
-
-                    <h2>About</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Deserunt eligendi minima nemo numquam quisquam tempora voluptatibus.
-                        Adipisci, alias animi, culpa delectus dicta laborum necessitatibus quia quidem recusandae, vel
-                        voluptatem voluptatibus.
-                    </p>
+                    <p><a class="btn btn-primary btn-sm" role="button">Continua</a></p>
 
                     <h2>Documentazione</h2>
                     <h4>Per utenti</h4>

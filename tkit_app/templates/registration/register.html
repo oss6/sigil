@@ -23,15 +23,15 @@
     <body class="bg-black">
 
         <div class="form-box" id="login-box">
-            <div class="header">Register New Membership</div>
+            <div class="header">Iscriviti</div>
             <form action="." method="post">{% csrf_token %}
                 <div class="body bg-gray">
                     {{ form|bootstrap }}
                 </div>
                 <div class="footer">
-                    <button type="submit" class="btn bg-olive btn-block">Sign me up</button>
+                    <button type="submit" class="btn bg-olive btn-block">Iscriviti</button>
 
-                    <a href="login.html" class="text-center">I already have a membership</a>
+                    <a href="/" class="text-center">Sono già iscritto</a>
                 </div>
             </form>
         </div>

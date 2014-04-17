@@ -23,14 +23,14 @@
     <body class="bg-black">
 
         <div class="form-box" id="login-box">
-            <div class="header">Sign In</div>
+            <div class="header">Tkit - Login</div>
             <form action="." method="post">{% csrf_token %}
                 <div class="body bg-gray">
                     {{ form|bootstrap }}
                 </div>
                 <div class="footer">
-                    <button type="submit" class="btn bg-olive btn-block">Login</button>
-                    <input type="hidden" name="next" value="/" />
+                    <button type="submit" class="btn bg-olive btn-block">Accedi</button>
+                    <input type="hidden" name="next" value="/dashboard/" />
 
                     <a href="/signup/" class="text-center">Non hai un account? Registrati.</a>
                 </div>

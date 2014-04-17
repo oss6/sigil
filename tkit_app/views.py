@@ -11,6 +11,7 @@ import json
 import datetime
 #from datetime import timedelta
 
+
 def ajax_resp(message):
     tm = datetime.datetime.now().time()
 
@@ -417,16 +418,22 @@ def to_do_list(request):
 
 @login_required(login_url='/login/')
 def add_todolist_item(request):
-    if request.method == "POST":
+    """if request.method == "POST":
         form = AddListItemForm(request.POST)
         if form.is_valid():
             # Retrieve data from request
             title = form.cleaned_data["title"]
-            date = form.cleaned_data["date_exp"]
+            date = '2014-04-01'
 
             # Save lesson into db
             ls = ToDoList(title=title, date_exp=date, teacher=request.user)
-            ls.save()
+            ls.save()"""
+    title = request.POST["title"]
+    date = request.POST["date_exp"]
+
+    # Save lesson into db
+    ls = ToDoList(title=title, date_exp=date, teacher=request.user)
+    ls.save()
 
     return redirect('/todolist/')
 
@@ -463,3 +470,8 @@ def mailbox_trash(request):
     return render_to_response("mailbox_trash.html", {
         'message_list': message_list,
     }, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def load_settings(request):
+    return ajax_resp(Settings.objects.filter(teacher=request.user).values())

@@ -63,6 +63,7 @@ class Settings(models.Model):
     absence_limit = models.IntegerField()
     spc_limit = models.IntegerField()  # students per class
     negative_notes_limit = models.IntegerField()
+    #color_scheme = models.CharField(max_length=50)
     teacher = models.ForeignKey(User)
 
 
