@@ -23,10 +23,11 @@
 
                 <span class="text">{{ item.title }}</span>
                 <small class="label label-success"><i class="fa fa-clock-o"></i> {{ item.date_exp }}</small>
+                <small class="label label-danger">{{ item.percentage }}%</small>
 
                 <div class="tools">
-                    <i class="fa fa-edit"></i>
-                    <i class="fa fa-trash-o"></i>
+                    <a href="#"><i class="fa fa-edit"></i></a>
+                    <button onclick="removeItem('{{ item.pk }}')" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></button>
                 </div>
             </li>
             {% endfor %}
@@ -54,6 +55,8 @@
                     <input id="title" type="text" class="form-control">
                     <label>Data</label>
                     <input id="date" type="text" class="form-control">
+                    <label>Percentuale</label>
+                    <input id="perc" type="number" class="form-control">
                 </form>
             </div>
             <div class="modal-footer">

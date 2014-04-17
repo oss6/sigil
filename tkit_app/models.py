@@ -31,14 +31,14 @@ class Attendance(models.Model):
 
 class Notes(models.Model):
     n_type = models.BooleanField()
-    date = models.DateField(blank=True, null=True, auto_now_add=True)
+    date = models.DateField()
     comment = models.TextField()
     student = models.ForeignKey(Students)
 
 
 class Grades(models.Model):
     subject = models.CharField(max_length=50)
-    date = models.DateField(blank=True, null=True, auto_now_add=True)
+    date = models.DateField()
     grade = models.FloatField(blank=True, null=True)
     type = models.CharField(max_length=50)
     student = models.ForeignKey(Students)
@@ -47,14 +47,14 @@ class Grades(models.Model):
 class Lessons(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    date = models.DateField(blank=True, null=True, auto_now_add=True)
+    date = models.DateField()
     teacher = models.ForeignKey(User)
 
 
 class Assignments(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    date_begin = models.DateField(blank=True, null=True, auto_now_add=True)
+    date_begin = models.DateField()
     date_end = models.DateField()
     a_class = models.ForeignKey(Classes)
 
@@ -63,11 +63,12 @@ class Settings(models.Model):
     absence_limit = models.IntegerField()
     spc_limit = models.IntegerField()  # students per class
     negative_notes_limit = models.IntegerField()
-    #color_scheme = models.CharField(max_length=50)
+    color_scheme = models.CharField(max_length=50)
     teacher = models.ForeignKey(User)
 
 
 class ToDoList(models.Model):
     title = models.CharField(max_length=60)
     date_exp = models.DateField()
+    percentage = models.IntegerField()
     teacher = models.ForeignKey(User)

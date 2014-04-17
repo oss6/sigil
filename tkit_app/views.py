@@ -412,29 +412,23 @@ def remove_assignment(request, id_class, id_assignment):
 
 @login_required(login_url='/login/')
 def to_do_list(request):
-    ls = ToDoList.objects.all().filter(teacher=request.user)
+    ls = ToDoList.objects.filter(teacher=request.user).order_by("date_exp").reverse()
     return render_to_response("todolist.html", {"list": ls}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
 def add_todolist_item(request):
-    """if request.method == "POST":
+    if request.method == "POST":
         form = AddListItemForm(request.POST)
         if form.is_valid():
             # Retrieve data from request
             title = form.cleaned_data["title"]
-            date = '2014-04-01'
+            date = form.cleaned_data["date_exp"]
+            perc = form.cleaned_data["perc"]
 
-            # Save lesson into db
-            ls = ToDoList(title=title, date_exp=date, teacher=request.user)
-            ls.save()"""
-
-    title = request.POST["title"]
-    date = request.POST["date_exp"]
-
-    # Save lesson into db
-    l = ToDoList(title=title, date_exp=date, teacher=request.user)
-    l.save()
+            # Save item into db
+            ls = ToDoList(title=title, date_exp=date, percentage=perc, teacher=request.user)
+            ls.save()
 
     return redirect("/todolist/")
 

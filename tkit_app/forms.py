@@ -67,3 +67,4 @@ class AddNoteForm(forms.Form):
 class AddListItemForm(forms.Form):
     title = forms.CharField()
     date_exp = forms.DateField()
+    perc = forms.IntegerField()

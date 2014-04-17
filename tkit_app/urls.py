@@ -64,7 +64,7 @@ urlpatterns = patterns('',
     # Lessons
     url(r'^lessons/$', views.lessons),
     url(r'^lessons/add/$', views.add_lesson),
-    url(r'^lessons/remove/(?P<id_lesson>[\w|\W]+)/$', views.remove_lesson),
+    url(r'^lessons/remove/(?P<id_lesson>\d+)/$', views.remove_lesson),
 
     # Homework
     url(r'^classes/(?P<id_class>\d+)/homework/$', views.homework),
@@ -74,7 +74,7 @@ urlpatterns = patterns('',
     # To do list
     url(r'^todolist/$', views.to_do_list),
     url(r'^todolist/add/$', views.add_todolist_item),
-    url(r'^todolist/remove/(?P<id_item>[\w|\W]+)/$', views.remove_lesson),
+    url(r'^todolist/remove/(?P<id_item>\d+)/$', views.remove_todolist_item),
 
     # Mailbox entry
     url(r'^mailbox/inbox/', views.mailbox_inbox),

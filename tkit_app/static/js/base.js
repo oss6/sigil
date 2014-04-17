@@ -34,6 +34,15 @@ function removeAssignment(id_class, id_assm) {
     });
 }
 
+function removeItem(id_item) {
+    $.ajax({
+        url: "/todolist/remove/" + id_item + "/"
+    })
+    .done(function(data) {
+        location.href = "/todolist/";
+    });
+}
+
 function applyGrade(id_class, id_grade, grade_value) {
     $.ajax({
         url: "/gradebook/update/" + id_grade + "/" + grade_value + "/"
@@ -132,15 +141,6 @@ google.setOnLoadCallback(drawAttendanceChart);
 //google.setOnLoadCallback(drawPerformance);*/
 
 function postData(url, data, redirect) {
-    /*$.ajax({
-        type: "POST",
-        url: url,
-        data: data
-    })
-    .done(function( msg ) {
-        console.log(msg);
-    });*/
-
     $.post(url, data, function() {
         location.href = redirect;
     }, 'html');
@@ -174,7 +174,8 @@ $(document).ready(function() {
         postData("/todolist/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
-            date_exp: $("#date").val()
+            date_exp: $("#date").val(),
+            perc: $("#perc").val()
         }, "/todolist/");
     });
 });

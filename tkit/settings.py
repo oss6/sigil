@@ -111,7 +111,10 @@ WSGI_APPLICATION = 'tkit.wsgi.application'
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'pybb.context_processors.processor',
-    'django_messages.context_processors.inbox'
+    'django_messages.context_processors.inbox',
+    'tkit_app.context_processors.tasks_count',
+    'tkit_app.context_processors.first_five_tasks',
+    'tkit_app.context_processors.color_scheme'
 )
 
 TEMPLATE_DIRS = (
