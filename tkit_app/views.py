@@ -28,7 +28,7 @@ def register(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/signup-success/')
+            return redirect('/')
     args = {}
     args.update(csrf(request))
     args['form'] = RegistrationForm()
