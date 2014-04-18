@@ -31,6 +31,9 @@
                         </a>
                     </div>
                 </div>
+                {% if not att %}
+                    <h2>Non è registrato niente</h2>
+                {% else %}
                 <table class="table table-hover table-bordered">
                     <thead>
                         <tr class="success">
@@ -48,7 +51,7 @@
                                         <option {% if a.type == "Presente" %} selected {% endif %}>Presente</option>
                                         <option {% if a.type == "Assente" %} selected {% endif %}>Assente</option>
                                     </select>
-                                    <!--<input id="att-type-{{ forloop.counter }}" class="form-control" type="text" value="{{ a.type }}" />-->
+
                                     <button onclick="mattendance.applyAttendance('{{ class.pk }}', '{{ date }}', '{{ a.pk }}', $('#att-type-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
                                         <span class="glyphicon glyphicon-ok"></span> OK
                                     </button>
@@ -57,6 +60,7 @@
                         {% endfor %}
                     </tbody>
                 </table>
+                {% endif %}
             </div>
         </div>
 {% endblock %}
