@@ -32,18 +32,20 @@
                     {% for class in classes %}
                         <div class="col-md-3 draggable">
                             <div class="panel panel-success">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a href="/classes/{{ class.pk }}/students/">{{ class.name }} - {{ class.school }}</a>
-                                    <a href="/classes/remove/{{ class.pk }}/" style="float: right;" class="btn btn-xs btn-danger">
-                                        <i class="fa fa-warning"></i>
-                                    </a>
-                                </h3>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a href="/classes/{{ class.pk }}/students/">{{ class.name }} - {{ class.school }}</a>
+                                    </h3>
 
-                              </div>
-                              <div class="panel-body">
-                                  {{ class.description }}
-                              </div>
+                                </div>
+                                <div class="panel-body">
+                                    {{ class.description }}
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/classes/remove/{{ class.pk }}/" class="btn btn-xs btn-danger">
+                                        Rimuovi <i class="glyphicon glyphicon-remove"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}

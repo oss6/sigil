@@ -13,6 +13,7 @@ urlpatterns = patterns('',
 
     # TODO
     url(r'^lockscreen/$', TemplateView.as_view(template_name="lockscreen.html")),
+    url(r'^settings/skin/(?P<cls>[\w|\W]+)/$', views.update_color_schema),
 
     # Sign up
     url(r'^signup/$', views.register),

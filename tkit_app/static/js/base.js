@@ -1,14 +1,3 @@
-var mitem = {
-    removeItem: function(id_item) {
-       $.ajax({
-            url: "/todolist/remove/" + id_item + "/"
-       })
-       .done(function(data) {
-            location.href = "/todolist/";
-       });
-    }
-};
-
 var mgrade = {
     applyGrade: function(id_class, id_grade, grade_value) {
         $.ajax({
@@ -159,10 +148,9 @@ $(document).ready(function() {
     $("#addGradeModalSave").click(function() {
         utils.postData("/classes/" + $(this).attr("data-class") + "/gradebook/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            title: $("#title").val(),
-            description: $("#description").val(),
-            date_begin: $("#date_begin").val(),
-            date_end: $("#date_end").val(),
+            subject: $("#subject").val(),
+            date: $("#date").val(),
+            type: $("#type").val(),
         }, "/classes/" + $(this).attr("data-class") + "/gradebook/");
     });
 
@@ -203,12 +191,13 @@ $(document).ready(function() {
     });
 
     $("#addAssignmentModalSave").click(function() {
-        utils.postData("/classes/" + $(this).attr("data-class") + "/gradebook/add/", {
+        utils.postData("/classes/" + $(this).attr("data-class") + "/homework/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            subject: $("#subject").val(),
-            date: $("#date").val(),
-            type: $("#type").val(),
-        }, "/classes/" + $(this).attr("data-class") + "/gradebook/");
+            title: $("#title").val(),
+            description: $("#description").val(),
+            date_begin: $("#date_begin").val(),
+            date_end: $("#date_end").val(),
+        }, "/classes/" + $(this).attr("data-class") + "/homework/");
     });
 
     // LIST ITEMS
@@ -227,8 +216,8 @@ $(document).ready(function() {
     });
 });
 
-google.load('visualization', '1.0', {'packages':['corechart']});
+/*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(mgrade.drawGradesChart);
 google.setOnLoadCallback(mnote.drawNotesChart);
-google.setOnLoadCallback(mattendance.drawAttendanceChart);
+google.setOnLoadCallback(mattendance.drawAttendanceChart);*/
 //google.setOnLoadCallback(mgrade.drawPerformance);

@@ -37,21 +37,24 @@
                     {% for assm in assignments %}
                         <div class="col-md-3 draggable">
                             <div class="panel panel-success">
-                              <div class="panel-heading">
-                                <h3 class="panel-title">
-                                    <a href="#">{{ assm.title }}</a>
-                                    <a href="/classes/{{ class.pk }}/homework/remove/{{ assm.pk }}/"
-                                       style="float: right;" class="btn btn-xs btn-danger">
-                                        <span class="glyphicon glyphicon-remove"></span>
-                                    </a>
-                                </h3>
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a href="#">{{ assm.title }}</a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    <p><b>Descrizione:</b> {{ assm.description }}</p>
 
-                              </div>
-                              <div class="panel-body">
-                                  <p><b>Descrizione:</b> {{ assm.description }}</p>
-                                  <p><b>Data inizio:</b> {{ assm.date_begin }}</p>
-                                  <p><b>Data fine:</b> {{ assm.date_end }}</p>
-                              </div>
+                                    <p><b>Data inizio:</b> {{ assm.date_begin }}</p>
+
+                                    <p><b>Data fine:</b> {{ assm.date_end }}</p>
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/classes/{{ class.pk }}/homework/remove/{{ assm.pk }}/"
+                                       class="btn btn-xs btn-danger">
+                                        Rimuovi <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
@@ -67,7 +70,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi compito</h2>
                     </div>
                     <div class="modal-body">
                         <form action="." method="post">{% csrf_token %}

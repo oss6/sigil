@@ -60,10 +60,10 @@ class Assignments(models.Model):
 
 
 class Settings(models.Model):
-    absence_limit = models.IntegerField()
-    spc_limit = models.IntegerField()  # students per class
-    negative_notes_limit = models.IntegerField()
-    color_scheme = models.CharField(max_length=50)
+    absence_limit = models.IntegerField(null=True, blank=True)
+    spc_limit = models.IntegerField(null=True, blank=True)  # students per class
+    negative_notes_limit = models.IntegerField(null=True, blank=True)
+    color_scheme = models.CharField(max_length=50, null=True, blank=True)
     teacher = models.ForeignKey(User)
 
 

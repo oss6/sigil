@@ -183,7 +183,7 @@ $(function() {
             + "<div class='form-group no-margin'>"
             + "<div class='.radio'>"
             + "<label>"
-            + "<input name='skins' type='radio' onchange='change_skin(\"skin-blue\");' checked='checked'/> "
+            + "<input name='skins' type='radio' onchange='change_skin(\"skin-blue\");' /> "
             + "Blu"
             + "</label>"
             + "</div>"
@@ -225,16 +225,16 @@ function change_layout() {
 
 }
 function change_skin(cls) {
-    $("body").removeClass("skin-blue skin-black");
-    $("body").addClass(cls);
+    /*$("body").removeClass("skin-blue skin-black");
+    $("body").addClass(cls);*/
 
     // Update settings on db
-    /*$.ajax({
-        url: "/settings/update/skin/" + id_att + "/"
+    $.ajax({
+        url: "/settings/skin/" + cls + "/"
     })
     .done(function(data) {
-        location.href = "/classes/" + id_class + "/attendance/" + date + "/";
-    });*/
+        location.href = location.href
+    });
 }
 /*END DEMO*/
 $(window).load(function() {

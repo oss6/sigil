@@ -14,7 +14,12 @@ def first_five_tasks(request):
     }
 
 
-def color_scheme(request):
+def color_schema(request):
+    try:
+        clr = Settings.objects.get(teacher=request.user).color_scheme
+    except Exception:
+        clr = 'skin-blue'
+
     return {
-        'color_scheme': 'skin-blue' #Settings.objects.get(teacher=request.user).color_scheme
+        'color_schema': clr
     }

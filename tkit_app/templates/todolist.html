@@ -27,7 +27,9 @@
 
                 <div class="tools">
                     <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
-                    <button onclick="removeItem('{{ item.pk }}')" class="btn btn-xs btn-danger"><i class="fa fa-trash-o"></i></button>
+                    <a href="/todolist/remove/{{ item.pk }}/" class="btn btn-xs btn-danger">
+                        <i class="fa fa-trash-o"></i>
+                    </a>
                 </div>
             </li>
             {% endfor %}

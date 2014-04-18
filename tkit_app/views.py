@@ -241,11 +241,7 @@ def add_gradable_item(request, id_class):
                 g = Grades(subject=subject, date=date, grade=None, type=ty, student=student)
                 g.save()
 
-            return redirect('/classes/' + id_class + '/gradebook/')
-    else:
-        form = AddGradableItemForm()
-
-    return render_to_response('add-gradable.html', {"form": form}, context_instance=RequestContext(request))
+    return redirect('/classes/' + id_class + '/gradebook/')
 
 
 @login_required(login_url='/login/')
@@ -398,11 +394,10 @@ def add_todolist_item(request):
 
 @login_required(login_url='/login/')
 def remove_todolist_item(request, id_item):
-    if request.is_ajax():
-        ls = ToDoList.objects.get(pk=id_item)
-        ls.delete()
+    ls = ToDoList.objects.get(pk=id_item)
+    ls.delete()
 
-    return ajax_resp("Item removed")
+    return redirect("/todolist/")
 
 
 @login_required(login_url='/login/')
@@ -431,5 +426,14 @@ def mailbox_trash(request):
 
 
 @login_required(login_url='/login/')
-def load_settings(request):
-    return ajax_resp(Settings.objects.filter(teacher=request.user).values())
+def update_color_schema(request, cls):
+    if request.is_ajax():
+        try:
+            clr = Settings.objects.get(teacher=request.user)
+            clr.color_scheme = cls
+            clr.save()
+        except Exception:
+            clr = Settings(color_scheme=cls, teacher=request.user)
+            clr.save()
+
+    return ajax_resp("Color schema updated")
