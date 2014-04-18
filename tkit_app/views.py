@@ -437,3 +437,45 @@ def update_color_schema(request, cls):
             clr.save()
 
     return ajax_resp("Color schema updated")
+
+
+@login_required(login_url='/login/')
+def update_absence_limit(request, limit):
+    if request.is_ajax():
+        try:
+            lm = Settings.objects.get(teacher=request.user)
+            lm.absence_limit = limit
+            lm.save()
+        except Exception:
+            lm = Settings(absence_limit=limit, teacher=request.user)
+            lm.save()
+
+    return ajax_resp("Absence limit updated")
+
+
+@login_required(login_url='/login/')
+def update_spc_limit(request, limit):
+    if request.is_ajax():
+        try:
+            lm = Settings.objects.get(teacher=request.user)
+            lm.spc_limit = limit
+            lm.save()
+        except Exception:
+            lm = Settings(spc_limit=limit, teacher=request.user)
+            lm.save()
+
+    return ajax_resp("SPC limit updated")
+
+
+@login_required(login_url='/login/')
+def update_negative_notes_limit(request, limit):
+    if request.is_ajax():
+        try:
+            lm = Settings.objects.get(teacher=request.user)
+            lm.negative_notes_limit = limit
+            lm.save()
+        except Exception:
+            lm = Settings(negative_notes_limit=limit, teacher=request.user)
+            lm.save()
+
+    return ajax_resp("NN limit updated")

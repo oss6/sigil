@@ -114,7 +114,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django_messages.context_processors.inbox',
     'tkit_app.context_processors.tasks_count',
     'tkit_app.context_processors.first_five_tasks',
-    'tkit_app.context_processors.color_schema'
+    'tkit_app.context_processors.color_schema',
+    'tkit_app.context_processors.absence_limit',
+    'tkit_app.context_processors.spc_limit',
+    'tkit_app.context_processors.negative_notes_limit'
 )
 
 TEMPLATE_DIRS = (
