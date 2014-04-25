@@ -77,18 +77,11 @@ var mgrade = {
             async: false
         }).responseText;
 
-        /*var data = google.visualization.arrayToDataTable([
-              ['Year', 'Sales', 'Expenses'],
-              ['2004',  1000,      400],
-              ['2005',  1170,      460],
-              ['2006',  660,       1120],
-              ['2007',  1030,      540]
-        ]);*/
-
         var options = {
-            title: 'Student Performance'
+            title: 'Andamento voti'
         };
 
+        var data = new google.visualization.DataTable(jsonData);
         var chart = new google.visualization.LineChart(document.getElementById('performance-chart'));
         chart.draw(data, options);
     }
@@ -258,8 +251,8 @@ $(document).ready(function() {
     });
 });
 
-/*google.load('visualization', '1.0', {'packages':['corechart']});
+google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(mgrade.drawGradesChart);
 google.setOnLoadCallback(mnote.drawNotesChart);
-google.setOnLoadCallback(mattendance.drawAttendanceChart);*/
-//google.setOnLoadCallback(mgrade.drawPerformance);
+google.setOnLoadCallback(mattendance.drawAttendanceChart);
+google.setOnLoadCallback(mgrade.drawPerformance);

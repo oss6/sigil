@@ -141,23 +141,15 @@ def grades_chart(request, id_student):
 
 @login_required(login_url='/login/')
 def grades_performance_chart(request, id_student):
-    """def daterange(start_date, end_date):
-    for n in range(int((end_date - start_date).days)):
-        yield start_date + timedelta(n)"""
-
     student = Students.objects.get(pk=id_student)
-    #grades = Grades.objects.filter(student=student)
-    oldest_date = Grades.objects.aggregate(Min('date'))['date__min']
-    newest_date = Grades.objects.aggregate(Max('date'))['date__max']
-    grades_ranges = []
-    grades_range = Grades.objects.filter(date__range=["2011-01-01", "2011-01-31"])
+    grades = Grades.objects.filter(student=student).order_by('date')
 
-    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades_range]
+    rows = [{"c": [{"v": str(g.date), "f": None}, {"v": g.grade, "f": None}]} for g in grades]
 
     j = json.dumps({
         "cols": [
-            {"id": "", "label": "Subject", "pattern": "", "type": "string"},
-            {"id": "", "label": "Grade", "pattern": "", "type": "number"}
+            {"id": "", "label": "Data", "pattern": "", "type": "string"},
+            {"id": "", "label": "Valutazione", "pattern": "", "type": "number"}
         ],
         "rows": rows
     })
