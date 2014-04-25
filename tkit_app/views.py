@@ -49,7 +49,7 @@ def classes(request):
 
 
 @login_required(login_url='/login/')
-def add_class(request):
+def add_class(request, id_class=None):
     if request.method == "POST":
         form = AddClassForm(request.POST)
         if form.is_valid():
@@ -59,7 +59,7 @@ def add_class(request):
             desc = form.cleaned_data["description"]
 
             # Save class into db
-            cl = Classes(name=cl_name, school=school, description=desc, teacher=request.user)
+            cl = Classes(id=id_class, name=cl_name, school=school, description=desc, teacher=request.user)
             cl.save()
 
     return redirect('/classes/')
@@ -71,11 +71,6 @@ def remove_class(request, id_class):
     c.delete()
 
     return redirect("/classes/")
-
-
-@login_required(login_url='/login/')
-def mod_class(request, id_class=None):
-    pass
 
 
 @login_required(login_url='/login/')
@@ -93,7 +88,7 @@ def students(request, id_class):
 
 
 @login_required(login_url='/login/')
-def add_student(request, id_class):
+def add_student(request, id_class, id_student=None):
     if request.method == "POST":
         form = AddStudentForm(request.POST)
         if form.is_valid():
@@ -107,7 +102,7 @@ def add_student(request, id_class):
 
             # Save student into db
             c = Classes.objects.get(pk=id_class)
-            s = Students(first_name=first_name, last_name=last_name,
+            s = Students(id=id_student, first_name=first_name, last_name=last_name,
                          email=email, parent=parent, parent_email=parent_email, photo=photo, s_class=c)
             s.save()
 
@@ -120,11 +115,6 @@ def remove_student(request, id_class, id_student):
     s.delete()
 
     return redirect("/classes/" + id_class + "/students/")
-
-
-@login_required(login_url='/login/')
-def mod_student(request, id_class, id_student):
-    pass
 
 
 @login_required(login_url='/login/')
@@ -255,6 +245,16 @@ def update_grade(request, id_grade, grade):
 
 
 @login_required(login_url='/login/')
+def remove_gradable_item(request, id_class, sub_name):
+    cl = Classes.objects.get(pk=id_class)
+    ss = Students.objects.filter(s_class=cl)
+    g = Grades.objects.filter(subject=sub_name, student__in=[s for s in ss])
+    g.delete()
+
+    return redirect("/classes/" + id_class + "/gradebook/")
+
+
+@login_required(login_url='/login/')
 def attendance(request, id_class, date):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl)
@@ -306,7 +306,7 @@ def lessons(request):
 
 
 @login_required(login_url='/login/')
-def add_lesson(request):
+def add_lesson(request, id_lesson=None):
     if request.method == "POST":
         form = AddLessonForm(request.POST)
         if form.is_valid():
@@ -316,7 +316,7 @@ def add_lesson(request):
             date = form.cleaned_data["date"]
 
             # Save lesson into db
-            l = Lessons(title=title, description=desc, date=date, teacher=request.user)
+            l = Lessons(id=id_lesson, title=title, description=desc, date=date, teacher=request.user)
             l.save()
 
     return redirect("/lessons/")
@@ -338,7 +338,7 @@ def homework(request, id_class):
 
 
 @login_required(login_url='/login/')
-def add_assignment(request, id_class):
+def add_assignment(request, id_class, id_assignment=None):
     if request.method == "POST":
         form = AddAssignmentForm(request.POST)
         if form.is_valid():
@@ -350,14 +350,11 @@ def add_assignment(request, id_class):
 
             # Save class into db
             cl = Classes.objects.get(pk=id_class)
-            assm = Assignments(title=title, description=desc, date_begin=begin, date_end=end, a_class=cl)
+            assm = Assignments(id=id_assignment, title=title, description=desc, date_begin=begin,
+                               date_end=end, a_class=cl)
             assm.save()
 
-            return redirect('/classes/' + str(id_class) + '/homework/')
-    else:
-        form = AddAssignmentForm()
-
-    return render_to_response('add-assignment.html', {"form": form}, context_instance=RequestContext(request))
+    return redirect('/classes/' + str(id_class) + '/homework/')
 
 
 @login_required(login_url='/login/')
@@ -376,7 +373,7 @@ def to_do_list(request):
 
 
 @login_required(login_url='/login/')
-def add_todolist_item(request):
+def add_todolist_item(request, id_item=None):
     if request.method == "POST":
         form = AddListItemForm(request.POST)
         if form.is_valid():
@@ -386,7 +383,7 @@ def add_todolist_item(request):
             perc = form.cleaned_data["perc"]
 
             # Save item into db
-            ls = ToDoList(title=title, date_exp=date, percentage=perc, teacher=request.user)
+            ls = ToDoList(id=id_item, title=title, date_exp=date, percentage=perc, teacher=request.user)
             ls.save()
 
     return redirect("/todolist/")

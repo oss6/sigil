@@ -40,7 +40,13 @@
                                 <tr class="success">
                                     <td>Studente</td>
                                     {% for sub in subs %}
-                                        <td>{{ sub.subject }}</td>
+                                        <td>
+                                            {{ sub.subject }}
+                                            <a href="/classes/{{ class.pk }}/gradebook/remove/{{ sub.subject }}/"
+                                                class="btn btn-xs btn-danger">
+                                                <span class="glyphicon glyphicon-remove"></span>
+                                            </a>
+                                        </td>
                                     {% endfor %}
                                 </tr>
                             </thead>

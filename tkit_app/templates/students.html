@@ -3,6 +3,9 @@
 {% block title %}Gestione studenti{% endblock %}
 {% block header-title %}
     {{ class.name }} - {{ nums }} {% if nums == 1 %}studente{% else %}studenti{% endif %}
+    {% if nums > spc_limit %}
+        <span class="glyphicon glyphicon-remove"></span>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
@@ -27,10 +30,7 @@
                         <a href="/classes/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-arrow-left"></span> Gestione classi
                         </a>
-                        <a href="/classes/" class="btn btn-sm btn-primary">
-                            <span class="glyphicon glyphicon-edit"></span> Modifica
-                        </a>
-                        <a id="addStudent" href="javascript:;" class="btn btn-sm btn-primary">
+                        <a onclick="mstudent.openStudentModal()" href="javascript:;" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                         <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-sm btn-primary">
@@ -75,6 +75,10 @@
                                        class="btn btn-xs btn-danger">
                                         Rimuovi <span class="glyphicon glyphicon-remove"></span>
                                     </a>
+                                    <a href="javascript:;" onclick="mstudent.openStudentModal('{{ student.pk }}')"
+                                       class="btn btn-xs btn-primary">
+                                        Modifica <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +90,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
+             aria-hidden="true" data-type="add">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -111,9 +115,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
-                        <button id="addStudentModalSave" data-class="{{ class.pk }}" type="button" class="btn btn-primary">Salva</button>
+                        <button id="addStudentModalSave" type="button" class="btn btn-primary">Salva</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Helpers -->
+        <input id="helper-class" type="hidden" value="{{ class.pk }}">
 {% endblock %}

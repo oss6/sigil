@@ -26,7 +26,9 @@
                 <small class="label label-danger">{{ item.percentage }}%</small>
 
                 <div class="tools">
-                    <button class="btn btn-xs btn-primary"><i class="fa fa-edit"></i></button>
+                    <button onclick="mitem.openItemModal('{{ item.pk }}')" class="btn btn-xs btn-primary">
+                        <i class="fa fa-edit"></i>
+                    </button>
                     <a href="/todolist/remove/{{ item.pk }}/" class="btn btn-xs btn-danger">
                         <i class="fa fa-trash-o"></i>
                     </a>
@@ -38,13 +40,15 @@
     </div>
     <!-- /.box-body -->
     <div class="box-footer clearfix no-border">
-        <button id="addListItem" class="btn btn-default pull-right"><i class="fa fa-plus"></i> Aggiungi elemento</button>
+        <button onclick="mitem.openItemModal()" class="btn btn-default pull-right">
+            <i class="fa fa-plus"></i> Aggiungi elemento
+        </button>
     </div>
 </div><!-- /.box -->
 
 <!-- Modal -->
 <div class="modal fade" id="addListItemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
+     aria-hidden="true" data-type="add">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

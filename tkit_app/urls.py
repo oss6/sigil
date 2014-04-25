@@ -33,20 +33,15 @@ urlpatterns = patterns('',
     # Classes
     url(r'^classes/$', views.classes),
     url(r'^classes/add/$', views.add_class),
+    url(r'^classes/update/(?P<id_class>\d+)/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
     url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
-
-    # TODO
-    url(r'^classes/(?P<id_class>\d+)/modify/$', views.mod_class),
 
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
     url(r'^classes/(?P<id_class>\d+)/students/add/$', views.add_student),
+    url(r'^classes/(?P<id_class>\d+)/students/update/(?P<id_student>\d+)/$', views.add_student),
     url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
-
-    # TODO
-    url(r'^classes/(?P<id_class>\d+)/students/modify/(?P<id_student>\d+)/$', views.mod_student),
-
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
 
     # TODO
@@ -60,6 +55,7 @@ urlpatterns = patterns('',
     # Gradebook
     url(r'^classes/(?P<id_class>\d+)/gradebook/$', views.grade_book),
     url(r'^classes/(?P<id_class>\d+)/gradebook/add/$', views.add_gradable_item),
+    url(r'^classes/(?P<id_class>\d+)/gradebook/remove/(?P<sub_name>[\w|\W]+)/$', views.remove_gradable_item),
     url(r'^gradebook/update/'
         r'(?P<id_grade>\d+)/(?P<grade>[\w|\W]+)/$', views.update_grade),
 
@@ -70,16 +66,19 @@ urlpatterns = patterns('',
     # Lessons
     url(r'^lessons/$', views.lessons),
     url(r'^lessons/add/$', views.add_lesson),
+    url(r'^lessons/update/(?P<id_lesson>\d+)/$', views.add_lesson),
     url(r'^lessons/remove/(?P<id_lesson>\d+)/$', views.remove_lesson),
 
     # Homework
     url(r'^classes/(?P<id_class>\d+)/homework/$', views.homework),
     url(r'^classes/(?P<id_class>\d+)/homework/add/$', views.add_assignment),
+    url(r'^classes/(?P<id_class>\d+)/homework/update/(?P<id_assignment>\d+)/$', views.add_assignment),
     url(r'^classes/(?P<id_class>\d+)/homework/remove/(?P<id_assignment>\d+)/$', views.remove_assignment),
 
     # To do list
     url(r'^todolist/$', views.to_do_list),
     url(r'^todolist/add/$', views.add_todolist_item),
+    url(r'^todolist/update/(?P<id_item>\d+)/$', views.add_todolist_item),
     url(r'^todolist/remove/(?P<id_item>\d+)/$', views.remove_todolist_item),
 
     # Mailbox entry

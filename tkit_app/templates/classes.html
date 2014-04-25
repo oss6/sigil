@@ -21,7 +21,7 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
-                    <a id="addClass" href="javascript:;" class="btn btn-sm btn-primary">
+                    <a onclick="mclass.openClassModal()" href="javascript:;" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon-plus"></span> Aggiungi
                     </a>
                 </div>
@@ -45,6 +45,10 @@
                                     <a href="/classes/remove/{{ class.pk }}/" class="btn btn-xs btn-danger">
                                         Rimuovi <i class="glyphicon glyphicon-remove"></i>
                                     </a>
+                                    <a href="javascript:;" onclick="mclass.openClassModal('{{ class.pk }}')"
+                                       class="btn btn-xs btn-primary">
+                                        Modifica <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +59,7 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="addClassModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div id="addClassModal" class="modal fade" data-type="add" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
              aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">

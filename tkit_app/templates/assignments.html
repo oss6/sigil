@@ -25,7 +25,7 @@
                         <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                         </a>
-                        <a id="addAssignment" class="btn btn-sm btn-primary">
+                        <a onclick="massignment.openAssignmentModal()" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                     </div>
@@ -54,6 +54,11 @@
                                        class="btn btn-xs btn-danger">
                                         Rimuovi <span class="glyphicon glyphicon-remove"></span>
                                     </a>
+                                    <a href="javascript:;"
+                                       class="btn btn-xs btn-primary"
+                                       onclick="massignment.openAssignmentModal('{{ assm.pk }}')">
+                                        Modifica <span class="glyphicon glyphicon-edit"></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +70,7 @@
 
         <!-- Modal -->
         <div class="modal fade" id="addAssignmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
+             aria-hidden="true" data-type="add">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -86,9 +91,12 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
-                        <button id="addAssignmentModalSave" data-class="{{ class.pk }}" type="button" class="btn btn-primary">Salva</button>
+                        <button id="addAssignmentModalSave" type="button" class="btn btn-primary">Salva</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Helpers -->
+        <input id="helper-class" type="hidden" value="{{ class.pk }}">
 {% endblock %}

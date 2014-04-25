@@ -1,3 +1,53 @@
+var mclass = {
+    openClassModal: function(id_class) {
+        id_class = id_class || "add";
+
+        $('#addClassModal')
+            .modal('show')
+            .attr("data-type", id_class);
+    }
+};
+
+var mstudent = {
+    openStudentModal: function(id_student) {
+        id_student = id_student || "add";
+
+        $("#addStudentModal")
+            .modal("show")
+            .attr("data-type", id_student);
+    }
+}
+
+var massignment = {
+    openAssignmentModal: function(id_assignment) {
+        id_assignment = id_assignment || "add";
+
+        $("#addAssignmentModal")
+            .modal("show")
+            .attr("data-type", id_assignment);
+    }
+}
+
+var mlesson = {
+    openLessonModal: function(id_lesson) {
+        id_lesson = id_lesson || "add";
+
+        $('#addLessonModal')
+            .modal('show')
+            .attr("data-type", id_lesson);
+    }
+}
+
+var mitem = {
+    openItemModal: function(id_item) {
+        id_item = id_item || "add";
+
+        $('#addListItemModal')
+            .modal('show')
+            .attr("data-type", id_item);
+    }
+}
+
 var mgrade = {
     applyGrade: function(id_class, id_grade, grade_value) {
         $.ajax({
@@ -107,13 +157,11 @@ $(document).ready(function() {
     $(".date").datepicker();
 
     // CLASSES
-    $("#addClass").click(function() {
-        $('#addClassModal').modal('show');
-        return false;
-    });
-
     $("#addClassModalSave").click(function() {
-        utils.postData("/classes/add/", {
+        var url = $("#addClassModal").attr("data-type") === "add" ? "/classes/add/" : "/classes/update/" +
+        $("#addClassModal").attr("data-type") + "/";
+
+        utils.postData(url, {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             name: $("#name").val(),
             school: $("#school").val(),
@@ -122,13 +170,12 @@ $(document).ready(function() {
     });
 
     // STUDENTS
-    $("#addStudent").click(function() {
-        $('#addStudentModal').modal('show');
-        return false;
-    });
-
     $("#addStudentModalSave").click(function() {
-        utils.postData("/classes/" + $(this).attr("data-class") + "/students/add/", {
+        var id_class = $("#helper-class").val();
+        var url = $("#addStudentModal").attr("data-type") === "add" ? "/classes/" + id_class +
+        "/students/add/" : "/classes/" + id_class + "/students/update/" + $("#addStudentModal").attr("data-type") + "/";
+
+        utils.postData(url, {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             first_name: $("#first_name").val(),
             last_name: $("#last_name").val(),
@@ -136,7 +183,7 @@ $(document).ready(function() {
             parent: $("#parent").val(),
             parent_email: $("#parent_email").val(),
             photo: $("#photo").val(),
-        }, "/classes/" + $(this).attr("data-class") + "/students/");
+        }, "/classes/" + id_class + "/students/");
     });
 
     // GRADE BOOK
@@ -170,13 +217,11 @@ $(document).ready(function() {
     });
 
     // LESSONS
-    $("#addLesson").click(function() {
-        $('#addLessonModal').modal('show');
-        return false;
-    });
-
     $("#addLessonModalSave").click(function() {
-        utils.postData("/lessons/add/", {
+        var url = $("#addLessonModal").attr("data-type") === "add" ? "/lessons/add/" : "/lessons/update/" +
+        $("#addLessonModal").attr("data-type") + "/";
+
+        utils.postData(url, {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
             description: $("#desc").val(),
@@ -185,29 +230,26 @@ $(document).ready(function() {
     });
 
     // ASSIGNMENTS
-    $("#addAssignment").click(function() {
-        $('#addAssignmentModal').modal('show');
-        return false;
-    });
-
     $("#addAssignmentModalSave").click(function() {
-        utils.postData("/classes/" + $(this).attr("data-class") + "/homework/add/", {
+        var id_class = $("#helper-class").val();
+        var url = $("#addAssignmentModal").attr("data-type") === "add" ? "/classes/" + id_class +
+        "/homework/add/" : "/classes/" + id_class + "/homework/update/" + $("#addAssignmentModal").attr("data-type") + "/";
+
+        utils.postData(url, {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
             description: $("#description").val(),
             date_begin: $("#date_begin").val(),
             date_end: $("#date_end").val(),
-        }, "/classes/" + $(this).attr("data-class") + "/homework/");
+        }, "/classes/" + id_class + "/homework/");
     });
 
     // LIST ITEMS
-    $("#addListItem").click(function() {
-        $("#addListItemModal").modal("show");
-        return false;
-    });
-
     $("#addListItemModalSave").click(function() {
-        utils.postData("/todolist/add/", {
+        var url = $("#addListItemModal").attr("data-type") === "add" ? "/todolist/add/" : "/todolist/update/" +
+        $("#addListItemModal").attr("data-type") + "/";
+
+        utils.postData(url, {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
             title: $("#title").val(),
             date_exp: $("#date").val(),
