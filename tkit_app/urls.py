@@ -35,7 +35,10 @@ urlpatterns = patterns('',
     url(r'^classes/add/$', views.add_class),
     url(r'^classes/update/(?P<id_class>\d+)/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
+
+    # TODO
     url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
+    url(r'^classes/(?P<id_class>\d+)/groupmaker/$', views.group_maker),
 
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
@@ -43,10 +46,7 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<id_class>\d+)/students/update/(?P<id_student>\d+)/$', views.add_student),
     url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
-
-    # TODO
     url(r'^students/(?P<id_student>\d+)/grades-performance-chart/', views.grades_performance_chart),
-
     url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/attendance-chart/', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
@@ -88,5 +88,8 @@ urlpatterns = patterns('',
     url(r'^mailbox/compose/', dmv.compose, {'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'}),
     url(r'^mailbox/view/(?P<message_id>[\d]+)/$', dmv.view, {'template_name': 'mailbox_view.html'}),
     url(r'^mailbox/reply/(?P<message_id>[\d]+)/', dmv.reply, {'template_name': 'mailbox_compose.html',
-                                                              'success_url': '/mailbox/inbox/'})
+                                                              'success_url': '/mailbox/inbox/'}),
+
+    # Mind map tool
+    url(r'^mindmap/', TemplateView.as_view(template_name="mindmap.html"))
 )

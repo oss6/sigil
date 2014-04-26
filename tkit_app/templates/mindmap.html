@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}Gestione lezioni{% endblock %}
+{% block header-title %}Mind map{% endblock %}
+
+{% block add-css %}
+        <link rel='stylesheet' type='text/css' href='/static/css/mindmap.css'>
+{% endblock %}
+
+{% block add-scripts %}
+        <script type="text/javascript" src="http://static.slatebox.com/dev/js/0.5.0/slatebox.min.js"></script>
+        <script>
+            (function ($, $s) {
+            $(document).ready(function () {
+                var log = [], startTime = Math.round(new Date().getTime() / 1000);
+
+                function upd() {
+                    /*Slatebox.el("txtSlateJson").value = _mainSlate.exportJSON();
+                    Slatebox.el("txtSlateLastUpdated").innerHTML = "last updated <b>" + new Date().toString();*/
+                };
+
+                var _mainSlate = $s.slate({
+                    id: 'firstSlateExample' //slate with the same ids can collaborate together.
+                    , container: 'slate'
+                    , viewPort: { width: 50000, height: 50000, allowDrag: true, left: 5000, top: 5000 }
+                    , showZoom: true
+                    , showBirdsEye: false
+                    , showStatus: false
+                    , showMultiSelect: false
+                    , collaboration: {
+                        allow: true
+                        , showPanel: false
+                        , url: 'http://slatebox.com'
+                        , jsonp: true
+                        , userName: "Tester"
+                        , userIP: 1
+                        , userProfile: ''
+                        /*, callbacks: {
+                            onCollaboration: function (name, msg) {
+                                var secs = Math.round(new Date().getTime() / 1000) - startTime;
+                                log.push(secs + " secs ago - " + name + ": " + msg.toLowerCase());
+                                Slatebox.el("slateMessage").innerHTML = log.reverse().join('<br/>');
+                                startTime = Math.round(new Date().getTime() / 1000);
+                                upd();
+                            }
+
+                        }*/
+                    }
+                }).canvas.init({ imageFolder: "http://static.slatebox.com/cursors/" });
+
+                var _initNode = $s.node({ id: 'start_node', text: 'Start', xPos: 5090, yPos: 5120, height: 40, width: 80, vectorPath: 'roundedrectangle', backgroundColor: '90-#ADD8C7-#59a989', lineColor: "red", lineWidth: 1, allowDrag: true, allowMenu: true, allowContext: true })
+                _mainSlate.nodes.add(_initNode);
+                _mainSlate.init();
+            });
+        })(jQuery, new Slatebox());
+        </script>
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a href="javascript:;" onclick="mlesson.openLessonModal()" class="btn btn-sm btn-primary"> <!-- /lessons/add/ -->
+                        <span class="glyphicon glyphicon-plus"></span> Salva
+                    </a>
+                </div>
+
+                <div id="slate">
+                </div>
+            </div>
+        </div>
+{% endblock %}

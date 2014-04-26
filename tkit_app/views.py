@@ -79,6 +79,11 @@ def class_report(request, id_class):
 
 
 @login_required(login_url='/login/')
+def group_maker(request, id_class):
+    pass
+
+
+@login_required(login_url='/login/')
 def students(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
@@ -144,7 +149,7 @@ def grades_performance_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     grades = Grades.objects.filter(student=student).order_by('date')
 
-    rows = [{"c": [{"v": str(g.date), "f": None}, {"v": g.grade, "f": None}]} for g in grades]
+    rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades]
 
     j = json.dumps({
         "cols": [

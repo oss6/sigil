@@ -251,8 +251,8 @@ $(document).ready(function() {
     });
 });
 
-google.load('visualization', '1.0', {'packages':['corechart']});
+/*google.load('visualization', '1.0', {'packages':['corechart']});
 google.setOnLoadCallback(mgrade.drawGradesChart);
 google.setOnLoadCallback(mnote.drawNotesChart);
 google.setOnLoadCallback(mattendance.drawAttendanceChart);
-google.setOnLoadCallback(mgrade.drawPerformance);
+google.setOnLoadCallback(mgrade.drawPerformance);*/
