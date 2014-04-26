@@ -1,8 +1,11 @@
 from django.conf.urls import patterns, url
+from django.conf.urls.static import static
+from django.conf import settings
 from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
 from tkit_app import views
 from django_messages import views as dmv
+from tkit_app.views import MindMapView
 
 urlpatterns = patterns('',
     # Static pages
@@ -82,14 +85,15 @@ urlpatterns = patterns('',
     url(r'^todolist/remove/(?P<id_item>\d+)/$', views.remove_todolist_item),
 
     # Mailbox entry
-    url(r'^mailbox/inbox/', views.mailbox_inbox),
-    url(r'^mailbox/outbox/', views.mailbox_outbox),
-    url(r'^mailbox/trash/', views.mailbox_trash),
-    url(r'^mailbox/compose/', dmv.compose, {'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'}),
+    url(r'^mailbox/inbox/$', views.mailbox_inbox),
+    url(r'^mailbox/outbox/$', views.mailbox_outbox),
+    url(r'^mailbox/trash/$', views.mailbox_trash),
+    url(r'^mailbox/compose/$', dmv.compose, {'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'}),
     url(r'^mailbox/view/(?P<message_id>[\d]+)/$', dmv.view, {'template_name': 'mailbox_view.html'}),
-    url(r'^mailbox/reply/(?P<message_id>[\d]+)/', dmv.reply, {'template_name': 'mailbox_compose.html',
+    url(r'^mailbox/reply/(?P<message_id>[\d]+)/$', dmv.reply, {'template_name': 'mailbox_compose.html',
                                                               'success_url': '/mailbox/inbox/'}),
 
     # Mind map tool
-    url(r'^mindmap/', TemplateView.as_view(template_name="mindmap.html"))
-)
+    url(r'^mindmap/$', views.mind_map),
+    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload")
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
