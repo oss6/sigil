@@ -56,7 +56,12 @@
                     });
 
                     $("#import-json").click(function() {
-                        // _mainSlate.loadJSON('');
+                        $.ajax({
+                            url: "/mindmap/load/" + $("#import-json").attr("data-map") + "/"
+                        })
+                        .done(function(data) {
+                            _mainSlate.loadJSON(data["message"]);
+                        });
                     });
                 });
             })(jQuery, new Slatebox());
@@ -82,22 +87,45 @@
                         </p>
                     </blockquote>
                     <button id="export-json" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span> Salva
+                        <span class="glyphicon glyphicon-download"></span> Salva
                     </button>
                     <a href="/mindmap/upload/" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span> Carica
+                        <span class="glyphicon glyphicon-upload"></span> Carica
                     </a>
-                    <h3>Mappe concettuali caricate</h3>
-                    {% if not mmaps %}
-                        <p>Nessuna mappa caricata</p>
-                    {% else %}
-                        <ul>
-                            {% for map in mmaps %}
-                                <li>{{ map.json_file }}</li>
+                </div>
+
+                <div class="box box-primary">
+                    <div class="box-body">
+                        {% if not mindmaps %}
+                            <p>Nessuna mappa caricata</p>
+                        {% else %}
+                        <h3>Le tue mappe</h3>
+                        <ul class="todo-list">
+                            {% for map in mindmaps %}
+                            <li>
+                                <span class="handle">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </span>
+
+                                <span class="text">
+                                    <a href="javascript:;" data-map="{{ map.pk }}" id="import-json">
+                                        {{ map.json_file.name }}
+                                    </a>
+                                </span>
+
+                                <div class="tools">
+                                    <a href="/mindmap/remove/{{ map.pk }}/" class="btn btn-xs btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+                            </li>
                             {% endfor %}
                         </ul>
-                    {% endif %}
-                </div>
+                        {% endif %}
+                    </div>
+                    <!-- /.box-body -->
+                </div><!-- /.box -->
 
                 <div id="slate">
                 </div>

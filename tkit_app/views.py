@@ -1,6 +1,6 @@
+import os
 import json
 import datetime
-
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
@@ -8,7 +8,6 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import FormView
 from django_messages.models import *
-
 from forms import *
 from models import *
 
@@ -476,9 +475,31 @@ def update_negative_notes_limit(request, limit):
     return ajax_resp("NN limit updated")
 
 
+@login_required(login_url='/login/')
 def mind_map(request):
     mmaps = MindMap.objects.all().filter(teacher=request.user)
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def load_mind_map(request, id_map):
+    mmap = MindMap.objects.get(pk=id_map)
+    data = mmap.json_file.read()
+    return ajax_resp(data)
+
+
+@login_required(login_url='/login/')
+def remove_mind_map(request, id_map):
+    # Get file object
+    f = MindMap.objects.get(pk=id_map)
+
+    # Delete from file system
+    os.remove(f.json_file.path)
+
+    # Delete DB reference to the file
+    f.delete()
+
+    return redirect("/mindmap/")
 
 
 class MindMapView(FormView):

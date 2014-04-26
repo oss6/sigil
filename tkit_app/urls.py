@@ -95,5 +95,10 @@ urlpatterns = patterns('',
 
     # Mind map tool
     url(r'^mindmap/$', views.mind_map),
-    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload")
+    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload"),
+    url(r'^mindmap/load/(?P<id_map>[\d]+)/$', views.load_mind_map),
+    url(r'^mindmap/remove/(?P<id_map>[\d]+)/$', views.remove_mind_map),
+
+    # Presentation tool
+    url(r'^presentation/$', TemplateView.as_view(template_name="presentation.html"))
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
