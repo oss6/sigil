@@ -68,3 +68,7 @@ class AddListItemForm(forms.Form):
     title = forms.CharField()
     date_exp = forms.DateField()
     perc = forms.IntegerField()
+
+
+class MindMapForm(forms.Form):
+    json_file = forms.FileField(label="Carica un file")

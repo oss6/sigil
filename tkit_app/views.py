@@ -1,15 +1,16 @@
+import json
+import datetime
+
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
-from django.db.models import Min, Max
+from django.views.generic import FormView
+from django_messages.models import *
+
 from forms import *
 from models import *
-from django_messages.models import *
-import json
-import datetime
-#from datetime import timedelta
 
 
 def ajax_resp(message):
@@ -473,3 +474,20 @@ def update_negative_notes_limit(request, limit):
             lm.save()
 
     return ajax_resp("NN limit updated")
+
+
+def mind_map(request):
+    mmaps = MindMap.objects.all().filter(teacher=request.user)
+    return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
+
+
+class MindMapView(FormView):
+    template_name = "mindmap_form.html"
+    form_class = MindMapForm
+
+    def form_valid(self, form):
+        json_file = MindMap(json_file=self.get_form_kwargs().get("files")["json_file"], teacher=self.request.user)
+        json_file.save()
+        self.id = json_file.id
+
+        return redirect("/mindmap/")

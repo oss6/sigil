@@ -1,48 +1,65 @@
 {% extends "base.html" %}
 {% load bootstrap %}
 
-{% block title %}Gestione lezioni{% endblock %}
-{% block header-title %}Mind map{% endblock %}
+{% block title %}Mappa concettuale{% endblock %}
+{% block header-title %}Mappa concettuale{% endblock %}
 
 {% block add-css %}
-        <link rel='stylesheet' type='text/css' href='/static/css/mindmap.css'>
+        <style type="text/css">
+            body
+            {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            #slate
+            {
+                float: left;
+                width: 100%;
+                height: 400px;
+                margin: 4px;
+                background-color: #fff;
+            }
+        </style>
 {% endblock %}
 
 {% block add-scripts %}
         <script type="text/javascript" src="http://static.slatebox.com/dev/js/0.5.0/slatebox.min.js"></script>
         <script>
             (function ($, $s) {
-            $(document).ready(function () {
-                var log = [], startTime = Math.round(new Date().getTime() / 1000);
+                $(document).ready(function () {
+                    var log = [], startTime = Math.round(new Date().getTime() / 1000);
 
-                var _mainSlate = $s.slate({
-                    id: 'firstSlateExample' //slate with the same ids can collaborate together.
-                    , container: 'slate'
-                    , viewPort: { width: 50000, height: 50000, allowDrag: true, left: 5000, top: 5000 }
-                    , showZoom: true
-                    , showBirdsEye: false
-                    , showStatus: false
-                    , showMultiSelect: false
-                    , collaboration: {
-                        allow: true
-                        , showPanel: false
-                        , url: 'http://slatebox.com'
-                        , jsonp: true
-                        , userName: "Tester"
-                        , userIP: 1
-                        , userProfile: ''
-                    }
-                }).canvas.init({ imageFolder: "http://static.slatebox.com/cursors/" });
+                    var _mainSlate = $s.slate({
+                        id: 'mindMap' //slate with the same ids can collaborate together.
+                        , container: 'slate'
+                        , viewPort: { width: 50000, height: 50000, allowDrag: true, left: 5000, top: 5000 }
+                        , showZoom: true
+                        , showBirdsEye: false
+                        , showStatus: false
+                        , showMultiSelect: false
+                        , collaboration: {
+                            allow: false
+                        }
+                    }).canvas.init({ imageFolder: "http://static.slatebox.com/cursors/" });
 
-                var _initNode = $s.node({ id: 'start_node', text: 'Start', xPos: 5090, yPos: 5120, height: 40, width: 80, vectorPath: 'roundedrectangle', backgroundColor: '90-#ADD8C7-#59a989', lineColor: "red", lineWidth: 1, allowDrag: true, allowMenu: true, allowContext: true })
-                _mainSlate.nodes.add(_initNode);
-                _mainSlate.init();
-            });
-        })(jQuery, new Slatebox());
+                    var _initNode = $s.node({ id: 'start_node', text: 'Idea', xPos: 5090, yPos: 5120, height: 40, width: 80, vectorPath: 'roundedrectangle', backgroundColor: '90-#ADD8C7-#59a989', lineColor: "red", lineWidth: 1, allowDrag: true, allowMenu: true, allowContext: true })
+                    _mainSlate.nodes.add(_initNode);
+                    _mainSlate.init();
 
-        function exportJSON() {
-            //_mainSlate.exportJSON()
-        }
+                    $("#export-json").click(function() {
+                        console.log(_mainSlate.exportJSON());
+                    });
+
+                    $("#import-json").click(function() {
+                        // _mainSlate.loadJSON('');
+                    });
+                });
+            })(jQuery, new Slatebox());
         </script>
 {% endblock %}
 
@@ -64,9 +81,22 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
-                    <button onclick="exportJSON();" class="btn btn-sm btn-primary">
+                    <button id="export-json" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon-plus"></span> Salva
                     </button>
+                    <a href="/mindmap/upload/" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> Carica
+                    </a>
+                    <h3>Mappe concettuali caricate</h3>
+                    {% if not mmaps %}
+                        <p>Nessuna mappa caricata</p>
+                    {% else %}
+                        <ul>
+                            {% for map in mmaps %}
+                                <li>{{ map.json_file }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
 
                 <div id="slate">
