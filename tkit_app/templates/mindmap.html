@@ -15,11 +15,6 @@
             $(document).ready(function () {
                 var log = [], startTime = Math.round(new Date().getTime() / 1000);
 
-                function upd() {
-                    /*Slatebox.el("txtSlateJson").value = _mainSlate.exportJSON();
-                    Slatebox.el("txtSlateLastUpdated").innerHTML = "last updated <b>" + new Date().toString();*/
-                };
-
                 var _mainSlate = $s.slate({
                     id: 'firstSlateExample' //slate with the same ids can collaborate together.
                     , container: 'slate'
@@ -36,16 +31,6 @@
                         , userName: "Tester"
                         , userIP: 1
                         , userProfile: ''
-                        /*, callbacks: {
-                            onCollaboration: function (name, msg) {
-                                var secs = Math.round(new Date().getTime() / 1000) - startTime;
-                                log.push(secs + " secs ago - " + name + ": " + msg.toLowerCase());
-                                Slatebox.el("slateMessage").innerHTML = log.reverse().join('<br/>');
-                                startTime = Math.round(new Date().getTime() / 1000);
-                                upd();
-                            }
-
-                        }*/
                     }
                 }).canvas.init({ imageFolder: "http://static.slatebox.com/cursors/" });
 
@@ -54,6 +39,10 @@
                 _mainSlate.init();
             });
         })(jQuery, new Slatebox());
+
+        function exportJSON() {
+            //_mainSlate.exportJSON()
+        }
         </script>
 {% endblock %}
 
@@ -75,9 +64,9 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
-                    <a href="javascript:;" onclick="mlesson.openLessonModal()" class="btn btn-sm btn-primary"> <!-- /lessons/add/ -->
+                    <button onclick="exportJSON();" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon-plus"></span> Salva
-                    </a>
+                    </button>
                 </div>
 
                 <div id="slate">
