@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/animate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/images/bg-mac.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/info-default-color.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/info.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/overwrite.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/simpletextrotator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.dev.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/license.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/images/me.jpg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tkit_app/static/css/simpletextrotator.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/info.html" afterPath="$PROJECT_DIR$/tkit_app/templates/info.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/urls.py" afterPath="$PROJECT_DIR$/tkit_app/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -88,7 +77,7 @@
       <file leaf-file-name="info.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="4" selection-start="206" selection-end="206" vertical-scroll-proportion="0.19529837" vertical-offset="0" max-vertical-offset="4752">
+            <state line="72" column="68" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.41410488" vertical-offset="1067" max-vertical-offset="4374">
               <folding />
             </state>
           </provider>
@@ -354,8 +343,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/tkit_app/static/fonts" />
       <recent name="$PROJECT_DIR$/tkit_app/static/images" />
+      <recent name="$PROJECT_DIR$/tkit_app/static/fonts" />
       <recent name="$PROJECT_DIR$/tkit_app/static/js" />
       <recent name="$PROJECT_DIR$/tkit_app/static/css" />
     </key>
@@ -617,7 +606,11 @@
       <created>1398633680617</created>
       <updated>1398633680617</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added info page">
+      <created>1398636088107</created>
+      <updated>1398636088107</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -667,7 +660,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;tkit_app/views.py&#10;" />
     <MESSAGE value="Some mods" />
     <MESSAGE value="Starting presentation tool" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting presentation tool" />
+    <MESSAGE value="Added info page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added info page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -962,7 +956,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="4" selection-start="206" selection-end="206" vertical-scroll-proportion="0.19529837" vertical-offset="0" max-vertical-offset="4752">
+        <state line="72" column="68" selection-start="2710" selection-end="2710" vertical-scroll-proportion="0.41410488" vertical-offset="1067" max-vertical-offset="4374">
           <folding />
         </state>
       </provider>
