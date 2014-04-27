@@ -9,8 +9,8 @@ from tkit_app.views import MindMapView
 
 urlpatterns = patterns('',
     # Static pages
+    url(r'^$', TemplateView.as_view(template_name="info.html")),
     url(r'^dashboard/$', TemplateView.as_view(template_name="base.html")),
-    url(r'^info/$', TemplateView.as_view(template_name="info.html")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
 
@@ -29,7 +29,6 @@ urlpatterns = patterns('',
     #url(r'^disable-account/$', views),
 
     # Login - Logout
-    url(r'^$', login),
     url(r'^login/$', login),
     url(r'^logout/$', logout, {'next_page': '/'}),
 
