@@ -19,8 +19,6 @@
 /*jshint bitwise:true, curly:true, eqeqeq:true, forin:true, latedef:true, newcap:true,
          noarg:true, noempty:true, undef:true, strict:true, browser:true */
 
-// You are one of those who like to know how things work inside?
-// Let me show you the cogs that make impress.js run...
 (function ( document, window ) {
     'use strict';
     
@@ -791,10 +789,10 @@
         
 })(document, window);
 
-// THAT'S ALL FOLKS!
-//
-// Thanks for reading it all.
-// Or thanks for scrolling down and reading the last part.
-//
-// I've learnt a lot when building impress.js and I hope this code and comments
-// will help somebody learn at least some part of it.
+// Event handlers
+$(document).ready(function() {
+    $("#new_slide").click(function() {
+        $("#impress").append('<div class="step slide" data-x="0" data-y="-1500"></div>');
+        //impress().init();
+    });
+});
