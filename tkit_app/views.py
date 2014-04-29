@@ -46,6 +46,11 @@ def disable_account(request):
 
 
 @login_required(login_url='/login/')
+def disable_lockscreen(request, pwd):
+    return ajax_resp("yes") if request.user.check_password(pwd) else ajax_resp("no")
+
+
+@login_required(login_url='/login/')
 def classes(request):
     cls = Classes.objects.all().filter(teacher=request.user)
     return render_to_response("classes.html", {"classes": cls}, context_instance=RequestContext(request))

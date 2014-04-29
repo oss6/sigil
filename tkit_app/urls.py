@@ -13,9 +13,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/$', TemplateView.as_view(template_name="base.html")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
-
-    # TODO
     url(r'^lockscreen/$', TemplateView.as_view(template_name="lockscreen.html")),
+    url(r'^lockscreen/disable/(?P<pwd>[\w|\W]+)/$', views.disable_lockscreen),
 
     # Settings
     url(r'^settings/skin/(?P<cls>[\w|\W]+)/$', views.update_color_schema),
