@@ -37,9 +37,10 @@ urlpatterns = patterns('',
     url(r'^classes/add/$', views.add_class),
     url(r'^classes/update/(?P<id_class>\d+)/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
+    url(r'^classes/(?P<id_class>\d+)/report/grades-performance-chart/$', views.class_grades_performance_chart),
+    url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
 
     # TODO
-    url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
     url(r'^classes/(?P<id_class>\d+)/groupmaker/$', views.group_maker),
 
     # Students
@@ -94,8 +95,9 @@ urlpatterns = patterns('',
 
     # Mind map tool
     url(r'^mindmap/$', views.mind_map),
-    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload"),
-    url(r'^mindmap/load/(?P<id_map>[\d]+)/$', views.load_mind_map),
+    url(r'^mindmap/save/$', views.save_mind_map),  # Save mind map to personal account
+    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload"),  # Upload from file system
+    url(r'^mindmap/load/(?P<id_map>[\d]+)/$', views.load_mind_map),  # Load from personal account
     url(r'^mindmap/remove/(?P<id_map>[\d]+)/$', views.remove_mind_map),
 
     # Presentation tool

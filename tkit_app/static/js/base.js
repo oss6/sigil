@@ -5,6 +5,22 @@ var mclass = {
         $('#addClassModal')
             .modal('show')
             .attr("data-type", id_class);
+    },
+
+    drawPerformance: function() {
+        var jsonData = $.ajax({
+            url: "grades-performance-chart/",
+            dataType:"json",
+            async: false
+        }).responseText;
+
+        var options = {
+            title: 'Andamento voti'
+        };
+
+        var data = new google.visualization.DataTable(jsonData);
+        var chart = new google.visualization.LineChart(document.getElementById('performance-chart'));
+        chart.draw(data, options);
     }
 };
 
@@ -139,15 +155,61 @@ var mnote = {
 };
 
 var utils = {
+    getCookie: function(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie != '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    },
+
     postData: function(url, data, redirect) {
         $.post(url, data, function() {
             location.href = redirect;
         }, 'html');
+    },
+
+    postJSONData: function(JSONData) {
+        var fn = $("#json-file-name").val();
+
+        /*utils.postData('/mindmap/save/', {
+            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+            file_name: fn,
+            json_data: JSONData
+        }, "/mindmap/");*/
+
+        $.ajax({
+            type: 'POST',
+            url: '/mindmap/save/',
+            data: {
+                csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                json_data: JSONData,
+                file_name: fn
+            },
+            success: function(data){
+                console.log(data);
+            },
+            error: function(x, status, error) {
+                if (x.status != 403) {
+                    console.log("An error occurred: " + status + "nError: " + error);
+                }
+
+                console.log("shiiiiiit");
+            }
+         });
     }
 };
 
 $(document).ready(function() {
-    $(".date").datepicker();
+    $("input[data-date-format='yyyy-mm-dd']").datepicker();
 
     // CLASSES
     $("#addClassModalSave").click(function() {
@@ -250,9 +312,3 @@ $(document).ready(function() {
         }, "/todolist/");
     });
 });
-
-/*google.load('visualization', '1.0', {'packages':['corechart']});
-google.setOnLoadCallback(mgrade.drawGradesChart);
-google.setOnLoadCallback(mnote.drawNotesChart);
-google.setOnLoadCallback(mattendance.drawAttendanceChart);
-google.setOnLoadCallback(mgrade.drawPerformance);*/

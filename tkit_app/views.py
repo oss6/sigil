@@ -4,6 +4,9 @@ import datetime
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
+from django.conf import settings
+from django.db.models import Avg, Count
+from django.core.files import File
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import FormView
@@ -75,7 +78,50 @@ def remove_class(request, id_class):
 
 @login_required(login_url='/login/')
 def class_report(request, id_class):
-    pass
+    # Andamento dei voti (generale)
+
+    cl = Classes.objects.get(pk=id_class)
+    stds = Students.objects.filter(s_class=cl)
+
+    # Numero studenti
+    nums = len(stds)
+
+    # Media per ogni prova fatta
+    # gds = Grades.objects.filter(student__in=[s for s in stds])
+    avg_grades = Grades.objects.filter(student__in=[s for s in stds]).values('subject').distinct()\
+        .annotate(avg_grades=Avg('grade'))
+
+    # Per ogni alunno il numero totale di assenze
+    abs_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Assente")\
+        .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(absence=Count('type'))
+
+    # Per ogni alunno il numero totale di presenze
+    pr_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Presente")\
+        .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(presence=Count('type'))
+
+    return render_to_response("class-report.html", {
+        "class": cl,
+        "students_number": nums,
+        "avg_grades": avg_grades,
+        "aps": abs_per_std,
+        "pps": pr_per_std
+    }, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def class_grades_performance_chart(request, id_class):
+    avg_grades = Grades.objects.values('date', 'subject').distinct().annotate(avg_grades=Avg('grade'))
+
+    rows = [{"c": [{"v": str(g["date"]), "f": None}, {"v": g["avg_grades"], "f": None}]} for g in avg_grades]
+
+    j = json.dumps({
+        "cols": [
+            {"id": "", "label": "Data", "pattern": "", "type": "string"},
+            {"id": "", "label": "Valutazione", "pattern": "", "type": "number"}
+        ],
+        "rows": rows
+    })
+    return HttpResponse(content=j, content_type="application/json")
 
 
 @login_required(login_url='/login/')
@@ -479,6 +525,31 @@ def update_negative_notes_limit(request, limit):
 def mind_map(request):
     mmaps = MindMap.objects.all().filter(teacher=request.user)
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
+
+
+# TODO!!!!!!
+@login_required(login_url='/login/')
+def save_mind_map(request):
+    if request.is_ajax():
+        file_name = request.POST["file_name"]
+        fname = file_name if file_name.split('.')[-1] == json else file_name + ".json"
+
+        # Save to file system
+        fp = open(os.path.join(settings.MEDIA_ROOT, 'mindmap', str(request.user.username), fname), "w+")
+        fp.write(request.POST["json_data"])
+
+        # Save to database
+        try:
+            mm_file = MindMap()
+            mm_file.json_file.save(file_name, File(fp))
+            mm_file.teacher = request.user
+            mm_file.save()
+
+            fp.close()
+        except Exception:
+            return ajax_resp(Exception.message)
+
+    return ajax_resp("Ok")
 
 
 @login_required(login_url='/login/')

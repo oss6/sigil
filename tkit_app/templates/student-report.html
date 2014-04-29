@@ -2,6 +2,15 @@
 
 {% block title %}Student report{% endblock %}
 {% block header-title %}{{ student.first_name }} {{ student.last_name }} <small> scheda informativa</small>{% endblock %}
+{% block add-scripts %}
+    <script>
+        google.load('visualization', '1.0', {'packages':['corechart']});
+        google.setOnLoadCallback(mgrade.drawGradesChart);
+        google.setOnLoadCallback(mnote.drawNotesChart);
+        google.setOnLoadCallback(mattendance.drawAttendanceChart);
+        google.setOnLoadCallback(mgrade.drawPerformance);
+    </script>
+{% endblock %}
 {% block content %}
         <div class="row">
             <div class="col-md-12">
@@ -95,10 +104,13 @@
 
                     <div class="modal-body">
                         <form action="." method="post">{% csrf_token %}
-                            <label>Positiva</label>
-                            <input id="positive" type="checkbox">
+                            <div class="checkbox">
+                                <label>
+                                    <input id="positive" type="checkbox"> Positiva
+                                </label>
+                            </div>
                             <label>Data</label>
-                            <input id="date" type="text" class="date form-control">
+                            <input id="date" type="text" class="form-control" data-date-format="yyyy-mm-dd">
                             <label>Commento</label>
                             <textarea id="comment" class="form-control"></textarea>
                         </form>

@@ -25,7 +25,8 @@
                         <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                     </a>
                     <div class="col-md-3 well">
-                        <input type="text" id="attendance-date" class="date form-control" value="{{ date }}" >
+                        <input type="text" id="attendance-date" class="form-control" data-date-format="yyyy-mm-dd"
+                               value="{{ date }}" >
                         <a id="change-att-date" onclick="mattendance.changeDateAtt('{{ class.pk }}', $('#attendance-date').val());" class="btn btn-sm btn-primary" href="javascript:;">
                             Data
                         </a>

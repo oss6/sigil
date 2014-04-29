@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}Report classe{% endblock %}
+{% block header-title %}Report classe - {{ class.name }}{% endblock %}
+{% block add-scripts %}
+    <script>
+        google.load('visualization', '1.0', {'packages':['corechart']});
+        google.setOnLoadCallback(mclass.drawPerformance);
+    </script>
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a href="#" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon glyphicon-file"></span> Salva report (PDF)
+                    </a>
+                </div>
+
+                <h2>Media voti per argomento/prova</h2>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="danger">
+                            <td>Argomento/Prova</td>
+                            <td>Media voti</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in avg_grades %}
+                        <tr>
+                            <td>{{ item.subject }}</td>
+                            <td>{{ item.avg_grades }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h2>Numero assenze per ogni studente</h2>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="success">
+                            <td>Studente</td>
+                            <td>Assenze totali</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in aps %}
+                        <tr>
+                            <td>
+                                {{ item.student__first_name }} {{ item.student__last_name }}
+                            </td>
+                            <td>{{ item.absence }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h2>Numero presenze per ogni studente</h2>
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr class="success">
+                            <td>Studente</td>
+                            <td>Presenze totali</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in pps %}
+                        <tr>
+                            <td>
+                                {{ item.student__first_name }} {{ item.student__last_name }}
+                            </td>
+                            <td>{{ item.presence }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <h2>Andamento voti</h2>
+                <div id="performance-chart"></div>
+            </div>
+        </div>
+{% endblock %}
