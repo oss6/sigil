@@ -154,7 +154,8 @@ def add_student(request, id_class, id_student=None):
             email = form.cleaned_data["email"]
             parent = form.cleaned_data["parent"]
             parent_email = form.cleaned_data["parent_email"]
-            photo = form.cleaned_data["photo"]
+            photo = form.cleaned_data["photo"]  # request.FILES['photo']
+            # self.get_form_kwargs().get("files")["json_file"]
 
             # Save student into db
             c = Classes.objects.get(pk=id_class)
@@ -540,7 +541,7 @@ def save_mind_map(request):
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".json"
 
         # Save to file system
-        fp = open(os.path.join(settings.MEDIA_ROOT, 'mindmap', str(request.user.username), fname), "w+")
+        fp = open(os.path.join(settings.MEDIA_ROOT, str(request.user.username), fname), "w+")
         fp.write(request.POST["json_data"])
 
         # Save to database
@@ -570,7 +571,10 @@ def remove_mind_map(request, id_map):
     f = MindMap.objects.get(pk=id_map)
 
     # Delete from file system
-    os.remove(f.json_file.path)
+    try:
+        os.remove(f.json_file.path)
+    except IOError:
+        pass
 
     # Delete DB reference to the file
     f.delete()

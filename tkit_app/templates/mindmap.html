@@ -52,7 +52,10 @@
                     _mainSlate.init();
 
                     $("#export-json").click(function() {
-                        utils.postJSONData(_mainSlate.exportJSON());
+                        //utils.postJSONData(_mainSlate.exportJSON());
+                        console.log(_mainSlate.exportJSON());
+
+                        return false;
                     });
 
                     $("#import-json").click(function() {

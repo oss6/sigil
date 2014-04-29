@@ -4,7 +4,7 @@ import os
 
 
 def get_mindmap_path(instance, filename):
-    return os.path.join('mindmap', str(instance.teacher.username), filename)
+    return os.path.join(str(instance.teacher.username), filename)
 
 
 class Classes(models.Model):
@@ -20,7 +20,7 @@ class Students(models.Model):
     email = models.EmailField(blank=True, null=True)
     parent = models.CharField(max_length=100)
     parent_email = models.EmailField()
-    photo = models.ImageField(upload_to="/static/img/", blank=True, null=True)
+    photo = models.ImageField(upload_to=get_mindmap_path, blank=True, null=True)
     s_class = models.ForeignKey(Classes)
 
 
