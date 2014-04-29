@@ -22,7 +22,7 @@
                             <h1><a href="index.html">Tkit</a></h1>
 
                             <div class="line-spacer"></div>
-                            <p><span>Web app per insegnanti</span></p>
+                            <p><span>L'arsenale indispensabile degli insegnanti</span></p>
                             <div class="line-spacer"></div>
 
                             <div class="btn-group">
@@ -44,18 +44,29 @@
                     <div class="section-heading">
                         <h2>About</h2>
                         <p>
-                            Sono Ossama Edbali
+                            Questo progetto è nato dall'esigenza di offrire
+                            agli insegnanti degli strumenti indispensabili
+                            per la gestione del proprio lavoro in modo ordinato
+                            e organizzato.
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="box-team">
-                        <img src="/static/images/me.jpg"
-                             alt="This is me!" class="img-responsive"/>
-                        <h4>Ossama Edbali</h4>
-                        <p>Sviluppo API, DB e design</p>
+                        <p>
+                            Molte sono le applicazioni che si trovano
+                            sui marketplace e tutte hanno i propri vantaggi
+                            e svantaggi.
+                        </p>
+                        <p>
+                            Tkit è speciale perchè
+                            è un'applicazione cross-platform basata sul web.
+                            Ciò significa che la si può usare con qualsiasi
+                            dispositivo e con la maggior parte dei browser
+                            attuali.
+                        </p>
+                        <p>
+                            Inoltre include svariati moduli (app incluse in Tkit)
+                            che in altre applicazioni si trovano prevalentemente
+                            separati. La filosofia di Tkit si basa sul concetto
+                            di gestire il proprio lavoro in modo sereno e piacevole.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -63,7 +74,7 @@
     </section>
 
     <!-- Services -->
-    <section id="services" class="home-section bg-white">
+    <section id="services" class="home-section bg-gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
@@ -79,7 +90,7 @@
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
                     <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
                         <i class="fa fa-code fa-4x"></i>
-                        <h4>Valid HTML5</h4>
+                        <h4>Cross-platform</h4>
 
                         <p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
                         <a class="btn btn-primary">Learn more</a>
@@ -97,7 +108,7 @@
                 <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.5s">
                     <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
                         <i class="fa fa-desktop fa-4x"></i>
-                        <h4>Responsive Layout</h4>
+                        <h4>Responsive</h4>
 
                         <p>Lorem ipsum dolor sit amet, ut decore iracundia urbanitas sit.</p>
                         <a class="btn btn-primary">Learn more</a>
@@ -116,36 +127,15 @@
         </div>
     </section>
 
-    <!-- Works -->
-    <section id="works" class="home-section bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="section-heading">
-                        <h2>Works</h2>
-
-                        <p>Dicunt tamquam dissentiet vix ex, ne mei dico reformidans, accumsan gloriatur necessitatibus eu
-                            sit.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    sdfsdfds
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Contact -->
     <section id="contact" class="home-section bg-white">
         <div class="container">
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
                     <div class="section-heading">
-                        <h2>Contact us</h2>
+                        <h2>Contattami</h2>
 
-                        <p>Contact via form below and we will be get in touch with you within 24 hours. </p>
+                        <p>Contattami dal form presentato di seguito e sarò a tua disposizione.</p>
                     </div>
                 </div>
             </div>
@@ -153,30 +143,32 @@
             <div class="row">
                 <div class="col-md-offset-1 col-md-10">
 
-                    <form class="form-horizontal" role="form">
+                    <form class="form-horizontal" action="MAILTO:ossedb@gmail.com" method="post" enctype="text/plain"
+                          role="form">
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <input type="text" class="form-control" id="inputName" placeholder="Name">
+                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Nome">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="email" class="form-control" id="inputEmail" name="email"
+                                       placeholder="La tua email">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <input type="text" class="form-control" id="inputSubject" placeholder="Subject">
+                                <input type="text" class="form-control" id="inputSubject" name="subject" placeholder="Oggetto">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <textarea name="message" class="form-control" rows="3" placeholder="Message"></textarea>
+                                <textarea name="message" class="form-control" rows="3" placeholder="Messaggio"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-8">
-                                <button type="button" class="btn btn-theme btn-lg btn-block">Send message</button>
+                                <input type="submit" class="btn btn-theme btn-lg btn-block" value="Invia messaggio">
                             </div>
                         </div>
                     </form>
@@ -187,30 +179,30 @@
             </div>
             <div class="row mar-top30 ">
                 <div class="col-md-offset-2 col-md-8">
-                    <h5>We're on social networks</h5>
+                    <h5>Contattami dai social networks</h5>
                     <ul class="social-network">
-                        <li><a href="#">
+                        <li><a href="https://www.facebook.com/oss.edbali">
                             <span class="fa-stack fa-2x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
                                 <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                             </span></a>
                         </li>
-                        <li><a href="#">
+                        <li><a href="https://plus.google.com/u/0/+OssamaEdbali/posts/p/pub">
                             <span class="fa-stack fa-2x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-dribbble fa-stack-1x fa-inverse"></i>
+                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
                             </span></a>
                         </li>
-                        <li><a href="#">
+                        <li><a href="https://www.linkedin.com/pub/ossama-edbali/95/468/431">
                             <span class="fa-stack fa-2x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
                             </span></a>
                         </li>
-                        <li><a href="#">
+                        <li><a href="https://github.com/oss6">
                             <span class="fa-stack fa-2x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                             </span></a>
                         </li>
                     </ul>
@@ -224,7 +216,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>Copyright &copy;2014 Mamba company. All rights reserved. By <a href="http://bootstraptaste.com">Bootstraptaste</a>
+                    <p>
+                        Copyright ©2014 Tkit. Tutti i diritti riservati.
                     </p>
                 </div>
             </div>
