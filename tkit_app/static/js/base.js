@@ -177,14 +177,8 @@ var utils = {
         }, 'html');
     },
 
-    postJSONData: function(JSONData) {
+    postJSONData: function(JSONData, redirect) {
         var fn = $("#json-file-name").val();
-
-        /*utils.postData('/mindmap/save/', {
-            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            file_name: fn,
-            json_data: JSONData
-        }, "/mindmap/");*/
 
         $.ajax({
             type: 'POST',
@@ -195,7 +189,7 @@ var utils = {
                 file_name: fn
             },
             success: function(data){
-                console.log(data);
+                location.href = redirect
             },
             error: function(x, status, error) {
                 if (x.status != 403) {

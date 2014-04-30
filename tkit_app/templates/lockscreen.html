@@ -81,8 +81,10 @@
 
                         if (result === "yes")
                             location.href = "/dashboard/";
-                        else
+                        else {
                             $("#modal").modal("show");
+                            $("#password").val("");
+                        }
                     });
                 });
             });

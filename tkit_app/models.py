@@ -78,3 +78,10 @@ class ToDoList(models.Model):
 class MindMap(models.Model):
     json_file = models.FileField(upload_to=get_mindmap_path)
     teacher = models.ForeignKey(User)
+
+
+class Presentation(models.Model):
+    title = models.CharField(max_length=80)
+    description = models.TextField()
+    pres_file = models.FileField(upload_to=get_mindmap_path)
+    teacher = models.ForeignKey(User)

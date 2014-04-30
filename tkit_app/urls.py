@@ -6,11 +6,12 @@ from django.contrib.auth.views import login, logout
 from tkit_app import views
 from django_messages import views as dmv
 from tkit_app.views import MindMapView
+from django.contrib.auth.decorators import login_required
 
 urlpatterns = patterns('',
     # Static pages
     url(r'^$', TemplateView.as_view(template_name="info.html")),
-    url(r'^dashboard/$', TemplateView.as_view(template_name="base.html")),
+    url(r'^dashboard/$', login_required(TemplateView.as_view(template_name="base.html"), login_url="/login/")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
     url(r'^lockscreen/$', TemplateView.as_view(template_name="lockscreen.html")),
@@ -48,11 +49,12 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<id_class>\d+)/students/update/(?P<id_student>\d+)/$', views.add_student),
     url(r'^classes/(?P<id_class>\d+)/students/remove/(?P<id_student>\d+)/$', views.remove_student),
     url(r'^students/(?P<id_student>\d+)/grades-chart/$', views.grades_chart),
-    url(r'^students/(?P<id_student>\d+)/grades-performance-chart/', views.grades_performance_chart),
-    url(r'^students/(?P<id_student>\d+)/notes-chart/', views.notes_chart),
-    url(r'^students/(?P<id_student>\d+)/attendance-chart/', views.attendance_chart),
+    url(r'^students/(?P<id_student>\d+)/grades-performance-chart/$', views.grades_performance_chart),
+    url(r'^students/(?P<id_student>\d+)/notes-chart/$', views.notes_chart),
+    url(r'^students/(?P<id_student>\d+)/attendance-chart/$', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
-    url(r'^students/(?P<id_student>\d+)/notes/add/', views.add_note),
+    url(r'^students/(?P<id_student>\d+)/notes/add/$', views.add_note),
+    url(r'^notes/remove/(?P<id_note>\d+)/$', views.remove_note),
 
     # Gradebook
     url(r'^classes/(?P<id_class>\d+)/gradebook/$', views.grade_book),
@@ -100,5 +102,11 @@ urlpatterns = patterns('',
     url(r'^mindmap/remove/(?P<id_map>[\d]+)/$', views.remove_mind_map),
 
     # Presentation tool
-    url(r'^presentation/$', TemplateView.as_view(template_name="presentation.html"))
+    url(r'^presentation/$', views.presentation_tool),
+    url(r'^presentation/create/$', TemplateView.as_view(template_name="presentation-create.html")),
+
+    # TODO
+    url(r'^presentation/save/$', views.save_pres),
+    url(r'^presentation/load/(?P<id_pres>[\d]+)/$', views.load_pres),
+    url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres)
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

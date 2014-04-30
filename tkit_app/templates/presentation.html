@@ -1,85 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=1024, user-scalable=no">
+{% extends "base.html" %}
 
-  <title>Your deck.js Presentation</title>
+{% block title %}Gestione presentazioni{% endblock %}
+{% block header-title %}Gestione presentazioni{% endblock %}
 
-  <!-- Required stylesheet -->
-  <link rel="stylesheet" media="screen" href="/static/css/deck.core.css">
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a href="/presentation/create/" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> Crea
+                    </a>
+                </div>
+                {% if not pres %}
+                    <h1>Non ci sono presentazioni</h1>
+                {% else %}
+                    <div class="row">
+                    {% for p in pres %}
+                        <div class="col-md-3 draggable">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a href="/classes/{{ class.pk }}/students/">{{ p.title }}</a>
+                                    </h3>
 
-  <!-- Extension CSS files go here. Remove or add as needed. -->
-  <link rel="stylesheet" media="screen" href="/static/css/deck.navigation.css">
-  <link rel="stylesheet" media="screen" href="/static/css/deck.status.css">
-
-  <!-- Style theme. More available in /themes/style/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="/static/css/web-2.0.css">
-
-  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
-  <link rel="stylesheet" media="screen" href="/static/css/horizontal-slide.css">
-
-  <!-- Required Modernizr file -->
-  <script src="/static/js/modernizr.custom.js"></script>
-</head>
-<body>
-  <button id="new-slide">Nuova diapositiva</button>
-  <div class="deck-container">
-
-    <!-- Begin slides. Just make elements with a class of slide. -->
-
-    <section class="slide">
-      <h1>Slide</h1>
-    </section>
-
-    <section class="slide">
-      <h1>Content</h1>
-    </section>
-
-    <section class="slide">
-      <h1>Here</h1>
-    </section>
-
-    <!-- End slides. -->
-
-    <!-- Begin extension snippets. Add or remove as needed. -->
-
-    <!-- deck.navigation snippet -->
-    <div aria-role="navigation">
-      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
-      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
-    </div>
-
-    <!-- deck.status snippet -->
-    <p class="deck-status" aria-role="status">
-      <span class="deck-status-current"></span>
-      /
-      <span class="deck-status-total"></span>
-    </p>
-
-    <!-- End extension snippets. -->
-  </div>
-
-<!-- Required JS files. -->
-<script src="/static/js/jquery.min.js"></script>
-<script src="/static/js/deck.core.js"></script>
-
-<!-- Extension JS files. Add or remove as needed. -->
-<script src="/static/js/deck.status.js"></script>
-<script src="/static/js/deck.navigation.js"></script>
-
-<!-- Initialize the deck. You can put this in an external file if desired. -->
-<script>
-  $(function() {
-    $.deck('.slide');
-
-    $("#new-slide").click(function() {
-        var n =$(".slide").length - 1;
-        $('<section id="slide-' + (n + 1) + '" class="slide deck-after"></section>').insertAfter("#slide-" + n);
-        $.deck('.slide');
-    });
-  });
-</script>
-</body>
-</html>
+                                </div>
+                                <div class="panel-body">
+                                    {{ p.description }}
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/presentation/remove/{{ p.pk }}/" class="btn btn-xs btn-danger">
+                                        Rimuovi <i class="glyphicon glyphicon-remove"></i>
+                                    </a>
+                                    <a href="javascript:;" onclick="mclass.openClassModal('{{ class.pk }}')"
+                                       class="btn btn-xs btn-primary">
+                                        Modifica <i class="glyphicon glyphicon-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+{% endblock %}

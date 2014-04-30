@@ -52,7 +52,7 @@ def disable_lockscreen(request, pwd):
 
 @login_required(login_url='/login/')
 def classes(request):
-    cls = Classes.objects.all().filter(teacher=request.user)
+    cls = Classes.objects.filter(teacher=request.user)
     return render_to_response("classes.html", {"classes": cls}, context_instance=RequestContext(request))
 
 
@@ -177,7 +177,12 @@ def remove_student(request, id_class, id_student):
 @login_required(login_url='/login/')
 def student_info(request, id_student):
     student = Students.objects.get(pk=id_student)
-    return render_to_response("student-report.html", {"student": student}, context_instance=RequestContext(request))
+    notes = Notes.objects.filter(student=student)
+
+    return render_to_response("student-report.html", {
+        "student": student,
+        "notes": notes
+    }, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
@@ -248,6 +253,14 @@ def add_note(request, id_student):
             n.save()
 
     return redirect('/students/' + id_student + '/')
+
+
+@login_required(login_url='/login/')
+def remove_note(request, id_note):
+    n = Notes.objects.get(pk=id_note)
+    n.delete()
+
+    return redirect("/students/" + str(n.student.pk) + "/")
 
 
 @login_required(login_url='/login/')
@@ -533,7 +546,7 @@ def mind_map(request):
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
 
 
-# TODO!!!!!!
+# TODO!
 @login_required(login_url='/login/')
 def save_mind_map(request):
     if request.is_ajax():
@@ -545,15 +558,12 @@ def save_mind_map(request):
         fp.write(request.POST["json_data"])
 
         # Save to database
-        try:
-            mm_file = MindMap()
-            mm_file.json_file.save(file_name, File(fp))
-            mm_file.teacher = request.user
-            mm_file.save()
+        mm_file = MindMap()
+        mm_file.teacher = request.user
+        mm_file.json_file.save(fname, File(fp))
+        #mm_file.save()
 
-            fp.close()
-        except Exception:
-            return ajax_resp(Exception.message)
+        fp.close()
 
     return ajax_resp("Ok")
 
@@ -592,3 +602,24 @@ class MindMapView(FormView):
         self.id = json_file.id
 
         return redirect("/mindmap/")
+
+
+@login_required(login_url='/login/')
+def presentation_tool(request):
+    ps = Presentation.objects.filter(teacher=request.user)
+    return render_to_response("presentation.html", {"pres": ps}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def save_pres(request):
+    pass
+
+
+@login_required(login_url='/login/')
+def load_pres(request, id_pres):
+    pass
+
+
+@login_required(login_url='/login/')
+def remove_pres(request, id_pres):
+    pass
