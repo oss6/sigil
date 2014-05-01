@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Libri{% endblock %}
+{% block add-scripts %}
+        <script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script type="text/javascript">
+      function openBookByTitle(title) {
+        showCanvas(false);
+        showStatus('Sto cercando ' + title + '...');
+        beginSearch(title);
+      }
+
+      function beginSearch(query) {
+        // Dynamically load the search results in JavaScript,
+        // using the Books API
+        // Once loaded, handleResults is automatically called with
+        // the result set
+        var script = document.createElement("script");
+        // We might need to supply a key for this or else we might run into
+        // quota limits.
+        script.src = 'https://www.googleapis.com/books/v1/volumes?q='
+          + encodeURIComponent(query) + '&filter=partial'
+          + '&callback=handleResults'
+          + '&key=AIzaSyA59OEyQ04fsRKplv1I36jMuSS4BJY_KiQ';
+        script.type = "text/javascript";
+        document.getElementsByTagName("head")[0].appendChild(script);
+      }
+
+      function handleResults(root) {
+        // Find the identifier of the first embeddable match
+        // If none found, report an error
+        var entries = root.items || [];
+
+        console.log(entries);
+        for (var i = 0; i < entries.length; ++i) {
+            var entry = entries[i];
+
+            $('<img src="' + entry.volumeInfo.thumbnail + '">').appendTo("#thumbCanvas");
+            //$("#thumbCanvas").append(entry.volumeInfo.title + "<br>");
+        }
+
+        for (var i = 0; i < entries.length; ++i) {
+          var entry = entries[i];
+          var isEmbeddable = entry.accessInfo.embeddable;
+          var identifier = entry.id;
+
+          if (isEmbeddable) {
+            loadBook(identifier);
+            return;
+          }
+        }
+
+        showStatus('Could not find a match');
+      }
+
+      function loadBook(identifier) {
+        // Load the Embedded Viewer API, calling showBook when it's ready
+        var callbackFn = function() { showBook(identifier); };
+        google.load("books", "0", { "callback" : callbackFn });
+      }
+
+      function showBook(identifier) {
+        // We have the book ID, API is loaded, now just show it
+        var canvas = document.getElementById('viewerCanvas');
+        viewer = new google.books.DefaultViewer(canvas);
+        viewer.load(identifier);
+
+        showCanvas(true);
+        showStatus('');
+      }
+
+      function showCanvas(showing) {
+        var canvasDiv = document.getElementById('viewerCanvas');
+        canvasDiv.style.display =  (showing) ? 'block' : 'none';
+      }
+
+      function showStatus(string) {
+        var statusDiv = document.getElementById('viewerStatus');
+        var showing = !(string == null || string.length == 0);
+        if (statusDiv.firstChild) {
+          statusDiv.removeChild(statusDiv.firstChild);
+        }
+        statusDiv.appendChild(document.createTextNode((showing) ? string : ''));
+        statusDiv.style.display =  (showing) ? 'block' : 'none';
+      }
+
+</script>
+
+{% endblock %}
+{% block content %}
+<form name="inputForm"
+      onsubmit="openBookByTitle(this.query.value); return false;"
+      method="get">
+    <input type="text" size="30" name="query" class="form-control" placeholder="Titolo libro"/>
+    <input type="submit" class="btn btn-primary" value="Cerca"/>
+</form>
+
+<div id="viewerStatus"
+     style="padding: 5px; background-color: #eee; display: none"></div>
+<div id="viewerCanvas"
+     style="width: 500px; height: 400px; display: none"></div>
+<div id="thumbCanvas"
+     style="width: 500px; height: 400px;"></div>
+{% endblock %}

@@ -8,6 +8,8 @@ from django_messages import views as dmv
 from tkit_app.views import MindMapView
 from django.contrib.auth.decorators import login_required
 
+# BOOKS API KEY: AIzaSyA59OEyQ04fsRKplv1I36jMuSS4BJY_KiQ
+
 urlpatterns = patterns('',
     # Static pages
     url(r'^$', TemplateView.as_view(template_name="info.html")),
@@ -103,10 +105,14 @@ urlpatterns = patterns('',
 
     # Presentation tool
     url(r'^presentation/$', views.presentation_tool),
-    url(r'^presentation/create/$', TemplateView.as_view(template_name="presentation-create.html")),
+    url(r'^presentation/create/$', login_required(TemplateView.as_view(template_name="presentation-create.html"),
+                                                  login_url="/login/")),
 
     # TODO
     url(r'^presentation/save/$', views.save_pres),
     url(r'^presentation/load/(?P<id_pres>[\d]+)/$', views.load_pres),
-    url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres)
+    url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres),
+
+    # Books
+    url(r'^books/$', login_required(TemplateView.as_view(template_name="books.html"), login_url="/login/"))
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
