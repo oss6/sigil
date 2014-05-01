@@ -30,7 +30,7 @@
                         <a href="/classes/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-arrow-left"></span> Gestione classi
                         </a>
-                        <a onclick="mstudent.openStudentModal()" href="javascript:;" class="btn btn-sm btn-primary">
+                        <a onclick="mstudent.openStudentModal('{{ class.pk }}')" href="javascript:;" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-plus"></span> Aggiungi
                         </a>
                         <a href="/classes/{{ class.pk }}/gradebook/" class="btn btn-sm btn-primary">
@@ -70,7 +70,7 @@
                                     <img width="100" height="100" src="/static/images/def-user.jpg/" alt="No photo"
                                          class="img-thumbnail">
                                     {% else %}
-                                        <img width="100" height="100" src="{{ student.photo.image.url }}"
+                                        <img width="100" height="100" src="{{ student.photo.url }}"
                                              alt="No photo">
                                     {% endif %}
                                 </div>
@@ -79,7 +79,7 @@
                                        class="btn btn-xs btn-danger">
                                         Rimuovi <span class="glyphicon glyphicon-remove"></span>
                                     </a>
-                                    <a href="javascript:;" onclick="mstudent.openStudentModal('{{ student.pk }}')"
+                                    <a href="javascript:;" onclick="mstudent.openStudentModal('{{ class.pk }}', '{{ student.pk }}')"
                                        class="btn btn-xs btn-primary">
                                         Modifica <span class="glyphicon glyphicon-edit"></span>
                                     </a>
@@ -93,33 +93,33 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true" data-type="add">
+        <div class="modal fade" id="addStudentModal" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                        <h2 class="modal-title" id="studentModalLabel">Aggiungi studente</h2>
                     </div>
                     <div class="modal-body">
-                        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                        <form id="student-form" action="/classes/{{ class.pk }}/students/add/" method="post" enctype="multipart/form-data">{% csrf_token %}
                             <label>Nome</label>
-                            <input id="first_name" type="text" class="form-control">
+                            <input id="first_name" name="first_name" type="text" class="form-control">
                             <label>Cognome</label>
-                            <input id="last_name" type="text" class="form-control">
+                            <input id="last_name" name="last_name" type="text" class="form-control">
                             <label>Email</label>
-                            <input id="email" type="text" class="form-control">
+                            <input id="email" name="email" type="text" class="form-control">
                             <label>Nome/Cognome genitore</label>
-                            <input id="parent" type="text" class="form-control">
+                            <input id="parent" name="parent" type="text" class="form-control">
                             <label>Email genitore</label>
-                            <input id="parent_email" type="text" class="form-control">
+                            <input id="parent_email" name="parent_email" type="text" class="form-control">
                             <label>Foto</label>
-                            <input id="photo" type="file" class="form-control">
+                            <input id="photo" name="photo" type="file" class="form-control">
                         </form>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
-                        <button id="addStudentModalSave" type="button" class="btn btn-primary">Salva</button>
+                        <input form="student-form" type="submit" class="btn btn-primary" value="Salva">
                     </div>
                 </div>
             </div>

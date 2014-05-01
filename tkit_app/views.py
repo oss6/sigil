@@ -154,8 +154,7 @@ def add_student(request, id_class, id_student=None):
             email = form.cleaned_data["email"]
             parent = form.cleaned_data["parent"]
             parent_email = form.cleaned_data["parent_email"]
-            photo = form.cleaned_data["photo"]  # request.FILES['photo']
-            # self.get_form_kwargs().get("files")["json_file"]
+            photo = request.FILES["photo"] if "photo" in request.FILES else None
 
             # Save student into db
             c = Classes.objects.get(pk=id_class)
@@ -169,6 +168,11 @@ def add_student(request, id_class, id_student=None):
 @login_required(login_url='/login/')
 def remove_student(request, id_class, id_student):
     s = Students.objects.get(pk=id_student)
+
+    # Remove student's photo (if exists)
+    if s.photo:
+        os.remove(s.photo.path)
+
     s.delete()
 
     return redirect("/classes/" + id_class + "/students/")

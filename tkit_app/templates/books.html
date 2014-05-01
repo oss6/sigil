@@ -85,20 +85,17 @@
       }
 
 </script>
-
 {% endblock %}
+
+{% block header-title %}Libri{% endblock %}
+
 {% block content %}
-<form name="inputForm"
-      onsubmit="openBookByTitle(this.query.value); return false;"
-      method="get">
+<form name="inputForm" onsubmit="openBookByTitle(this.query.value); return false;" method="get">
     <input type="text" size="30" name="query" class="form-control" placeholder="Titolo libro"/>
     <input type="submit" class="btn btn-primary" value="Cerca"/>
 </form>
 
-<div id="viewerStatus"
-     style="padding: 5px; background-color: #eee; display: none"></div>
-<div id="viewerCanvas"
-     style="width: 500px; height: 400px; display: none"></div>
-<div id="thumbCanvas"
-     style="width: 500px; height: 400px;"></div>
+<div id="viewerStatus" style="padding: 5px; background-color: #eee; display: none"></div>
+<div id="viewerCanvas" style="width: 500px; height: 400px; display: none"></div>
+<div id="thumbCanvas" style="width: 500px; height: 400px;"></div>
 {% endblock %}

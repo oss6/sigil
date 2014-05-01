@@ -25,12 +25,13 @@ var mclass = {
 };
 
 var mstudent = {
-    openStudentModal: function(id_student) {
+    openStudentModal: function(id_class, id_student) {
         id_student = id_student || "add";
 
-        $("#addStudentModal")
-            .modal("show")
-            .attr("data-type", id_student);
+        $("#student-form")
+        .attr("action", id_student === "add" ? "/classes/" + id_class + "/students/add/" : "/classes/" + id_class + "/students/update/" + id_student + "/");
+        $("#studentModalLabel").text(id_student === "add" ? "Aggiungi studente" : "Modifica studente");
+        $("#addStudentModal").modal("show");
     }
 }
 
@@ -216,23 +217,6 @@ $(document).ready(function() {
             school: $("#school").val(),
             description: $("#desc").val(),
         }, "/classes/");
-    });
-
-    // STUDENTS
-    $("#addStudentModalSave").click(function() {
-        var id_class = $("#helper-class").val();
-        var url = $("#addStudentModal").attr("data-type") === "add" ? "/classes/" + id_class +
-        "/students/add/" : "/classes/" + id_class + "/students/update/" + $("#addStudentModal").attr("data-type") + "/";
-
-        utils.postData(url, {
-            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            first_name: $("#first_name").val(),
-            last_name: $("#last_name").val(),
-            email: $("#email").val(),
-            parent: $("#parent").val(),
-            parent_email: $("#parent_email").val(),
-            photo: $("#photo").val(),
-        }, "/classes/" + id_class + "/students/");
     });
 
     // GRADE BOOK
