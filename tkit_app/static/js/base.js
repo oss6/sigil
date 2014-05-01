@@ -175,15 +175,15 @@ var utils = {
     postData: function(url, data, redirect) {
         $.post(url, data, function() {
             location.href = redirect;
-        }, 'html');
+        });
     },
 
-    postJSONData: function(JSONData, redirect) {
+    postJSONData: function(url, JSONData, redirect) {
         var fn = $("#json-file-name").val();
 
         $.ajax({
             type: 'POST',
-            url: '/mindmap/save/',
+            url: url,
             data: {
                 csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
                 json_data: JSONData,

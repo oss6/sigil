@@ -616,7 +616,23 @@ def presentation_tool(request):
 
 @login_required(login_url='/login/')
 def save_pres(request):
-    pass
+    if request.is_ajax():
+        file_name = request.POST["file_name"]
+        fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
+        # Save to file system
+        fp = open(os.path.join(settings.MEDIA_ROOT, str(request.user.username), fname), "w+")
+        fp.write(request.POST["html_data"])
+
+        # Save to database
+        pres = Presentation()
+        pres.title = request.POST["title"]
+        pres.description = request.POST["description"]
+        pres.teacher = request.user
+        pres.pres_file.save(fname, File(fp))
+
+        fp.close()
+
+    return ajax_resp("Ok")
 
 
 @login_required(login_url='/login/')

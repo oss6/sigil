@@ -29,7 +29,12 @@
         <h4>Menu degli strumenti</h4>
         <button class="btn btn-success" id="new-slide">Nuova diapositiva</button>
         <button class="btn btn-success" id="delete-current-slide">Elimina diapositiva</button>
-        <button class="btn btn-success" id="save-pres">Salva</button>
+        <form action="." method="post">{% csrf_token %}
+            <input type="text" id="html-file-name" placeholder="Nome file">
+            <input type="text" id="pres-title" placeholder="Titolo presentazione">
+            <input type="text" id="pres-desc" placeholder="Descrizione presentazione">
+            <button id="save-pres">Salva</button>
+        </form>
     </div>
 
     <div class="deck-container">
@@ -107,7 +112,13 @@
         });
 
         $("#save-pres").click(function() {
-
+            utils.postData("/presentation/save/", {
+                csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                html_data: $(".deck-container")[0].html(),
+                file_name: $("#html-file-name").val(),
+                title: $("#pres-title").val(),
+                description: $("#pres-desc").val()
+            }, "/presentation/");
         });
       });
     </script>

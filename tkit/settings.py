@@ -139,6 +139,7 @@ INSTALLED_APPS = (
     'bootstrapform',
     'pybb',
     'django_messages',
+    'easy_pdf',
     'tkit_app'
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',

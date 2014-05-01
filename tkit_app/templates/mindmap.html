@@ -52,7 +52,7 @@
                     _mainSlate.init();
 
                     $("#export-json").click(function() {
-                        utils.postJSONData(_mainSlate.exportJSON(), "/mindmap/");
+                        utils.postJSONData('/mindmap/save/', _mainSlate.exportJSON(), "/mindmap/");
                         return false;
                     });
 

@@ -5,10 +5,8 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
 from tkit_app import views
 from django_messages import views as dmv
-from tkit_app.views import MindMapView
+from easy_pdf.views import PDFTemplateView
 from django.contrib.auth.decorators import login_required
-
-# BOOKS API KEY: AIzaSyA59OEyQ04fsRKplv1I36jMuSS4BJY_KiQ
 
 urlpatterns = patterns('',
     # Static pages
@@ -16,7 +14,7 @@ urlpatterns = patterns('',
     url(r'^dashboard/$', login_required(TemplateView.as_view(template_name="base.html"), login_url="/login/")),
     url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
-    url(r'^lockscreen/$', TemplateView.as_view(template_name="lockscreen.html")),
+    url(r'^lockscreen/$', login_required(TemplateView.as_view(template_name="lockscreen.html"), login_url="/login/")),
     url(r'^lockscreen/disable/(?P<pwd>[\w|\W]+)/$', views.disable_lockscreen),
 
     # Settings
@@ -55,6 +53,7 @@ urlpatterns = patterns('',
     url(r'^students/(?P<id_student>\d+)/notes-chart/$', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/attendance-chart/$', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
+    url(r'^students/(?P<id_student>\d+)/pdf/$', PDFTemplateView.as_view(template_name="pdf-convert.html")),
     url(r'^students/(?P<id_student>\d+)/notes/add/$', views.add_note),
     url(r'^notes/remove/(?P<id_note>\d+)/$', views.remove_note),
 
@@ -99,7 +98,7 @@ urlpatterns = patterns('',
     # Mind map tool
     url(r'^mindmap/$', views.mind_map),
     url(r'^mindmap/save/$', views.save_mind_map),  # Save mind map to personal account
-    url(r'^mindmap/upload/$', MindMapView.as_view(), name="mindmap_upload"),  # Upload from file system
+    url(r'^mindmap/upload/$', views.MindMapView.as_view(), name="mindmap_upload"),  # Upload from file system
     url(r'^mindmap/load/(?P<id_map>[\d]+)/$', views.load_mind_map),  # Load from personal account
     url(r'^mindmap/remove/(?P<id_map>[\d]+)/$', views.remove_mind_map),
 
@@ -114,5 +113,5 @@ urlpatterns = patterns('',
     url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres),
 
     # Books
-    url(r'^books/$', login_required(TemplateView.as_view(template_name="books.html"), login_url="/login/"))
+    url(r'^books/$', login_required(TemplateView.as_view(template_name="books.html"), login_url="/login/")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
