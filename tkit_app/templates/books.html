@@ -2,7 +2,7 @@
 
 {% block title %}Libri{% endblock %}
 {% block add-scripts %}
-        <script type="text/javascript" src="//www.google.com/jsapi"></script>
+<script type="text/javascript" src="//www.google.com/jsapi"></script>
 <script type="text/javascript">
       function openBookByTitle(title) {
         showCanvas(false);
@@ -32,11 +32,25 @@
         var entries = root.items || [];
 
         console.log(entries);
-        for (var i = 0; i < entries.length; ++i) {
-            var entry = entries[i];
+        $("#thumbCanvas").children().remove();
+        $('<table class="table table-hover table-bordered"><thead><tr class="success"><td>Titolo</td><td>Autori</td><td>Valutazione</td><td>Categorie</td><td>N. pagine</td><td>Anteprima</td></tr></thead><tbody id="books-table"></tbody></table>').appendTo("#thumbCanvas");
 
-            $('<img src="' + entry.volumeInfo.thumbnail + '">').appendTo("#thumbCanvas");
-            //$("#thumbCanvas").append(entry.volumeInfo.title + "<br>");
+        for (var i = 0; i < entries.length; ++i) {
+            var entry = entries[i],
+                authors = "",
+                rating = !entry.volumeInfo.averageRating ? "NA" : entry.volumeInfo.averageRating,
+                cat = "",
+                page_count = !entry.volumeInfo.pageCount ? "NA" : entry.volumeInfo.pageCount,
+                tag_load = entry.accessInfo.embeddable ? "<button class='load-preview btn btn-primary' data-id='" + entry.id + "'>Carica</button>" : "NA";
+
+            for (var j = 0; j < entry.volumeInfo.authors.length; j++)
+                authors += entry.volumeInfo.authors[j] + "<br>";
+
+            if (entry.volumeInfo.categories)
+                for (var j = 0; j < entry.volumeInfo.categories.length; j++)
+                    cat += entry.volumeInfo.categories[j] + "<br>";
+
+            $("#books-table").append("<tr><td>" + entry.volumeInfo.title + "</td><td>" + authors + "</td><td>" + rating + "</td><td>" + cat + "</td><td>" + page_count + "</td><td>" + tag_load + "</td></tr>");
         }
 
         for (var i = 0; i < entries.length; ++i) {
@@ -45,7 +59,7 @@
           var identifier = entry.id;
 
           if (isEmbeddable) {
-            loadBook(identifier);
+            loadBook(identifier, false);
             return;
           }
         }
@@ -53,10 +67,15 @@
         showStatus('Could not find a match');
       }
 
-      function loadBook(identifier) {
+      function loadBook(identifier, loaded) {
         // Load the Embedded Viewer API, calling showBook when it's ready
-        var callbackFn = function() { showBook(identifier); };
-        google.load("books", "0", { "callback" : callbackFn });
+        if (!loaded) {
+            var callbackFn = function() { showBook(identifier); };
+            google.load("books", "0", { "callback" : callbackFn });
+        }
+        else {
+            showBook(identifier);
+        }
       }
 
       function showBook(identifier) {
@@ -84,18 +103,29 @@
         statusDiv.style.display =  (showing) ? 'block' : 'none';
       }
 
+      $(document).ready(function() {
+        $(document).on("click", ".load-preview", function(){
+            loadBook($(this).attr("data-id"), true);
+        });
+      });
 </script>
 {% endblock %}
 
 {% block header-title %}Libri{% endblock %}
 
 {% block content %}
-<form name="inputForm" onsubmit="openBookByTitle(this.query.value); return false;" method="get">
-    <input type="text" size="30" name="query" class="form-control" placeholder="Titolo libro"/>
-    <input type="submit" class="btn btn-primary" value="Cerca"/>
-</form>
+<div class="text-center">
+    <h2>Cerca un libro</h2>
+    <form class="form-inline" name="inputForm" onsubmit="openBookByTitle(this.query.value); return false;" method="get">
+        <div class="form-group">
+            <label class="sr-only" for="query">Titolo del libro</label>
+            <input type="text" size="30" id="query" name="query" class="form-control" placeholder="Inserisci titolo"/>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Cerca"/>
+    </form>
+</div>
 
 <div id="viewerStatus" style="padding: 5px; background-color: #eee; display: none"></div>
 <div id="viewerCanvas" style="width: 500px; height: 400px; display: none"></div>
-<div id="thumbCanvas" style="width: 500px; height: 400px;"></div>
+<div id="thumbCanvas" style="width: 500px; height: 400px; margin-top: 50px;"></div>
 {% endblock %}
