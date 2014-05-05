@@ -80,6 +80,7 @@
     <!-- Extension JS files. Add or remove as needed. -->
     <script src="/static/js/deck.status.js"></script>
     <script src="/static/js/deck.navigation.js"></script>
+    <!--<script src="/static/js/base.js"></script>-->
 
     <!-- Initialize the deck. You can put this in an external file if desired. -->
     <script>
@@ -114,7 +115,7 @@
         $("#save-pres").click(function() {
             utils.postData("/presentation/save/", {
                 csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                html_data: $(".deck-container")[0].html(),
+                html_data: $("#menu").html(),
                 file_name: $("#html-file-name").val(),
                 title: $("#pres-title").val(),
                 description: $("#pres-desc").val()

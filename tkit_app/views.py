@@ -562,7 +562,7 @@ def save_mind_map(request):
         mm_file.teacher = request.user
         mm_file.json_file.save(fname, ContentFile(request.POST["json_data"]))
 
-    return ajax_resp("Ok")
+    return ajax_resp("Action performed")
 
 
 @login_required(login_url='/login/')
@@ -612,20 +612,15 @@ def save_pres(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
-        # Save to file system
-        fp = open(os.path.join(settings.MEDIA_ROOT, str(request.user.username), fname), "w+")
-        fp.write(request.POST["html_data"])
 
-        # Save to database
+        # Save to database and fs
         pres = Presentation()
         pres.title = request.POST["title"]
         pres.description = request.POST["description"]
         pres.teacher = request.user
-        pres.pres_file.save(fname, File(fp))
+        pres.pres_file.save(fname, ContentFile(request.POST["html_data"]))
 
-        fp.close()
-
-    return ajax_resp("Ok")
+    return ajax_resp("Action performed")
 
 
 @login_required(login_url='/login/')
