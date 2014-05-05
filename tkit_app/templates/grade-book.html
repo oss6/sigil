@@ -42,6 +42,8 @@
                                     {% for sub in subs %}
                                         <td>
                                             {{ sub.subject }}
+                                            <span class="label label-primary">{{ sub.date }}</span>
+                                            <span class="label label-warning">{{ sub.type }}</span>
                                             <a href="/classes/{{ class.pk }}/gradebook/remove/{{ sub.subject }}/"
                                                 class="btn btn-xs btn-danger">
                                                 <span class="glyphicon glyphicon-remove"></span>

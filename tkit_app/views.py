@@ -273,7 +273,7 @@ def grade_book(request, id_class):
     ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
     # Student-grades dictionary
     grades = dict((Students.objects.get(pk=s), Grades.objects.filter(student__pk=s)) for s in ss)
-    subs = Grades.objects.values('subject').distinct()  # TODO: not only subject
+    subs = Grades.objects.values('subject', 'date', 'type').distinct()
 
     return render_to_response("grade-book.html", {"subs": subs, "class": cl, "grades": grades},
                               context_instance=RequestContext(request))
