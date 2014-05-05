@@ -7,6 +7,7 @@ from django.core.context_processors import csrf
 from django.conf import settings
 from django.db.models import Avg, Count
 from django.core.files import File
+from django.core.files.base import ContentFile
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import FormView
@@ -550,24 +551,16 @@ def mind_map(request):
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
 
 
-# TODO!
 @login_required(login_url='/login/')
 def save_mind_map(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".json"
 
-        # Save to file system
-        fp = open(os.path.join(settings.MEDIA_ROOT, str(request.user.username), fname), "w+")
-        fp.write(request.POST["json_data"])
-
-        # Save to database
+        # Save to database and fs
         mm_file = MindMap()
         mm_file.teacher = request.user
-        mm_file.json_file.save(fname, File(fp))
-        #mm_file.save()
-
-        fp.close()
+        mm_file.json_file.save(fname, ContentFile(request.POST["json_data"]))
 
     return ajax_resp("Ok")
 
