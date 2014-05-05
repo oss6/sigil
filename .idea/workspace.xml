@@ -28,7 +28,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="22" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.446281" vertical-offset="360" max-vertical-offset="2052">
+            <state line="42" column="10" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.41652894" vertical-offset="360" max-vertical-offset="2052">
               <folding />
             </state>
           </provider>
@@ -668,7 +668,11 @@
       <created>1399302939696</created>
       <updated>1399302939696</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Added pdf report feature.">
+      <created>1399302948668</created>
+      <updated>1399302948668</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1010,7 +1014,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="22" selection-start="2078" selection-end="2078" vertical-scroll-proportion="0.446281" vertical-offset="360" max-vertical-offset="2052">
+        <state line="42" column="10" selection-start="2055" selection-end="2055" vertical-scroll-proportion="0.41652894" vertical-offset="360" max-vertical-offset="2052">
           <folding />
         </state>
       </provider>
