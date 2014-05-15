@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}Editor di documenti{% endblock %}
+{% block header-title %}Editor di documenti{% endblock %}
+
+{% block add-css %}
+        <link rel="stylesheet" href="/static/css/jquery-te-1.4.0.css">
+{% endblock %}
+
+{% block add-scripts %}
+        <script src="/static/js/jquery-te-1.4.0.min.js"></script>
+        <script>
+            (function ($) {
+                $(document).ready(function () {
+                    $("#editor").jqte();
+
+                    $("#export-html").click(function() {
+                        utils.postData("/editor/save/", {
+                            csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                            html_data: $("#editor").val(),
+                            file_name: $("#html-file-name").val()
+                        }, "/editor/");
+
+                        return false;
+                    });
+
+                    $("#import-html").click(function() {
+                        $.ajax({
+                            url: "/editor/load/" + $("#import-html").attr("data-doc") + "/"
+                        })
+                        .done(function(data) {
+                            $("#editor").jqteVal(data["message"]);
+                        });
+                    });
+                });
+            })(jQuery);
+        </script>
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <form action="." method="post">{% csrf_token %}
+                        <input type="text" id="html-file-name" placeholder="Nome file" class="form-control">
+                        <button id="export-html" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon-download"></span> Salva
+                        </button>
+                    </form>
+                </div>
+
+                <div class="box box-primary">
+                    <div class="box-body">
+                        {% if not docs %}
+                            <p>Nessun documento</p>
+                        {% else %}
+                        <h3>I tuoi documenti</h3>
+                        <ul class="todo-list">
+                            {% for doc in docs %}
+                            <li>
+                                <span class="handle">
+                                    <i class="fa fa-ellipsis-v"></i>
+                                    <i class="fa fa-ellipsis-v"></i>
+                                </span>
+
+                                <span class="text">
+                                    <a href="javascript:;" data-doc="{{ doc.pk }}" id="import-html">
+                                        {{ doc.doc_file.name }}
+                                    </a>
+                                </span>
+
+                                <div class="tools">
+                                    <a href="/editor/remove/{{ doc.pk }}/" class="btn btn-xs btn-danger">
+                                        <i class="fa fa-trash-o"></i>
+                                    </a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    <!-- /.box-body -->
+                </div><!-- /.box -->
+
+                <textarea id="editor">
+                </textarea>
+            </div>
+        </div>
+{% endblock %}

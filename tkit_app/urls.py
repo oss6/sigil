@@ -112,6 +112,12 @@ urlpatterns = patterns('',
     url(r'^presentation/load/(?P<id_pres>[\d]+)/$', views.load_pres),
     url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres),
 
+    # TODO
+    url(r'^editor/$', views.doc_editor),
+    url(r'^editor/save/$', views.save_doc),
+    url(r'^editor/load/(?P<id_doc>[\d]+)/', views.load_doc),
+    url(r'^editor/remove/(?P<id_doc>[\d]+)/$', views.remove_doc),
+
     # Books
     url(r'^books/$', login_required(TemplateView.as_view(template_name="books.html"), login_url="/login/")),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

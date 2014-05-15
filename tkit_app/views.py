@@ -631,3 +631,47 @@ def load_pres(request, id_pres):
 @login_required(login_url='/login/')
 def remove_pres(request, id_pres):
     pass
+
+
+@login_required(login_url='/login/')
+def doc_editor(request):
+    docs = Document.objects.filter(teacher=request.user)
+    return render_to_response("editor.html", {"docs": docs}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def save_doc(request):
+    if request.is_ajax():
+        file_name = request.POST["file_name"]
+        fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
+
+        # Save to database and fs
+        doc = Document()
+        doc.teacher = request.user
+        doc.doc_file.save(fname, ContentFile(request.POST["html_data"]))
+
+    return ajax_resp("Action performed")
+
+
+@login_required(login_url='/login/')
+def load_doc(request, id_doc):
+    doc = Document.objects.get(pk=id_doc)
+    data = doc.doc_file.read()
+    return ajax_resp(data)
+
+
+@login_required(login_url='/login/')
+def remove_doc(request, id_doc):
+    # Get file object
+    f = Document.objects.get(pk=id_doc)
+
+    # Delete from file system
+    try:
+        os.remove(f.doc_file.path)
+    except IOError:
+        pass
+
+    # Delete DB reference to the file
+    f.delete()
+
+    return redirect("/editor/")

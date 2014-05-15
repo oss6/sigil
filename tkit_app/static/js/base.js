@@ -196,8 +196,6 @@ var utils = {
                 if (x.status != 403) {
                     console.log("An error occurred: " + status + "nError: " + error);
                 }
-
-                console.log("shiiiiiit");
             }
          });
     }

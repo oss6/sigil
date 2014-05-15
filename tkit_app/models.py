@@ -89,3 +89,8 @@ class Presentation(models.Model):
     description = models.TextField()
     pres_file = models.FileField(upload_to=get_mindmap_path)
     teacher = models.ForeignKey(User)
+
+
+class Document(models.Model):
+    doc_file = models.FileField(upload_to=get_mindmap_path)
+    teacher = models.ForeignKey(User)
