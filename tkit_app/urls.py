@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     # Static pages
     url(r'^$', TemplateView.as_view(template_name="info.html")),
     url(r'^dashboard/$', login_required(TemplateView.as_view(template_name="base.html"), login_url="/login/")),
-    url(r'^documentation/dev/$', TemplateView.as_view(template_name="doc-dev.html")),
+    url(r'^documentation/developers/$', TemplateView.as_view(template_name="doc-dev.html")),
     url(r'^documentation/users/$', TemplateView.as_view(template_name="doc-users.html")),
     url(r'^lockscreen/$', login_required(TemplateView.as_view(template_name="lockscreen.html"), login_url="/login/")),
     url(r'^lockscreen/disable/(?P<pwd>[\w|\W]+)/$', views.disable_lockscreen),
