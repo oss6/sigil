@@ -607,7 +607,7 @@ def presentation_tool(request):
     return render_to_response("presentation.html", {"pres": ps}, context_instance=RequestContext(request))
 
 
-# @login_required(login_url='/login/')
+@login_required(login_url='/login/')
 def save_pres(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
