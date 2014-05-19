@@ -7,20 +7,15 @@
 
     <title>Tkit - Strumento di presentazione</title>
 
-    <!-- Required stylesheet -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="/static/css/deck.core.css">
-
-    <!-- Extension CSS files go here. Remove or add as needed. -->
     <link rel="stylesheet" media="screen" href="/static/css/deck.navigation.css">
     <link rel="stylesheet" media="screen" href="/static/css/deck.status.css">
-
-    <!-- Style theme. More available in /themes/style/ or create your own. -->
     <link rel="stylesheet" media="screen" href="/static/css/web-2.0.css">
-
-    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
     <link rel="stylesheet" media="screen" href="/static/css/horizontal-slide.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/popline-def.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/toggle-switch.css">
 
-    <!-- Required Modernizr file -->
     <script src="/static/js/modernizr.custom.js"></script>
 </head>
 <body>
@@ -35,14 +30,40 @@
             <input type="text" id="pres-desc" placeholder="Descrizione presentazione">
             <button id="save-pres">Salva</button>
         </form>
+
+        <div class="switcher">
+            <h4>Modalità</h4>
+
+            <div class="switch-toggle candy blue">
+                <input id="edit" name="mode" type="radio" checked="">
+                <label for="edit">Modifica</label>
+
+                <input id="view" name="mode" type="radio">
+                <label for="view">Pres.</label>
+
+                <a></a>
+            </div>
+
+            <h4>Layout</h4>
+
+            <div class="switch-toggle candy blue">
+                <input id="fixed" name="position" type="radio" checked="">
+                <label for="fixed">Fixed</label>
+
+                <input id="relative" name="position" type="radio">
+                <label for="relative">Relative</label>
+
+                <a></a>
+            </div>
+        </div>
     </div>
 
     <div class="deck-container">
-
         <!-- Begin slides. Just make elements with a class of slide. -->
 
-        <section class="slide">
+        <section class="slide editor" contenteditable="true">
             <h2>Titolo</h2>
+
             <p>
                 Contenuto
             </p>
@@ -70,6 +91,15 @@
 
     <!-- Required JS files. -->
     <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.popline.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.link.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.blockquote.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.decoration.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.list.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.justify.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.blockformat.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.social.js"></script>
+    <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.backcolor.js"></script>
     <script src="/static/js/deck.core.js"></script>
 
     <!-- Extension JS files. Add or remove as needed. -->
@@ -79,44 +109,55 @@
 
     <!-- Initialize the deck. You can put this in an external file if desired. -->
     <script>
-      $(function() {
-        var menu_toggle = false;
+          $(function() {
+            var menu_toggle = false;
 
-        $.deck('.slide');
+            $(".editor").popline();
+            $("input[name='mode']").click(function(){
+                $(".editor").popline("destroy");
+                $(".editor").attr("contenteditable", this.id === "edit");
+                $(".editor").popline({mode: this.id, position: $("input[name='position']:checked").attr("id")});
+              });
+              $("input[name='position']").click(function(){
+                $(".editor").popline("setPosition", this.id);
+              });
 
-        $("#menu-trigger").click(function() {
-            if (!menu_toggle) {
-                $("#menu").css("right", 0);
-                $(this).css("right", 200);
-            }
-            else {
-                $("#menu").css("right", -210);
-                $(this).css("right", 0);
-            }
-
-            menu_toggle = !menu_toggle;
-        });
-
-        $("#new-slide").click(function() {
-            var n =$(".slide").length - 1;
-            $('<section id="slide-' + (n + 1) + '" class="slide deck-after"></section>').insertAfter("#slide-" + n);
             $.deck('.slide');
-        });
 
-        $("#delete-current-slide").click(function() {
+            $("#menu-trigger").click(function() {
+                if (!menu_toggle) {
+                    $("#menu").css("right", 0);
+                    $(this).css("right", 200);
+                }
+                else {
+                    $("#menu").css("right", -210);
+                    $(this).css("right", 0);
+                }
 
-        });
+                menu_toggle = !menu_toggle;
+            });
 
-        $("#save-pres").click(function() {
-            utils.postData("/presentation/save/", {
-                csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                html_data: $("#menu").html(),
-                file_name: $("#html-file-name").val(),
-                title: $("#pres-title").val(),
-                description: $("#pres-desc").val()
-            }, "/presentation/");
-        });
-      });
+            $("#new-slide").click(function() {
+                var n =$(".slide").length - 1;
+                $('<section id="slide-' + (n + 1) + '" class="slide editor deck-after" contenteditable="true"><h2>Titolo</h2><p>Contenuto</p></section>').insertAfter("#slide-" + n);
+                $.deck('.slide');
+            });
+
+            $("#delete-current-slide").click(function() {
+
+            });
+
+            $("#save-pres").click(function() {
+                utils.postData("/presentation/save/", {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    html_data: $("#menu").html(),
+                    file_name: $("#html-file-name").val(),
+                    title: $("#pres-title").val(),
+                    description: $("#pres-desc").val()
+                }, "/presentation/");
+            });
+          });
+
     </script>
 </body>
 </html>
