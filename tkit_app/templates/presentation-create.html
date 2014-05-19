@@ -7,6 +7,7 @@
 
     <title>Tkit - Strumento di presentazione</title>
 
+    <!-- CSS -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="/static/css/deck.core.css">
     <link rel="stylesheet" media="screen" href="/static/css/deck.navigation.css">
@@ -59,8 +60,6 @@
     </div>
 
     <div class="deck-container">
-        <!-- Begin slides. Just make elements with a class of slide. -->
-
         <section class="slide editor" contenteditable="true">
             <h2>Titolo</h2>
 
@@ -69,27 +68,19 @@
             </p>
         </section>
 
-        <!-- End slides. -->
-
-        <!-- Begin extension snippets. Add or remove as needed. -->
-
-        <!-- deck.navigation snippet -->
         <div aria-role="navigation">
             <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
             <a href="#" class="deck-next-link" title="Next">&#8594;</a>
         </div>
 
-        <!-- deck.status snippet -->
         <p class="deck-status" aria-role="status">
             <span class="deck-status-current"></span>
             /
             <span class="deck-status-total"></span>
         </p>
-
-        <!-- End extension snippets. -->
     </div>
 
-    <!-- Required JS files. -->
+    <!-- JS -->
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/jquery.popline.js"></script>
     <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.link.js"></script>
@@ -101,13 +92,9 @@
     <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.social.js"></script>
     <script type="text/javascript" src="/static/js/popline-plugins/jquery.popline.backcolor.js"></script>
     <script src="/static/js/deck.core.js"></script>
-
-    <!-- Extension JS files. Add or remove as needed. -->
     <script src="/static/js/deck.status.js"></script>
     <script src="/static/js/deck.navigation.js"></script>
-    <!--<script src="/static/js/base.js"></script>-->
 
-    <!-- Initialize the deck. You can put this in an external file if desired. -->
     <script>
           $(function() {
             var menu_toggle = false;
@@ -150,11 +137,11 @@
             $("#save-pres").click(function() {
                 utils.postData("/presentation/save/", {
                     csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                    html_data: $("#menu").html(),
+                    html_data: $(".slide").html(),
                     file_name: $("#html-file-name").val(),
                     title: $("#pres-title").val(),
                     description: $("#pres-desc").val()
-                }, "/presentation/");
+                }, "/dashboard/");
             });
           });
 
