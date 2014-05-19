@@ -60,10 +60,18 @@
                                         </td>
                                         {% for n in g %}
                                             <td>
-                                                <input id="grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" class="form-control" type="text" value="{{ n.grade }}" />
-                                                <button onclick="mgrade.applyGrade('{{ class.pk }}', '{{ n.pk }}', $('#grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
-                                                    <span class="glyphicon glyphicon-ok"></span> OK
-                                                </button>
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+                                                        <div class="input-group">
+                                                            <input id="grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}" class="form-control" type="text" value="{{ n.grade }}" />
+                                                            <span class="input-group-btn">
+                                                                <button onclick="mgrade.applyGrade('{{ class.pk }}', '{{ n.pk }}', $('#grade-value-{{ forloop.parentloop.counter }}-{{ forloop.counter }}').val())" class="btn btn-primary">
+                                                                    <span class="glyphicon glyphicon-ok"></span> OK
+                                                                </button>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </td>
                                         {% endfor %}
                                     </tr>

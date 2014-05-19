@@ -87,14 +87,23 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
+
                     <form action="." method="post">{% csrf_token %}
-                        <input type="text" id="json-file-name" placeholder="Nome file" class="form-control">
-                        <button id="export-json" class="btn btn-sm btn-primary">
-                            <span class="glyphicon glyphicon-download"></span> Salva
-                        </button>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="json-file-name" placeholder="Nome file" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button id="export-json" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-download"></span> Salva
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </form>
 
-                    <a href="/mindmap/upload/" class="btn btn-sm btn-primary">
+                    <a href="/mindmap/upload/" class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Carica un file JSON compatibile">
                         <span class="glyphicon glyphicon-upload"></span> Carica
                     </a>
                 </div>

@@ -24,12 +24,19 @@
                     <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                     </a>
-                    <div class="col-md-3 well">
-                        <input type="text" id="attendance-date" class="form-control" data-date-format="yyyy-mm-dd"
-                               value="{{ date }}" >
-                        <a id="change-att-date" onclick="mattendance.changeDateAtt('{{ class.pk }}', $('#attendance-date').val());" class="btn btn-sm btn-primary" href="javascript:;">
-                            Data
-                        </a>
+
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input-group">
+                                <input type="text" id="attendance-date" class="form-control" data-date-format="yyyy-mm-dd"
+                                    value="{{ date }}" >
+                                <span class="input-group-btn">
+                                    <a id="change-att-date" onclick="mattendance.changeDateAtt('{{ class.pk }}', $('#attendance-date').val());" class="btn btn-primary" href="javascript:;">
+                                        Cambia data
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 {% if not att %}
@@ -47,15 +54,22 @@
                             <tr>
                                 <td>{{ a.student.first_name }} {{ a.student.last_name }}</td>
                                 <td>
-                                    <select id="att-type-{{ forloop.counter }}" class="form-control">
-                                        <option {% if a.type == "NA" %} selected {% endif %}>NA</option>
-                                        <option {% if a.type == "Presente" %} selected {% endif %}>Presente</option>
-                                        <option {% if a.type == "Assente" %} selected {% endif %}>Assente</option>
-                                    </select>
-
-                                    <button onclick="mattendance.applyAttendance('{{ class.pk }}', '{{ date }}', '{{ a.pk }}', $('#att-type-{{ forloop.counter }}').val())" class="btn btn-sm btn-primary">
-                                        <span class="glyphicon glyphicon-ok"></span> OK
-                                    </button>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <div class="input-group">
+                                                <select id="att-type-{{ forloop.counter }}" class="form-control">
+                                                    <option {% if a.type == "NA" %} selected {% endif %}>NA</option>
+                                                    <option {% if a.type == "Presente" %} selected {% endif %}>Presente</option>
+                                                    <option {% if a.type == "Assente" %} selected {% endif %}>Assente</option>
+                                                </select>
+                                                <span class="input-group-btn">
+                                                    <button onclick="mattendance.applyAttendance('{{ class.pk }}', '{{ date }}', '{{ a.pk }}', $('#att-type-{{ forloop.counter }}').val())" class="btn btn-primary">
+                                                        <span class="glyphicon glyphicon-ok"></span> OK
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         {% endfor %}

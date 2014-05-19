@@ -57,12 +57,18 @@
                         </p>
                     </blockquote>
                     <form action="." method="post">{% csrf_token %}
-                        <div class="col-md-3">
-                            <input type="text" id="html-file-name" placeholder="Nome file" class="form-control">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="html-file-name" placeholder="Nome file" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button id="export-html" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-download"></span> Salva
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <button id="export-html" class="btn btn-sm btn-primary">
-                            <span class="glyphicon glyphicon-download"></span> Salva
-                        </button>
                     </form>
                 </div>
 
