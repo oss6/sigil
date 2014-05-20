@@ -119,4 +119,5 @@ urlpatterns = patterns('',
 
     # Books
     url(r'^books/$', login_required(TemplateView.as_view(template_name="books.html"), login_url="/login/")),
+    url(r'^books/save/$', views.add_assignment),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
