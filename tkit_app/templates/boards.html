@@ -6,12 +6,19 @@
 
 {% block add-css %}
     <link rel="stylesheet" href="/static/css/drawingboard.min.css"/>
+    <style type="text/css">
+        .board {
+			margin: 0 auto;
+			height: 300px;
+		}
+    </style>
 {% endblock %}
 
 {% block add-scripts %}
     <script src="/static/js/drawingboard.min.js"></script>
     <script>
-        var board = new DrawingBoard.Board('board');
+        var board = new DrawingBoard.Board('def-board');
+        board.addControl('Download');
     </script>
 {% endblock %}
 
@@ -46,7 +53,7 @@
                     </div>
                 {% endif %}
 
-                <div id="board"></div>
+                <div id="def-board" class="board"></div>
             </div>
         </div>
 {% endblock %}

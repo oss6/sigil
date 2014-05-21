@@ -400,7 +400,7 @@ def remove_lesson(request, id_lesson):
 @login_required(login_url='/login/')
 def lesson_boards(request, id_lesson):
     b_lesson = Lessons.objects.get(pk=id_lesson)
-    boards = Boards.objects.filter(lessons=b_lesson)
+    boards = Boards.objects.filter(lesson=b_lesson)
     return render_to_response("boards.html", {"boards": boards, "lesson": b_lesson}, context_instance=RequestContext(request))
 
 
