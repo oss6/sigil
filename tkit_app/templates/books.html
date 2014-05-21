@@ -33,7 +33,7 @@
 
         console.log(entries);
         $("#thumbCanvas").children().remove();
-        $('<table class="table table-hover table-bordered"><thead><tr class="success"><td>Titolo</td><td>Autori</td><td>Valutazione</td><td>Categorie</td><td>N. pagine</td><td>Anteprima</td><td></td></tr></thead><tbody id="books-table"></tbody></table>').appendTo("#thumbCanvas");
+        $('<table class="table table-hover table-bordered"><thead><tr class="success"><td>Titolo</td><td>Autori</td><td>Valutazione</td><td>Categorie</td><td>N. pagine</td><td>Anteprima</td></tr></thead><tbody id="books-table"></tbody></table>').appendTo("#thumbCanvas");
 
         for (var i = 0; i < entries.length; ++i) {
             var entry = entries[i],
@@ -50,7 +50,7 @@
                 for (var j = 0; j < entry.volumeInfo.categories.length; j++)
                     cat += entry.volumeInfo.categories[j] + "<br>";
 
-            $("#books-table").append("<tr><td>" + entry.volumeInfo.title + "</td><td>" + authors + "</td><td>" + rating + "</td><td>" + cat + "</td><td>" + page_count + "</td><td>" + tag_load + "</td><td><button id='save-book' class='btn btn-primary'>Salva</button></td></tr>");
+            $("#books-table").append("<tr><td>" + entry.volumeInfo.title + "</td><td>" + authors + "</td><td>" + rating + "</td><td>" + cat + "</td><td>" + page_count + "</td><td>" + tag_load + "</td></tr>");
         }
 
         for (var i = 0; i < entries.length; ++i) {
@@ -106,10 +106,6 @@
       $(document).ready(function() {
         $(document).on("click", ".load-preview", function(){
             loadBook($(this).attr("data-id"), true);
-        });
-
-        $("#save-book").click(function() {
-
         });
       });
 </script>
