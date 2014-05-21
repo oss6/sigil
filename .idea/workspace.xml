@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/boards.html" afterPath="$PROJECT_DIR$/tkit_app/templates/boards.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/views.py" afterPath="$PROJECT_DIR$/tkit_app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -60,7 +58,7 @@
       <file leaf-file-name="boards.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="13" selection-start="524" selection-end="524" vertical-scroll-proportion="0.60913706" vertical-offset="0" max-vertical-offset="1152">
+            <state line="20" column="37" selection-start="548" selection-end="548" vertical-scroll-proportion="0.60913706" vertical-offset="0" max-vertical-offset="1170">
               <folding />
             </state>
           </provider>
@@ -724,7 +722,11 @@
       <created>1400685441547</created>
       <updated>1400685441547</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added board feature.">
+      <created>1400687346638</created>
+      <updated>1400687346638</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1090,7 +1092,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="524" selection-end="524" vertical-scroll-proportion="0.60913706" vertical-offset="0" max-vertical-offset="1152">
+        <state line="20" column="37" selection-start="548" selection-end="548" vertical-scroll-proportion="0.60913706" vertical-offset="0" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
