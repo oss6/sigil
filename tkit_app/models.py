@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import os
 
 
-def get_mindmap_path(instance, filename):
+def get_ord_path(instance, filename):
     return os.path.join(str(instance.teacher.username), filename)
 
 
@@ -56,6 +56,11 @@ class Lessons(models.Model):
     teacher = models.ForeignKey(User)
 
 
+class Boards(models.Model):
+    b_file = models.ImageField(upload_to=get_ord_path)
+    lesson = models.ForeignKey(Lessons)
+
+
 class Assignments(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
@@ -80,17 +85,17 @@ class ToDoList(models.Model):
 
 
 class MindMap(models.Model):
-    json_file = models.FileField(upload_to=get_mindmap_path)
+    json_file = models.FileField(upload_to=get_ord_path)
     teacher = models.ForeignKey(User)
 
 
 class Presentation(models.Model):
     title = models.CharField(max_length=80)
     description = models.TextField()
-    pres_file = models.FileField(upload_to=get_mindmap_path)
+    pres_file = models.FileField(upload_to=get_ord_path)
     teacher = models.ForeignKey(User)
 
 
 class Document(models.Model):
-    doc_file = models.FileField(upload_to=get_mindmap_path)
+    doc_file = models.FileField(upload_to=get_ord_path)
     teacher = models.ForeignKey(User)

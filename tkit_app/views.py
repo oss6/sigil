@@ -368,7 +368,7 @@ def attendance_chart(request, id_student):
 
 @login_required(login_url='/login/')
 def lessons(request):
-    cls = Lessons.objects.all().filter(teacher=request.user)
+    cls = Lessons.objects.filter(teacher=request.user)
     return render_to_response("lessons.html", {"lessons": cls}, context_instance=RequestContext(request))
 
 
@@ -395,6 +395,13 @@ def remove_lesson(request, id_lesson):
     l.delete()
 
     return redirect("/lessons/")
+
+
+@login_required(login_url='/login/')
+def lesson_boards(request, id_lesson):
+    b_lesson = Lessons.objects.get(pk=id_lesson)
+    boards = Boards.objects.filter(lessons=b_lesson)
+    return render_to_response("boards.html", {"boards": boards, "lesson": b_lesson}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')

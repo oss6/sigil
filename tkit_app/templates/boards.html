@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load bootstrap %}
+
+{% block title %}Gestione lavagne{% endblock %}
+{% block header-title %}{{ lesson.title }}{% endblock %}
+
+{% block add-css %}
+    <link rel="stylesheet" href="/static/css/drawingboard.min.css"/>
+{% endblock %}
+
+{% block add-scripts %}
+    <script src="/static/js/drawingboard.min.js"></script>
+    <script>
+        var board = new DrawingBoard.Board('board');
+    </script>
+{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                </div>
+                {% if not boards %}
+                    <h1>Non ci sono lavagne</h1>
+                {% else %}
+                    <div class="row">
+                    {% for board in boards %}
+                        <div class="col-md-3 draggable">
+                            <img src="" alt="{{ lesson.title }}">
+                        </div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div id="board"></div>
+            </div>
+        </div>
+{% endblock %}
