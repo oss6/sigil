@@ -39,6 +39,7 @@ urlpatterns = patterns('',
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
     url(r'^classes/(?P<id_class>\d+)/report/grades-performance-chart/$', views.class_grades_performance_chart),
     url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
+    url(r'^classes/(?P<id_class>\d+)/report/pdf/$', PDFTemplateView.as_view(template_name="pdf-convert.html")),
 
     # TODO
     url(r'^classes/(?P<id_class>\d+)/groupmaker/$', views.group_maker),
