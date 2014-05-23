@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/boards.html" afterPath="$PROJECT_DIR$/tkit_app/templates/boards.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" afterPath="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -30,7 +29,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="45" selection-start="3831" selection-end="3831" vertical-scroll-proportion="0.0" vertical-offset="907" max-vertical-offset="2196">
+            <state line="72" column="45" selection-start="3831" selection-end="3831" vertical-scroll-proportion="0.0" vertical-offset="1591" max-vertical-offset="2196">
               <folding />
             </state>
           </provider>
@@ -48,16 +47,16 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="438" column="22" selection-start="14573" selection-end="14573" vertical-scroll-proportion="0.0" vertical-offset="7226" max-vertical-offset="12744">
+            <state line="78" column="36" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="11221" max-vertical-offset="12744">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="boards.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
+      <file leaf-file-name="presentation-create.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tkit_app/templates/presentation-create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="32" selection-start="5943" selection-end="5943" vertical-scroll-proportion="0.5951557" vertical-offset="1960" max-vertical-offset="2538">
+            <state line="142" column="54" selection-start="6008" selection-end="6008" vertical-scroll-proportion="4.4221454" vertical-offset="0" max-vertical-offset="2808">
               <folding />
             </state>
           </provider>
@@ -66,16 +65,7 @@
       <file leaf-file-name="base.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/static/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="5310">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lessons.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/lessons.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="38" selection-start="2157" selection-end="2157" vertical-scroll-proportion="2.0370371" vertical-offset="865" max-vertical-offset="1782">
+            <state line="15" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5310">
               <folding />
             </state>
           </provider>
@@ -114,7 +104,6 @@
         <option value="$PROJECT_DIR$/tkit_app/static/js/base.js" />
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/app.js" />
-        <option value="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/classes.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/class-report.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/mindmap.html" />
@@ -128,8 +117,9 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/lessons.html" />
         <option value="$PROJECT_DIR$/tkit_app/urls.py" />
         <option value="$PROJECT_DIR$/tkit_app/models.py" />
-        <option value="$PROJECT_DIR$/tkit_app/views.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/boards.html" />
+        <option value="$PROJECT_DIR$/tkit_app/views.py" />
+        <option value="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" />
       </list>
     </option>
   </component>
@@ -230,6 +220,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -703,7 +715,11 @@
       <created>1400857312287</created>
       <updated>1400857312287</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Finished boards feature">
+      <created>1400857738143</created>
+      <updated>1400857738143</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -945,11 +961,6 @@
         <state line="706" column="24" selection-start="30498" selection-end="30498" vertical-scroll-proportion="0.21034482" vertical-offset="12586" max-vertical-offset="20520" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/presentation-create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="30" selection-start="5985" selection-end="5985" vertical-scroll-proportion="-17.407408" vertical-offset="2104" max-vertical-offset="2790" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/classes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="70" column="71" selection-start="3610" selection-end="3610" vertical-scroll-proportion="0.41048825" vertical-offset="1033" max-vertical-offset="1656" />
@@ -1012,27 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="56" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="1944">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="438" column="22" selection-start="14573" selection-end="14573" vertical-scroll-proportion="0.0" vertical-offset="7226" max-vertical-offset="12744">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5310">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/editor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="35" selection-start="1477" selection-end="1477" vertical-scroll-proportion="0.12456747" vertical-offset="684" max-vertical-offset="2106">
@@ -1047,6 +1037,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="27" selection-start="5998" selection-end="5998" vertical-scroll-proportion="4.048443" vertical-offset="0" max-vertical-offset="2538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5310">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="56" selection-start="1838" selection-end="1838" vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="1944">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="45" selection-start="3831" selection-end="3831" vertical-scroll-proportion="0.0" vertical-offset="907" max-vertical-offset="2196">
@@ -1054,9 +1065,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
+    <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="32" selection-start="5943" selection-end="5943" vertical-scroll-proportion="0.5951557" vertical-offset="1960" max-vertical-offset="2538">
+        <state line="78" column="36" selection-start="2362" selection-end="2362" vertical-scroll-proportion="0.0" vertical-offset="11221" max-vertical-offset="12744">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/presentation-create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="142" column="54" selection-start="6008" selection-end="6008" vertical-scroll-proportion="4.4221454" vertical-offset="0" max-vertical-offset="2808">
           <folding />
         </state>
       </provider>

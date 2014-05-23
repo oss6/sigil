@@ -137,14 +137,15 @@
             $("#save-pres").click(function() {
                 utils.postData("/presentation/save/", {
                     csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                    html_data: $(".slide").html(),
+                    html_data: $(".slide").not("[aria-role='navigation'], [aria-role='status']").html(),
                     file_name: $("#html-file-name").val(),
                     title: $("#pres-title").val(),
                     description: $("#pres-desc").val()
                 }, "/dashboard/");
+
+                return false;
             });
           });
-
     </script>
 </body>
 </html>
