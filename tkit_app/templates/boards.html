@@ -77,36 +77,41 @@
         </div>
 
         <div class="row">
-            <div class="page-header">
-                <blockquote>
-                    <p>
-                        In the class management section you can add a class.
-                        A class is an entity with the following properties:
-                        name, school and a small description.
-                        You can also remove a class by clicking on the white
-                        cross on the top right of the class header.
-                    </p>
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
 
-                    <p>
-                        By clicking on the name of the class a new page will be visualized.
-                        This page contains the students of the class. In addition you can
-                        also update the properties of each class.
-                    </p>
-                </blockquote>
-                <form action="." method="post">{% csrf_token %}
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <div class="input-group">
-                                <input type="text" id="png-file-name" placeholder="Nome file" class="form-control">
-                                <span class="input-group-btn">
-                                    <button id="export-png" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-download"></span> Salva
-                                    </button>
-                                </span>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <form action="." method="post">{% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="input-group">
+                                    <input type="text" id="png-file-name" placeholder="Nome file" class="form-control">
+                                    <span class="input-group-btn">
+                                        <button id="export-png" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-download"></span> Salva
+                                        </button>
+                                        <a href="/lessons/" class="btn btn-primary">
+                                            <span class="glyphicon glyphicon-arrow-left"></span> Lezioni
+                                        </a>
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
 
             <div class="col-md-12">
@@ -121,12 +126,6 @@
                         <a href="/lessons/{{ lesson.pk }}/boards/remove/{{ board.pk }}/" class="btn btn-xs btn-danger">
                             <i class="fa fa-trash-o"></i>
                         </a>
-                        <!--<div class="col-md-3 draggable">
-                            <img width="200" height="200" src="{{ board.b_file.url }}" alt="{{ board.pk }}">
-                            <a href="/lessons/{{ lesson.pk }}/boards/remove/{{ board.pk }}/" class="btn btn-xs btn-danger">
-                                <i class="fa fa-trash-o"></i>
-                            </a>
-                        </div>-->
                     {% endfor %}
                     </div>
                 {% endif %}
