@@ -1,6 +1,7 @@
 import os
 import json
 import datetime
+from base64 import b64decode
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
@@ -402,6 +403,40 @@ def lesson_boards(request, id_lesson):
     b_lesson = Lessons.objects.get(pk=id_lesson)
     boards = Boards.objects.filter(lesson=b_lesson)
     return render_to_response("boards.html", {"boards": boards, "lesson": b_lesson}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def save_board(request, id_lesson):
+    if request.is_ajax():
+        file_name = request.POST["file_name"]
+        fname = file_name if file_name.split('.')[-1] == json else file_name + ".png"
+
+        # Save to database and fs
+        _, b64data = request.POST["img_data"].split(',')
+        image_data = b64decode(b64data)
+
+        board = Boards()
+        board.lesson = Lessons.objects.get(pk=id_lesson)
+        board.b_file.save(fname, ContentFile(image_data))
+
+    return ajax_resp("Action performed")
+
+
+@login_required(login_url='/login/')
+def remove_board(request, id_lesson, id_board):
+    # Get file object
+    f = Boards.objects.get(pk=id_board)
+
+    # Delete from file system
+    try:
+        os.remove(f.b_file.path)
+    except IOError:
+        pass
+
+    # Delete DB reference to the file
+    f.delete()
+
+    return redirect("/lessons/" + id_lesson + "/boards/")
 
 
 @login_required(login_url='/login/')

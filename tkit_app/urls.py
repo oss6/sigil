@@ -73,7 +73,9 @@ urlpatterns = patterns('',
     url(r'^lessons/add/$', views.add_lesson),
     url(r'^lessons/update/(?P<id_lesson>\d+)/$', views.add_lesson),
     url(r'^lessons/remove/(?P<id_lesson>\d+)/$', views.remove_lesson),
-    url(r'^lessons/(?P<id_lesson>\d+)/boards/$', views.lesson_boards), # BOARDS!!!
+    url(r'^lessons/(?P<id_lesson>\d+)/boards/$', views.lesson_boards),
+    url(r'^lessons/(?P<id_lesson>\d+)/boards/save/$', views.save_board),
+    url(r'^lessons/(?P<id_lesson>\d+)/boards/remove/(?P<id_board>[\d]+)/$', views.remove_board),
 
     # Homework
     url(r'^classes/(?P<id_class>\d+)/homework/$', views.homework),

@@ -11,6 +11,10 @@ def get_student_path(instance, filename):
     return os.path.join(str(instance.s_class.teacher.username), filename)
 
 
+def get_board_path(instance, filename):
+    return os.path.join(str(instance.lesson.teacher.username), filename)
+
+
 class Classes(models.Model):
     name = models.CharField(max_length=200)
     school = models.CharField(max_length=200)
@@ -57,7 +61,7 @@ class Lessons(models.Model):
 
 
 class Boards(models.Model):
-    b_file = models.ImageField(upload_to=get_ord_path)
+    b_file = models.ImageField(upload_to=get_board_path)
     lesson = models.ForeignKey(Lessons)
 
 

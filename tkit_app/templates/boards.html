@@ -6,6 +6,8 @@
 
 {% block add-css %}
     <link rel="stylesheet" href="/static/css/drawingboard.min.css"/>
+    <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-image-gallery.min.css">
     <style type="text/css">
         .board {
 			margin: 0 auto;
@@ -15,45 +17,120 @@
 {% endblock %}
 
 {% block add-scripts %}
+    <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <script src="/static/js/bootstrap-image-gallery.min.js"></script>
     <script src="/static/js/drawingboard.min.js"></script>
     <script>
         var board = new DrawingBoard.Board('def-board');
         board.addControl('Download');
+
+        $(document).ready(function() {
+            $("#export-png").click(function() {
+                var l_pk = "{{ lesson.pk }}";
+                console.log(board.getImg());
+                utils.postData("/lessons/" + l_pk + "/boards/save/", {
+                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                    img_data: board.getImg(),
+                    file_name: $("#png-file-name").val()
+                }, "/lessons/" + l_pk + "/boards/");
+
+                return false;
+            });
+        });
     </script>
 {% endblock %}
 
 {% block content %}
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-header">
-                    <blockquote>
-                        <p>
-                            In the class management section you can add a class.
-                            A class is an entity with the following properties:
-                            name, school and a small description.
-                            You can also remove a class by clicking on the white
-                            cross on the top right of the class header.
-                        </p>
-                        <p>
-                            By clicking on the name of the class a new page will be visualized.
-                            This page contains the students of the class. In addition you can
-                            also update the properties of each class.
-                        </p>
-                    </blockquote>
+        <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery">
+            <!-- The container for the modal slides -->
+            <div class="slides"></div>
+            <!-- Controls for the borderless lightbox -->
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+            <!-- The modal dialog, which will be used to wrap the lightbox content -->
+            <div class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body next"></div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default pull-left prev">
+                                <i class="glyphicon glyphicon-chevron-left"></i>
+                                Previous
+                            </button>
+                            <button type="button" class="btn btn-primary next">
+                                Next
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="page-header">
+                <blockquote>
+                    <p>
+                        In the class management section you can add a class.
+                        A class is an entity with the following properties:
+                        name, school and a small description.
+                        You can also remove a class by clicking on the white
+                        cross on the top right of the class header.
+                    </p>
+
+                    <p>
+                        By clicking on the name of the class a new page will be visualized.
+                        This page contains the students of the class. In addition you can
+                        also update the properties of each class.
+                    </p>
+                </blockquote>
+                <form action="." method="post">{% csrf_token %}
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="input-group">
+                                <input type="text" id="png-file-name" placeholder="Nome file" class="form-control">
+                                <span class="input-group-btn">
+                                    <button id="export-png" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon-download"></span> Salva
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-12">
                 {% if not boards %}
                     <h1>Non ci sono lavagne</h1>
                 {% else %}
-                    <div class="row">
+                    <div id="links">
                     {% for board in boards %}
-                        <div class="col-md-3 draggable">
-                            <img src="" alt="{{ lesson.title }}">
-                        </div>
+                        <a href="{{ board.b_file.url }}" title="{{ board.b_file.name }}" data-gallery>
+                            <img width="200" height="200" src="{{ board.b_file.url }}" alt="{{ board.pk }}">
+                        </a>
+                        <a href="/lessons/{{ lesson.pk }}/boards/remove/{{ board.pk }}/" class="btn btn-xs btn-danger">
+                            <i class="fa fa-trash-o"></i>
+                        </a>
+                        <!--<div class="col-md-3 draggable">
+                            <img width="200" height="200" src="{{ board.b_file.url }}" alt="{{ board.pk }}">
+                            <a href="/lessons/{{ lesson.pk }}/boards/remove/{{ board.pk }}/" class="btn btn-xs btn-danger">
+                                <i class="fa fa-trash-o"></i>
+                            </a>
+                        </div>-->
                     {% endfor %}
                     </div>
                 {% endif %}
-
-                <h1>Edit</h1>
+                <br /><br />
                 <div id="def-board" class="board"></div>
             </div>
         </div>
