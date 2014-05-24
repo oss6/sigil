@@ -721,8 +721,8 @@ def remove_doc(request, id_doc):
 
 @login_required(login_url='/login/')
 def papers(request):
-    papers = Papers.objects.filter(teacher=request.user)
-    return render_to_response("papers.html", {"papers": papers}, context_instance=RequestContext(request))
+    pps = Papers.objects.filter(teacher=request.user)
+    return render_to_response("papers.html", {"papers": pps}, context_instance=RequestContext(request))
 
 
 @login_required(login_url='/login/')
