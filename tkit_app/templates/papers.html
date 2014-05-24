@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Gestione pubblicazioni{% endblock %}
+{% block header-title %}Gestione pubblicazioni{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a onclick="mpub.openPubModal()" href="javascript:;" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> Aggiungi
+                    </a>
+                </div>
+                {% if not papers %}
+                    <h1>Non ci sono pubblicazioni</h1>
+                {% else %}
+                    <div class="row">
+                    {% for paper in papers %}
+                        {{ paper.title }} <br>
+                        {{ paper.abstract }} <br>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="addPubModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h2 class="modal-title" id="myModalLabel">Aggiungi pubblicazione</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form id="paper-form" action="/papers/add/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                            <label>Titolo</label>
+                            <input name="title" type="text" class="form-control">
+                            <label>Premessa</label>
+                            <textarea name="abstract" class="form-control"></textarea>
+                            <label>Foto</label>
+                            <input name="file" type="file" class="form-control">
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
+                        <input form="paper-form" type="submit" class="btn btn-primary" value="Salva">
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

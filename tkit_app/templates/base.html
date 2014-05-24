@@ -135,7 +135,7 @@
                                 <a href="/logout/">
                                     <span>
                                         <i class="glyphicon glyphicon-user"></i>
-                                        {{ user.first_name }} {{ user.last_name }}, logout
+                                        {{ user.first_name }} {{ user.last_name }}, disconnetti
                                     </span>
                                 </a>
                             {% else %}
@@ -157,7 +157,7 @@
                     <div class="user-panel">
                         <div class="pull-left info">
                             {% if user.is_authenticated %}
-                                <p>Hello, {{ user.username }}</p>
+                                <p>Benvenuto, {{ user.username }}</p>
                                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                             {% else %}
                                 <p>Login or register</p>
@@ -179,11 +179,6 @@
                         <li>
                             <a href="/lessons/">
                                 <i class="fa fa-edit"></i> <span>Gestione lezioni</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/about/">
-                                <i class="fa fa-calendar"></i> <span>Orario</span>
                             </a>
                         </li>
                         <li>
@@ -212,6 +207,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/papers/">
+                                <i class="fa fa-comments"></i> <span>Pubblicazioni</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/forum/">
                                 <i class="fa fa-comments"></i> <span>Forum</span>
                             </a>
@@ -234,7 +234,7 @@
                 <section class="content-header">
                     <h1 class="text-center">
                         {% block header-title %}
-                        Tkit - web app per insegnanti
+                        Home
                         {% endblock %}
                     </h1>
                 </section>
@@ -243,17 +243,10 @@
                 <section class="content">
                 <!-- ABOUT/CONTATTI E DOCUMENTAZIONE LINK -->
                 {% block content %}
+                    <h3>Ti diamo il benvenuto su Tkit</h3>
                     <p>
-                        Ti diamo il benvenuto su Tkit!
+
                     </p>
-                    <h2>Introduzione</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Deserunt eligendi minima nemo numquam quisquam tempora voluptatibus.
-                        Adipisci, alias animi, culpa delectus dicta laborum necessitatibus quia quidem recusandae, vel
-                        voluptatem voluptatibus.
-                    </p>
-                    <p><a class="btn btn-primary btn-sm" role="button">Continua</a></p>
                 {% endblock %}
                 </section><!-- /.content -->
 

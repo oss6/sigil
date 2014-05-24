@@ -717,3 +717,34 @@ def remove_doc(request, id_doc):
     f.delete()
 
     return redirect("/editor/")
+
+
+@login_required(login_url='/login/')
+def papers(request):
+    papers = Papers.objects.filter(teacher=request.user)
+    return render_to_response("papers.html", {"papers": papers}, context_instance=RequestContext(request))
+
+
+@login_required(login_url='/login/')
+def add_paper(request):
+    if request.method == "POST":
+        form = AddPaperForm(request.POST)
+        if form.is_valid():
+            # Retrieve data from request
+            title = form.cleaned_data["title"]
+            abstract = form.cleaned_data["abstract"]
+            p_file = request.FILES["file"]
+
+            # Save paper into db
+            p = Papers(paper_file=p_file, title=title, abstract=abstract, teacher=request.user)
+            p.save()
+
+    return redirect('/papers/')
+
+
+@login_required(login_url='/login/')
+def remove_paper(request, id_class):
+    c = Classes.objects.get(pk=id_class)
+    c.delete()
+
+    return redirect("/classes/")

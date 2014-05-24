@@ -39,6 +39,12 @@ class AddStudentForm(forms.Form):
     photo = forms.ImageField(required=False)
 
 
+class AddPaperForm(forms.Form):
+    file = forms.FileField()
+    title = forms.CharField()
+    abstract = forms.CharField()
+
+
 class AddGradableItemForm(forms.Form):
     subject = forms.CharField()
     date = forms.DateField(required=False)

@@ -24,6 +24,12 @@ var mclass = {
     }
 };
 
+var mpub = {
+    openPubModal: function() {
+        $('#addPubModal').modal('show');
+    }
+}
+
 var mstudent = {
     openStudentModal: function(id_class, id_student) {
         id_student = id_student || "add";

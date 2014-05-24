@@ -103,3 +103,10 @@ class Presentation(models.Model):
 class Document(models.Model):
     doc_file = models.FileField(upload_to=get_ord_path)
     teacher = models.ForeignKey(User)
+
+
+class Papers(models.Model):
+    paper_file = models.FileField(upload_to=get_ord_path)
+    title = models.CharField(max_length=150)
+    abstract = models.TextField()
+    teacher = models.ForeignKey(User)
