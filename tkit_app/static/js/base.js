@@ -2,6 +2,7 @@ var mclass = {
     openClassModal: function(id_class) {
         id_class = id_class || "add";
 
+        $("#classModalLabel").text(id_class === "add" ? "Aggiungi classe" : "Modifica classe");
         $('#addClassModal')
             .modal('show')
             .attr("data-type", id_class);

@@ -743,8 +743,8 @@ def add_paper(request):
 
 
 @login_required(login_url='/login/')
-def remove_paper(request, id_class):
-    c = Classes.objects.get(pk=id_class)
-    c.delete()
+def remove_paper(request, id_paper):
+    p = Papers.objects.get(pk=id_paper)
+    p.delete()
 
-    return redirect("/classes/")
+    return redirect("/papers/")
