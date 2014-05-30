@@ -745,13 +745,3 @@ def remove_paper(request, id_paper):
     p.delete()
 
     return redirect("/papers/")
-
-
-@login_required(login_url='/login/')
-def download_paper(request, id_paper):
-    paper = Papers.objects.get(pk=id_paper)
-    response = HttpResponse(mimetype='application/pdf')
-    response['Content-Disposition'] = 'filename=' + paper.paper_file.name
-
-    #print PDF to response
-    return response

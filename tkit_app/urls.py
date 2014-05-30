@@ -125,5 +125,4 @@ urlpatterns = patterns('',
     url(r'^papers/$', views.papers),
     url(r'^papers/add/$', views.add_paper),
     url(r'^papers/remove/(?P<id_paper>\d+)/$', views.remove_paper),
-    url(r'^papers/download/(?P<id_paper>\d+)/$', views.download_paper)
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
