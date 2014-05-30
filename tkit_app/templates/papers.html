@@ -30,8 +30,32 @@
                 {% else %}
                     <div class="row">
                     {% for paper in papers %}
-                        {{ paper.title }} <br>
-                        {{ paper.abstract }} <br>
+                        <div class="col-md-3 draggable">
+                            <div class="panel panel-danger">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">
+                                        <a href="#"> <!-- Download -->
+                                            {{ paper.title }}
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="panel-body">
+                                    {{ paper.abstract }}
+                                </div>
+                                <div class="panel-footer">
+                                    <a href="/papers/remove/{{ paper.pk }}/"
+                                       class="btn btn-xs btn-danger">
+                                        Rimuovi <span class="glyphicon glyphicon-remove"></span>
+                                    </a>
+                                    {% if paper.paper_file %}
+                                    <a href="{{ paper.paper_file.url }}" target="_blank"
+                                       class="btn btn-xs btn-primary">
+                                        Scarica <span class="glyphicon glyphicon-arrow-down"></span>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
                     {% endfor %}
                     </div>
                 {% endif %}
@@ -50,11 +74,11 @@
                     <div class="modal-body">
                         <form id="paper-form" action="/papers/add/" method="post" enctype="multipart/form-data">{% csrf_token %}
                             <label>Titolo</label>
-                            <input name="title" type="text" class="form-control">
+                            <input name="title" id="title" type="text" class="form-control">
                             <label>Premessa</label>
-                            <textarea name="abstract" class="form-control"></textarea>
+                            <textarea name="abstract" id="abstract" class="form-control"></textarea>
                             <label>File</label>
-                            <input name="file" type="file" class="form-control">
+                            <input name="p_file" id="p_file" type="file" class="form-control">
                         </form>
                     </div>
                     <div class="modal-footer">

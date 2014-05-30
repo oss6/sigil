@@ -132,11 +132,6 @@ def class_grades_performance_chart(request, id_class):
 
 
 @login_required(login_url='/login/')
-def group_maker(request, id_class):
-    pass
-
-
-@login_required(login_url='/login/')
 def students(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
@@ -733,7 +728,7 @@ def add_paper(request):
             # Retrieve data from request
             title = form.cleaned_data["title"]
             abstract = form.cleaned_data["abstract"]
-            p_file = request.FILES["file"]
+            p_file = request.FILES["p_file"] if "p_file" in request.FILES else None
 
             # Save paper into db
             p = Papers(paper_file=p_file, title=title, abstract=abstract, teacher=request.user)
@@ -745,6 +740,18 @@ def add_paper(request):
 @login_required(login_url='/login/')
 def remove_paper(request, id_paper):
     p = Papers.objects.get(pk=id_paper)
+    if p.paper_file:
+        os.remove(p.paper_file.path)
     p.delete()
 
     return redirect("/papers/")
+
+
+@login_required(login_url='/login/')
+def download_paper(request, id_paper):
+    paper = Papers.objects.get(pk=id_paper)
+    response = HttpResponse(mimetype='application/pdf')
+    response['Content-Disposition'] = 'filename=' + paper.paper_file.name
+
+    #print PDF to response
+    return response

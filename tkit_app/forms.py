@@ -42,7 +42,7 @@ class AddStudentForm(forms.Form):
 class AddPaperForm(forms.Form):
     title = forms.CharField()
     abstract = forms.CharField()
-    file = forms.FileField()
+    p_file = forms.FileField(required=False)
 
 
 class AddGradableItemForm(forms.Form):

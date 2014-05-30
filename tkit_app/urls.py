@@ -41,9 +41,6 @@ urlpatterns = patterns('',
     url(r'^classes/(?P<id_class>\d+)/report/$', views.class_report),
     url(r'^classes/(?P<id_class>\d+)/report/pdf/$', PDFTemplateView.as_view(template_name="pdf-convert.html")),
 
-    # TODO
-    url(r'^classes/(?P<id_class>\d+)/groupmaker/$', views.group_maker),
-
     # Students
     url(r'^classes/(?P<id_class>\d+)/students/$', views.students),
     url(r'^classes/(?P<id_class>\d+)/students/add/$', views.add_student),
@@ -126,5 +123,7 @@ urlpatterns = patterns('',
 
     # Papers
     url(r'^papers/$', views.papers),
-    url(r'^papers/add/$', views.add_paper)
+    url(r'^papers/add/$', views.add_paper),
+    url(r'^papers/remove/(?P<id_paper>\d+)/$', views.remove_paper),
+    url(r'^papers/download/(?P<id_paper>\d+)/$', views.download_paper)
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
