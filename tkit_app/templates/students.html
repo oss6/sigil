@@ -42,9 +42,6 @@
                         <a href="/classes/{{ class.pk }}/homework/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-pencil"></span> Compiti
                         </a>
-                        <a onclick="mclass.openGroupMakerModal()" href="javascript:;" class="btn btn-sm btn-primary">
-                            <span class="glyphicon glyphicon-book"></span> Group maker
-                        </a>
                         <a href="/classes/{{ class.pk }}/report/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon-stats"></span> Andamento classe
                         </a>
@@ -120,26 +117,6 @@
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
                         <input form="student-form" type="submit" class="btn btn-primary" value="Salva">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Group maker modal -->
-        <div class="modal fade" id="groupMakerModal" tabindex="-1" role="dialog" aria-labelledby="gmModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="gmModalLabel">Group maker</h2>
-                    </div>
-                    <div class="modal-body">
-
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Annulla</button>
-                        <input type="button" class="btn btn-primary" value="Crea">
                     </div>
                 </div>
             </div>

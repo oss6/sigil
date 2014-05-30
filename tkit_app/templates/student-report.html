@@ -9,6 +9,16 @@
         google.setOnLoadCallback(mnote.drawNotesChart);
         google.setOnLoadCallback(mattendance.drawAttendanceChart);
         google.setOnLoadCallback(mgrade.drawPerformance);
+
+        $(document).ready(function() {
+            var s_pk = '{{ student.pk }}';
+
+            $.post("/students/" + s_pk + "/pdf/", {
+                html_data: $("#student-info").html()
+            }, function() {
+                //location.href = redirect;
+            });
+        });
     </script>
 {% endblock %}
 {% block content %}
@@ -34,14 +44,14 @@
                         <a href="/classes/{{ student.s_class.pk }}/students/" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ student.s_class.name }}
                         </a>
-                        <a href="/classes/{{ student.s_class.pk }}/students/pdf/" class="btn btn-sm btn-primary">
+                        <a href="/students/{{ student.pk }}/pdf/" class="btn btn-sm btn-primary">
                             <span class="glyphicon glyphicon glyphicon-file"></span> Salva report (PDF)
                         </a>
                     </span>
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row" id="student-info">
             <div class="col-md-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">

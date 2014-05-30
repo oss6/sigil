@@ -8,10 +8,6 @@ var mclass = {
             .attr("data-type", id_class);
     },
 
-    openGroupMakerModal: function() {
-        $("#groupMakerModal").modal("show");
-    },
-
     drawPerformance: function() {
         var jsonData = $.ajax({
             url: "grades-performance-chart/",

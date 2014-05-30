@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import FormView
 from django_messages.models import *
+from easy_pdf.views import PDFTemplateView
 from forms import *
 from models import *
 
@@ -184,6 +185,17 @@ def student_info(request, id_student):
         "student": student,
         "notes": notes
     }, context_instance=RequestContext(request))
+
+
+class StudentReportPDF(PDFTemplateView):
+    template_name = "pdf-convert.html"
+
+    def get_context_data(self, **kwargs):
+        return super(StudentReportPDF, self).get_context_data(
+            pagesize="A4",
+            title="Hi there!",
+            **kwargs
+        )
 
 
 @login_required(login_url='/login/')

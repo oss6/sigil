@@ -51,7 +51,7 @@ urlpatterns = patterns('',
     url(r'^students/(?P<id_student>\d+)/notes-chart/$', views.notes_chart),
     url(r'^students/(?P<id_student>\d+)/attendance-chart/$', views.attendance_chart),
     url(r'^students/(?P<id_student>\d+)/$', views.student_info),
-    url(r'^students/(?P<id_student>\d+)/pdf/$', PDFTemplateView.as_view(template_name="pdf-convert.html")),
+    url(r'^students/(?P<id_student>\d+)/pdf/$', views.StudentReportPDF.as_view()),
     url(r'^students/(?P<id_student>\d+)/notes/add/$', views.add_note),
     url(r'^notes/remove/(?P<id_note>\d+)/$', views.remove_note),
 
