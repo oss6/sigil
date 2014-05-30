@@ -190,11 +190,17 @@ def student_info(request, id_student):
 class StudentReportPDF(PDFTemplateView):
     template_name = "pdf-convert.html"
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, id_student):
+        student = Students.objects.get(pk=id_student)
+        notes = Notes.objects.filter(student=student)
+        grades = Grades.objects.filter(student=student)
+        attendance = Attendance.objects.filter(student=student)
+
         return super(StudentReportPDF, self).get_context_data(
-            pagesize="A4",
-            title="Hi there!",
-            **kwargs
+            student=student,
+            notes=notes,
+            grades=grades,
+            attendance=attendance
         )
 
 

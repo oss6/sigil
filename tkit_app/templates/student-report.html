@@ -9,16 +9,6 @@
         google.setOnLoadCallback(mnote.drawNotesChart);
         google.setOnLoadCallback(mattendance.drawAttendanceChart);
         google.setOnLoadCallback(mgrade.drawPerformance);
-
-        $(document).ready(function() {
-            var s_pk = '{{ student.pk }}';
-
-            $.post("/students/" + s_pk + "/pdf/", {
-                html_data: $("#student-info").html()
-            }, function() {
-                //location.href = redirect;
-            });
-        });
     </script>
 {% endblock %}
 {% block content %}
@@ -58,11 +48,11 @@
                         <h3 class="panel-title">Informazioni generali</h3>
                     </div>
                     <div class="panel-body">
-                        <p><b>First name:</b> {{ student.first_name }}</p>
-                        <p><b>Last name:</b> {{ student.last_name }}</p>
+                        <p><b>Nome:</b> {{ student.first_name }}</p>
+                        <p><b>Cognome:</b> {{ student.last_name }}</p>
                         <p><b>Email:</b> {{ student.email }}</p>
-                        <p><b>Parent name:</b> {{ student.parent }}</p>
-                        <p><b>Parent email:</b> {{ student.parent_email }}</p>
+                        <p><b>Genitore di riferimento:</b> {{ student.parent }}</p>
+                        <p><b>Email genitore:</b> {{ student.parent_email }}</p>
                     </div>
                 </div>
             </div>
