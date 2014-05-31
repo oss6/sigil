@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Report: {{ student.first_name }} {{ student.last_name }}</title>
+
+    <style type="text/css">
+        body {
+            font-size: 15px;
+            font-family: Ubuntu;
+        }
+
+        h1 {
+            border: 1px solid #aeaeae;
+            background-color: #fafafa;
+            padding: 10px;
+            color: #343434;
+        }
+
+        td {
+            padding: 5px;
+            border: 1px solid #656565;
+        }
+
+        .head td {
+            background: #babae9;
+            color: #313131;
+            padding: 5px 0px;
+            text-align: center;
+            border: 1px solid #676767;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ cl.name }} - {{ cl.school }}</h1>
+
+    <h2>Descrizione</h2>
+    <p>
+        {{ cl.description }}
+    </p>
+
+    <h2>Media voti per argomento/prova</h2>
+    <table>
+        <thead>
+        <tr class="head">
+            <td>Argomento/Prova</td>
+            <td>Media voti</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in avg_grades %}
+        <tr>
+            <td>{{ item.subject }}</td>
+            <td>{{ item.avg_grades }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Numero assenze per ogni studente</h2>
+    <table>
+        <thead>
+        <tr class="head">
+            <td>Studente</td>
+            <td>Assenze totali</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in aps %}
+        <tr>
+            <td>
+                {{ item.student__first_name }} {{ item.student__last_name }}
+            </td>
+            <td>{{ item.absence }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Numero presenze per ogni studente</h2>
+    <table>
+        <thead>
+        <tr class="head">
+            <td>Studente</td>
+            <td>Presenze totali</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in pps %}
+        <tr>
+            <td>
+                {{ item.student__first_name }} {{ item.student__last_name }}
+            </td>
+            <td>{{ item.presence }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

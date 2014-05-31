@@ -2,7 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/pdf-convert.html" afterPath="$PROJECT_DIR$/tkit_app/templates/pdf-convert.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tkit_app/templates/pdf-convert.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/class-report.html" afterPath="$PROJECT_DIR$/tkit_app/templates/class-report.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/urls.py" afterPath="$PROJECT_DIR$/tkit_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/views.py" afterPath="$PROJECT_DIR$/tkit_app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -29,7 +35,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="82" selection-start="3006" selection-end="3006" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2394">
+            <state line="44" column="66" selection-start="2218" selection-end="2218" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2250">
               <folding />
             </state>
           </provider>
@@ -38,7 +44,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="2106">
+            <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="2070">
               <folding />
             </state>
           </provider>
@@ -47,7 +53,25 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="192" column="43" selection-start="6397" selection-end="6397" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="13860">
+            <state line="228" column="14" selection-start="7944" selection-end="7944" vertical-scroll-proportion="0.0" vertical-offset="3560" max-vertical-offset="14094">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class-report-pdf.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="36" selection-start="791" selection-end="791" vertical-scroll-proportion="1.1130742" vertical-offset="0" max-vertical-offset="1908">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="class-report.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="60" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-12.62963" vertical-offset="253" max-vertical-offset="1926">
               <folding />
             </state>
           </provider>
@@ -56,7 +80,7 @@
       <file leaf-file-name="students.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/students.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="25" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2376">
+            <state line="27" column="33" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-8.666667" vertical-offset="252" max-vertical-offset="2376">
               <folding />
             </state>
           </provider>
@@ -65,25 +89,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="86" selection-start="362" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="4950">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="student-report.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="49" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pdf-convert.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/pdf-convert.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="8" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.30035335" vertical-offset="910" max-vertical-offset="1512">
+            <state line="7" column="86" selection-start="362" selection-end="362" vertical-scroll-proportion="-0.0" vertical-offset="126" max-vertical-offset="4950">
               <folding />
             </state>
           </provider>
@@ -114,7 +120,6 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/lockscreen.html" />
         <option value="$PROJECT_DIR$/tkit/settings.py" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/app.js" />
-        <option value="$PROJECT_DIR$/tkit_app/templates/class-report.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/grade-book.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/attendance.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/editor.html" />
@@ -136,11 +141,13 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/mailbox_inbox.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/base.js" />
         <option value="$PROJECT_DIR$/tkit_app/templates/students.html" />
-        <option value="$PROJECT_DIR$/tkit_app/urls.py" />
-        <option value="$PROJECT_DIR$/tkit_app/views.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/student-report.html" />
         <option value="/usr/local/lib/python2.7/dist-packages/easy_pdf/templates/easy_pdf/base.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/pdf-convert.html" />
+        <option value="$PROJECT_DIR$/tkit_app/urls.py" />
+        <option value="$PROJECT_DIR$/tkit_app/views.py" />
+        <option value="$PROJECT_DIR$/tkit_app/templates/class-report.html" />
+        <option value="$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html" />
       </list>
     </option>
   </component>
@@ -263,6 +270,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit_app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -800,7 +829,11 @@
       <created>1401531457676</created>
       <updated>1401531457676</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Fixing pdf reports">
+      <created>1401531490104</created>
+      <updated>1401531490104</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -859,7 +892,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Some mods&#10;" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;Conflicts:&#10;&#9;tkit_app/views.py&#10;" />
     <MESSAGE value="Starting presentation tool" />
     <MESSAGE value="Added info page" />
@@ -884,7 +916,8 @@
     <MESSAGE value="Adding papers feature" />
     <MESSAGE value="Finished papers feature" />
     <MESSAGE value="Some mods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some mods" />
+    <MESSAGE value="Fixing pdf reports" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing pdf reports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -892,11 +925,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/deck.core.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="62" selection-start="240" selection-end="240" vertical-scroll-proportion="0.24283305" vertical-offset="0" max-vertical-offset="13572" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="25" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.716094" vertical-offset="0" max-vertical-offset="1080" />
@@ -977,11 +1005,6 @@
         <state line="706" column="24" selection-start="30498" selection-end="30498" vertical-scroll-proportion="0.21034482" vertical-offset="12586" max-vertical-offset="20520" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="1251" selection-end="1251" vertical-scroll-proportion="0.822335" vertical-offset="0" max-vertical-offset="1890" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/grade-book.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="72" selection-start="3428" selection-end="3428" vertical-scroll-proportion="-8.407408" vertical-offset="907" max-vertical-offset="2124" />
@@ -1034,7 +1057,9 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="948" column="8" selection-start="32294" selection-end="32294" vertical-scroll-proportion="0.33275864" vertical-offset="16871" max-vertical-offset="91782" />
+        <state line="948" column="8" selection-start="32294" selection-end="32294" vertical-scroll-proportion="0.33275864" vertical-offset="16871" max-vertical-offset="91782">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django/forms/forms.py">
@@ -1097,16 +1122,11 @@
         <state line="9" column="4" selection-start="299" selection-end="299" vertical-scroll-proportion="0.27931035" vertical-offset="0" max-vertical-offset="5436" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/students.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="25" selection-start="355" selection-end="355" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="2376">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="44" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1494" />
+        <state line="44" column="44" selection-start="1290" selection-end="1290" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1494">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py">
@@ -1114,9 +1134,23 @@
         <state line="43" column="4" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.3322091" vertical-offset="469" max-vertical-offset="1350" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="82" selection-start="3006" selection-end="3006" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2394">
+        <state line="87" column="49" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/easy_pdf/templates/easy_pdf/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="365" selection-end="365" vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="171" selection-end="171" vertical-scroll-proportion="0.19081272" vertical-offset="0" max-vertical-offset="2052">
           <folding />
         </state>
       </provider>
@@ -1128,16 +1162,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report.html">
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/students.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="49" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024">
+        <state line="27" column="33" selection-start="1254" selection-end="1254" vertical-scroll-proportion="-8.666667" vertical-offset="252" max-vertical-offset="2376">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="66" selection-start="2218" selection-end="2218" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2250">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="192" column="43" selection-start="6397" selection-end="6397" vertical-scroll-proportion="0.0" vertical-offset="3240" max-vertical-offset="13860">
+        <state line="228" column="14" selection-start="7944" selection-end="7944" vertical-scroll-proportion="0.0" vertical-offset="3560" max-vertical-offset="14094">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="60" selection-start="1627" selection-end="1627" vertical-scroll-proportion="-12.62963" vertical-offset="253" max-vertical-offset="1926">
           <folding />
         </state>
       </provider>
@@ -1149,14 +1197,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/easy_pdf/templates/easy_pdf/base.html">
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="365" selection-end="365" vertical-scroll-proportion="0.12720849" vertical-offset="162" max-vertical-offset="1152" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/pdf-convert.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="8" selection-start="1754" selection-end="1754" vertical-scroll-proportion="0.30035335" vertical-offset="910" max-vertical-offset="1512">
+        <state line="35" column="36" selection-start="791" selection-end="791" vertical-scroll-proportion="1.1130742" vertical-offset="0" max-vertical-offset="1908">
           <folding />
         </state>
       </provider>

@@ -27,12 +27,14 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
-                    <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
-                    </a>
-                    <a href="#" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon glyphicon-file"></span> Salva report (PDF)
-                    </a>
+                    <div class="btn-group">
+                        <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
+                        </a>
+                        <a href="/classes/{{ class.pk }}/report/pdf/" class="btn btn-sm btn-primary">
+                            <span class="glyphicon glyphicon glyphicon-file"></span> Salva report (PDF)
+                        </a>
+                    </div>
                 </div>
 
                 <h2>Media voti per argomento/prova</h2>

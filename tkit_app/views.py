@@ -86,8 +86,6 @@ def remove_class(request, id_class):
 
 @login_required(login_url='/login/')
 def class_report(request, id_class):
-    # Andamento dei voti (generale)
-
     cl = Classes.objects.get(pk=id_class)
     stds = Students.objects.filter(s_class=cl)
 
@@ -188,7 +186,7 @@ def student_info(request, id_student):
 
 
 class StudentReportPDF(PDFTemplateView):
-    template_name = "pdf-convert.html"
+    template_name = "student-report-pdf.html"
 
     def get_context_data(self, id_student):
         student = Students.objects.get(pk=id_student)
@@ -201,6 +199,38 @@ class StudentReportPDF(PDFTemplateView):
             notes=notes,
             grades=grades,
             attendance=attendance
+        )
+
+
+class ClassReportPDF(PDFTemplateView):
+    template_name = "class-report-pdf.html"
+
+    def get_context_data(self, id_class):
+        cl = Classes.objects.get(pk=id_class)
+        stds = Students.objects.filter(s_class=cl)
+
+        # Numero studenti
+        nums = len(stds)
+
+        # Media per ogni prova fatta
+        # gds = Grades.objects.filter(student__in=[s for s in stds])
+        avg_grades = Grades.objects.filter(student__in=[s for s in stds]).values('subject').distinct()\
+            .annotate(avg_grades=Avg('grade'))
+
+        # Per ogni alunno il numero totale di assenze
+        abs_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Assente")\
+            .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(absence=Count('type'))
+
+        # Per ogni alunno il numero totale di presenze
+        pr_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Presente")\
+            .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(presence=Count('type'))
+
+        return super(ClassReportPDF, self).get_context_data(
+            cl=cl,
+            students_number=nums,
+            avg_grades=avg_grades,
+            aps=abs_per_std,
+            pps=pr_per_std
         )
 
 
