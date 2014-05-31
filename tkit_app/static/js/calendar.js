@@ -1,6 +1,8 @@
 $(document).ready(function() {
                 var currentMonth = moment().format('YYYY-MM');
                 var nextMonth    = moment().add('month', 1).format('YYYY-MM');
+                console.log(JSON.parse(TODOS));
+
                 var events = [
                   { date: currentMonth + '-' + '10', title: 'Persian Kitten Auction', location: 'Center for Beautiful Cats' },
                   { date: currentMonth + '-' + '19', title: 'Cat Frisbee', location: 'Jefferson Park' },
@@ -24,5 +26,5 @@ $(document).ready(function() {
                       }
                     },
                     adjacentDaysChangeMonth: true
-                  });
+                });
             });

@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/static/css/calendar.css" afterPath="$PROJECT_DIR$/tkit_app/static/css/calendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/calendar.html" afterPath="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/static/js/calendar.js" afterPath="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/views.py" afterPath="$PROJECT_DIR$/tkit_app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -41,7 +40,7 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="648" max-vertical-offset="2106">
+            <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="1242" max-vertical-offset="2070">
               <folding />
             </state>
           </provider>
@@ -50,7 +49,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="802" column="48" selection-start="26026" selection-end="26026" vertical-scroll-proportion="0.0" vertical-offset="13633" max-vertical-offset="14238">
+            <state line="804" column="17" selection-start="26046" selection-end="26046" vertical-scroll-proportion="0.0" vertical-offset="13669" max-vertical-offset="14292">
               <folding />
             </state>
           </provider>
@@ -59,17 +58,17 @@
       <file leaf-file-name="calendar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="37" selection-start="1493" selection-end="1493" vertical-scroll-proportion="-10.074074" vertical-offset="358" max-vertical-offset="1422">
+            <state line="10" column="38" selection-start="297" selection-end="297" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1476">
               <folding>
-                <marker date="1401569843133" expanded="true" signature="1613:1846" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="1896:3241" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="1939:2447" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="1989:2215" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="2492:3214" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="2542:2710" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="2764:3183" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="2896:3106" placeholder="..." />
-                <marker date="1401569843133" expanded="true" signature="2960:3067" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="1692:1925" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="1975:3320" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2018:2526" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2068:2294" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2571:3293" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2621:2789" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2843:3262" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="2975:3185" placeholder="..." />
+                <marker date="1401577560477" expanded="true" signature="3039:3146" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -78,7 +77,7 @@
       <file leaf-file-name="calendar.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/static/js/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="78" selection-start="172" selection-end="172" vertical-scroll-proportion="0.059504133" vertical-offset="0" max-vertical-offset="605">
+            <state line="3" column="47" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0892562" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -136,10 +135,10 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html" />
         <option value="$PROJECT_DIR$/tkit_app/urls.py" />
-        <option value="$PROJECT_DIR$/tkit_app/views.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
-        <option value="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
+        <option value="$PROJECT_DIR$/tkit_app/views.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
+        <option value="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
       </list>
     </option>
   </component>
@@ -850,7 +849,11 @@
       <created>1401567741023</created>
       <updated>1401567741023</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Starting calendar feature">
+      <created>1401570244533</created>
+      <updated>1401570244533</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1141,13 +1144,6 @@
         <state line="13" column="16" selection-start="365" selection-end="365" vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1890" />
@@ -1186,13 +1182,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="37" selection-start="6876" selection-end="6876" vertical-scroll-proportion="0.0" vertical-offset="1645" max-vertical-offset="2304">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="257" column="72" selection-start="13086" selection-end="13086" vertical-scroll-proportion="8.00346" vertical-offset="0" max-vertical-offset="4842">
@@ -1200,33 +1189,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="37" selection-start="6876" selection-end="6876" vertical-scroll-proportion="0.0" vertical-offset="1645" max-vertical-offset="2304">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="42" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2070">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="802" column="48" selection-start="26026" selection-end="26026" vertical-scroll-proportion="0.0" vertical-offset="13633" max-vertical-offset="14238">
+        <state line="804" column="17" selection-start="26046" selection-end="26046" vertical-scroll-proportion="0.0" vertical-offset="13669" max-vertical-offset="14292">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="37" selection-start="1493" selection-end="1493" vertical-scroll-proportion="-10.074074" vertical-offset="358" max-vertical-offset="1422">
+        <state line="10" column="38" selection-start="297" selection-end="297" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1476">
           <folding>
-            <marker date="1401569843133" expanded="true" signature="1613:1846" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="1896:3241" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="1939:2447" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="1989:2215" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="2492:3214" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="2542:2710" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="2764:3183" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="2896:3106" placeholder="..." />
-            <marker date="1401569843133" expanded="true" signature="2960:3067" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="1692:1925" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="1975:3320" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2018:2526" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2068:2294" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2571:3293" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2621:2789" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2843:3262" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="2975:3185" placeholder="..." />
+            <marker date="1401577560477" expanded="true" signature="3039:3146" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/static/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="78" selection-start="172" selection-end="172" vertical-scroll-proportion="0.059504133" vertical-offset="0" max-vertical-offset="605">
+        <state line="3" column="47" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0892562" vertical-offset="0" max-vertical-offset="630">
           <folding />
         </state>
       </provider>

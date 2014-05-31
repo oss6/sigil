@@ -794,9 +794,12 @@ def remove_paper(request, id_paper):
 
     return redirect("/papers/")
 
+from django.utils.encoding import smart_str
+
+
 @login_required(login_url='/login/')
 def calendar(request):
-    todos = ToDoList.objects.filter(teacher=request.user)
+    todos = ToDoList.objects.filter(teacher=request.user).values("title", "date_exp")
 
     return render_to_response("calendar.html", {
         "todos": todos
