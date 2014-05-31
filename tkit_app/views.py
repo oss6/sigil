@@ -793,3 +793,11 @@ def remove_paper(request, id_paper):
     p.delete()
 
     return redirect("/papers/")
+
+@login_required(login_url='/login/')
+def calendar(request):
+    todos = ToDoList.objects.filter(teacher=request.user)
+
+    return render_to_response("calendar.html", {
+        "todos": todos
+    }, context_instance=RequestContext(request))

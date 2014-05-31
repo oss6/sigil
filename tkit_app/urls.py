@@ -125,4 +125,7 @@ urlpatterns = patterns('',
     url(r'^papers/$', views.papers),
     url(r'^papers/add/$', views.add_paper),
     url(r'^papers/remove/(?P<id_paper>\d+)/$', views.remove_paper),
+
+    # Calendar
+    url(r'calendar/$', views.calendar)
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

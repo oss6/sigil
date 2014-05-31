@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 
-{% block title %}Gestione classi{% endblock %}
-{% block header-title %}Gestione classi{% endblock %}
+{% block title %}Calendario{% endblock %}
+{% block header-title %}Calendario{% endblock %}
+
+{% block add-css %}
+        <link rel="stylesheet" href="/static/css/calendar.css">
+{% endblock %}
+{% block add-scripts %}
+        <script src="/static/js/underscore-min.js"></script>
+        <script src="/static/js/moment.min.js"></script>
+        <script src="/static/js/clndr.min.js"></script>
+        <script src="/static/js/calendar.js"></script>
+{% endblock %}
 
 {% block content %}
         <div class="row">
@@ -21,12 +31,30 @@
                             also update the properties of each class.
                         </p>
                     </blockquote>
-                    <a onclick="mclass.openClassModal()" href="javascript:;" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon-plus"></span> Aggiungi
-                    </a>
                 </div>
 
+                <div id="mini-clndr"></div>
 
+                <script id="calendar-template" type="text/template">
+                    <div class="controls">
+                        <div class="clndr-previous-button">&lsaquo;</div>
+                        <div class="month"><%= month %></div>
+                        <div class="clndr-next-button">&rsaquo;</div>
+                    </div>
+
+                    <div class="days-container">
+                        <div class="days">
+                            <div class="headers">
+                                <% _.each(daysOfTheWeek, function(day) { %>
+                                <div class="day-header"><%= day %></div>
+                                <% }); %>
+                            </div>
+                            <% _.each(days, function(day) { %>
+                            <div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </script>
             </div>
         </div>
 {% endblock %}
