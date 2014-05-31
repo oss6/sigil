@@ -9,20 +9,20 @@ $(document).ready(function() {
                 ];
 
                 $('#mini-clndr').clndr({
-                  template: $('#calendar-template').html(),
-                  events: events,
-                  daysOfTheWeek: ['D', 'L', 'M', 'M', 'G', 'V', 'S'],
-                  clickEvents: {
-                    click: function(target) {
-                      if(target.events.length) {
-                        var daysContainer = $('#mini-clndr').find('.days-container');
-                        daysContainer.toggleClass('show-events', true);
-                        $('#mini-clndr').find('.x-button').click( function() {
-                          daysContainer.toggleClass('show-events', false);
-                        });
+                    template: $('#mini-clndr-template').html(),
+                    events: events,
+                    daysOfTheWeek: ['D', 'L', 'M', 'M', 'G', 'V', 'S'],
+                    clickEvents: {
+                      click: function(target) {
+                        if(target.events.length) {
+                          var daysContainer = $('#mini-clndr').find('.days-container');
+                          daysContainer.toggleClass('show-events', true);
+                          $('#mini-clndr').find('.x-button').click( function() {
+                            daysContainer.toggleClass('show-events', false);
+                          });
+                        }
                       }
-                    }
-                  },
-                  adjacentDaysChangeMonth: true
-                });
+                    },
+                    adjacentDaysChangeMonth: true
+                  });
             });
