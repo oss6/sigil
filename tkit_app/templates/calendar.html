@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Gestione classi{% endblock %}
+{% block header-title %}Gestione classi{% endblock %}
+
+{% block content %}
+        <div class="row">
+            <div class="col-md-12">
+                <div class="page-header">
+                    <blockquote>
+                        <p>
+                            In the class management section you can add a class.
+                            A class is an entity with the following properties:
+                            name, school and a small description.
+                            You can also remove a class by clicking on the white
+                            cross on the top right of the class header.
+                        </p>
+                        <p>
+                            By clicking on the name of the class a new page will be visualized.
+                            This page contains the students of the class. In addition you can
+                            also update the properties of each class.
+                        </p>
+                    </blockquote>
+                    <a onclick="mclass.openClassModal()" href="javascript:;" class="btn btn-sm btn-primary">
+                        <span class="glyphicon glyphicon-plus"></span> Aggiungi
+                    </a>
+                </div>
+
+
+            </div>
+        </div>
+{% endblock %}

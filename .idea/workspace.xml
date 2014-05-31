@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -52,10 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="30" selection-start="12502" selection-end="12502" vertical-scroll-proportion="0.43598616" vertical-offset="4104" max-vertical-offset="4950">
+            <state line="247" column="0" selection-start="12695" selection-end="12695" vertical-scroll-proportion="-13.333333" vertical-offset="4086" max-vertical-offset="4950">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="16" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.78680205" vertical-offset="39" max-vertical-offset="666">
               <folding />
             </state>
           </provider>
@@ -115,6 +125,7 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
+        <option value="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
       </list>
     </option>
   </component>
@@ -812,7 +823,11 @@
       <created>1401543711959</created>
       <updated>1401543711959</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Some mods">
+      <created>1401543730847</created>
+      <updated>1401543730847</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -904,11 +919,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="1048" selection-end="1048" vertical-scroll-proportion="0.716094" vertical-offset="0" max-vertical-offset="1080" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="72" selection-start="1527" selection-end="1527" vertical-scroll-proportion="1.074141" vertical-offset="0" max-vertical-offset="1008" />
@@ -1029,11 +1039,6 @@
         <state line="19" column="21" selection-start="585" selection-end="585" vertical-scroll-proportion="-0.0" vertical-offset="342" max-vertical-offset="5130" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/classes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="127" selection-start="3101" selection-end="3101" vertical-scroll-proportion="0.0" vertical-offset="1049" max-vertical-offset="1656" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="948" column="8" selection-start="32294" selection-end="32294" vertical-scroll-proportion="0.33275864" vertical-offset="16871" max-vertical-offset="91782" />
@@ -1138,13 +1143,6 @@
         <state line="18" column="12" selection-start="396" selection-end="396" vertical-scroll-proportion="0.5724382" vertical-offset="0" max-vertical-offset="2034" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="8" selection-start="1614" selection-end="1614" vertical-scroll-proportion="1.432188" vertical-offset="0" max-vertical-offset="2538">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/students.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="33" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2376">
@@ -1168,7 +1166,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="30" selection-start="12502" selection-end="12502" vertical-scroll-proportion="0.43598616" vertical-offset="4104" max-vertical-offset="4950">
+        <state line="247" column="0" selection-start="12695" selection-end="12695" vertical-scroll-proportion="-13.333333" vertical-offset="4086" max-vertical-offset="4950">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="8" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.98442906" vertical-offset="223" max-vertical-offset="2538">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/classes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="47" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.39619377" vertical-offset="1049" max-vertical-offset="1656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="16" selection-start="1328" selection-end="1328" vertical-scroll-proportion="0.78680205" vertical-offset="39" max-vertical-offset="666">
           <folding />
         </state>
       </provider>
