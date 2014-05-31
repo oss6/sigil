@@ -794,13 +794,14 @@ def remove_paper(request, id_paper):
 
     return redirect("/papers/")
 
-from django.utils.encoding import smart_str
+
+from django.core import serializers
 
 
 @login_required(login_url='/login/')
 def calendar(request):
-    todos = ToDoList.objects.filter(teacher=request.user).values("title", "date_exp")
+    todos = ToDoList.objects.filter(teacher=request.user)
 
     return render_to_response("calendar.html", {
-        "todos": todos
+        "todos": serializers.serialize('json', todos, fields=('title', 'date_exp'))
     }, context_instance=RequestContext(request))
