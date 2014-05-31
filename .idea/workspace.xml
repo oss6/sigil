@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/templates/calendar.html" afterPath="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/static/js/calendar.js" afterPath="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/views.py" afterPath="$PROJECT_DIR$/tkit_app/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -58,17 +56,17 @@
       <file leaf-file-name="calendar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="38" selection-start="297" selection-end="297" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1476">
+            <state line="11" column="29" selection-start="332" selection-end="332" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1494">
               <folding>
-                <marker date="1401577560477" expanded="true" signature="1692:1925" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="1975:3320" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2018:2526" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2068:2294" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2571:3293" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2621:2789" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2843:3262" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="2975:3185" placeholder="..." />
-                <marker date="1401577560477" expanded="true" signature="3039:3146" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="1722:1955" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2005:3350" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2048:2556" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2098:2324" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2601:3323" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2651:2819" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="2873:3292" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="3005:3215" placeholder="..." />
+                <marker date="1401577704089" expanded="true" signature="3069:3176" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -77,7 +75,7 @@
       <file leaf-file-name="calendar.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/static/js/calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="47" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0892562" vertical-offset="0" max-vertical-offset="630">
+            <state line="9" column="51" selection-start="661" selection-end="661" vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="630">
               <folding />
             </state>
           </provider>
@@ -137,8 +135,8 @@
         <option value="$PROJECT_DIR$/tkit_app/urls.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
         <option value="$PROJECT_DIR$/tkit_app/views.py" />
-        <option value="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
+        <option value="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
       </list>
     </option>
   </component>
@@ -853,7 +851,11 @@
       <created>1401570244533</created>
       <updated>1401570244533</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Starting calendar feature">
+      <created>1401577658360</created>
+      <updated>1401577658360</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1212,24 +1214,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="38" selection-start="297" selection-end="297" vertical-scroll-proportion="-6.6666665" vertical-offset="0" max-vertical-offset="1476">
+        <state line="11" column="29" selection-start="332" selection-end="332" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="1494">
           <folding>
-            <marker date="1401577560477" expanded="true" signature="1692:1925" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="1975:3320" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2018:2526" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2068:2294" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2571:3293" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2621:2789" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2843:3262" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="2975:3185" placeholder="..." />
-            <marker date="1401577560477" expanded="true" signature="3039:3146" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="1722:1955" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2005:3350" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2048:2556" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2098:2324" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2601:3323" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2651:2819" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="2873:3292" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="3005:3215" placeholder="..." />
+            <marker date="1401577704089" expanded="true" signature="3069:3176" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/static/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="47" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0892562" vertical-offset="0" max-vertical-offset="630">
+        <state line="9" column="51" selection-start="661" selection-end="661" vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="630">
           <folding />
         </state>
       </provider>
