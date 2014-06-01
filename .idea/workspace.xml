@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/home/fontello.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/fontello.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/info.html" afterPath="$PROJECT_DIR$/sigil/templates/info.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -55,39 +59,18 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="0.0" vertical-offset="3976" max-vertical-offset="6048">
+            <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="info.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="20" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="6786">
+            <state line="70" column="68" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-0.62283736" vertical-offset="1620" max-vertical-offset="5256">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="152" column="15" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.0" vertical-offset="2736" max-vertical-offset="3492">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
           </provider>
         </entry>
       </file>
@@ -151,6 +134,7 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/info.html" />
         <option value="$PROJECT_DIR$/tkit/settings.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sigil/templates/info.html" />
       </list>
     </option>
   </component>
@@ -247,6 +231,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="registration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -883,7 +907,11 @@
       <created>1401645701896</created>
       <updated>1401645701896</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="Changed app name: tkit_app --&gt; sigil">
+      <created>1401645711068</created>
+      <updated>1401645711068</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -975,11 +1003,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sigil/templates/grade-book.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="72" selection-start="3428" selection-end="3428" vertical-scroll-proportion="-8.407408" vertical-offset="907" max-vertical-offset="2124" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/books.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="190" selection-start="1519" selection-end="1519" vertical-scroll-proportion="1.0899653" vertical-offset="0" max-vertical-offset="2538" />
@@ -1145,11 +1168,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="75" selection-start="1616" selection-end="1616" vertical-scroll-proportion="1.0276817" vertical-offset="0" max-vertical-offset="972" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.8737864" vertical-offset="0" max-vertical-offset="648" />
@@ -1196,23 +1214,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="0.0" vertical-offset="3976" max-vertical-offset="6048">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="5436" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="20" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="6786">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/__init__.py">
@@ -1230,13 +1234,6 @@
         <state line="44" column="44" selection-start="1290" selection-end="1290" vertical-scroll-proportion="1.2200648" vertical-offset="2" max-vertical-offset="1494" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="152" column="15" selection-start="5231" selection-end="5231" vertical-scroll-proportion="0.0" vertical-offset="2508" max-vertical-offset="3492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589">
@@ -1245,6 +1242,41 @@
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="152" column="15" selection-start="5231" selection-end="5231" vertical-scroll-proportion="4.522314" vertical-offset="0" max-vertical-offset="3492">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/static/fonts/fontello.svg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.78843" vertical-offset="5317" max-vertical-offset="5922">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="73" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.5951557" vertical-offset="394" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="68" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-0.62283736" vertical-offset="1620" max-vertical-offset="5256">
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>

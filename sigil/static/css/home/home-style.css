@@ -379,33 +379,33 @@ section.single-page h1 {
 	line-height: 1.35;
 	color: #fff;
 }
-/* Portfolio */
+/* about */
 
-section#portfolio {
+section#about {
 	padding-bottom: 0;
 }
-section#portfolio h1 {
+section#about h1 {
 	font-size: 3em;
 	margin-bottom: 1em;
 	margin-top: 0.5em;
 }
-section#portfolio hgroup h2 {
+section#about hgroup h2 {
 	margin-top: 1em;
 	text-transform: capitalize;
 }
-section#portfolio hgroup h3 {
+section#about hgroup h3 {
 	margin-top:  .35em;
 	font-family: 'Patua One', cursive;
 }
-section#portfolio .entry-content {
+section#about .entry-content {
 	margin: 1em 0 2.5em;
 }
-section#portfolio .align {
+section#about .align {
 	text-align:center;
 	margin-top:10px;
 	font-size:6em;
 }
-/* Portfolio Image Hover */
+/* about Image Hover */
 .mask2 img {
 	margin: 0 auto;
 	max-width: 100%;
@@ -934,7 +934,7 @@ footer p {
 /*	display: none; */
 		}
 		
-		/* Portfolio & News */
+		/* about & News */
 		
 		#news h1 {
  background: transparent;
@@ -943,7 +943,7 @@ footer p {
  background: transparent;
  padding: 0;
 }
- #portfolio .container {
+ #about .container {
  top: 0 !important;
 }
  #feature article p {
@@ -961,7 +961,7 @@ footer p {
  margin-left: auto;
  display: block;
 }
- section#portfolio hgroup h2 {
+ section#about hgroup h2 {
  margin-top: 1.5em;
 }
 	
