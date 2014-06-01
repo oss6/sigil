@@ -1,277 +1,372 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-    <title>Tkit - {% block title %}Benvenuto{% endblock %}</title>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta charset="utf-8">
+    <title>Sigil - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Web app for teachers">
+    <meta name="author" content="Ossama Edbali">
 
-    <!-- css -->
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="/static/css/info.css" rel="stylesheet" media="screen">
-    <link href="/static/css/info-default-color.css" rel="stylesheet" media="screen">
-    <script src="/static/js/modernizr.custom.js"></script>
+    <!-- Styles -->
+    <link href="/static/css/home/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/home/home-style.css" rel="stylesheet">
+    <link href="/static/css/home/fontello.css" type="text/css" rel="stylesheet">
+    <!--[if lt IE 7]>
+    <link href="/static/css/home/fontello-ie7.css" type="text/css" rel="stylesheet">
+    <![endif]-->
+    <!-- Google Web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Quattrocento:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+        }
+    </style>
+    <link href="/static/css/home/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <script src="/static/js/home/jquery.js"></script>
+    <script src="/static/js/home/jquery.scrollTo-1.4.2-min.js"></script>
+    <script src="/static/js/home/jquery.localscroll-1.2.7-min.js"></script>
 </head>
 <body>
-    <!-- intro area -->
-    <div id="intro">
-        <div class="intro-text">
+<!--******************** NAVBAR ********************-->
+<div class="navbar-wrapper">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="brand">
-                            {% block intro %}
-                            <h1><a href="/">Tkit</a></h1>
+                <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span
+                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 
-                            <div class="line-spacer"></div>
-                            <p><span>L'arsenale indispensabile degli insegnanti</span></p>
-                            <div class="line-spacer"></div>
-
-                            <div class="btn-group">
-                                <a class="btn btn-info" href="/login/">Login</a>
-                                <a class="btn btn-info" href="/signup/">Registrati</a>
-                                <a class="btn btn-info" href="/dashboard/">Dashboard</a>
-                            </div>
-                            {% endblock %}
-                        </div>
-                    </div>
-                </div>
+                <h1 class="brand"><a href="#top">Sigil!</a></h1>
+                <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                <nav class="pull-right nav-collapse collapse">
+                    <ul id="menu-main" class="nav">
+                        <li><a title="portfolio" href="#portfolio">Portfolio</a></li>
+                        <li><a title="services" href="#services">Services</a></li>
+                        <li><a title="contact" href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
+            <!-- /.container -->
         </div>
+        <!-- /.navbar-inner -->
     </div>
+    <!-- /.navbar -->
+</div>
+<!-- /.navbar-wrapper -->
+<div id="top"></div>
+<!-- ******************** HeaderWrap ********************-->
+<div id="headerwrap">
+    <header class="clearfix">
+        <h1><span>Sigil!</span> We make web a beautiful place.</h1>
 
-    {% block content %}
-    <!-- About -->
-    <section id="about" class="home-section bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="section-heading">
-                        <h2>About</h2>
-                        <p>
-                            Questo progetto è nato dall'esigenza di offrire
-                            agli insegnanti degli strumenti indispensabili
-                            per la gestione del proprio lavoro in modo ordinato
-                            e organizzato.
-                        </p>
-                        <p>
-                            Molte sono le applicazioni che si trovano
-                            sui marketplace e tutte hanno i propri vantaggi
-                            e svantaggi.
-                        </p>
-                        <p>
-                            Tkit è speciale perchè
-                            è un'applicazione cross-platform basata sul web.
-                            Ciò significa che la si può usare con qualsiasi
-                            dispositivo e con la maggior parte dei browser
-                            attuali.
-                        </p>
-                        <p>
-                            Inoltre include svariati moduli (app incluse in Tkit)
-                            che in altre applicazioni si trovano prevalentemente
-                            separati. La filosofia di Tkit si basa sul concetto
-                            di gestire il proprio lavoro in modo sereno e piacevole.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="home-section bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="section-heading">
-                        <h2>Servizi Web</h2>
-                        <p>
-                            Tkit è un insieme di servizi raggruppati in un'unica
-                            applicazione semplice e intuitiva da usare.
-                        </p>
-                    </div>
+                <div class="span12">
+                    <h2>Signup for our Newsletter to be updated</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
-                    <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
-                        <i class="fa fa-code fa-4x"></i>
-                        <h4>Open source</h4>
-
-                        <p>Il progetto è open source e il codice può essere scaricato da GitHub</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.3s">
-                    <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
-                        <i class="fa fa-cog fa-4x"></i>
-                        <h4>Personalizzabile</h4>
-
-                        <p>L'API su cui poggia l'applicazione è altamente personalizzabile</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.5s">
-                    <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
-                        <i class="fa fa-desktop fa-4x"></i>
-                        <h4>Responsive</h4>
-
-                        <p>L'applicazione è cross-platform e responsive</p>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3" data-wow-delay="0.7s">
-                    <div class="service-box wow bounceInDown" data-wow-delay="0.1s">
-                        <i class="fa fa-dropbox fa-4x"></i>
-                        <h4>Tutto in uno</h4>
-
-                        <p>Tutti i servizi di Tkit sono raggruppati in un'unica app</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Docs -->
-    <section id="doc" class="home-section bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="section-heading">
-                        <h2>Documentazione</h2>
-                        <p>
-                            La documentazione sul progetto
-                            fornisce una panoramica molto dettagliata
-                            della GUI (Graphical User Interface) e dell'API
-                            (Application Programming Interface).<br>Essa è divisa in:
-                        </p>
-
-                        <h3>
-                            <i class="fa fa-desktop"></i>
-                            <a href="/documentation/users/">
-                                Documentazione per utenti
-                            </a>
-                        </h3>
-                        <p>
-                            In questa documentazione vengono trattati
-                            i concetti legati all'interfaccia grafica
-                            vera e propria. E' dedicata all'utente
-                            finale per avere una panoramica sul
-                            funzionamento dei vari moduli di Tkit.
-                        </p>
-                        <h3>
-                            <i class="fa fa-code"></i>
-                            <a href="/documentation/developers/">
-                                Documentazione per sviluppatori
-                            </a>
-                        </h3>
-                        <p>
-                            Nella documentazione per sviluppatori invece
-                            viene dato spazio alla trattazione dei concetti
-                            inerenti l'API: il cuore dell'applicazione.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="home-section bg-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <div class="section-heading">
-                        <h2>Contattami</h2>
-
-                        <p>Contattami dal form presentato di seguito e sarò a tua disposizione.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10">
-
-                    <form class="form-horizontal" action="MAILTO:ossedb@gmail.com" method="post" enctype="text/plain"
-                          role="form">
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-8">
-                                <input type="text" class="form-control" id="inputName" name="name" placeholder="Nome">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-8">
-                                <input type="email" class="form-control" id="inputEmail" name="email"
-                                       placeholder="La tua email">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-8">
-                                <input type="text" class="form-control" id="inputSubject" name="subject" placeholder="Oggetto">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-8">
-                                <textarea name="message" class="form-control" rows="3" placeholder="Messaggio"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-8">
-                                <input type="submit" class="btn btn-theme btn-lg btn-block" value="Invia messaggio">
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-
-
-            </div>
-            <div class="row mar-top30 ">
-                <div class="col-md-offset-2 col-md-8">
-                    <h5>Contattami dai social networks</h5>
-                    <ul class="social-network">
-                        <li><a href="https://www.facebook.com/oss.edbali">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span></a>
-                        </li>
-                        <li><a href="https://plus.google.com/u/0/+OssamaEdbali/posts/p/pub">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
-                            </span></a>
-                        </li>
-                        <li><a href="https://www.linkedin.com/pub/ossama-edbali/95/468/431">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                            </span></a>
-                        </li>
-                        <li><a href="https://github.com/oss6">
-                            <span class="fa-stack fa-2x">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span></a>
-                        </li>
+                <div class="span12">
+                    <ul class="icon">
+                        <li><a href="#" target="_blank"><i class="icon-pinterest-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-twitter-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="icon-skype-circled"></i></a></li>
                     </ul>
                 </div>
             </div>
-
         </div>
-    </section>
-    {% endblock %}
-
-    <footer>
+    </header>
+</div>
+<!--******************** Feature ********************-->
+<div class="scrollblock">
+    <section id="feature">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <p>
-                        Copyright ©2014 Tkit. Tutti i diritti riservati.
-                    </p>
+                <div class="span12">
+                    <article>
+                        <p>We work to make web a beautiful place.</p>
+
+                        <p>We craft beautiful designs and convert them into</p>
+
+                        <p>fully functional and user-friendy web app.</p>
+                    </article>
+                </div>
+                <!-- ./span12 -->
+            </div>
+            <!-- .row -->
+        </div>
+        <!-- ./container -->
+    </section>
+</div>
+<hr>
+<!--******************** Portfolio Section ********************-->
+<section id="portfolio" class="single-page scrollblock">
+    <div class="container">
+        <div class="align"><i class="icon-desktop-circled"></i></div>
+        <h1 id="folio-headline">Portfolio...</h1>
+
+        <div class="row">
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-01.jpg" rel="prettyPhoto"><img src="img/portfolio-01.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>Ethan Marcotte Design</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-02.jpg" rel="prettyPhoto"><img src="img/portfolio-02.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>A Book Apart</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-03.jpg" rel="prettyPhoto"><img src="img/portfolio-03.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>Four Rules for Designers</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+        </div>
+        <!-- /.row -->
+
+        <div class="row">
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-01.jpg" rel="prettyPhoto"><img src="img/portfolio-03.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>Ethan Marcotte Design</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-02.jpg" rel="prettyPhoto"><img src="img/portfolio-01.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>A Book Apart</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+            <div class="span4">
+                <div class="mask2"><a href="img/portfolio-03.jpg" rel="prettyPhoto"><img src="img/portfolio-02.jpg"
+                                                                                         alt=""></a></div>
+                <div class="inside">
+                    <hgroup>
+                        <h2>Four Rules for Designers</h2>
+                    </hgroup>
+                    <div class="entry-content">
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.</p>
+                        <a class="more-link" href="#">view project</a></div>
+                </div>
+                <!-- /.inside -->
+            </div>
+            <!-- /.span4 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<hr>
+<!--******************** Services Section ********************-->
+<section id="services" class="single-page scrollblock">
+    <div class="container">
+        <div class="align"><i class="icon-cog-circled"></i></div>
+        <h1>Services</h1>
+        <!-- Four columns -->
+        <div class="row">
+            <div class="span3">
+                <div class="align"><i class="icon-desktop sev_icon"></i></div>
+                <h2>Web design</h2>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <!-- /.span3 -->
+            <div class="span3">
+                <div class="align"><i class="icon-vector sev_icon"></i></div>
+                <h2>Print Design</h2>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <!-- /.span3 -->
+            <div class="span3">
+                <div class="align"><i class="icon-basket sev_icon"></i></div>
+                <h2>Ecommerce</h2>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <!-- /.span3 -->
+            <div class="span3">
+                <div class="align"><i class="icon-mobile-1 sev_icon"></i></div>
+                <h2>Marketing</h2>
+
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s.</p>
+            </div>
+            <!-- /.span3 -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!--******************** Testimonials Section ********************-->
+<section id="testimonials" class="single-page hidden-phone">
+    <div class="container">
+        <div class="row">
+            <div class="blockquote-wrapper">
+                <blockquote class="mega">
+                    <div class="span4">
+                        <p class="cite">John Doe &amp; Sons:</p>
+                    </div>
+                    <div class="span8">
+                        <p class="alignright">"We highly appreciate the enthusiasm and creative talent of the people at
+                            Legend!"</p>
+                    </div>
+                </blockquote>
+            </div>
+            <!-- /.blockquote-wrapper -->
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<!--******************** Contact Section ********************-->
+<section id="contact" class="single-page scrollblock">
+    <div class="container">
+        <div class="align"><i class="icon-mail-2"></i></div>
+        <h1>Contact us now!</h1>
+
+        <div class="row">
+            <div class="span12">
+                <div class="cform" id="theme-form">
+                    <form action="#" method="post" class="cform-form">
+                        <div class="row">
+                            <div class="span6"> <span class="your-name">
+                    <input type="text" name="your-name" placeholder="Your Name" class="cform-text" size="40"
+                           title="your name">
+                    </span></div>
+                            <div class="span6"> <span class="your-email">
+                    <input type="text" name="your-email" placeholder="Your Email" class="cform-text" size="40"
+                           title="your email">
+                    </span></div>
+                        </div>
+                        <div class="row">
+                            <div class="span6"> <span class="company">
+                    <input type="text" name="company" placeholder="Your Company" class="cform-text" size="40"
+                           title="company">
+                    </span></div>
+                            <div class="span6"> <span class="website">
+                    <input type="text" name="website" placeholder="Your Website" class="cform-text" size="40"
+                           title="website">
+                    </span></div>
+                        </div>
+                        <div class="row">
+                            <div class="span12"> <span class="message">
+                    <textarea name="message" class="cform-textarea" cols="40" rows="10"
+                              title="drop us a line."></textarea>
+                    </span></div>
+                        </div>
+                        <div>
+                            <input type="submit" value="Send message" class="cform-submit pull-left">
+                        </div>
+                        <div class="cform-response-output"></div>
+                    </form>
                 </div>
             </div>
+            <!-- ./span12 -->
         </div>
-    </footer>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</section>
+<hr>
+<div class="footer-wrapper">
+    <div class="container">
+        <footer>
+            <small>&copy; 2013 Inbetwin Network. All rights reserved.</small>
+        </footer>
+    </div>
+    <!-- ./container -->
+</div>
+<!-- Loading the javaScript at the end of the page -->
+<script src="/static/js/home/bootstrap.js"></script>
+<script>
+	jQuery(document).ready(function($) {
+	    //$('#nav-main').scrollspy()
 
-    <!-- js -->
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
+	    // Localscrolling
+	    $('#nav-main, .brand').localScroll();
+	    $('.container').localScroll();
+	});
+</script>
+
+<!--ANALYTICS CODE-->
+<script>
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-29231762-1']);
+	  _gaq.push(['_setDomainName', 'dzyngiri.com']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+</script>
 </body>
 </html>
