@@ -98,7 +98,10 @@ LOGIN_URL = '/login/'
 
 LOGIN_EXEMPT_URLS = (
     r'^$',
-    r'^signup/$'
+    r'^signup/$',
+    r'^documentation/developers/$',
+    r'^documentation/users/$',
+    r'^signup-success/$'
 )
 
 MIDDLEWARE_CLASSES = (
