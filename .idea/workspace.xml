@@ -875,7 +875,11 @@
       <created>1401645673160</created>
       <updated>1401645673160</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Changed app name: tkit_app --&gt; sigil">
+      <created>1401645679986</created>
+      <updated>1401645679986</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
