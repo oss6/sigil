@@ -25,7 +25,7 @@
         <h4>Menu degli strumenti</h4>
         <button class="btn btn-success" id="new-slide">Nuova diapositiva</button>
         <button class="btn btn-success" id="delete-current-slide">Elimina diapositiva</button>
-        <form action="." method="post">{% csrf_token %}
+        <form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
             <input type="text" id="html-file-name" placeholder="Nome file">
             <input type="text" id="pres-title" placeholder="Titolo presentazione">
             <input type="text" id="pres-desc" placeholder="Descrizione presentazione">
