@@ -21,7 +21,7 @@ def tasks_count(request):
 def first_five_tasks(request):
     return {
         'first_five_tasks':
-            ToDoList.objects.filter(teacher=request.user.pk, percentage__lte=99).order_by('date_exp').reverse()[:5],
+        ToDoList.objects.filter(teacher=request.user.pk, percentage__lte=99).order_by('date_exp').reverse()[:5],
     }
 
 
