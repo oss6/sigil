@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/info.html" afterPath="$PROJECT_DIR$/sigil/templates/info.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -65,7 +66,7 @@
       <file leaf-file-name="info.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="54" selection-start="7470" selection-end="7470" vertical-scroll-proportion="0.43598616" vertical-offset="2754" max-vertical-offset="5220">
+            <state line="71" column="54" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.5294118" vertical-offset="972" max-vertical-offset="5274">
               <folding />
             </state>
           </provider>
@@ -960,7 +961,11 @@
       <created>1401647548733</created>
       <updated>1401647548733</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="General restyling">
+      <created>1401648021922</created>
+      <updated>1401648021922</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1323,7 +1328,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="54" selection-start="7470" selection-end="7470" vertical-scroll-proportion="0.43598616" vertical-offset="2754" max-vertical-offset="5220">
+        <state line="71" column="54" selection-start="3380" selection-end="3380" vertical-scroll-proportion="0.5294118" vertical-offset="972" max-vertical-offset="5274">
           <folding />
         </state>
       </provider>
