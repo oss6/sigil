@@ -97,7 +97,8 @@ TEMPLATE_LOADERS = (
 LOGIN_URL = '/login/'
 
 LOGIN_EXEMPT_URLS = (
-    r'^$'
+    r'^$',
+    r'^signup/$'
 )
 
 MIDDLEWARE_CLASSES = (
