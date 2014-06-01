@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -84,7 +82,7 @@
       <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.030560272" vertical-offset="0" max-vertical-offset="589">
+            <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589">
               <folding />
             </state>
           </provider>
@@ -873,7 +871,11 @@
       <created>1401645484313</created>
       <updated>1401645484313</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="Changed app name: tkit_app --&gt; sigil">
+      <created>1401645673160</created>
+      <updated>1401645673160</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -900,6 +902,7 @@
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -914,7 +917,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36882716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1229,7 +1231,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.030560272" vertical-offset="0" max-vertical-offset="589">
+        <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589">
           <folding />
         </state>
       </provider>
