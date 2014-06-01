@@ -2,15 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Tkit - {% block title %}Home{% endblock %}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-        <!-- bootstrap 3.0.2 -->
+        <title>Tkit - {% block title %}Home{% endblock %}</title>
+
         <link href="/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <!-- font Awesome -->
         <link href="/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-        <!-- Ionicons -->
         <link href="/static/css/ionicons.min.css" rel="stylesheet" type="text/css" />
-        <!-- Theme style -->
         <link href="/static/css/AdminLTE.css" rel="stylesheet" type="text/css" />
         <link href="/static/css/bootstrap-datepicker.css" rel="stylesheet" type="text/css" />
 
@@ -24,13 +21,10 @@
         {% block add-css %}{% endblock %}
     </head>
     <body class="{{ color_schema }}">
-        <!-- header logo: style can be found in header.less -->
         <header class="header">
             <a href="/dashboard/" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
                 Tkit
             </a>
-            <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
                 <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -41,14 +35,12 @@
                 </a>
                 <div class="navbar-right">
                     <ul class="nav navbar-nav">
-                        <!-- Messages: style can be found in dropdown.less-->
                         <li>
                             <a href="/mailbox/inbox/">
                                 <i class="fa fa-envelope"></i>
                                 <span class="label label-success">{{ messages_inbox_count }}</span>
                             </a>
                         </li>
-                        <!-- Tasks: style can be found in dropdown.less -->
                         <li class="dropdown tasks-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <i class="fa fa-tasks"></i>
@@ -59,7 +51,7 @@
                                 <li>
                                     <ul class="menu">
                                         {% for task in first_five_tasks %}
-                                            <li><!-- Task item -->
+                                            <li>
                                                 <a href="#">
                                                     <h3>
                                                         {{ task.title }}
@@ -71,7 +63,7 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                            </li><!-- end task item -->
+                                            </li>
                                         {% endfor %}
                                     </ul>
                                 </li>
@@ -148,12 +140,10 @@
                 </div>
             </nav>
         </header>
+
         <div class="wrapper row-offcanvas row-offcanvas-left">
-            <!-- Left side column. contains the logo and sidebar -->
-            <aside class="left-side sidebar-offcanvas">                
-                <!-- sidebar: style can be found in sidebar.less -->
+            <aside class="left-side sidebar-offcanvas">
                 <section class="sidebar">
-                    <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left info">
                             {% if user.is_authenticated %}
@@ -164,7 +154,6 @@
                             {% endif %}
                         </div>
                     </div>
-                    <!-- sidebar menu: : style can be found in sidebar.less -->
                     <ul class="sidebar-menu">
                         <li>
                             <a href="/dashboard/">
@@ -212,6 +201,11 @@
                             </a>
                         </li>
                         <li>
+                            <a href="/calendar/">
+                                <i class="fa fa-calendar"></i> <span>Calendario</span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="/forum/">
                                 <i class="fa fa-comments"></i> <span>Forum</span>
                             </a>
@@ -224,13 +218,9 @@
                         </li>
                     </ul>
                 </section>
-                <!-- /.sidebar -->
             </aside>
 
-            <!-- Right side column. Contains the navbar and content of the page -->
             <aside class="right-side">
-
-                <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1 class="text-center">
                         {% block header-title %}
@@ -239,19 +229,17 @@
                     </h1>
                 </section>
 
-                <!-- Main content -->
                 <section class="content">
-                <!-- ABOUT/CONTATTI E DOCUMENTAZIONE LINK -->
+
                 {% block content %}
                     <h3>Ti diamo il benvenuto su Tkit</h3>
                     <p>
 
                     </p>
                 {% endblock %}
-                </section><!-- /.content -->
-
-            </aside><!-- /.right-side -->
-        </div><!-- ./wrapper -->
+                </section>
+            </aside>
+        </div>
 
         <script src="/static/js/jquery.min.js"></script>
         <script src="/static/js/bootstrap.min.js" type="text/javascript"></script>

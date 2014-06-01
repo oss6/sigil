@@ -801,7 +801,11 @@ from django.core import serializers
 @login_required(login_url='/login/')
 def calendar(request):
     todos = ToDoList.objects.filter(teacher=request.user)
+    ls = Lessons.objects.filter(teacher=request.user)
+    assignments = Assignments.objects.filter(a_class__teacher=request.user)
 
     return render_to_response("calendar.html", {
-        "todos": serializers.serialize('json', todos, fields=('title', 'date_exp'))
+        "todos": serializers.serialize('json', todos, fields=('title', 'date_exp')),
+        "lessons": serializers.serialize('json', ls, fields=('title', 'date')),
+        "assignments": serializers.serialize('json', assignments, fields=('title', 'date_end')),
     }, context_instance=RequestContext(request))

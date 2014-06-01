@@ -9,10 +9,12 @@
 {% block add-scripts %}
         <script>
             var TODOS = '{{ todos|safe }}';
-            var LESSONS = "";
+            var LESSONS = '{{ lessons|safe }}';
+            var ASSIGNMENTS = '{{ assignments|safe }}';
         </script>
         <script src="/static/js/underscore-min.js"></script>
         <script src="/static/js/moment.min.js"></script>
+        <script src="/static/js/calendar-it.js"></script>
         <script src="/static/js/clndr.min.js"></script>
         <script src="/static/js/calendar.js"></script>
 {% endblock %}
@@ -42,7 +44,7 @@
                 <script id="mini-clndr-template" type="text/template">
                     <div class="controls">
                         <div class="clndr-previous-button">&lsaquo;</div>
-                        <div class="month"><%= month %></div>
+                        <div class="month"><%= month %> <%= year %></div>
                         <div class="clndr-next-button">&rsaquo;</div>
                     </div>
 
