@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/home/fontello.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/fontello.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/info.html" afterPath="$PROJECT_DIR$/sigil/templates/info.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -59,7 +56,7 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
+            <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-160.0" vertical-offset="0" max-vertical-offset="6048">
               <folding />
             </state>
           </provider>
@@ -68,7 +65,7 @@
       <file leaf-file-name="info.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="68" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-0.62283736" vertical-offset="1620" max-vertical-offset="5256">
+            <state line="167" column="54" selection-start="7470" selection-end="7470" vertical-scroll-proportion="0.43598616" vertical-offset="2754" max-vertical-offset="5220">
               <folding />
             </state>
           </provider>
@@ -271,6 +268,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -911,7 +956,11 @@
       <created>1401645711068</created>
       <updated>1401645711068</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="General restyling">
+      <created>1401647548733</created>
+      <updated>1401647548733</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -970,7 +1019,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Adjusted student upload" />
     <MESSAGE value="Finished book features." />
     <MESSAGE value="Added pdf report feature." />
     <MESSAGE value="Some mods to grade book viz." />
@@ -995,7 +1043,8 @@
     <MESSAGE value="Some mods" />
     <MESSAGE value="Home page restyling" />
     <MESSAGE value="Changed app name: tkit_app --&gt; sigil" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed app name: tkit_app --&gt; sigil" />
+    <MESSAGE value="General restyling" />
+    <option name="LAST_COMMIT_MESSAGE" value="General restyling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1258,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="73" selection-start="2365" selection-end="2365" vertical-scroll-proportion="0.5951557" vertical-offset="394" max-vertical-offset="972">
@@ -1272,9 +1314,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-160.0" vertical-offset="0" max-vertical-offset="6048">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="68" selection-start="3333" selection-end="3333" vertical-scroll-proportion="-0.62283736" vertical-offset="1620" max-vertical-offset="5256">
+        <state line="167" column="54" selection-start="7470" selection-end="7470" vertical-scroll-proportion="0.43598616" vertical-offset="2754" max-vertical-offset="5220">
           <folding />
         </state>
       </provider>
