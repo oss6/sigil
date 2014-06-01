@@ -1,18 +1,18 @@
-import os
+# import os
 import json
 import datetime
 from base64 import b64decode
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
-from django.conf import settings
+# from django.conf import settings
 from django.core import serializers
 from django.db.models import Avg, Count
-from django.core.files import File
+# from django.core.files import File
 from django.core.files.base import ContentFile
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
-from django.views.generic import FormView
+from django.views.generic import FormView, ListView
 from django_messages.models import *
 from easy_pdf.views import PDFTemplateView
 from forms import *
@@ -52,9 +52,12 @@ def disable_lockscreen(request, pwd):
     return ajax_resp("yes") if request.user.check_password(pwd) else ajax_resp("no")
 
 
-def classes(request):
-    cls = Classes.objects.filter(teacher=request.user)
-    return render_to_response("classes.html", {"classes": cls}, context_instance=RequestContext(request))
+class ClassesList(ListView):
+    context_object_name = 'classes'
+    template_name = 'classes.html'
+
+    def get_queryset(self):
+        return Classes.objects.filter(teacher=self.request.user)
 
 
 def add_class(request, id_class=None):
@@ -81,6 +84,7 @@ def remove_class(request, id_class):
 
 
 def class_report(request, id_class):
+    # Studenti
     cl = Classes.objects.get(pk=id_class)
     stds = Students.objects.filter(s_class=cl)
 

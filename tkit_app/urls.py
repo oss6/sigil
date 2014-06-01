@@ -32,7 +32,7 @@ urlpatterns = patterns('',
     url(r'^logout/$', logout, {'next_page': '/'}),
 
     # Classes
-    url(r'^classes/$', views.classes),
+    url(r'^classes/$', views.ClassesList.as_view()),
     url(r'^classes/add/$', views.add_class),
     url(r'^classes/update/(?P<id_class>\d+)/$', views.add_class),
     url(r'^classes/remove/(?P<id_class>\d+)/$', views.remove_class),
