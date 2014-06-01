@@ -43,7 +43,6 @@ def register(request):
     return render(request, 'registration/register.html', args)
 
 
-
 def disable_account(request):
     u = request.user
     u.is_active = False
