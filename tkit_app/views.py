@@ -6,6 +6,7 @@ from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.conf import settings
+from django.core import serializers
 from django.db.models import Avg, Count
 from django.core.files import File
 from django.core.files.base import ContentFile
@@ -42,24 +43,21 @@ def register(request):
     return render(request, 'registration/register.html', args)
 
 
-@login_required(login_url='/login/')
+
 def disable_account(request):
     u = request.user
     u.is_active = False
 
 
-@login_required(login_url='/login/')
 def disable_lockscreen(request, pwd):
     return ajax_resp("yes") if request.user.check_password(pwd) else ajax_resp("no")
 
 
-@login_required(login_url='/login/')
 def classes(request):
     cls = Classes.objects.filter(teacher=request.user)
     return render_to_response("classes.html", {"classes": cls}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_class(request, id_class=None):
     if request.method == "POST":
         form = AddClassForm(request.POST)
@@ -76,7 +74,6 @@ def add_class(request, id_class=None):
     return redirect('/classes/')
 
 
-@login_required(login_url='/login/')
 def remove_class(request, id_class):
     c = Classes.objects.get(pk=id_class)
     c.delete()
@@ -84,7 +81,6 @@ def remove_class(request, id_class):
     return redirect("/classes/")
 
 
-@login_required(login_url='/login/')
 def class_report(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     stds = Students.objects.filter(s_class=cl)
@@ -114,7 +110,6 @@ def class_report(request, id_class):
     }, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def class_grades_performance_chart(request, id_class):
     avg_grades = Grades.objects.values('date', 'subject').distinct().annotate(avg_grades=Avg('grade'))
 
@@ -130,7 +125,6 @@ def class_grades_performance_chart(request, id_class):
     return HttpResponse(content=j, content_type="application/json")
 
 
-@login_required(login_url='/login/')
 def students(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
@@ -139,7 +133,6 @@ def students(request, id_class):
                               context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_student(request, id_class, id_student=None):
     if request.method == "POST":
         form = AddStudentForm(request.POST)
@@ -161,7 +154,6 @@ def add_student(request, id_class, id_student=None):
     return redirect('/classes/' + id_class + '/students/')
 
 
-@login_required(login_url='/login/')
 def remove_student(request, id_class, id_student):
     s = Students.objects.get(pk=id_student)
 
@@ -174,7 +166,6 @@ def remove_student(request, id_class, id_student):
     return redirect("/classes/" + id_class + "/students/")
 
 
-@login_required(login_url='/login/')
 def student_info(request, id_student):
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
@@ -234,7 +225,6 @@ class ClassReportPDF(PDFTemplateView):
         )
 
 
-@login_required(login_url='/login/')
 def grades_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     grades = Grades.objects.filter(student=student)
@@ -250,7 +240,6 @@ def grades_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
-@login_required(login_url='/login/')
 def grades_performance_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     grades = Grades.objects.filter(student=student).order_by('date')
@@ -267,7 +256,6 @@ def grades_performance_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
-@login_required(login_url='/login/')
 def notes_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
@@ -286,7 +274,6 @@ def notes_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
-@login_required(login_url='/login/')
 def add_note(request, id_student):
     if request.method == "POST":
         form = AddNoteForm(request.POST)
@@ -304,7 +291,6 @@ def add_note(request, id_student):
     return redirect('/students/' + id_student + '/')
 
 
-@login_required(login_url='/login/')
 def remove_note(request, id_note):
     n = Notes.objects.get(pk=id_note)
     n.delete()
@@ -312,7 +298,6 @@ def remove_note(request, id_note):
     return redirect("/students/" + str(n.student.pk) + "/")
 
 
-@login_required(login_url='/login/')
 def grade_book(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
@@ -324,7 +309,6 @@ def grade_book(request, id_class):
                               context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_gradable_item(request, id_class):
     if request.method == "POST":
         form = AddGradableItemForm(request.POST)
@@ -345,7 +329,6 @@ def add_gradable_item(request, id_class):
     return redirect('/classes/' + id_class + '/gradebook/')
 
 
-@login_required(login_url='/login/')
 def update_grade(request, id_grade, grade):
     if request.is_ajax():
         g = Grades.objects.get(pk=id_grade)
@@ -355,7 +338,6 @@ def update_grade(request, id_grade, grade):
     return ajax_resp("Grade updated")
 
 
-@login_required(login_url='/login/')
 def remove_gradable_item(request, id_class, sub_name):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl)
@@ -365,7 +347,6 @@ def remove_gradable_item(request, id_class, sub_name):
     return redirect("/classes/" + id_class + "/gradebook/")
 
 
-@login_required(login_url='/login/')
 def attendance(request, id_class, date):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl)
@@ -381,7 +362,6 @@ def attendance(request, id_class, date):
                               context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def update_attendance_type(request, id_att, att_type):
     if request.is_ajax():
         a = Attendance.objects.get(pk=id_att)
@@ -391,7 +371,6 @@ def update_attendance_type(request, id_att, att_type):
     return ajax_resp("Attendance type updated")
 
 
-@login_required(login_url='/login/')
 def attendance_chart(request, id_student):
     student = Students.objects.get(pk=id_student)
     atts = Attendance.objects.filter(student=student)
@@ -410,13 +389,11 @@ def attendance_chart(request, id_student):
     return HttpResponse(content=j, content_type="application/json")
 
 
-@login_required(login_url='/login/')
 def lessons(request):
     cls = Lessons.objects.filter(teacher=request.user)
     return render_to_response("lessons.html", {"lessons": cls}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_lesson(request, id_lesson=None):
     if request.method == "POST":
         form = AddLessonForm(request.POST)
@@ -433,7 +410,6 @@ def add_lesson(request, id_lesson=None):
     return redirect("/lessons/")
 
 
-@login_required(login_url='/login/')
 def remove_lesson(request, id_lesson):
     l = Lessons.objects.get(pk=id_lesson)
     l.delete()
@@ -441,14 +417,12 @@ def remove_lesson(request, id_lesson):
     return redirect("/lessons/")
 
 
-@login_required(login_url='/login/')
 def lesson_boards(request, id_lesson):
     b_lesson = Lessons.objects.get(pk=id_lesson)
     boards = Boards.objects.filter(lesson=b_lesson)
     return render_to_response("boards.html", {"boards": boards, "lesson": b_lesson}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def save_board(request, id_lesson):
     if request.is_ajax():
         file_name = request.POST["file_name"]
@@ -465,7 +439,6 @@ def save_board(request, id_lesson):
     return ajax_resp("Action performed")
 
 
-@login_required(login_url='/login/')
 def remove_board(request, id_lesson, id_board):
     # Get file object
     f = Boards.objects.get(pk=id_board)
@@ -482,14 +455,12 @@ def remove_board(request, id_lesson, id_board):
     return redirect("/lessons/" + id_lesson + "/boards/")
 
 
-@login_required(login_url='/login/')
 def homework(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     assm = Assignments.objects.all().filter(a_class=cl)
     return render_to_response("assignments.html", {"assignments": assm, "class": cl}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_assignment(request, id_class, id_assignment=None):
     if request.method == "POST":
         form = AddAssignmentForm(request.POST)
@@ -509,7 +480,6 @@ def add_assignment(request, id_class, id_assignment=None):
     return redirect('/classes/' + str(id_class) + '/homework/')
 
 
-@login_required(login_url='/login/')
 def remove_assignment(request, id_class, id_assignment):
     cl = Classes.objects.get(pk=id_class)
     assm = Assignments.objects.get(pk=id_assignment, a_class=cl)
@@ -518,13 +488,11 @@ def remove_assignment(request, id_class, id_assignment):
     return redirect("/classes/" + id_class + "/homework/")
 
 
-@login_required(login_url='/login/')
 def to_do_list(request):
     ls = ToDoList.objects.filter(teacher=request.user).order_by("date_exp").reverse()
     return render_to_response("todolist.html", {"list": ls}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_todolist_item(request, id_item=None):
     if request.method == "POST":
         form = AddListItemForm(request.POST)
@@ -541,7 +509,6 @@ def add_todolist_item(request, id_item=None):
     return redirect("/todolist/")
 
 
-@login_required(login_url='/login/')
 def remove_todolist_item(request, id_item):
     ls = ToDoList.objects.get(pk=id_item)
     ls.delete()
@@ -549,7 +516,6 @@ def remove_todolist_item(request, id_item):
     return redirect("/todolist/")
 
 
-@login_required(login_url='/login/')
 def mailbox_inbox(request):
     message_list = Message.objects.inbox_for(request.user)
 
@@ -558,7 +524,7 @@ def mailbox_inbox(request):
     }, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
+
 def mailbox_outbox(request):
     message_list = Message.objects.outbox_for(request.user)
     return render_to_response("mailbox_outbox.html", {
@@ -566,7 +532,6 @@ def mailbox_outbox(request):
     }, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def mailbox_trash(request):
     message_list = Message.objects.trash_for(request.user)
     return render_to_response("mailbox_trash.html", {
@@ -574,7 +539,6 @@ def mailbox_trash(request):
     }, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def update_color_schema(request, cls):
     if request.is_ajax():
         try:
@@ -588,7 +552,6 @@ def update_color_schema(request, cls):
     return ajax_resp("Color schema updated")
 
 
-@login_required(login_url='/login/')
 def update_absence_limit(request, limit):
     if request.is_ajax():
         try:
@@ -602,7 +565,6 @@ def update_absence_limit(request, limit):
     return ajax_resp("Absence limit updated")
 
 
-@login_required(login_url='/login/')
 def update_spc_limit(request, limit):
     if request.is_ajax():
         try:
@@ -616,7 +578,6 @@ def update_spc_limit(request, limit):
     return ajax_resp("SPC limit updated")
 
 
-@login_required(login_url='/login/')
 def update_negative_notes_limit(request, limit):
     if request.is_ajax():
         try:
@@ -630,13 +591,11 @@ def update_negative_notes_limit(request, limit):
     return ajax_resp("NN limit updated")
 
 
-@login_required(login_url='/login/')
 def mind_map(request):
     mmaps = MindMap.objects.all().filter(teacher=request.user)
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def save_mind_map(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
@@ -650,14 +609,12 @@ def save_mind_map(request):
     return ajax_resp("Action performed")
 
 
-@login_required(login_url='/login/')
 def load_mind_map(request, id_map):
     mmap = MindMap.objects.get(pk=id_map)
     data = mmap.json_file.read()
     return ajax_resp(data)
 
 
-@login_required(login_url='/login/')
 def remove_mind_map(request, id_map):
     # Get file object
     f = MindMap.objects.get(pk=id_map)
@@ -686,13 +643,11 @@ class MindMapView(FormView):
         return redirect("/mindmap/")
 
 
-@login_required(login_url='/login/')
 def presentation_tool(request):
     ps = Presentation.objects.filter(teacher=request.user)
     return render_to_response("presentation.html", {"pres": ps}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def save_pres(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
@@ -708,23 +663,20 @@ def save_pres(request):
     return ajax_resp("Action performed")
 
 
-@login_required(login_url='/login/')
 def load_pres(request, id_pres):
     pass
 
 
-@login_required(login_url='/login/')
+
 def remove_pres(request, id_pres):
     pass
 
 
-@login_required(login_url='/login/')
 def doc_editor(request):
     docs = Document.objects.filter(teacher=request.user)
     return render_to_response("editor.html", {"docs": docs}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def save_doc(request):
     if request.is_ajax():
         file_name = request.POST["file_name"]
@@ -738,14 +690,12 @@ def save_doc(request):
     return ajax_resp("Action performed")
 
 
-@login_required(login_url='/login/')
 def load_doc(request, id_doc):
     doc = Document.objects.get(pk=id_doc)
     data = doc.doc_file.read()
     return ajax_resp(data)
 
 
-@login_required(login_url='/login/')
 def remove_doc(request, id_doc):
     # Get file object
     f = Document.objects.get(pk=id_doc)
@@ -762,13 +712,11 @@ def remove_doc(request, id_doc):
     return redirect("/editor/")
 
 
-@login_required(login_url='/login/')
 def papers(request):
     pps = Papers.objects.filter(teacher=request.user)
     return render_to_response("papers.html", {"papers": pps}, context_instance=RequestContext(request))
 
 
-@login_required(login_url='/login/')
 def add_paper(request):
     if request.method == "POST":
         form = AddPaperForm(request.POST)
@@ -785,7 +733,6 @@ def add_paper(request):
     return redirect('/papers/')
 
 
-@login_required(login_url='/login/')
 def remove_paper(request, id_paper):
     p = Papers.objects.get(pk=id_paper)
     if p.paper_file:
@@ -795,10 +742,6 @@ def remove_paper(request, id_paper):
     return redirect("/papers/")
 
 
-from django.core import serializers
-
-
-@login_required(login_url='/login/')
 def calendar(request):
     todos = ToDoList.objects.filter(teacher=request.user)
     ls = Lessons.objects.filter(teacher=request.user)
