@@ -5,7 +5,6 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
 from tkit_app import views
 from django_messages import views as dmv
-from easy_pdf.views import PDFTemplateView
 from django.contrib.auth.decorators import login_required
 
 urlpatterns = patterns('',
@@ -91,7 +90,9 @@ urlpatterns = patterns('',
     url(r'^mailbox/inbox/$', views.mailbox_inbox),
     url(r'^mailbox/outbox/$', views.mailbox_outbox),
     url(r'^mailbox/trash/$', views.mailbox_trash),
-    url(r'^mailbox/compose/$', dmv.compose, {'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'}),
+    url(r'^mailbox/compose/$', dmv.compose, {
+        'template_name': 'mailbox_compose.html', 'success_url': '/mailbox/inbox/'
+    }),
     url(r'^mailbox/view/(?P<message_id>[\d]+)/$', dmv.view, {'template_name': 'mailbox_view.html'}),
     url(r'^mailbox/reply/(?P<message_id>[\d]+)/$', dmv.reply, {'template_name': 'mailbox_compose.html',
                                                               'success_url': '/mailbox/inbox/'}),

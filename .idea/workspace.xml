@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="$PROJECT_DIR$/tkit_storage" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit/middleware.py" afterPath="$PROJECT_DIR$/tkit/middleware.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit/settings.py" afterPath="$PROJECT_DIR$/tkit/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit_app/urls.py" afterPath="$PROJECT_DIR$/tkit_app/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -31,7 +30,7 @@
       <file leaf-file-name="urls.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="45" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="2304">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0016528926" vertical-offset="1" max-vertical-offset="2340">
               <folding />
             </state>
           </provider>
@@ -40,28 +39,8 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1452" max-vertical-offset="2070">
+            <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="24" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="3492">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="middleware.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit/middleware.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-              <folding>
-                <element signature="e#0#44#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +48,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="31" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="13320">
+            <state line="153" column="0" selection-start="5303" selection-end="5303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13320">
               <folding />
             </state>
           </provider>
@@ -126,7 +105,6 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/calendar.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/calendar.js" />
-        <option value="$PROJECT_DIR$/tkit_app/urls.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" />
         <option value="$PROJECT_DIR$/local/custom/middleware/login_required.py" />
         <option value="$PROJECT_DIR$/local/custom/middleware/login.py" />
@@ -134,6 +112,7 @@
         <option value="$PROJECT_DIR$/tkit_app/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/tkit/middleware.py" />
         <option value="$PROJECT_DIR$/tkit/settings.py" />
+        <option value="$PROJECT_DIR$/tkit_app/urls.py" />
       </list>
     </option>
   </component>
@@ -217,28 +196,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registration" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -842,7 +799,11 @@
       <created>1401621203630</created>
       <updated>1401621203630</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Added middleware for login required feature">
+      <created>1401621437893</created>
+      <updated>1401621437893</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -934,11 +895,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/core/files/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="8" selection-start="410" selection-end="410" vertical-scroll-proportion="-3.381113" vertical-offset="2113" max-vertical-offset="2808" />
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django/utils/datastructures.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="279" column="8" selection-start="8116" selection-end="8116" vertical-scroll-proportion="-1.4362069" vertical-offset="5819" max-vertical-offset="9396" />
@@ -1167,9 +1123,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="75" selection-start="1616" selection-end="1616" vertical-scroll-proportion="1.0276817" vertical-offset="0" max-vertical-offset="972">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit/middleware.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.8737864" vertical-offset="0" max-vertical-offset="648">
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="24" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.35041323" vertical-offset="1642" max-vertical-offset="3492">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit_app/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="31" selection-start="1557" selection-end="1557" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13320">
+        <state line="153" column="0" selection-start="5303" selection-end="5303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13320">
           <folding />
         </state>
       </provider>
@@ -1181,32 +1167,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="75" selection-start="1616" selection-end="1616" vertical-scroll-proportion="1.0276817" vertical-offset="0" max-vertical-offset="972">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit/middleware.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="648">
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="24" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.0" vertical-offset="1504" max-vertical-offset="3492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="45" selection-start="1293" selection-end="1293" vertical-scroll-proportion="0.446281" vertical-offset="0" max-vertical-offset="2304">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0016528926" vertical-offset="1" max-vertical-offset="2340">
           <folding />
         </state>
       </provider>
