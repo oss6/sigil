@@ -1,4 +1,4 @@
-from tkit_app.models import ToDoList, Settings
+from sigil.models import ToDoList, Settings
 
 
 def color_schema(request):

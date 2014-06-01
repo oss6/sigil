@@ -2,7 +2,139 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tkit_app/static/css/home-style.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/__init__.py" afterPath="$PROJECT_DIR$/sigil/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/admin.py" afterPath="$PROJECT_DIR$/sigil/admin.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/context_processors.py" afterPath="$PROJECT_DIR$/sigil/context_processors.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/forms.py" afterPath="$PROJECT_DIR$/sigil/forms.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/models.py" afterPath="$PROJECT_DIR$/sigil/models.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/AdminLTE.css" afterPath="$PROJECT_DIR$/sigil/static/css/AdminLTE.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/animate.css" afterPath="$PROJECT_DIR$/sigil/static/css/animate.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/bootstrap-datepicker.css" afterPath="$PROJECT_DIR$/sigil/static/css/bootstrap-datepicker.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/bootstrap-image-gallery.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/bootstrap-image-gallery.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/bootstrap-responsive.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/bootstrap-responsive.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/bootstrap.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/calendar.css" afterPath="$PROJECT_DIR$/sigil/static/css/calendar.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/deck.core.css" afterPath="$PROJECT_DIR$/sigil/static/css/deck.core.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/deck.navigation.css" afterPath="$PROJECT_DIR$/sigil/static/css/deck.navigation.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/deck.status.css" afterPath="$PROJECT_DIR$/sigil/static/css/deck.status.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/drawingboard.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/drawingboard.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/font-awesome.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home-style.css" afterPath="$PROJECT_DIR$/sigil/static/css/home-style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home/bootstrap-responsive.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/bootstrap-responsive.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home/bootstrap.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/bootstrap.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home/fontello-ie7.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/fontello-ie7.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home/fontello.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/fontello.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/home/home-style.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/horizontal-slide.css" afterPath="$PROJECT_DIR$/sigil/static/css/horizontal-slide.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/ionicons.min.css" afterPath="$PROJECT_DIR$/sigil/static/css/ionicons.min.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/jquery-te-1.4.0.css" afterPath="$PROJECT_DIR$/sigil/static/css/jquery-te-1.4.0.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/jquery-te.png" afterPath="$PROJECT_DIR$/sigil/static/css/jquery-te.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/overwrite.css" afterPath="$PROJECT_DIR$/sigil/static/css/overwrite.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/popline-def.css" afterPath="$PROJECT_DIR$/sigil/static/css/popline-def.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/toggle-switch.css" afterPath="$PROJECT_DIR$/sigil/static/css/toggle-switch.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/css/web-2.0.css" afterPath="$PROJECT_DIR$/sigil/static/css/web-2.0.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/sigil/static/fonts/FontAwesome.otf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontawesome-webfont.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontawesome-webfont.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontawesome-webfont.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontawesome-webfont.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontello.eot" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontello.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontello.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontello.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontello.ttf" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontello.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/fontello.woff" afterPath="$PROJECT_DIR$/sigil/static/fonts/fontello.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/sigil/static/fonts/glyphicons-halflings-regular.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/glyphicons-halflings-regular.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/sigil/static/fonts/glyphicons-halflings-regular.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/sigil/static/fonts/glyphicons-halflings-regular.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.dev.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/icomoon.dev.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.eot" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/icomoon.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/icomoon.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.ttf" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/icomoon.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/icomoon.woff" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/icomoon.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/icomoon/license.txt" afterPath="$PROJECT_DIR$/sigil/static/fonts/icomoon/license.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/ionicons.eot" afterPath="$PROJECT_DIR$/sigil/static/fonts/ionicons.eot" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/ionicons.svg" afterPath="$PROJECT_DIR$/sigil/static/fonts/ionicons.svg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/ionicons.ttf" afterPath="$PROJECT_DIR$/sigil/static/fonts/ionicons.ttf" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/fonts/ionicons.woff" afterPath="$PROJECT_DIR$/sigil/static/fonts/ionicons.woff" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/bg-mac.png" afterPath="$PROJECT_DIR$/sigil/static/images/bg-mac.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/blur-background09.jpg" afterPath="$PROJECT_DIR$/sigil/static/images/blur-background09.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/def-user.jpg" afterPath="$PROJECT_DIR$/sigil/static/images/def-user.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/top-bg.jpg" afterPath="$PROJECT_DIR$/sigil/static/images/top-bg.jpg" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/yellow.png" afterPath="$PROJECT_DIR$/sigil/static/images/yellow.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/images/yellow_testimonial.png" afterPath="$PROJECT_DIR$/sigil/static/images/yellow_testimonial.png" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/app.js" afterPath="$PROJECT_DIR$/sigil/static/js/app.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/base.js" afterPath="$PROJECT_DIR$/sigil/static/js/base.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/sigil/static/js/bootstrap-datepicker.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/bootstrap-image-gallery.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/bootstrap-image-gallery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/bootstrap.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/calendar-it.js" afterPath="$PROJECT_DIR$/sigil/static/js/calendar-it.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/calendar.js" afterPath="$PROJECT_DIR$/sigil/static/js/calendar.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/clndr.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/clndr.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/deck.core.js" afterPath="$PROJECT_DIR$/sigil/static/js/deck.core.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/deck.navigation.js" afterPath="$PROJECT_DIR$/sigil/static/js/deck.navigation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/deck.status.js" afterPath="$PROJECT_DIR$/sigil/static/js/deck.status.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/drawingboard.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/drawingboard.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/home/bootstrap.js" afterPath="$PROJECT_DIR$/sigil/static/js/home/bootstrap.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/home/jquery.js" afterPath="$PROJECT_DIR$/sigil/static/js/home/jquery.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/home/jquery.localscroll-1.2.7-min.js" afterPath="$PROJECT_DIR$/sigil/static/js/home/jquery.localscroll-1.2.7-min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/home/jquery.scrollTo-1.4.2-min.js" afterPath="$PROJECT_DIR$/sigil/static/js/home/jquery.scrollTo-1.4.2-min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/jquery-te-1.4.0.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/jquery-te-1.4.0.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/jquery.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/jquery.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/jquery.popline.js" afterPath="$PROJECT_DIR$/sigil/static/js/jquery.popline.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/modernizr.custom.js" afterPath="$PROJECT_DIR$/sigil/static/js/modernizr.custom.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/moment.min.js" afterPath="$PROJECT_DIR$/sigil/static/js/moment.min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.backcolor.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.backcolor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.blockformat.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.blockformat.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.blockquote.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.blockquote.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.decoration.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.decoration.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.justify.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.justify.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.link.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.link.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.list.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.list.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/popline-plugins/jquery.popline.social.js" afterPath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.social.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/static/js/underscore-min.js" afterPath="$PROJECT_DIR$/sigil/static/js/underscore-min.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/404.html" afterPath="$PROJECT_DIR$/sigil/templates/404.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/500.html" afterPath="$PROJECT_DIR$/sigil/templates/500.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/assignments.html" afterPath="$PROJECT_DIR$/sigil/templates/assignments.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/attendance.html" afterPath="$PROJECT_DIR$/sigil/templates/attendance.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/base.html" afterPath="$PROJECT_DIR$/sigil/templates/base.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/boards.html" afterPath="$PROJECT_DIR$/sigil/templates/boards.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/books.html" afterPath="$PROJECT_DIR$/sigil/templates/books.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/calendar.html" afterPath="$PROJECT_DIR$/sigil/templates/calendar.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html" afterPath="$PROJECT_DIR$/sigil/templates/class-report-pdf.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/class-report.html" afterPath="$PROJECT_DIR$/sigil/templates/class-report.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/classes.html" afterPath="$PROJECT_DIR$/sigil/templates/classes.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/doc-dev.html" afterPath="$PROJECT_DIR$/sigil/templates/doc-dev.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/doc-users.html" afterPath="$PROJECT_DIR$/sigil/templates/doc-users.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/editor.html" afterPath="$PROJECT_DIR$/sigil/templates/editor.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/grade-book.html" afterPath="$PROJECT_DIR$/sigil/templates/grade-book.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/info.html" afterPath="$PROJECT_DIR$/sigil/templates/info.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/lessons.html" afterPath="$PROJECT_DIR$/sigil/templates/lessons.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/lockscreen.html" afterPath="$PROJECT_DIR$/sigil/templates/lockscreen.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mailbox_compose.html" afterPath="$PROJECT_DIR$/sigil/templates/mailbox_compose.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mailbox_inbox.html" afterPath="$PROJECT_DIR$/sigil/templates/mailbox_inbox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mailbox_outbox.html" afterPath="$PROJECT_DIR$/sigil/templates/mailbox_outbox.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mailbox_trash.html" afterPath="$PROJECT_DIR$/sigil/templates/mailbox_trash.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mailbox_view.html" afterPath="$PROJECT_DIR$/sigil/templates/mailbox_view.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mindmap.html" afterPath="$PROJECT_DIR$/sigil/templates/mindmap.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/mindmap_form.html" afterPath="$PROJECT_DIR$/sigil/templates/mindmap_form.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/papers.html" afterPath="$PROJECT_DIR$/sigil/templates/papers.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/presentation-create.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation-create.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/presentation.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/registration/login.html" afterPath="$PROJECT_DIR$/sigil/templates/registration/login.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/registration/register.html" afterPath="$PROJECT_DIR$/sigil/templates/registration/register.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/registration/signup_success.html" afterPath="$PROJECT_DIR$/sigil/templates/registration/signup_success.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html" afterPath="$PROJECT_DIR$/sigil/templates/student-report-pdf.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/student-report.html" afterPath="$PROJECT_DIR$/sigil/templates/student-report.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/students.html" afterPath="$PROJECT_DIR$/sigil/templates/students.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templates/todolist.html" afterPath="$PROJECT_DIR$/sigil/templates/todolist.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templatetags/__init__.py" afterPath="$PROJECT_DIR$/sigil/templatetags/__init__.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/templatetags/bootstrap.py" afterPath="$PROJECT_DIR$/sigil/templatetags/bootstrap.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/tests.py" afterPath="$PROJECT_DIR$/sigil/tests.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/urls.py" afterPath="$PROJECT_DIR$/sigil/urls.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/tkit_app/views.py" afterPath="$PROJECT_DIR$/sigil/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit/settings.py" afterPath="$PROJECT_DIR$/tkit/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit/urls.py" afterPath="$PROJECT_DIR$/tkit/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -27,16 +159,16 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
+        <entry file="file://$PROJECT_DIR$/sigil/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="52" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2466">
+            <state line="34" column="52" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2466">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
+        <entry file="file://$PROJECT_DIR$/sigil/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2106">
               <folding />
@@ -45,7 +177,7 @@
         </entry>
       </file>
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
+        <entry file="file://$PROJECT_DIR$/sigil/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="13716">
               <folding />
@@ -54,7 +186,7 @@
         </entry>
       </file>
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
+        <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
               <folding>
@@ -75,10 +207,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="info.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tkit_app/templates/info.html">
+      <file leaf-file-name="info.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="540" selection-end="540" vertical-scroll-proportion="0.40484428" vertical-offset="0" max-vertical-offset="6786">
+            <state line="11" column="20" selection-start="391" selection-end="391" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="6786">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tkit/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="127" column="5" selection-start="4428" selection-end="4428" vertical-scroll-proportion="-0.36694214" vertical-offset="2508" max-vertical-offset="3492">
               <folding />
             </state>
           </provider>
@@ -137,12 +278,12 @@
         <option value="$PROJECT_DIR$/local/custom/middleware/login.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/tkit/middleware.py" />
-        <option value="$PROJECT_DIR$/tkit/settings.py" />
         <option value="$PROJECT_DIR$/tkit_app/context_processors.py" />
         <option value="$PROJECT_DIR$/tkit_app/urls.py" />
         <option value="$PROJECT_DIR$/tkit_app/views.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/base.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/info.html" />
+        <option value="$PROJECT_DIR$/tkit/settings.py" />
       </list>
     </option>
   </component>
@@ -207,7 +348,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="tkit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -221,7 +362,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -239,7 +394,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="sigil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -261,33 +416,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="sigil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -309,7 +438,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="sigil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -327,7 +456,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tkit_app" />
+              <option name="myItemId" value="sigil" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -336,34 +465,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -979,7 +1080,11 @@
       <created>1401645157685</created>
       <updated>1401645157685</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Home page restyling">
+      <created>1401645213889</created>
+      <updated>1401645213889</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1010,6 +1115,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36882716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24256651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1019,7 +1125,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1038,7 +1143,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="General mods." />
     <MESSAGE value="Starting books feature." />
     <MESSAGE value="Adjusted student upload" />
     <MESSAGE value="Finished book features." />
@@ -1063,7 +1167,8 @@
     <MESSAGE value="Fixing presentation tool" />
     <MESSAGE value="Added middleware for login required feature" />
     <MESSAGE value="Some mods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some mods" />
+    <MESSAGE value="Home page restyling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Home page restyling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1071,42 +1176,42 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/jquery.popline.js">
+    <entry file="file://$PROJECT_DIR$/sigil/static/js/jquery.popline.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="8" selection-start="283" selection-end="283" vertical-scroll-proportion="0.36724138" vertical-offset="57" max-vertical-offset="8730" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/app.js">
+    <entry file="file://$PROJECT_DIR$/sigil/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="706" column="24" selection-start="30498" selection-end="30498" vertical-scroll-proportion="0.21034482" vertical-offset="12586" max-vertical-offset="20520" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/grade-book.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/grade-book.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="63" column="72" selection-start="3428" selection-end="3428" vertical-scroll-proportion="-8.407408" vertical-offset="907" max-vertical-offset="2124" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/books.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/books.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="190" selection-start="1519" selection-end="1519" vertical-scroll-proportion="1.0899653" vertical-offset="0" max-vertical-offset="2538" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/lessons.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/lessons.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="45" column="38" selection-start="2157" selection-end="2157" vertical-scroll-proportion="2.0370371" vertical-offset="865" max-vertical-offset="1782" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/editor.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/editor.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="23" column="0" selection-start="879" selection-end="879" vertical-scroll-proportion="0.5533454" vertical-offset="108" max-vertical-offset="2106" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/doc-users.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="122" column="23" selection-start="5732" selection-end="5732" vertical-scroll-proportion="-5.111111" vertical-offset="2058" max-vertical-offset="5760" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/doc-dev.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/doc-dev.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="21" selection-start="585" selection-end="585" vertical-scroll-proportion="-0.0" vertical-offset="342" max-vertical-offset="5130" />
       </provider>
@@ -1121,47 +1226,47 @@
         <state line="79" column="13" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.33275864" vertical-offset="1013" max-vertical-offset="9936" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/todolist.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/todolist.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="19" selection-start="140" selection-end="140" vertical-scroll-proportion="0.1590106" vertical-offset="0" max-vertical-offset="1386" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mindmap_form.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mindmap_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="34" selection-start="61" selection-end="61" vertical-scroll-proportion="0.06360424" vertical-offset="0" max-vertical-offset="566" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mindmap.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mindmap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="0.09764919" vertical-offset="0" max-vertical-offset="2736" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mailbox_compose.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_compose.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mailbox_trash.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_trash.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mailbox_view.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mailbox_outbox.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_outbox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/mailbox_inbox.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_inbox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="24" selection-start="94" selection-end="94" vertical-scroll-proportion="0.12456747" vertical-offset="0" max-vertical-offset="1422" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/papers.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/papers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="61" selection-start="2730" selection-end="2730" vertical-scroll-proportion="1.5882353" vertical-offset="0" max-vertical-offset="1728" />
       </provider>
@@ -1171,7 +1276,7 @@
         <state line="43" column="4" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.3322091" vertical-offset="469" max-vertical-offset="1350" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/student-report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="87" column="49" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024" />
       </provider>
@@ -1181,42 +1286,42 @@
         <state line="13" column="16" selection-start="365" selection-end="365" vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report-pdf.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/class-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1890" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/student-report-pdf.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/student-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="12" selection-start="396" selection-end="396" vertical-scroll-proportion="0.5724382" vertical-offset="0" max-vertical-offset="2034" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/students.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/students.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="33" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2376" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/class-report.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/class-report.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="60" selection-start="1627" selection-end="1627" vertical-scroll-proportion="1.0050762" vertical-offset="0" max-vertical-offset="1926" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/boards.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/boards.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="8" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.98442906" vertical-offset="223" max-vertical-offset="2538" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/classes.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/classes.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="71" column="47" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.39619377" vertical-offset="1049" max-vertical-offset="1656" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/500.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/attendance.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/attendance.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="39" selection-start="106" selection-end="106" vertical-scroll-proportion="0.09342561" vertical-offset="0" max-vertical-offset="1548" />
       </provider>
@@ -1226,22 +1331,22 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/calendar.js">
+    <entry file="file://$PROJECT_DIR$/sigil/static/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="47" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/calendar.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="67" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-30.666666" vertical-offset="0" max-vertical-offset="1530" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/presentation.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/presentation.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="46" selection-start="127" selection-end="127" vertical-scroll-proportion="0.030456852" vertical-offset="36" max-vertical-offset="1170" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/presentation-create.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="145" column="16" selection-start="6091" selection-end="6091" vertical-scroll-proportion="4.515571" vertical-offset="0" max-vertical-offset="2808" />
       </provider>
@@ -1251,7 +1356,7 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/registration/login.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="75" selection-start="1616" selection-end="1616" vertical-scroll-proportion="1.0276817" vertical-offset="0" max-vertical-offset="972" />
       </provider>
@@ -1261,63 +1366,60 @@
         <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.8737864" vertical-offset="0" max-vertical-offset="648" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="24" selection-start="3581" selection-end="3581" vertical-scroll-proportion="0.35041323" vertical-offset="1642" max-vertical-offset="3492" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/tests.py">
+    <entry file="file://$PROJECT_DIR$/sigil/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/admin.py">
+    <entry file="file://$PROJECT_DIR$/sigil/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/context_processors.py">
+    <entry file="file://$PROJECT_DIR$/sigil/context_processors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="202" selection-end="202" vertical-scroll-proportion="0.20826447" vertical-offset="0" max-vertical-offset="1134" />
+        <state line="7" column="25" selection-start="202" selection-end="202" vertical-scroll-proportion="0.20826447" vertical-offset="0" max-vertical-offset="1134">
+          <folding />
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/models.py">
+    <entry file="file://$PROJECT_DIR$/sigil/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/forms.py">
+    <entry file="file://$PROJECT_DIR$/sigil/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="44" selection-start="1290" selection-end="1290" vertical-scroll-proportion="1.2233009" vertical-offset="0" max-vertical-offset="1494" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/urls.py">
+    <entry file="file://$PROJECT_DIR$/sigil/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="52" selection-start="1660" selection-end="1660" vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="2340">
+        <state line="34" column="52" selection-start="1657" selection-end="1657" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="2466">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/404.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/assignments.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/assignments.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/views.py">
+    <entry file="file://$PROJECT_DIR$/sigil/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13716">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="240" column="33" selection-start="12111" selection-end="12111" vertical-scroll-proportion="-12.740741" vertical-offset="3976" max-vertical-offset="6048">
           <folding>
@@ -1337,16 +1439,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/static/js/base.js">
+    <entry file="file://$PROJECT_DIR$/sigil/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="5436">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit_app/templates/info.html">
+    <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="540" selection-end="540" vertical-scroll-proportion="0.40484428" vertical-offset="0" max-vertical-offset="6786">
+        <state line="11" column="20" selection-start="391" selection-end="391" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="6786">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="5" selection-start="4428" selection-end="4428" vertical-scroll-proportion="-0.36694214" vertical-offset="2508" max-vertical-offset="3492">
           <folding />
         </state>
       </provider>

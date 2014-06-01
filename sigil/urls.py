@@ -3,7 +3,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.views.generic import TemplateView
 from django.contrib.auth.views import login, logout
-from tkit_app import views
+from sigil import views
 from django_messages import views as dmv
 from django.contrib.auth.decorators import login_required
 
