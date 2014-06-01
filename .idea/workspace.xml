@@ -58,7 +58,7 @@
       <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="398" column="69" selection-start="20717" selection-end="20717" vertical-scroll-proportion="3.915225" vertical-offset="4901" max-vertical-offset="7686">
+            <state line="265" column="119" selection-start="13674" selection-end="13674" vertical-scroll-proportion="0.7543253" vertical-offset="4334" max-vertical-offset="5940">
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#section#1;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -841,7 +841,11 @@
       <created>1401627222407</created>
       <updated>1401627222408</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Some mods">
+      <created>1401627315952</created>
+      <updated>1401627315952</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1219,7 +1223,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit_app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="398" column="69" selection-start="20717" selection-end="20717" vertical-scroll-proportion="3.915225" vertical-offset="4901" max-vertical-offset="7686">
+        <state line="265" column="119" selection-start="13674" selection-end="13674" vertical-scroll-proportion="0.7543253" vertical-offset="4334" max-vertical-offset="5940">
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#section#1;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#section#1;n#aside#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
