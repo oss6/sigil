@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -873,7 +873,11 @@
       <created>1401786426937</created>
       <updated>1401786426937</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Added requirements.txt">
+      <created>1401787977006</created>
+      <updated>1401787977006</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -932,7 +936,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Finished book features." />
     <MESSAGE value="Added pdf report feature." />
     <MESSAGE value="Some mods to grade book viz." />
     <MESSAGE value="Bug fix on &quot;save_mind_map&quot; view" />
@@ -957,7 +960,8 @@
     <MESSAGE value="Home page restyling" />
     <MESSAGE value="Changed app name: tkit_app --&gt; sigil" />
     <MESSAGE value="General restyling" />
-    <option name="LAST_COMMIT_MESSAGE" value="General restyling" />
+    <MESSAGE value="Added requirements.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added requirements.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -978,11 +982,6 @@
     <entry file="file://$USER_HOME$/.PyCharm30/system/python_stubs/-1247972723/__builtin__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="948" column="8" selection-start="32294" selection-end="32294" vertical-scroll-proportion="0.33275864" vertical-offset="16871" max-vertical-offset="91782" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/forms/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="13" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.33275864" vertical-offset="1013" max-vertical-offset="9936" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/todolist.html">
@@ -1028,11 +1027,6 @@
     <entry file="file://$PROJECT_DIR$/sigil/templates/papers.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="61" selection-start="2730" selection-end="2730" vertical-scroll-proportion="1.5882353" vertical-offset="0" max-vertical-offset="1728" />
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python2.7/dist-packages/django/contrib/auth/decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="4" selection-start="1891" selection-end="1891" vertical-scroll-proportion="0.3322091" vertical-offset="469" max-vertical-offset="1350" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/student-report.html">
