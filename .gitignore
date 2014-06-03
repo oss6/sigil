@@ -1,7 +1,7 @@
 venv
 media
-workspace.xml
-tasks.xml
+.idea/workspace.xml
+.idea/tasks.xml
 *.iws
 *.log
 *.pot
