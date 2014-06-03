@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -61,10 +62,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="12" selection-start="250" selection-end="250" vertical-scroll-proportion="0.6796116" vertical-offset="138" max-vertical-offset="756">
+            <state line="33" column="7" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="756">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requirements.txt" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="21" selection-start="105" selection-end="105" vertical-scroll-proportion="0.14563107" vertical-offset="0" max-vertical-offset="618">
               <folding />
             </state>
           </provider>
@@ -92,7 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tkit_app/templates/registration/signup_success.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/impress.js" />
         <option value="$PROJECT_DIR$/tkit_app/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/assignments.html" />
@@ -143,6 +152,7 @@
         <option value="$PROJECT_DIR$/sigil/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/sigil/templates/base.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -190,20 +200,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="tkit" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tkit" />
@@ -901,7 +897,11 @@
       <created>1401789551167</created>
       <updated>1401789551167</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Mods to .gitignore">
+      <created>1401789580371</created>
+      <updated>1401789580371</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1265,7 +1265,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="12" selection-start="250" selection-end="250" vertical-scroll-proportion="0.6796116" vertical-offset="138" max-vertical-offset="756">
+        <state line="33" column="7" selection-start="266" selection-end="266" vertical-scroll-proportion="0.0" vertical-offset="138" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="105" selection-end="105" vertical-scroll-proportion="0.14563107" vertical-offset="0" max-vertical-offset="618">
           <folding />
         </state>
       </provider>
