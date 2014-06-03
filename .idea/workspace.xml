@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment=".gitignore mods">
+    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -74,7 +74,7 @@
       <file leaf-file-name="requirements.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
+            <state line="6" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
               <folding />
             </state>
           </provider>
@@ -909,7 +909,11 @@
       <created>1401790160842</created>
       <updated>1401790160843</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="requirements.txt mods">
+      <created>1401790498211</created>
+      <updated>1401790498211</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -968,7 +972,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added and finished editor feature" />
     <MESSAGE value="Starting docs" />
     <MESSAGE value="Finishing presentation" />
     <MESSAGE value="Some restyling." />
@@ -993,7 +996,8 @@
     <MESSAGE value="Mods to .gitignore" />
     <MESSAGE value="Adjusted requirements.txt" />
     <MESSAGE value=".gitignore mods" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore mods" />
+    <MESSAGE value="requirements.txt mods" />
+    <option name="LAST_COMMIT_MESSAGE" value="requirements.txt mods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1280,7 +1284,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
+        <state line="6" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
           <folding />
         </state>
       </provider>
