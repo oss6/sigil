@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="Changed db name">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="tkit.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -65,7 +64,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="22" selection-start="53" selection-end="53" vertical-scroll-proportion="0.08737864" vertical-offset="0" max-vertical-offset="774">
+            <state line="7" column="5" selection-start="87" selection-end="87" vertical-scroll-proportion="0.2038835" vertical-offset="0" max-vertical-offset="774">
               <folding />
             </state>
           </provider>
@@ -229,21 +228,21 @@
     <property name="recentsLimit" value="5" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="73" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="70" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="93" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="99" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="968" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="973" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="73" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="75" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="93" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="95" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="101" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="104" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="968" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="961" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesPython" value="false" />
@@ -933,7 +932,11 @@
       <created>1401793193879</created>
       <updated>1401793193880</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Changed db name">
+      <created>1401793539417</created>
+      <updated>1401793539418</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1294,7 +1297,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="22" selection-start="53" selection-end="53" vertical-scroll-proportion="0.08737864" vertical-offset="0" max-vertical-offset="774">
+        <state line="7" column="5" selection-start="87" selection-end="87" vertical-scroll-proportion="0.2038835" vertical-offset="0" max-vertical-offset="774">
           <folding />
         </state>
       </provider>
