@@ -1,5 +1,33 @@
 venv
 *.log
 *.pot
-*.pyc
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Django files
 local_settings.py
+include
+lib
+local
+man
+share
+tkit_storage
+Scripts
+.Python
+*.pyc
+*~
+*.db
