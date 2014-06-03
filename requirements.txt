@@ -1,0 +1,5 @@
+Django==1.5
+easy_pdf
+pybb
+django_messages==0.5
+bootstrapform==3.1
