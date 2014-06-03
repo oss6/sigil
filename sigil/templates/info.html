@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Sigil - Home</title>
+    <title>Sigil - {% block title %}Home{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Web app for teachers">
     <meta name="author" content="Ossama Edbali">
@@ -46,10 +46,18 @@
                 <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
                 <nav class="pull-right nav-collapse collapse">
                     <ul id="menu-main" class="nav">
-                        <li><a title="about" href="#about">About</a></li>
-                        <li><a title="services" href="#services">Servizi</a></li>
-                        <li><a title="contact" href="#contact">Contatti</a></li>
+                        <li><a title="about" href="/#about">About</a></li>
+                        <li><a title="services" href="/#services">Servizi</a></li>
+                        <li><a title="contact" href="/#contact">Contatti</a></li>
                         <li><a href="/signup/">Registrati</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentazione <b
+                                    class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/documentation/users/">Utenti</a></li>
+                                <li><a href="/documentation/developers/">Sviluppatori</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -61,6 +69,7 @@
 </div>
 <!-- /.navbar-wrapper -->
 <div id="top"></div>
+{% block content %}
 <!-- ******************** HeaderWrap ********************-->
 <div id="headerwrap">
     <header class="clearfix">
@@ -248,6 +257,7 @@
     </div>
     <!-- /.container -->
 </section>
+{% endblock %}
 <hr>
 <div class="footer-wrapper">
     <div class="container">

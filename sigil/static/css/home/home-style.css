@@ -468,6 +468,18 @@ section#services .span3:hover {
 	background:#e3e3e3;
 	box-shadow: 1px 1px 6px #C1BAC1;
 }
+section#services a {
+	color: #312A1E;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+section#services a:hover {
+	color: #000;
+	text-decoration: none;
+}
 /* Testimonials */
 
 section#testimonials {
