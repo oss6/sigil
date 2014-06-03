@@ -1,4 +1,8 @@
 venv
+media
+workspace.xml
+tasks.xml
+*.iws
 *.log
 *.pot
 

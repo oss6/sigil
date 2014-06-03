@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
+    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="Mods to .gitignore">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -65,7 +65,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="3" selection-start="32" selection-end="32" vertical-scroll-proportion="0.14563107" vertical-offset="0" max-vertical-offset="684">
+            <state line="4" column="5" selection-start="40" selection-end="40" vertical-scroll-proportion="0.116504855" vertical-offset="0" max-vertical-offset="756">
               <folding />
             </state>
           </provider>
@@ -894,7 +894,11 @@
       <created>1401788961988</created>
       <updated>1401788961988</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Mods to .gitignore">
+      <created>1401789248953</created>
+      <updated>1401789248953</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -953,7 +957,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Some mods to grade book viz." />
     <MESSAGE value="Bug fix on &quot;save_mind_map&quot; view" />
     <MESSAGE value="Fixing save presentation feature" />
     <MESSAGE value="Added and finished editor feature" />
@@ -978,7 +981,8 @@
     <MESSAGE value="General restyling" />
     <MESSAGE value="Added requirements.txt" />
     <MESSAGE value="Added &quot;venv&quot; to .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added &quot;venv&quot; to .gitignore" />
+    <MESSAGE value="Mods to .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mods to .gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1258,7 +1262,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="32" selection-end="32" vertical-scroll-proportion="0.14563107" vertical-offset="0" max-vertical-offset="684">
+        <state line="4" column="5" selection-start="40" selection-end="40" vertical-scroll-proportion="0.116504855" vertical-offset="0" max-vertical-offset="756">
           <folding />
         </state>
       </provider>
