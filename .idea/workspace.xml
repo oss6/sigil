@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tkit_storage" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tkit/settings.py" afterPath="$PROJECT_DIR$/tkit/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -63,19 +62,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="756">
+            <state line="31" column="9" selection-start="259" selection-end="259" vertical-scroll-proportion="0.6796116" vertical-offset="138" max-vertical-offset="756">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tkit/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="24" selection-start="382" selection-end="382" vertical-scroll-proportion="0.47603306" vertical-offset="0" max-vertical-offset="3492">
+            <state line="16" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3492">
               <folding />
             </state>
           </provider>
@@ -151,9 +150,9 @@
         <option value="$PROJECT_DIR$/sigil/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/sigil/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/sigil/templates/base.html" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/tkit/settings.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -936,7 +935,11 @@
       <created>1401792615403</created>
       <updated>1401792615403</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="Changed db name">
+      <created>1401793084013</created>
+      <updated>1401793084013</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -995,7 +998,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Starting docs" />
     <MESSAGE value="Finishing presentation" />
     <MESSAGE value="Some restyling." />
     <MESSAGE value="Writing docs." />
@@ -1020,7 +1022,8 @@
     <MESSAGE value=".gitignore mods" />
     <MESSAGE value="requirements.txt mods" />
     <MESSAGE value="Some mods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some mods" />
+    <MESSAGE value="Changed db name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed db name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1288,16 +1291,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="756">
+        <state line="16" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3492">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tkit/settings.py">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="24" selection-start="382" selection-end="382" vertical-scroll-proportion="0.47603306" vertical-offset="0" max-vertical-offset="3492">
+        <state line="31" column="9" selection-start="259" selection-end="259" vertical-scroll-proportion="0.6796116" vertical-offset="138" max-vertical-offset="756">
           <folding />
         </state>
       </provider>

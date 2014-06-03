@@ -29,7 +29,7 @@ lib
 local
 man
 share
-tkit_storage
+*.sqlite3
 Scripts
 .Python
 *.pyc
