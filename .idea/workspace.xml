@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment=".gitignore mods">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/requirements.txt" afterPath="$PROJECT_DIR$/requirements.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -62,19 +62,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.116504855" vertical-offset="0" max-vertical-offset="756">
+            <state line="6" column="5" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="requirements.txt" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="requirements.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="5" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+            <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
               <folding />
             </state>
           </provider>
@@ -151,8 +151,8 @@
         <option value="$PROJECT_DIR$/sigil/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/sigil/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/sigil/templates/base.html" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -905,7 +905,11 @@
       <created>1401790024030</created>
       <updated>1401790024031</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary=".gitignore mods">
+      <created>1401790160842</created>
+      <updated>1401790160843</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -964,7 +968,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixing save presentation feature" />
     <MESSAGE value="Added and finished editor feature" />
     <MESSAGE value="Starting docs" />
     <MESSAGE value="Finishing presentation" />
@@ -989,7 +992,8 @@
     <MESSAGE value="Added &quot;venv&quot; to .gitignore" />
     <MESSAGE value="Mods to .gitignore" />
     <MESSAGE value="Adjusted requirements.txt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjusted requirements.txt" />
+    <MESSAGE value=".gitignore mods" />
+    <option name="LAST_COMMIT_MESSAGE" value=".gitignore mods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1267,16 +1271,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="5" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="234">
+        <state line="6" column="5" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="47" selection-end="47" vertical-scroll-proportion="0.116504855" vertical-offset="0" max-vertical-offset="756">
+        <state line="6" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.17475729" vertical-offset="0" max-vertical-offset="618">
           <folding />
         </state>
       </provider>
