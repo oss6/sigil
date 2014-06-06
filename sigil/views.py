@@ -1,16 +1,15 @@
 # import os
+# from django.conf import settings
+# from django.core.files import File
 import json
 import datetime
 from base64 import b64decode
 from django.shortcuts import render, render_to_response, redirect
 from django.http import HttpResponse
 from django.core.context_processors import csrf
-# from django.conf import settings
 from django.core import serializers
 from django.db.models import Avg, Count
-# from django.core.files import File
 from django.core.files.base import ContentFile
-# from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from django.views.generic import FormView, ListView
 from django_messages.models import *
