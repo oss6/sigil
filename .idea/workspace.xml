@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment=".gitignore mods">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" afterPath="$PROJECT_DIR$/sigil/static/css/home/home-style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/doc-users.html" afterPath="$PROJECT_DIR$/sigil/templates/doc-users.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/info.html" afterPath="$PROJECT_DIR$/sigil/templates/info.html" />
+    <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="Starting docs">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/views.py" afterPath="$PROJECT_DIR$/sigil/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -31,7 +29,8 @@
       <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="38" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="1735" max-vertical-offset="2340">
+            <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="2466">
+              <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -40,16 +39,18 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2106">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2106">
+              <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="13716">
+            <state vertical-scroll-proportion="2.5289257" vertical-offset="0" max-vertical-offset="13626">
+              <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -58,7 +59,8 @@
       <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="70" selection-start="846" selection-end="846" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="6048">
+            <state vertical-scroll-proportion="22.666666" vertical-offset="810" max-vertical-offset="6048">
+              <caret line="11" column="90" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
               <folding />
             </state>
           </provider>
@@ -67,16 +69,18 @@
       <file leaf-file-name="doc-dev.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/doc-dev.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="21" selection-start="585" selection-end="585" vertical-scroll-proportion="-0.0" vertical-offset="342" max-vertical-offset="5130">
+            <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="5130">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doc-users.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="doc-users.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="22" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-0.38235295" vertical-offset="1751" max-vertical-offset="6858">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1805" max-vertical-offset="6858">
+              <caret line="115" column="46" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -85,7 +89,8 @@
       <file leaf-file-name="info.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="273" column="14" selection-start="12024" selection-end="12024" vertical-scroll-proportion="-182.0" vertical-offset="0" max-vertical-offset="5418">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="5418">
+              <caret line="273" column="14" selection-start-line="273" selection-start-column="14" selection-end-line="273" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -104,7 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tkit_app/templates/registration/register.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/assignments.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/class_report.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/presentation.html" />
@@ -155,14 +159,15 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/sigil/templates/info.html" />
         <option value="$PROJECT_DIR$/sigil/templates/doc-users.html" />
+        <option value="$PROJECT_DIR$/sigil/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1301" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -178,7 +183,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -256,54 +261,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sigil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sigil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1031,7 +988,11 @@
       <created>1401794021837</created>
       <updated>1401794021837</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Starting docs">
+      <created>1401799000567</created>
+      <updated>1401799000567</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1055,15 +1016,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
+    <frame x="65" y="24" width="1301" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33333334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24256651" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22222222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
@@ -1073,6 +1033,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36882716" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1080,6 +1041,9 @@
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
       <collection />
     </option>
   </component>
@@ -1090,7 +1054,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Finishing presentation" />
     <MESSAGE value="Some restyling." />
     <MESSAGE value="Writing docs." />
     <MESSAGE value="Added board feature." />
@@ -1115,7 +1078,8 @@
     <MESSAGE value="Some mods" />
     <MESSAGE value="Changed db name" />
     <MESSAGE value=".gitignore mods" />
-    <option name="LAST_COMMIT_MESSAGE" value=".gitignore mods" />
+    <MESSAGE value="Starting docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1125,172 +1089,240 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/sigil/templates/todolist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="140" selection-end="140" vertical-scroll-proportion="0.1590106" vertical-offset="0" max-vertical-offset="1386" />
+        <state vertical-scroll-proportion="0.1590106" vertical-offset="0" max-vertical-offset="1386">
+          <caret line="5" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mindmap_form.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="61" selection-end="61" vertical-scroll-proportion="0.06360424" vertical-offset="0" max-vertical-offset="566" />
+        <state vertical-scroll-proportion="0.06360424" vertical-offset="0" max-vertical-offset="566">
+          <caret line="2" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mindmap.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="34" selection-start="82" selection-end="82" vertical-scroll-proportion="0.09764919" vertical-offset="0" max-vertical-offset="2736" />
+        <state vertical-scroll-proportion="0.09764919" vertical-offset="0" max-vertical-offset="2736">
+          <caret line="3" column="34" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_compose.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="593">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_trash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_outbox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/mailbox_inbox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="94" selection-end="94" vertical-scroll-proportion="0.12456747" vertical-offset="0" max-vertical-offset="1422" />
+        <state vertical-scroll-proportion="0.12456747" vertical-offset="0" max-vertical-offset="1422">
+          <caret line="4" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/papers.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="61" selection-start="2730" selection-end="2730" vertical-scroll-proportion="1.5882353" vertical-offset="0" max-vertical-offset="1728" />
+        <state vertical-scroll-proportion="1.5882353" vertical-offset="0" max-vertical-offset="1728">
+          <caret line="51" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/student-report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="49" selection-start="4229" selection-end="4229" vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024">
+          <caret line="87" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/easy_pdf/templates/easy_pdf/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="16" selection-start="365" selection-end="365" vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152" />
+        <state vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152">
+          <caret line="13" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/class-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="216" selection-end="216" vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1890" />
+        <state vertical-scroll-proportion="-6.0" vertical-offset="0" max-vertical-offset="1890">
+          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/student-report-pdf.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="12" selection-start="396" selection-end="396" vertical-scroll-proportion="0.5724382" vertical-offset="0" max-vertical-offset="2034" />
+        <state vertical-scroll-proportion="0.5724382" vertical-offset="0" max-vertical-offset="2034">
+          <caret line="18" column="12" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/students.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="33" selection-start="1254" selection-end="1254" vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2376" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="2376">
+          <caret line="27" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/class-report.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="60" selection-start="1627" selection-end="1627" vertical-scroll-proportion="1.0050762" vertical-offset="0" max-vertical-offset="1926" />
+        <state vertical-scroll-proportion="1.0050762" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="33" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/boards.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="8" selection-start="1614" selection-end="1614" vertical-scroll-proportion="0.98442906" vertical-offset="223" max-vertical-offset="2538" />
+        <state vertical-scroll-proportion="0.98442906" vertical-offset="223" max-vertical-offset="2538">
+          <caret line="44" column="8" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/classes.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="47" selection-start="3664" selection-end="3664" vertical-scroll-proportion="0.39619377" vertical-offset="1049" max-vertical-offset="1656" />
+        <state vertical-scroll-proportion="0.39619377" vertical-offset="1049" max-vertical-offset="1656">
+          <caret line="71" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/500.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/attendance.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="106" selection-end="106" vertical-scroll-proportion="0.09342561" vertical-offset="0" max-vertical-offset="1548" />
+        <state vertical-scroll-proportion="0.09342561" vertical-offset="0" max-vertical-offset="1548">
+          <caret line="3" column="39" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/LICENSE">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/js/calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="47" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="864">
+          <caret line="16" column="47" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/calendar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="67" selection-start="1997" selection-end="1997" vertical-scroll-proportion="-30.666666" vertical-offset="0" max-vertical-offset="1530" />
+        <state vertical-scroll-proportion="-30.666666" vertical-offset="0" max-vertical-offset="1530">
+          <caret line="46" column="67" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/presentation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="46" selection-start="127" selection-end="127" vertical-scroll-proportion="0.030456852" vertical-offset="36" max-vertical-offset="1170" />
+        <state vertical-scroll-proportion="0.030456852" vertical-offset="36" max-vertical-offset="1170">
+          <caret line="3" column="46" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="16" selection-start="6091" selection-end="6091" vertical-scroll-proportion="4.515571" vertical-offset="0" max-vertical-offset="2808" />
+        <state vertical-scroll-proportion="4.515571" vertical-offset="0" max-vertical-offset="2808">
+          <caret line="145" column="16" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit/wsgi.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="684">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="62" selection-start="1342" selection-end="1342" vertical-scroll-proportion="0.8737864" vertical-offset="0" max-vertical-offset="648" />
+        <state vertical-scroll-proportion="0.8737864" vertical-offset="0" max-vertical-offset="648">
+          <caret line="30" column="62" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/assignments.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="5436" />
+        <state vertical-scroll-proportion="0.2677686" vertical-offset="0" max-vertical-offset="5436">
+          <caret line="9" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/context_processors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="25" selection-start="199" selection-end="199" vertical-scroll-proportion="-0.737931" vertical-offset="554" max-vertical-offset="1134" />
+        <state vertical-scroll-proportion="-0.737931" vertical-offset="554" max-vertical-offset="1134">
+          <caret line="7" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="44" selection-start="1290" selection-end="1290" vertical-scroll-proportion="1.2200648" vertical-offset="2" max-vertical-offset="1494" />
+        <state vertical-scroll-proportion="1.2200648" vertical-offset="2" max-vertical-offset="1494">
+          <caret line="44" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -1298,105 +1330,126 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="70" selection-end="70" vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589" />
+        <state vertical-scroll-proportion="0.12224109" vertical-offset="0" max-vertical-offset="589">
+          <caret line="4" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/fonts/fontello.svg">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.78843" vertical-offset="5317" max-vertical-offset="5922" />
+        <state vertical-scroll-proportion="-8.78843" vertical-offset="5317" max-vertical-offset="5922">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/registration/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="24" selection-start="1065" selection-end="1065" vertical-scroll-proportion="0.11418685" vertical-offset="330" max-vertical-offset="972" />
+        <state vertical-scroll-proportion="0.11418685" vertical-offset="330" max-vertical-offset="972">
+          <caret line="22" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/registration/register.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="20" selection-start="124" selection-end="124" vertical-scroll-proportion="0.18685122" vertical-offset="0" max-vertical-offset="1008" />
+        <state vertical-scroll-proportion="0.18685122" vertical-offset="0" max-vertical-offset="1008">
+          <caret line="6" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django_messages/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.9818182" vertical-offset="594" max-vertical-offset="1926" />
+        <state vertical-scroll-proportion="-0.9818182" vertical-offset="594" max-vertical-offset="1926">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/django_messages/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.3801653" vertical-offset="835" max-vertical-offset="3906" />
+        <state vertical-scroll-proportion="-1.3801653" vertical-offset="835" max-vertical-offset="3906">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="29" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2070">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="691" selection-end="691" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13716">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1494" max-vertical-offset="2106">
+          <caret line="83" column="29" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="68" selection-start="139" selection-end="139" vertical-scroll-proportion="0.121416524" vertical-offset="0" max-vertical-offset="593" />
+        <state vertical-scroll-proportion="0.121416524" vertical-offset="0" max-vertical-offset="593">
+          <caret line="5" column="68" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
+          <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="19" selection-start="30" selection-end="30" vertical-scroll-proportion="0.058252428" vertical-offset="0" max-vertical-offset="738">
-          <folding />
+        <state vertical-scroll-proportion="0.058252428" vertical-offset="0" max-vertical-offset="738">
+          <caret line="2" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tkit/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="35" selection-start="393" selection-end="393" vertical-scroll-proportion="0.47603306" vertical-offset="0" max-vertical-offset="3492">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="70" selection-start="846" selection-end="846" vertical-scroll-proportion="-9.333333" vertical-offset="0" max-vertical-offset="6048">
-          <folding />
+        <state vertical-scroll-proportion="0.47603306" vertical-offset="0" max-vertical-offset="3492">
+          <caret line="16" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/doc-dev.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="585" selection-end="585" vertical-scroll-proportion="-0.0" vertical-offset="342" max-vertical-offset="5130">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="38" selection-start="602" selection-end="602" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2340">
+        <state vertical-scroll-proportion="0.0" vertical-offset="342" max-vertical-offset="5130">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/info.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="273" column="14" selection-start="12024" selection-end="12024" vertical-scroll-proportion="-182.0" vertical-offset="0" max-vertical-offset="5418">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4914" max-vertical-offset="5418">
+          <caret line="273" column="14" selection-start-line="273" selection-start-column="14" selection-end-line="273" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="22" selection-start="2862" selection-end="2862" vertical-scroll-proportion="-0.38235295" vertical-offset="1751" max-vertical-offset="6858">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1805" max-vertical-offset="6858">
+          <caret line="115" column="46" selection-start-line="115" selection-start-column="46" selection-end-line="115" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="234" max-vertical-offset="2466">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.666666" vertical-offset="810" max-vertical-offset="6048">
+          <caret line="11" column="90" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.5289257" vertical-offset="0" max-vertical-offset="13626">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="24" selection-end-line="90" selection-end-column="24" />
           <folding />
         </state>
       </provider>

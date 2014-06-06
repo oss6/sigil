@@ -84,11 +84,11 @@ def remove_class(request, id_class):
 
 
 def class_report(request, id_class):
-    # Studenti
+    # Students
     cl = Classes.objects.get(pk=id_class)
     stds = Students.objects.filter(s_class=cl)
 
-    # Numero studenti
+    # Number of students
     nums = len(stds)
 
     # Media per ogni prova fatta
