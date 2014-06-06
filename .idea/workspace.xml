@@ -81,8 +81,8 @@
       <file leaf-file-name="doc-users.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="8.961082" vertical-offset="1652" max-vertical-offset="7200">
-              <caret line="386" column="41" selection-start-line="386" selection-start-column="41" selection-end-line="386" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.37225044" vertical-offset="1832" max-vertical-offset="7470">
+              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -245,24 +245,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tkit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sigil" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -467,22 +449,8 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  <component name="SvnConfiguration" myUseAcceleration="nothing">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1002,7 +970,11 @@
       <created>1402070673592</created>
       <updated>1402070673593</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="Some mods">
+      <created>1402071096502</created>
+      <updated>1402071096502</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1085,11 +1057,11 @@
     <MESSAGE value="Mods to .gitignore" />
     <MESSAGE value="Adjusted requirements.txt" />
     <MESSAGE value="requirements.txt mods" />
-    <MESSAGE value="Some mods" />
     <MESSAGE value="Changed db name" />
     <MESSAGE value=".gitignore mods" />
     <MESSAGE value="Starting docs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting docs" />
+    <MESSAGE value="Some mods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some mods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1399,6 +1371,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="216">
           <caret line="6" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1460,8 +1433,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="8.961082" vertical-offset="1652" max-vertical-offset="7200">
-          <caret line="386" column="41" selection-start-line="386" selection-start-column="41" selection-end-line="386" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.37225044" vertical-offset="1832" max-vertical-offset="7470">
+          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
           <folding />
         </state>
       </provider>
