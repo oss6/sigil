@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sigil/templatetags/set_var.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/assignments.html" afterPath="$PROJECT_DIR$/sigil/templates/assignments.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/js/base.js" afterPath="$PROJECT_DIR$/sigil/static/js/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/classes.html" afterPath="$PROJECT_DIR$/sigil/templates/classes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/students.html" afterPath="$PROJECT_DIR$/sigil/templates/students.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/lessons.html" afterPath="$PROJECT_DIR$/sigil/templates/lessons.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/todolist.html" afterPath="$PROJECT_DIR$/sigil/templates/todolist.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -42,8 +42,8 @@
       <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2070">
-              <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="737" max-vertical-offset="2070">
+              <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -69,21 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="students.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sigil/templates/students.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.8148148" vertical-offset="1301" max-vertical-offset="2376">
-              <caret line="78" column="143" selection-start-line="78" selection-start-column="143" selection-end-line="78" selection-end-column="143" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="base.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/static/js/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7758621" vertical-offset="486" max-vertical-offset="4842">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+            <state vertical-scroll-proportion="2.647934" vertical-offset="72" max-vertical-offset="5094">
+              <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -112,9 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tkit_app/templates/lessons.html" />
-        <option value="$PROJECT_DIR$/tkit_app/templates/boards.html" />
-        <option value="$PROJECT_DIR$/tkit_app/templates/doc-users.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/classes.html" />
         <option value="$PROJECT_DIR$/tkit_app/forms.py" />
         <option value="$PROJECT_DIR$/tkit_app/templates/papers.html" />
@@ -162,6 +149,9 @@
         <option value="$PROJECT_DIR$/sigil/templatetags/set_var.py" />
         <option value="$PROJECT_DIR$/sigil/templates/classes.html" />
         <option value="$PROJECT_DIR$/sigil/templates/students.html" />
+        <option value="$PROJECT_DIR$/sigil/templates/lessons.html" />
+        <option value="$PROJECT_DIR$/sigil/templates/assignments.html" />
+        <option value="$PROJECT_DIR$/sigil/templates/todolist.html" />
         <option value="$PROJECT_DIR$/sigil/static/js/base.js" />
       </list>
     </option>
@@ -1061,7 +1051,11 @@
       <created>1402408061593</created>
       <updated>1402408061594</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="Some mods (comments, little changes etc...)">
+      <created>1402418579449</created>
+      <updated>1402418579449</updated>
+    </task>
+    <option name="localTasksCounter" value="139" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1156,20 +1150,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sigil/templates/papers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5882353" vertical-offset="0" max-vertical-offset="1728">
-          <caret line="51" column="61" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/student-report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1350" max-vertical-offset="3024">
-          <caret line="87" column="49" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/lib/python2.7/dist-packages/easy_pdf/templates/easy_pdf/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6219081" vertical-offset="586" max-vertical-offset="1152">
@@ -1257,13 +1237,6 @@
     <entry file="file://$PROJECT_DIR$/sigil/templates/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="618">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/assignments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1926">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
@@ -1514,14 +1487,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="2070">
-          <caret line="19" column="45" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/students.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8148148" vertical-offset="1301" max-vertical-offset="2376">
@@ -1530,10 +1495,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="953" max-vertical-offset="2070">
+          <caret line="67" column="6" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/lessons.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.259259" vertical-offset="1096" max-vertical-offset="1782">
+          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/assignments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2603978" vertical-offset="347" max-vertical-offset="1926">
+          <caret line="58" column="224" selection-start-line="58" selection-start-column="224" selection-end-line="58" selection-end-column="224" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/todolist.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40484428" vertical-offset="216" max-vertical-offset="1386">
+          <caret line="25" column="156" selection-start-line="25" selection-start-column="156" selection-end-line="25" selection-end-column="156" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/js/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7758621" vertical-offset="486" max-vertical-offset="4842">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+        <state vertical-scroll-proportion="2.647934" vertical-offset="72" max-vertical-offset="5094">
+          <caret line="93" column="42" selection-start-line="93" selection-start-column="42" selection-end-line="93" selection-end-column="42" />
           <folding />
         </state>
       </provider>

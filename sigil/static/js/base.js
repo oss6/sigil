@@ -41,23 +41,27 @@ var mstudent = {
 
         $("#student-form")
         .attr("action", id_student === "add" ? "/classes/" + id_class + "/students/add/" : "/classes/" + id_class + "/students/update/" + id_student + "/");
+        $("#studentModalLabel").text(id_student === "add" ? "Aggiungi studente" : "Modifica studente");
 
-        if (opt) {
-            $("#studentModalLabel").text(id_student === "add" ? "Aggiungi studente" : "Modifica studente");
-            $("#first_name").val(opt.first_name);
-            $("#last_name").val(opt.last_name);
-            $("#email").val(opt.email);
-            $("#parent").val(opt.parent);
-            $("#parent_email").val(opt.parent_email);
-        }
+        $("#first_name").val(opt ? opt.first_name : "");
+        $("#last_name").val(opt ? opt.last_name : "");
+        $("#email").val(opt ? opt.email : "");
+        $("#parent").val(opt ? opt.parent : "");
+        $("#parent_email").val(opt ? opt.parent_email : "");
 
         $("#addStudentModal").modal("show");
     }
 }
 
 var massignment = {
-    openAssignmentModal: function(id_assignment) {
+    openAssignmentModal: function(id_assignment, opt) {
         id_assignment = id_assignment || "add";
+        $("#assignmentModalLabel").text(id_assignment === "add" ? "Aggiungi compito" : "Modifica compito");
+
+        $("#title").val(opt ? opt.title : "");
+        $("#description").val(opt ? opt.description : "");
+        $("#date_begin").val(opt ? opt.date_begin : "");
+        $("#date_end").val(opt ? opt.date_end : "");
 
         $("#addAssignmentModal")
             .modal("show")
@@ -66,8 +70,13 @@ var massignment = {
 }
 
 var mlesson = {
-    openLessonModal: function(id_lesson) {
+    openLessonModal: function(id_lesson, opt) {
         id_lesson = id_lesson || "add";
+        $("#lessonModalLabel").text(id_lesson === "add" ? "Aggiungi lezione" : "Modifica lezione");
+
+        $("#title").val(opt ? opt.title : "");
+        $("#desc").val(opt ? opt.description : "");
+        $("#date").val(opt ? opt.date: "");
 
         $('#addLessonModal')
             .modal('show')
@@ -76,8 +85,13 @@ var mlesson = {
 }
 
 var mitem = {
-    openItemModal: function(id_item) {
+    openItemModal: function(id_item, opt) {
         id_item = id_item || "add";
+        $("#itemModalLabel").text(id_item === "add" ? "Aggiungi elemento" : "Modifica elemento");
+
+        $("#title").val(opt ? opt.title : "");
+        $("#date").val(opt ? opt.date : "");
+        $("#perc").val(opt ? opt.perc : "");
 
         $('#addListItemModal')
             .modal('show')

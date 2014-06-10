@@ -23,7 +23,7 @@
                 <small class="label label-danger">{{ item.percentage }}%</small>
 
                 <div class="tools">
-                    <button onclick="mitem.openItemModal('{{ item.pk }}')" class="btn btn-xs btn-primary">
+                    <button onclick="mitem.openItemModal('{{ item.pk }}', {title: '{{ item.title }}', date: '{{ item.date_exp }}', perc: '{{ item.percentage }}' })" class="btn btn-xs btn-primary">
                         <i class="fa fa-edit"></i>
                     </button>
                     <a href="/todolist/remove/{{ item.pk }}/" class="btn btn-xs btn-danger">
@@ -44,13 +44,13 @@
 </div><!-- /.box -->
 
 <!-- Modal -->
-<div class="modal fade" id="addListItemModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+<div class="modal fade" id="addListItemModal" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel"
      aria-hidden="true" data-type="add">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h2 class="modal-title" id="myModalLabel">Aggiungi elemento</h2>
+                <h2 class="modal-title" id="itemModalLabel">Aggiungi elemento</h2>
             </div>
             <div class="modal-body">
                 <form action="." method="post">{% csrf_token %}

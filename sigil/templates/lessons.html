@@ -49,7 +49,7 @@
                                         <a href="/lessons/remove/{{ lesson.pk }}/" class="btn btn-xs btn-danger">
                                             Rimuovi <span class="glyphicon glyphicon-remove"></span>
                                         </a>
-                                        <a href="javascript:;" onclick="mlesson.openLessonModal('{{ lesson.pk }}')" class="btn btn-xs btn-primary">
+                                        <a href="javascript:;" onclick="mlesson.openLessonModal('{{ lesson.pk }}', { title: '{{ lesson.title }}', description: '{{ lesson.description }}', date: '{{ lesson.date }}' })" class="btn btn-xs btn-primary">
                                             Modifica <span class="glyphicon glyphicon-edit"></span>
                                         </a>
                                         <a href="/lessons/{{ lesson.pk }}/boards/" class="btn btn-xs btn-primary">
@@ -66,13 +66,13 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="addLessonModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        <div class="modal fade" id="addLessonModal" tabindex="-1" role="dialog" aria-labelledby="lessonModalLabel"
              aria-hidden="true" data-type="add">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h2 class="modal-title" id="myModalLabel">Aggiungi lezione</h2>
+                        <h2 class="modal-title" id="lessonModalLabel">Aggiungi lezione</h2>
                     </div>
                     <div class="modal-body">
                         <form action="." method="post">{% csrf_token %}
