@@ -664,7 +664,8 @@ def save_pres(request, id_pres=None):
             pres.pres_file.save(fname, ContentFile(request.POST["html_data"]))
         else:
             pres = Presentation.objects.get(pk=id_pres)
-            os.remove(pres.pres_file.path)
+            if os.path.exists(pres.pres_file.path):
+                os.remove(pres.pres_file.path)
             pres.pres_file.save(os.path.basename(pres.pres_file.name), ContentFile(request.POST["html_data"]))
             pres.save()
 

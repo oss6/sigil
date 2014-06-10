@@ -2,12 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sigil/static/js/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/base.html" afterPath="$PROJECT_DIR$/sigil/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/js/base.js" afterPath="$PROJECT_DIR$/sigil/static/js/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/presentation-create.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation-create.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/presentation.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/urls.py" afterPath="$PROJECT_DIR$/sigil/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/views.py" afterPath="$PROJECT_DIR$/sigil/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -55,8 +49,8 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.28595042" vertical-offset="11617" max-vertical-offset="14112">
-              <caret line="655" column="49" selection-start-line="655" selection-start-column="49" selection-end-line="655" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.52396697" vertical-offset="11671" max-vertical-offset="14130">
+              <caret line="666" column="51" selection-start-line="666" selection-start-column="51" selection-end-line="666" selection-end-column="51" />
               <folding>
                 <element signature="e#84#95#0" expanded="true" />
               </folding>
@@ -146,8 +140,8 @@
         <option value="$PROJECT_DIR$/sigil/templates/base.html" />
         <option value="$PROJECT_DIR$/sigil/templates/presentation.html" />
         <option value="$PROJECT_DIR$/sigil/templates/presentation-create.html" />
-        <option value="$PROJECT_DIR$/sigil/views.py" />
         <option value="$PROJECT_DIR$/sigil/urls.py" />
+        <option value="$PROJECT_DIR$/sigil/views.py" />
       </list>
     </option>
   </component>
@@ -1056,7 +1050,11 @@
       <created>1402397709168</created>
       <updated>1402397709168</updated>
     </task>
-    <option name="localTasksCounter" value="134" />
+    <task id="LOCAL-00134" summary="Fixing pres tool">
+      <created>1402405106210</created>
+      <updated>1402405106210</updated>
+    </task>
+    <option name="localTasksCounter" value="135" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1516,8 +1514,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28595042" vertical-offset="11617" max-vertical-offset="14112">
-          <caret line="655" column="49" selection-start-line="655" selection-start-column="49" selection-end-line="655" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.52396697" vertical-offset="11671" max-vertical-offset="14130">
+          <caret line="666" column="51" selection-start-line="666" selection-start-column="51" selection-end-line="666" selection-end-column="51" />
           <folding>
             <element signature="e#84#95#0" expanded="true" />
           </folding>
