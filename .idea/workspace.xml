@@ -2,7 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/static/css/calendar.css" afterPath="$PROJECT_DIR$/sigil/static/css/calendar.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/deck.core.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/deck.core.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/deck.navigation.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/deck.navigation.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/deck.status.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/deck.status.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/horizontal-slide.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/horizontal-slide.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/popline-def.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/popline-def.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/toggle-switch.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/toggle-switch.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/css/web-2.0.css" afterPath="$PROJECT_DIR$/sigil/static/css/presentation/web-2.0.css" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/deck.core.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/deck.core.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/deck.navigation.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/deck.navigation.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/deck.status.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/deck.status.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/jquery.popline.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.backcolor.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.backcolor.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.blockformat.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.blockformat.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.blockquote.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.blockquote.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.decoration.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.decoration.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.justify.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.justify.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.link.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.link.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.list.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.list.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/sigil/static/js/popline-plugins/jquery.popline.social.js" afterPath="$PROJECT_DIR$/sigil/static/js/presentation/jquery.popline.social.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/presentation-create.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation-create.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -79,8 +98,8 @@
       <file leaf-file-name="presentation-create.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2188065" vertical-offset="1769" max-vertical-offset="2808">
-              <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.437613" vertical-offset="1522" max-vertical-offset="2808">
+              <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -109,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tkit_app/templates/presentation.html" />
         <option value="$PROJECT_DIR$/tkit_app/templates/lockscreen.html" />
         <option value="$PROJECT_DIR$/tkit_app/static/js/app.js" />
         <option value="$PROJECT_DIR$/tkit_app/templates/grade-book.html" />
@@ -160,6 +178,7 @@
         <option value="$PROJECT_DIR$/sigil/templates/base.html" />
         <option value="$PROJECT_DIR$/sigil/templates/calendar.html" />
         <option value="$PROJECT_DIR$/sigil/static/js/calendar.js" />
+        <option value="$PROJECT_DIR$/sigil/templates/presentation-create.html" />
       </list>
     </option>
   </component>
@@ -262,6 +281,28 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tkit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sigil" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -330,11 +371,11 @@
       <recent name="$PROJECT_DIR$/tkit_app/static/images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/sigil/static/js/popline-plugins" />
+      <recent name="$PROJECT_DIR$/sigil/static/css/presentation" />
       <recent name="$PROJECT_DIR$/tkit_app/static/js/home" />
       <recent name="$PROJECT_DIR$/tkit_app/static/css/home" />
       <recent name="$PROJECT_DIR$/tkit_app" />
-      <recent name="$PROJECT_DIR$/tkit" />
-      <recent name="$PROJECT_DIR$/tkit_app/static/css" />
     </key>
   </component>
   <component name="RunManager" selected="Python.views">
@@ -1020,7 +1061,11 @@
       <created>1402396494807</created>
       <updated>1402396494807</updated>
     </task>
-    <option name="localTasksCounter" value="132" />
+    <task id="LOCAL-00132" summary="Fixed calendar tool">
+      <created>1402397241297</created>
+      <updated>1402397241297</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1482,8 +1527,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2188065" vertical-offset="1769" max-vertical-offset="2808">
-          <caret line="105" column="40" selection-start-line="105" selection-start-column="40" selection-end-line="105" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.437613" vertical-offset="1522" max-vertical-offset="2808">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
           <folding />
         </state>
       </provider>
