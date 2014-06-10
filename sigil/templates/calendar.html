@@ -39,42 +39,45 @@
                     </blockquote>
                 </div>
 
-                <div id="mini-clndr"></div>
+                <div class="cal1"></div>
 
-                <script id="mini-clndr-template" type="text/template">
-                    <div class="controls">
+                <script type="text/template" id="template-calendar">
+                    <div class="clndr-controls">
                         <div class="clndr-previous-button">&lsaquo;</div>
-                        <div class="month"><%= month %> <%= year %></div>
+                        <div class="month"><%= month %></div>
                         <div class="clndr-next-button">&rsaquo;</div>
                     </div>
-
-                    <div class="days-container">
-                        <div class="days">
-                            <div class="headers">
-                                <% _.each(daysOfTheWeek, function(day) { %>
-                                <div class="day-header"><%= day %></div>
-                                <% }); %>
-                            </div>
-                            <% _.each(days, function(day) { %>
-                            <div class="<%= day.classes %>" id="<%= day.id %>"><%= day.day %></div>
+                    <div class="clndr-grid">
+                        <div class="days-of-the-week">
+                            <% _.each(daysOfTheWeek, function(day) { %>
+                            <div class="header-day"><%= day %></div>
                             <% }); %>
-                        </div>
-                        <div class="events">
-                            <div class="headers">
-                                <div class="x-button">x</div>
-                                <div class="event-header">EVENTI</div>
-                            </div>
-                            <div class="events-list">
-                                <% _.each(eventsThisMonth, function(event) { %>
-                                <div class="event">
-                                    <a href="<%= event.url %>"><%= moment(event.date).format('MMMM Do') %>: <%=
-                                        event.title %></a>
-                                </div>
+                            <div class="days">
+                                <% _.each(days, function(day) { %>
+                                <div class="<%= day.classes %>"><%= day.day %></div>
                                 <% }); %>
                             </div>
                         </div>
                     </div>
+                    <div class="clndr-today-button">Today</div>
                 </script>
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="modalLabel">Eventi</h4>
+                            </div>
+                            <div class="modal-body" id="modalDesc">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 {% endblock %}
