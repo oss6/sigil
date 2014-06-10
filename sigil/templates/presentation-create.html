@@ -25,10 +25,10 @@
         <h4>Menu degli strumenti</h4>
         <button class="btn btn-success" id="new-slide">Nuova diapositiva</button>
         <button class="btn btn-success" id="delete-current-slide">Elimina diapositiva</button>
-        <form action="." method="post" enctype="multipart/form-data">{% csrf_token %}
+        <form action="." method="post">{% csrf_token %}
             <input type="text" id="html-file-name" placeholder="Nome file">
-            <input type="text" id="pres-title" placeholder="Titolo presentazione">
-            <input type="text" id="pres-desc" placeholder="Descrizione presentazione">
+            <input type="text" id="pres-title" placeholder="Titolo presentazione" value="{{ pres.title }}">
+            <input type="text" id="pres-desc" placeholder="Descrizione presentazione" value="{{ pres.description }}">
             <button id="save-pres">Salva</button>
         </form>
 
@@ -60,6 +60,9 @@
     </div>
 
     <div class="deck-container">
+        {% if data %}
+            {{ data|safe }}
+        {% else %}
         <section class="slide editor" contenteditable="true">
             <h2>Titolo</h2>
 
@@ -78,6 +81,7 @@
             /
             <span class="deck-status-total"></span>
         </p>
+        {% endif %}
     </div>
 
     <!-- JS -->
@@ -94,10 +98,12 @@
     <script src="/static/js/presentation/deck.core.js"></script>
     <script src="/static/js/presentation/deck.status.js"></script>
     <script src="/static/js/presentation/deck.navigation.js"></script>
+    <script src="/static/js/utils.js"></script>
 
     <script>
           $(function() {
             var menu_toggle = false;
+            var id_pres = '{{ pres.pk }}';
 
             $(".editor").popline();
             $("input[name='mode']").click(function(){
@@ -135,14 +141,23 @@
             });
 
             $("#save-pres").click(function() {
-                utils.postData("/presentation/save/", {
-                    csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-                    html_data: $(".slide").not("[aria-role='navigation'], [aria-role='status']").html(),
-                    file_name: $("#html-file-name").val(),
-                    title: $("#pres-title").val(),
-                    description: $("#pres-desc").val()
-                }, "/dashboard/");
-
+                if (id_pres != '') {
+                    utils.postData("/presentation/save/" + id_pres + "/", {
+                        csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                        html_data: $(".deck-container").html(),
+                        title: $("#pres-title").val(),
+                        description: $("#pres-desc").val()
+                    }, "/presentation/");
+                }
+                else {
+                    utils.postData("/presentation/save/", {
+                        csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
+                        html_data: $(".deck-container").html(),
+                        file_name: $("#html-file-name").val(),
+                        title: $("#pres-title").val(),
+                        description: $("#pres-desc").val()
+                    }, "/presentation/");
+                }
                 return false;
             });
           });

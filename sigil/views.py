@@ -650,28 +650,51 @@ def presentation_tool(request):
     return render_to_response("presentation.html", {"pres": ps}, context_instance=RequestContext(request))
 
 
-def save_pres(request):
+def save_pres(request, id_pres=None):
     if request.is_ajax():
-        file_name = request.POST["file_name"]
-        fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
+        if id_pres is None:
+            file_name = request.POST["file_name"]
+            fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
 
-        # Save to database and fs
-        pres = Presentation()
-        pres.title = request.POST["title"]
-        pres.description = request.POST["description"]
-        pres.teacher = request.user
-        pres.pres_file.save(fname, ContentFile(request.POST["html_data"]))
+            # Save to database and fs
+            pres = Presentation()
+            pres.title = request.POST["title"]
+            pres.description = request.POST["description"]
+            pres.teacher = request.user
+            pres.pres_file.save(fname, ContentFile(request.POST["html_data"]))
+        else:
+            pres = Presentation.objects.get(pk=id_pres)
+            os.remove(pres.pres_file.path)
+            pres.pres_file.save(os.path.basename(pres.pres_file.name), ContentFile(request.POST["html_data"]))
+            pres.save()
 
     return ajax_resp("Action performed")
 
 
 def load_pres(request, id_pres):
-    pass
+    pres = Presentation.objects.get(pk=id_pres)
+    data = pres.pres_file.read()
 
+    return render_to_response("presentation-create.html", {
+        "data": data,
+        "pres": pres
+    }, context_instance=RequestContext(request))
 
 
 def remove_pres(request, id_pres):
-    pass
+    # Get file object
+    f = Presentation.objects.get(pk=id_pres)
+
+    # Delete from file system
+    try:
+        os.remove(f.pres_file.path)
+    except IOError:
+        pass
+
+    # Delete DB reference to the file
+    f.delete()
+
+    return redirect("/presentation/")
 
 
 def doc_editor(request):

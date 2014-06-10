@@ -108,10 +108,9 @@ urlpatterns = patterns('',
     url(r'^presentation/$', views.presentation_tool),
     url(r'^presentation/create/$', login_required(TemplateView.as_view(template_name="presentation-create.html"),
                                                   login_url="/login/")),
-
-    # TODO
-    url(r'^presentation/save/$', views.save_pres),
     url(r'^presentation/load/(?P<id_pres>[\d]+)/$', views.load_pres),
+    url(r'^presentation/save/$', views.save_pres),
+    url(r'^presentation/save/(?P<id_pres>[\d]+)/$', views.save_pres),
     url(r'^presentation/remove/(?P<id_pres>[\d]+)/$', views.remove_pres),
 
     url(r'^editor/$', views.doc_editor),
