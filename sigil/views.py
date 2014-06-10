@@ -19,6 +19,9 @@ from models import *
 
 
 def ajax_resp(message):
+    """
+    Returns an ajax response with the specified message
+    """
     tm = datetime.datetime.now().time()
 
     j = json.dumps({
@@ -30,6 +33,9 @@ def ajax_resp(message):
 
 
 def register(request):
+    """
+    View for registration form and saving
+    """
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
@@ -48,10 +54,18 @@ def disable_account(request):
 
 
 def disable_lockscreen(request, pwd):
+    """
+    View for lockscreen feature.
+    If the password is correct return 'yes' otherwise 'no'
+    """
     return ajax_resp("yes") if request.user.check_password(pwd) else ajax_resp("no")
 
 
 class ClassesList(ListView):
+    """
+    Generic class-based view for listing the classes
+    of the current teacher.
+    """
     context_object_name = 'classes'
     template_name = 'classes.html'
 
@@ -60,6 +74,10 @@ class ClassesList(ListView):
 
 
 def add_class(request, id_class=None):
+    """
+    View for adding or updating a class:
+    it depends on the id_class parameter.
+    """
     if request.method == "POST":
         form = AddClassForm(request.POST)
         if form.is_valid():
@@ -76,6 +94,9 @@ def add_class(request, id_class=None):
 
 
 def remove_class(request, id_class):
+    """
+    View for removing a specified class
+    """
     c = Classes.objects.get(pk=id_class)
     c.delete()
 
@@ -90,16 +111,16 @@ def class_report(request, id_class):
     # Number of students
     nums = len(stds)
 
-    # Media per ogni prova fatta
+    # Average for every test
     # gds = Grades.objects.filter(student__in=[s for s in stds])
     avg_grades = Grades.objects.filter(student__in=[s for s in stds]).values('subject').distinct()\
         .annotate(avg_grades=Avg('grade'))
 
-    # Per ogni alunno il numero totale di assenze
+    # For every student get the number of absence
     abs_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Assente")\
         .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(absence=Count('type'))
 
-    # Per ogni alunno il numero totale di presenze
+    # For every student get the number of presence
     pr_per_std = Attendance.objects.filter(student__in=[s for s in stds], type="Presente")\
         .values('student_id', 'student__first_name', 'student__last_name').distinct().annotate(presence=Count('type'))
 
@@ -113,6 +134,10 @@ def class_report(request, id_class):
 
 
 def class_grades_performance_chart(request, id_class):
+    """
+    Returns a JSON object in order to plot a Google Chart
+    grades performance graph
+    """
     avg_grades = Grades.objects.values('date', 'subject').distinct().annotate(avg_grades=Avg('grade'))
 
     rows = [{"c": [{"v": str(g["date"]), "f": None}, {"v": g["avg_grades"], "f": None}]} for g in avg_grades]
@@ -128,6 +153,9 @@ def class_grades_performance_chart(request, id_class):
 
 
 def students(request, id_class):
+    """
+    View for listing the students of a specified class
+    """
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
 
@@ -136,6 +164,10 @@ def students(request, id_class):
 
 
 def add_student(request, id_class, id_student=None):
+    """
+    View for adding or updating a student in a specified class:
+    it depends on the id_student parameter.
+    """
     if request.method == "POST":
         form = AddStudentForm(request.POST)
         if form.is_valid():
@@ -157,6 +189,10 @@ def add_student(request, id_class, id_student=None):
 
 
 def remove_student(request, id_class, id_student):
+    """
+    View for removing a specified student.
+    If the student has attached a photo this will also be removed.
+    """
     s = Students.objects.get(pk=id_student)
 
     # Remove student's photo (if exists)
@@ -169,6 +205,9 @@ def remove_student(request, id_class, id_student):
 
 
 def student_info(request, id_student):
+    """
+    View for getting information about a specified student
+    """
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
 
@@ -179,6 +218,9 @@ def student_info(request, id_student):
 
 
 class StudentReportPDF(PDFTemplateView):
+    """
+    Generic class-based view for a PDF report of a particular student
+    """
     template_name = "student-report-pdf.html"
 
     def get_context_data(self, id_student):
@@ -196,6 +238,9 @@ class StudentReportPDF(PDFTemplateView):
 
 
 class ClassReportPDF(PDFTemplateView):
+    """
+    Generic class-based view for a PDF report of a particular class
+    """
     template_name = "class-report-pdf.html"
 
     def get_context_data(self, id_class):
@@ -228,6 +273,10 @@ class ClassReportPDF(PDFTemplateView):
 
 
 def grades_chart(request, id_student):
+    """
+    Returns a JSON object in order to plot a Google Chart
+    grades graph for the specified student
+    """
     student = Students.objects.get(pk=id_student)
     grades = Grades.objects.filter(student=student)
     rows = [{"c": [{"v": g.subject, "f": None}, {"v": g.grade, "f": None}]} for g in grades]
@@ -243,6 +292,10 @@ def grades_chart(request, id_student):
 
 
 def grades_performance_chart(request, id_student):
+    """
+    Returns a JSON object in order to plot a Google Chart
+    grades performance graph for the specified student
+    """
     student = Students.objects.get(pk=id_student)
     grades = Grades.objects.filter(student=student).order_by('date')
 
@@ -259,6 +312,10 @@ def grades_performance_chart(request, id_student):
 
 
 def notes_chart(request, id_student):
+    """
+    Returns a JSON object in order to plot a Google Chart
+    notes graph for the specified student
+    """
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
     nnotes = [note.n_type for note in notes]
@@ -277,6 +334,10 @@ def notes_chart(request, id_student):
 
 
 def add_note(request, id_student):
+    """
+    View for adding a note (positive or negative)
+    to the specified student
+    """
     if request.method == "POST":
         form = AddNoteForm(request.POST)
         if form.is_valid():
@@ -294,6 +355,9 @@ def add_note(request, id_student):
 
 
 def remove_note(request, id_note):
+    """
+    View for removing the specified note
+    """
     n = Notes.objects.get(pk=id_note)
     n.delete()
 
@@ -301,6 +365,9 @@ def remove_note(request, id_note):
 
 
 def grade_book(request, id_class):
+    """
+    View that lists all the test of the specified class
+    """
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl).values_list('pk', flat=True)
     # Student-grades dictionary
@@ -312,6 +379,10 @@ def grade_book(request, id_class):
 
 
 def add_gradable_item(request, id_class):
+    """
+    View for adding a gradable item to the students
+    of the specified class
+    """
     if request.method == "POST":
         form = AddGradableItemForm(request.POST)
         if form.is_valid():
@@ -332,6 +403,9 @@ def add_gradable_item(request, id_class):
 
 
 def update_grade(request, id_grade, grade):
+    """
+    View for updating a student's grade
+    """
     if request.is_ajax():
         g = Grades.objects.get(pk=id_grade)
         g.grade = grade
@@ -341,6 +415,9 @@ def update_grade(request, id_grade, grade):
 
 
 def remove_gradable_item(request, id_class, sub_name):
+    """
+    View for removing a gradable item of the specified class
+    """
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl)
     g = Grades.objects.filter(subject=sub_name, student__in=[s for s in ss])
@@ -350,6 +427,9 @@ def remove_gradable_item(request, id_class, sub_name):
 
 
 def attendance(request, id_class, date):
+    """
+    View that lists the attendance of the specified class students
+    """
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.filter(s_class=cl)
     att = Attendance.objects.filter(student__in=[s for s in ss], date=date)
@@ -374,6 +454,10 @@ def update_attendance_type(request, id_att, att_type):
 
 
 def attendance_chart(request, id_student):
+    """
+    Returns a JSON object in order to plot a Google Chart
+    attendance graph for the specified student
+    """
     student = Students.objects.get(pk=id_student)
     atts = Attendance.objects.filter(student=student)
     aatts = [att.type for att in atts]
@@ -392,11 +476,18 @@ def attendance_chart(request, id_student):
 
 
 def lessons(request):
+    """
+    View that lists the lessons of the current teacher/user
+    """
     cls = Lessons.objects.filter(teacher=request.user)
     return render_to_response("lessons.html", {"lessons": cls}, context_instance=RequestContext(request))
 
 
 def add_lesson(request, id_lesson=None):
+    """
+    View for adding or updating a lesson:
+    it depends on the id_lesson attribute
+    """
     if request.method == "POST":
         form = AddLessonForm(request.POST)
         if form.is_valid():
@@ -413,6 +504,9 @@ def add_lesson(request, id_lesson=None):
 
 
 def remove_lesson(request, id_lesson):
+    """
+    View for removing a lesson
+    """
     l = Lessons.objects.get(pk=id_lesson)
     l.delete()
 
@@ -420,12 +514,18 @@ def remove_lesson(request, id_lesson):
 
 
 def lesson_boards(request, id_lesson):
+    """
+    View for listing the board of the specified lesson
+    """
     b_lesson = Lessons.objects.get(pk=id_lesson)
     boards = Boards.objects.filter(lesson=b_lesson)
     return render_to_response("boards.html", {"boards": boards, "lesson": b_lesson}, context_instance=RequestContext(request))
 
 
 def save_board(request, id_lesson):
+    """
+    View for saving a board
+    """
     if request.is_ajax():
         file_name = request.POST["file_name"]
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".png"
@@ -442,6 +542,9 @@ def save_board(request, id_lesson):
 
 
 def remove_board(request, id_lesson, id_board):
+    """
+    View for removing a board and its attached file
+    """
     # Get file object
     f = Boards.objects.get(pk=id_board)
 
@@ -458,12 +561,18 @@ def remove_board(request, id_lesson, id_board):
 
 
 def homework(request, id_class):
+    """
+    View for listing the specified class' assignments
+    """
     cl = Classes.objects.get(pk=id_class)
     assm = Assignments.objects.all().filter(a_class=cl)
     return render_to_response("assignments.html", {"assignments": assm, "class": cl}, context_instance=RequestContext(request))
 
 
 def add_assignment(request, id_class, id_assignment=None):
+    """
+    View for adding or updating an assignment for the specified class
+    """
     if request.method == "POST":
         form = AddAssignmentForm(request.POST)
         if form.is_valid():
@@ -483,6 +592,9 @@ def add_assignment(request, id_class, id_assignment=None):
 
 
 def remove_assignment(request, id_class, id_assignment):
+    """
+    View for removing an assignment
+    """
     cl = Classes.objects.get(pk=id_class)
     assm = Assignments.objects.get(pk=id_assignment, a_class=cl)
     assm.delete()
@@ -496,6 +608,9 @@ def to_do_list(request):
 
 
 def add_todolist_item(request, id_item=None):
+    """
+    View for adding or updating a "to do list" item
+    """
     if request.method == "POST":
         form = AddListItemForm(request.POST)
         if form.is_valid():
@@ -512,6 +627,9 @@ def add_todolist_item(request, id_item=None):
 
 
 def remove_todolist_item(request, id_item):
+    """
+    View for removing the specified "to do list" item
+    """
     ls = ToDoList.objects.get(pk=id_item)
     ls.delete()
 
@@ -519,6 +637,9 @@ def remove_todolist_item(request, id_item):
 
 
 def mailbox_inbox(request):
+    """
+    View for getting the inbox message list
+    """
     message_list = Message.objects.inbox_for(request.user)
 
     return render_to_response("mailbox_inbox.html", {
@@ -526,8 +647,10 @@ def mailbox_inbox(request):
     }, context_instance=RequestContext(request))
 
 
-
 def mailbox_outbox(request):
+    """
+    View for getting the outbox message list
+    """
     message_list = Message.objects.outbox_for(request.user)
     return render_to_response("mailbox_outbox.html", {
         'message_list': message_list,
@@ -535,6 +658,9 @@ def mailbox_outbox(request):
 
 
 def mailbox_trash(request):
+    """
+    View for getting the trash message list
+    """
     message_list = Message.objects.trash_for(request.user)
     return render_to_response("mailbox_trash.html", {
         'message_list': message_list,
@@ -542,6 +668,9 @@ def mailbox_trash(request):
 
 
 def update_color_schema(request, cls):
+    """
+    View for updating the color schema of the application
+    """
     if request.is_ajax():
         try:
             clr = Settings.objects.get(teacher=request.user)
@@ -594,11 +723,17 @@ def update_negative_notes_limit(request, limit):
 
 
 def mind_map(request):
+    """
+    View for listing the pre-saved mind maps
+    """
     mmaps = MindMap.objects.all().filter(teacher=request.user)
     return render_to_response("mindmap.html", {"mindmaps": mmaps}, context_instance=RequestContext(request))
 
 
 def save_mind_map(request):
+    """
+    View for saving a created mind map with its file
+    """
     if request.is_ajax():
         file_name = request.POST["file_name"]
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".json"
@@ -612,12 +747,18 @@ def save_mind_map(request):
 
 
 def load_mind_map(request, id_map):
+    """
+    View for loading the specified mind map
+    """
     mmap = MindMap.objects.get(pk=id_map)
     data = mmap.json_file.read()
     return ajax_resp(data)
 
 
 def remove_mind_map(request, id_map):
+    """
+    View for removing the specified mind map and its attached JSON file
+    """
     # Get file object
     f = MindMap.objects.get(pk=id_map)
 
@@ -646,11 +787,17 @@ class MindMapView(FormView):
 
 
 def presentation_tool(request):
+    """
+    View for listing the pre-saved presentations
+    """
     ps = Presentation.objects.filter(teacher=request.user)
     return render_to_response("presentation.html", {"pres": ps}, context_instance=RequestContext(request))
 
 
 def save_pres(request, id_pres=None):
+    """
+    View for saving a new or a pre-saved presentation
+    """
     if request.is_ajax():
         if id_pres is None:
             file_name = request.POST["file_name"]
@@ -677,6 +824,9 @@ def save_pres(request, id_pres=None):
 
 
 def load_pres(request, id_pres):
+    """
+    View for loading a pre-saved presentation
+    """
     pres = Presentation.objects.get(pk=id_pres)
     data = pres.pres_file.read()
 
@@ -687,6 +837,9 @@ def load_pres(request, id_pres):
 
 
 def remove_pres(request, id_pres):
+    """
+    View for removing a presentation and its HTML file
+    """
     # Get file object
     f = Presentation.objects.get(pk=id_pres)
 
@@ -703,11 +856,17 @@ def remove_pres(request, id_pres):
 
 
 def doc_editor(request):
+    """
+    View for listing the pre-saved documents
+    """
     docs = Document.objects.filter(teacher=request.user)
     return render_to_response("editor.html", {"docs": docs}, context_instance=RequestContext(request))
 
 
 def save_doc(request):
+    """
+    View for saving a new document
+    """
     if request.is_ajax():
         file_name = request.POST["file_name"]
         fname = file_name if file_name.split('.')[-1] == json else file_name + ".html"
@@ -721,12 +880,18 @@ def save_doc(request):
 
 
 def load_doc(request, id_doc):
+    """
+    View for loading the specified document
+    """
     doc = Document.objects.get(pk=id_doc)
     data = doc.doc_file.read()
     return ajax_resp(data)
 
 
 def remove_doc(request, id_doc):
+    """
+    View for removing the specified document and its file
+    """
     # Get file object
     f = Document.objects.get(pk=id_doc)
 
@@ -743,11 +908,17 @@ def remove_doc(request, id_doc):
 
 
 def papers(request):
+    """
+    View for listing the pre-saved papers
+    """
     pps = Papers.objects.filter(teacher=request.user)
     return render_to_response("papers.html", {"papers": pps}, context_instance=RequestContext(request))
 
 
 def add_paper(request):
+    """
+    View for adding a paper
+    """
     if request.method == "POST":
         form = AddPaperForm(request.POST)
         if form.is_valid():
@@ -764,6 +935,9 @@ def add_paper(request):
 
 
 def remove_paper(request, id_paper):
+    """
+    View for removing the specified paper
+    """
     p = Papers.objects.get(pk=id_paper)
     if p.paper_file:
         os.remove(p.paper_file.path)
@@ -773,6 +947,9 @@ def remove_paper(request, id_paper):
 
 
 def calendar(request):
+    """
+    View for visualizing on the Javascript calendar tool the current user's events
+    """
     todos = ToDoList.objects.filter(teacher=request.user)
     ls = Lessons.objects.filter(teacher=request.user)
     assignments = Assignments.objects.filter(a_class__teacher=request.user)
