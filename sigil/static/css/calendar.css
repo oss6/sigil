@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Droid+Sans+Mono);
+@import url(http://fonts.googleapis.com/css?family=Asap:400,700);
+
 .clearfix:after {
   content: ".";
   display: block;
@@ -27,7 +28,7 @@ html[xmlns] .clearfix {
 .cal1 {
   margin: 30px auto;
   max-width: 600px;
-  font-family: 'Droid Sans Mono';
+  font-family: 'Asap';
   font-size: 14px;
 }
 .cal1 .clndr .clndr-controls {
