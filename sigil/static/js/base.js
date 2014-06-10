@@ -1,8 +1,12 @@
 var mclass = {
-    openClassModal: function(id_class) {
+    openClassModal: function(id_class, name, school, desc) {
         id_class = id_class || "add";
 
         $("#classModalLabel").text(id_class === "add" ? "Aggiungi classe" : "Modifica classe");
+        $("#name").val(name);
+        $("#school").val(school);
+        $("#desc").val(desc);
+
         $('#addClassModal')
             .modal('show')
             .attr("data-type", id_class);
@@ -32,12 +36,21 @@ var mpub = {
 }
 
 var mstudent = {
-    openStudentModal: function(id_class, id_student) {
+    openStudentModal: function(id_class, id_student, opt) {
         id_student = id_student || "add";
 
         $("#student-form")
         .attr("action", id_student === "add" ? "/classes/" + id_class + "/students/add/" : "/classes/" + id_class + "/students/update/" + id_student + "/");
-        $("#studentModalLabel").text(id_student === "add" ? "Aggiungi studente" : "Modifica studente");
+
+        if (opt) {
+            $("#studentModalLabel").text(id_student === "add" ? "Aggiungi studente" : "Modifica studente");
+            $("#first_name").val(opt.first_name);
+            $("#last_name").val(opt.last_name);
+            $("#email").val(opt.email);
+            $("#parent").val(opt.parent);
+            $("#parent_email").val(opt.parent_email);
+        }
+
         $("#addStudentModal").modal("show");
     }
 }

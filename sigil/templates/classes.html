@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load set_var %}
 
 {% block title %}Gestione classi{% endblock %}
 {% block header-title %}Gestione classi{% endblock %}
@@ -45,10 +46,10 @@
                                     <a href="/classes/remove/{{ class.pk }}/" class="btn btn-xs btn-danger">
                                         Rimuovi <i class="glyphicon glyphicon-remove"></i>
                                     </a>
-                                    <a href="javascript:;" onclick="mclass.openClassModal('{{ class.pk }}')"
+                                    <button onclick="mclass.openClassModal('{{ class.pk }}', '{{ class.name }}', '{{ class.school }}', '{{ class.description }}');"
                                        class="btn btn-xs btn-primary">
                                         Modifica <i class="glyphicon glyphicon-edit"></i>
-                                    </a>
+                                    </button>
                                 </div>
                             </div>
                         </div>

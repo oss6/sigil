@@ -76,7 +76,7 @@
                                        class="btn btn-xs btn-danger">
                                         Rimuovi <span class="glyphicon glyphicon-remove"></span>
                                     </a>
-                                    <a href="javascript:;" onclick="mstudent.openStudentModal('{{ class.pk }}', '{{ student.pk }}')"
+                                    <a href="javascript:;" onclick="mstudent.openStudentModal('{{ class.pk }}', '{{ student.pk }}', {first_name: '{{ student.first_name }}',last_name: '{{ student.last_name }}',email: '{{ student.email }}',parent: '{{ student.parent }}',parent_email: '{{ student.parent_email }}'})"
                                        class="btn btn-xs btn-primary">
                                         Modifica <span class="glyphicon glyphicon-edit"></span>
                                     </a>
