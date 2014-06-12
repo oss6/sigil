@@ -3,15 +3,26 @@
 {% block title %}Gestione studenti{% endblock %}
 {% block header-title %}
     {{ class.name }} - {{ nums }} {% if nums == 1 %}studente{% else %}studenti{% endif %}
-    {% if nums > spc_limit %}
-        <span class="glyphicon glyphicon-remove"></span>
-    {% endif %}
+{% endblock %}
+
+{% block add-css %}
+    <style type="text/css">
+        .panel-body .img-responsive {
+            margin: 0 auto;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
+                    {% if nums > spc_limit %}
+                        <div class="alert alert-warning alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <strong>Attenzione!</strong> Hai superato il limite di studenti
+                        </div>
+                    {% endif %}
                     <blockquote>
                         <p>
                             In the class management section you can add a class.
@@ -53,22 +64,22 @@
                 {% else %}
                     <div class="row">
                         {% for student in students %}
-                        <div class="col-md-3 draggable">
+                        <div class="col-md-3">
                             <div class="panel panel-danger">
                                 <div class="panel-heading">
                                     <h3 class="panel-title">
-                                        <a href="/students/{{ student.pk }}/">{{ student.first_name }}
-                                            {{ student.last_name }}</a>
+                                        <a href="/students/{{ student.pk }}/">
+                                            {{ student.first_name }} {{ student.last_name }}
+                                        </a>
                                     </h3>
-
                                 </div>
                                 <div class="panel-body">
                                     {% if not student.photo %}
                                     <img width="100" height="100" src="/static/images/def-user.jpg/" alt="No photo"
-                                         class="img-thumbnail">
+                                            class="img-responsive">
                                     {% else %}
                                         <img width="100" height="100" src="{{ student.photo.url }}"
-                                             alt="No photo">
+                                             class="img-responsive" alt="No photo">
                                     {% endif %}
                                 </div>
                                 <div class="panel-footer">

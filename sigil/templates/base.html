@@ -85,7 +85,7 @@
                                             <a href="#">
                                                 <h3>
                                                     Limite assenze:
-                                                    <input type="number" class="form-control" value="{{ absence_limit }}">
+                                                    <input id="abs-limit" type="number" class="form-control" value="{{ absence_limit }}">
                                                 </h3>
                                             </a>
                                         </li>
@@ -93,7 +93,7 @@
                                             <a href="#">
                                                 <h3>
                                                     Limite note negative:
-                                                    <input type="number" class="form-control" value="{{ negative_notes_limit }}">
+                                                    <input id="nn-limit" type="number" class="form-control" value="{{ negative_notes_limit }}">
                                                 </h3>
                                             </a>
                                         </li>
@@ -101,14 +101,14 @@
                                             <a href="#">
                                                 <h3>
                                                     N. studenti per classe:
-                                                    <input type="number" class="form-control" value="{{ spc_limit }}">
+                                                    <input id="spc-limit" type="number" class="form-control" value="{{ spc_limit }}">
                                                 </h3>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="footer">
-                                    <a href="/settings/update/">Applica modifiche</a>
+                                    <a id="update-settings" href="javascript:;">Applica modifiche</a>
                                 </li>
                             </ul>
                         </li>

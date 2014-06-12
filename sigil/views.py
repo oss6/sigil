@@ -159,8 +159,11 @@ def students(request, id_class):
     cl = Classes.objects.get(pk=id_class)
     ss = Students.objects.all().filter(s_class=cl)
 
-    return render_to_response("students.html", {"students": ss, "class": cl, "nums": len(ss)},
-                              context_instance=RequestContext(request))
+    return render_to_response("students.html", {
+        "students": ss,
+        "class": cl,
+        "nums": len(ss)
+    }, context_instance=RequestContext(request))
 
 
 def add_student(request, id_class, id_student=None):
@@ -720,6 +723,14 @@ def update_negative_notes_limit(request, limit):
             lm.save()
 
     return ajax_resp("NN limit updated")
+
+
+def update_settings(request, abs_limit, nn_limit, spc_limit):
+    update_absence_limit(request, abs_limit)
+    update_negative_notes_limit(request, nn_limit)
+    update_spc_limit(request, spc_limit)
+
+    return ajax_resp("Settings updated")
 
 
 def mind_map(request):

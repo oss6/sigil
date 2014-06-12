@@ -18,9 +18,10 @@ urlpatterns = patterns('',
 
     # Settings
     url(r'^settings/skin/(?P<cls>[\w|\W]+)/$', views.update_color_schema),
-    url(r'^settings/absence-limit/(?P<limit>[\w|\W]+)/$', views.update_absence_limit),
-    url(r'^settings/spc-limit/(?P<limit>[\w|\W]+)/$', views.update_spc_limit),
-    url(r'^settings/nn-limit/(?P<limit>[\w|\W]+)/$', views.update_negative_notes_limit),
+    url(r'^settings/absence-limit/(?P<limit>\d+)/$', views.update_absence_limit),
+    url(r'^settings/spc-limit/(?P<limit>\d+)/$', views.update_spc_limit),
+    url(r'^settings/nn-limit/(?P<limit>\d+)/$', views.update_negative_notes_limit),
+    url(r'^settings/update/(?P<abs_limit>\d+)/(?P<nn_limit>\d+)/(?P<spc_limit>\d+)/$', views.update_settings),
 
     # Sign up
     url(r'^signup/$', views.register),

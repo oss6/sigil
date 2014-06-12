@@ -275,4 +275,14 @@ $(document).ready(function() {
             perc: $("#perc").val()
         }, "/todolist/");
     });
+
+    // SETTINGS
+    $("#update-settings").click(function() {
+        $.ajax({
+            url: "/settings/update/" + $("#abs-limit").val() + "/" + $("#nn-limit").val() + "/" + $("#spc-limit").val() + "/",
+        })
+        .done(function(msg) {
+            location.href = location.href;
+        });
+    });
 });
