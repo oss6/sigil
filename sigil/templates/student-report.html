@@ -72,14 +72,16 @@
             <div class="col-md-4">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Note</h3>
-                        {% if num_nn_notes > negative_notes_limit %}
-                            <span
-                                    class="glyphicon glyphicon-warning-sign pull-right"
-                                    data-toggle="tooltip"
-                                    data-placement="left"
-                                    title="Attenzione! Limite note negative superato!"></span>
-                        {% endif %}
+                        <h3 class="panel-title">
+                            Note
+                            {% if num_nn_notes > negative_notes_limit %}
+                                <span
+                                        class="glyphicon glyphicon-warning-sign pull-right"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="Attenzione! Limite note negative superato!"></span>
+                            {% endif %}
+                        </h3>
                     </div>
                     <div class="panel-body">
                         <div id="notes-chart"></div>
