@@ -213,10 +213,14 @@ def student_info(request, id_student):
     """
     student = Students.objects.get(pk=id_student)
     notes = Notes.objects.filter(student=student)
+    num_nn_notes = len(Notes.objects.filter(student=student, n_type=False))
+    num_abs = len(Attendance.objects.filter(student=student, type="Assente"))
 
     return render_to_response("student-report.html", {
         "student": student,
-        "notes": notes
+        "notes": notes,
+        "num_nn_notes": num_nn_notes,
+        "num_abs": num_abs
     }, context_instance=RequestContext(request))
 
 

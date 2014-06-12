@@ -73,6 +73,13 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3 class="panel-title">Note</h3>
+                        {% if num_nn_notes > negative_notes_limit %}
+                            <span
+                                    class="glyphicon glyphicon-warning-sign pull-right"
+                                    data-toggle="tooltip"
+                                    data-placement="left"
+                                    title="Attenzione! Limite note negative superato!"></span>
+                        {% endif %}
                     </div>
                     <div class="panel-body">
                         <div id="notes-chart"></div>
@@ -121,7 +128,17 @@
             <div class="col-md-8">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Presenze/Assenze</h3>
+                        <h3 class="panel-title">
+                            Presenze/Assenze
+                            {% if num_abs > absence_limit %}
+                                <span
+                                        class="glyphicon glyphicon-warning-sign pull-right"
+                                        data-toggle="tooltip"
+                                        data-placement="left"
+                                        title="Attenzione! Limite assenze superato!"></span>
+                            {% endif %}
+                        </h3>
+
                     </div>
                     <div class="panel-body">
                         <div id="attendance-chart"></div>
@@ -142,11 +159,8 @@
 
                     <div class="modal-body">
                         <form action="." method="post">{% csrf_token %}
-                            <div class="checkbox">
-                                <label>
-                                    <input id="positive" type="checkbox"> Positiva
-                                </label>
-                            </div>
+                            <label>Positiva</label>
+                            <input id="positive" type="checkbox">
                             <label>Data</label>
                             <input id="date" type="text" class="form-control" data-date-format="yyyy-mm-dd">
                             <label>Commento</label>

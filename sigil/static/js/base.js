@@ -229,7 +229,7 @@ $(document).ready(function() {
     $("#addNoteModalSave").click(function() {
         utils.postData("/students/" + $(this).attr("data-student") + "/notes/add/", {
             csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value,
-            positive: $("#positive").val(),
+            positive: $("#positive").is(':checked'),
             date: $("#date").val(),
             comment: $("#comment").val(),
         }, "/students/" + $(this).attr("data-student") + "/");
