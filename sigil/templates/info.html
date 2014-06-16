@@ -33,264 +33,264 @@
     <script src="/static/js/home/jquery.localscroll-1.2.7-min.js"></script>
 </head>
 <body>
-<!--******************** NAVBAR ********************-->
-<div class="navbar-wrapper">
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span
-                        class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
+    <!--******************** NAVBAR ********************-->
+    <div class="navbar-wrapper">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span
+                            class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a>
 
-                <h1 class="brand"><a href="#top">Sigil!</a></h1>
-                <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
-                <nav class="pull-right nav-collapse collapse">
-                    <ul id="menu-main" class="nav">
-                        <li><a title="about" href="/#about">About</a></li>
-                        <li><a title="services" href="/#services">Servizi</a></li>
-                        <li><a title="contact" href="/#contact">Contatti</a></li>
-                        <li><a href="/signup/">Registrati</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentazione <b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="/documentation/users/">Utenti</a></li>
-                                <li><a href="/documentation/developers/">Sviluppatori</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
+                    <h1 class="brand"><a href="#top">Sigil!</a></h1>
+                    <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+                    <nav class="pull-right nav-collapse collapse">
+                        <ul id="menu-main" class="nav">
+                            <li><a title="about" href="/#about">About</a></li>
+                            <li><a title="services" href="/#services">Servizi</a></li>
+                            <li><a title="contact" href="/#contact">Contatti</a></li>
+                            <li><a href="/signup/">Registrati</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Documentazione <b
+                                        class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="/documentation/users/">Utenti</a></li>
+                                    <li><a href="/documentation/developers/">Sviluppatori</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- /.container -->
             </div>
-            <!-- /.container -->
+            <!-- /.navbar-inner -->
         </div>
-        <!-- /.navbar-inner -->
+        <!-- /.navbar -->
     </div>
-    <!-- /.navbar -->
-</div>
-<!-- /.navbar-wrapper -->
-<div id="top"></div>
-{% block content %}
-<!-- ******************** HeaderWrap ********************-->
-<div id="headerwrap">
-    <header class="clearfix">
-        <h1><span>Sigil!</span> Il kit indispensabile</h1>
+    <!-- /.navbar-wrapper -->
+    <div id="top"></div>
+    {% block content %}
+    <!-- ******************** HeaderWrap ********************-->
+    <div id="headerwrap">
+        <header class="clearfix">
+            <h1><span>Sigil!</span> Il kit indispensabile</h1>
 
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h2>Ti diamo il benvenuto su Sigil!</h2>
+                        <a href="/login/" class="btn btn-default">Login</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        <ul class="icon">
+                            <li><a href="https://www.facebook.com/oss.edbali" target="_blank"><i class="icon-facebook-circled"></i></a></li>
+                            <li><a href="https://plus.google.com/u/0/+OssamaEdbali/posts/p/pub" target="_blank"><i class="icon-gplus-circled"></i></a></li>
+                            <li><a href="https://www.linkedin.com/pub/ossama-edbali/95/468/431" target="_blank"><i class="icon-linkedin-circled"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!--******************** Feature ********************-->
+    <div class="scrollblock">
+        <section id="feature">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <article>
+                            <p>Sigil è un applicazione web per insegnanti.</p>
+
+                            <p>Il suo uso è semplice ed intuitivo.</p>
+                        </article>
+                    </div>
+                    <!-- ./span12 -->
+                </div>
+                <!-- .row -->
+            </div>
+            <!-- ./container -->
+        </section>
+    </div>
+    <!--******************** about Section ********************-->
+    <section id="about" class="single-page scrollblock">
         <div class="container">
+            <div class="align"><i class="icon-desktop-circled"></i></div>
+            <h1 id="folio-headline">About</h1>
+
             <div class="row">
                 <div class="span12">
-                    <h2>Ti diamo il benvenuto su Sigil!</h2>
-                    <a href="/login/" class="btn btn-default">Login</a>
+                    <div class="inside">
+                        <hgroup>
+                            <h2>Ethan Marcotte Design</h2>
+                        </hgroup>
+                        <div class="entry-content">
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                                galley of type and scrambled it to make a type specimen book.
+                            </p>
+                            <a class="more-link" href="#">view project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="span12">
-                    <ul class="icon">
-                        <li><a href="https://www.facebook.com/oss.edbali" target="_blank"><i class="icon-facebook-circled"></i></a></li>
-                        <li><a href="https://plus.google.com/u/0/+OssamaEdbali/posts/p/pub" target="_blank"><i class="icon-gplus-circled"></i></a></li>
-                        <li><a href="https://www.linkedin.com/pub/ossama-edbali/95/468/431" target="_blank"><i class="icon-linkedin-circled"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+            <!-- /.row -->
         </div>
-    </header>
-</div>
-<!--******************** Feature ********************-->
-<div class="scrollblock">
-    <section id="feature">
+        <!-- /.container -->
+    </section>
+    <hr>
+    <!--******************** Services Section ********************-->
+    <section id="services" class="single-page scrollblock">
+        <div class="container">
+            <div class="align"><i class="icon-cog-circled"></i></div>
+            <h1>Servizi</h1>
+            <!-- Four columns -->
+            <div class="row">
+                <div class="span3">
+                    <div class="align"><i class="icon-mobile-1 sev_icon"></i></div>
+                    <h2>Responsive</h2>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s.</p>
+                </div>
+                <!-- /.span3 -->
+                <div class="span3">
+                    <div class="align"><i class="icon-install sev_icon"></i></div>
+                    <h2>Cross platform</h2>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s.</p>
+                </div>
+                <!-- /.span3 -->
+                <div class="span3">
+                    <div class="align"><i class="icon-group-circled sev_icon"></i></div>
+                    <h2>Open source</h2>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s.</p>
+                </div>
+                <!-- /.span3 -->
+                <div class="span3">
+                    <div class="align"><i class="icon-list sev_icon"></i></div>
+                    <h2>Modulare</h2>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's standard dummy text ever since the 1500s.</p>
+                </div>
+                <!-- /.span3 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!--******************** Testimonials Section ********************-->
+    <section id="testimonials" class="single-page hidden-phone">
         <div class="container">
             <div class="row">
-                <div class="span12">
-                    <article>
-                        <p>Sigil è un applicazione web per insegnanti.</p>
+                <div class="blockquote-wrapper">
+                    <blockquote class="mega">
+                        <div class="span8">
+                            <p class="cite">Lahoucine Allam - High school teacher in Agadir, Morocco:</p>
+                        </div>
+                        <div class="span8">
+                            <p class="alignright">
+                                "We highly appreciate the enthusiasm and creative talent of the people at
+                                Legend!"
+                            </p>
+                        </div>
+                    </blockquote>
+                </div>
+                <!-- /.blockquote-wrapper -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    <!--******************** Contact Section ********************-->
+    <section id="contact" class="single-page scrollblock">
+        <div class="container">
+            <div class="align"><i class="icon-mail-2"></i></div>
+            <h1>Contattami!</h1>
 
-                        <p>Il suo uso è semplice ed intuitivo.</p>
-                    </article>
+            <div class="row">
+                <div class="span12">
+                    <div class="cform" id="theme-form">
+                        <form action="#" method="post" class="cform-form">
+                            <div class="row">
+                                <div class="span6"> <span class="your-name">
+                        <input type="text" name="your-name" placeholder="Your Name" class="cform-text" size="40"
+                               title="your name">
+                        </span></div>
+                                <div class="span6"> <span class="your-email">
+                        <input type="text" name="your-email" placeholder="Your Email" class="cform-text" size="40"
+                               title="your email">
+                        </span></div>
+                            </div>
+                            <div class="row">
+                                <div class="span6"> <span class="company">
+                        <input type="text" name="company" placeholder="Your Company" class="cform-text" size="40"
+                               title="company">
+                        </span></div>
+                                <div class="span6"> <span class="website">
+                        <input type="text" name="website" placeholder="Your Website" class="cform-text" size="40"
+                               title="website">
+                        </span></div>
+                            </div>
+                            <div class="row">
+                                <div class="span12"> <span class="message">
+                        <textarea name="message" class="cform-textarea" cols="40" rows="10"
+                                  title="drop us a line."></textarea>
+                        </span></div>
+                            </div>
+                            <div>
+                                <input type="submit" value="Send message" class="cform-submit pull-left">
+                            </div>
+                            <div class="cform-response-output"></div>
+                        </form>
+                    </div>
                 </div>
                 <!-- ./span12 -->
             </div>
-            <!-- .row -->
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
+    {% endblock %}
+    <hr>
+    <div class="footer-wrapper">
+        <div class="container">
+            <footer>
+                <small>2014 Sigil App. MIT Licensed.</small>
+            </footer>
         </div>
         <!-- ./container -->
-    </section>
-</div>
-<!--******************** about Section ********************-->
-<section id="about" class="single-page scrollblock">
-    <div class="container">
-        <div class="align"><i class="icon-desktop-circled"></i></div>
-        <h1 id="folio-headline">About</h1>
-
-        <div class="row">
-            <div class="span12">
-                <div class="inside">
-                    <hgroup>
-                        <h2>Ethan Marcotte Design</h2>
-                    </hgroup>
-                    <div class="entry-content">
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book.
-                        </p>
-                        <a class="more-link" href="#">view project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
-</section>
-<hr>
-<!--******************** Services Section ********************-->
-<section id="services" class="single-page scrollblock">
-    <div class="container">
-        <div class="align"><i class="icon-cog-circled"></i></div>
-        <h1>Servizi</h1>
-        <!-- Four columns -->
-        <div class="row">
-            <div class="span3">
-                <div class="align"><i class="icon-mobile-1 sev_icon"></i></div>
-                <h2>Responsive</h2>
+    <!-- Loading the javaScript at the end of the page -->
+    <script src="/static/js/home/bootstrap.js"></script>
+    <script>
+        jQuery(document).ready(function($) {
+            //$('#nav-main').scrollspy()
 
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- /.span3 -->
-            <div class="span3">
-                <div class="align"><i class="icon-install sev_icon"></i></div>
-                <h2>Cross platform</h2>
+            // Localscrolling
+            $('#nav-main, .brand').localScroll();
+            $('.container').localScroll();
+        });
+    </script>
 
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- /.span3 -->
-            <div class="span3">
-                <div class="align"><i class="icon-group-circled sev_icon"></i></div>
-                <h2>Open source</h2>
+    <!--ANALYTICS CODE-->
+    <script>
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-29231762-1']);
+          _gaq.push(['_setDomainName', 'dzyngiri.com']);
+          _gaq.push(['_trackPageview']);
 
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- /.span3 -->
-            <div class="span3">
-                <div class="align"><i class="icon-list sev_icon"></i></div>
-                <h2>Modulare</h2>
-
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s.</p>
-            </div>
-            <!-- /.span3 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-<!--******************** Testimonials Section ********************-->
-<section id="testimonials" class="single-page hidden-phone">
-    <div class="container">
-        <div class="row">
-            <div class="blockquote-wrapper">
-                <blockquote class="mega">
-                    <div class="span8">
-                        <p class="cite">Lahoucine Allam - High school teacher in Agadir, Morocco:</p>
-                    </div>
-                    <div class="span8">
-                        <p class="alignright">
-                            "We highly appreciate the enthusiasm and creative talent of the people at
-                            Legend!"
-                        </p>
-                    </div>
-                </blockquote>
-            </div>
-            <!-- /.blockquote-wrapper -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-<!--******************** Contact Section ********************-->
-<section id="contact" class="single-page scrollblock">
-    <div class="container">
-        <div class="align"><i class="icon-mail-2"></i></div>
-        <h1>Contattami!</h1>
-
-        <div class="row">
-            <div class="span12">
-                <div class="cform" id="theme-form">
-                    <form action="#" method="post" class="cform-form">
-                        <div class="row">
-                            <div class="span6"> <span class="your-name">
-                    <input type="text" name="your-name" placeholder="Your Name" class="cform-text" size="40"
-                           title="your name">
-                    </span></div>
-                            <div class="span6"> <span class="your-email">
-                    <input type="text" name="your-email" placeholder="Your Email" class="cform-text" size="40"
-                           title="your email">
-                    </span></div>
-                        </div>
-                        <div class="row">
-                            <div class="span6"> <span class="company">
-                    <input type="text" name="company" placeholder="Your Company" class="cform-text" size="40"
-                           title="company">
-                    </span></div>
-                            <div class="span6"> <span class="website">
-                    <input type="text" name="website" placeholder="Your Website" class="cform-text" size="40"
-                           title="website">
-                    </span></div>
-                        </div>
-                        <div class="row">
-                            <div class="span12"> <span class="message">
-                    <textarea name="message" class="cform-textarea" cols="40" rows="10"
-                              title="drop us a line."></textarea>
-                    </span></div>
-                        </div>
-                        <div>
-                            <input type="submit" value="Send message" class="cform-submit pull-left">
-                        </div>
-                        <div class="cform-response-output"></div>
-                    </form>
-                </div>
-            </div>
-            <!-- ./span12 -->
-        </div>
-        <!-- /.row -->
-    </div>
-    <!-- /.container -->
-</section>
-{% endblock %}
-<hr>
-<div class="footer-wrapper">
-    <div class="container">
-        <footer>
-            <small>2014 Sigil App. MIT Licensed.</small>
-        </footer>
-    </div>
-    <!-- ./container -->
-</div>
-<!-- Loading the javaScript at the end of the page -->
-<script src="/static/js/home/bootstrap.js"></script>
-<script>
-	jQuery(document).ready(function($) {
-	    //$('#nav-main').scrollspy()
-
-	    // Localscrolling
-	    $('#nav-main, .brand').localScroll();
-	    $('.container').localScroll();
-	});
-</script>
-
-<!--ANALYTICS CODE-->
-<script>
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-29231762-1']);
-	  _gaq.push(['_setDomainName', 'dzyngiri.com']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-</script>
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+    </script>
 </body>
 </html>
