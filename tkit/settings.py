@@ -6,7 +6,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Ossama Edbali', 'ossedb@gmail.com'),
 )
 
 MANAGERS = ADMINS
@@ -123,6 +123,8 @@ WSGI_APPLICATION = 'tkit.wsgi.application'
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.static',
+    'django.core.context_processors.i18n',
     'pybb.context_processors.processor',
     'django_messages.context_processors.inbox',
     'sigil.context_processors.tasks_count',
