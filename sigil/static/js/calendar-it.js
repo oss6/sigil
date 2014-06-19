@@ -1,7 +1,4 @@
-// moment.js language configuration
-// language : italian (it)
-// author : Lorenzo : https://github.com/aliem
-// author: Mattia Larentis: https://github.com/nostalgiaz
+// moment.js italian language configuration
 
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
