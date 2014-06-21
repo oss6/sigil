@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=1024, user-scalable=no">
 
-    <title>Tkit - Strumento di presentazione</title>
+    <title>Sigil - Strumento di presentazione</title>
 
     <!-- CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" media="screen" href="/static/css/presentation/deck.core.css">
     <link rel="stylesheet" media="screen" href="/static/css/presentation/deck.navigation.css">
@@ -16,15 +17,17 @@
     <link rel="stylesheet" media="screen" href="/static/css/presentation/horizontal-slide.css">
     <link rel="stylesheet" type="text/css" href="/static/css/presentation/popline-def.css">
     <link rel="stylesheet" type="text/css" href="/static/css/presentation/toggle-switch.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/presentation/sidebar.css">
 
     <script src="/static/js/modernizr.custom.js"></script>
 </head>
 <body>
     <div id="menu-trigger"></div>
     <div id="menu">
-        <h4>Menu degli strumenti</h4>
+        <h4>Torna a <a href="/presentation/">presentazioni</a></h4>
         <button class="btn btn-success" id="new-slide">Nuova diapositiva</button>
         <button class="btn btn-success" id="delete-current-slide">Elimina diapositiva</button>
+        <h4>Salva presentazione</h4>
         <form action="." method="post">{% csrf_token %}
             <input type="text" id="html-file-name" placeholder="Nome file">
             <input type="text" id="pres-title" placeholder="Titolo presentazione" value="{{ pres.title }}">
@@ -119,12 +122,22 @@
 
             $("#menu-trigger").click(function() {
                 if (!menu_toggle) {
-                    $("#menu").css("right", 0);
-                    $(this).css("right", 200);
+                    $("#menu").animate({
+                        right: "0px"
+                    }, 300);
+
+                    $("#menu-trigger").animate({
+                        right: "240px"
+                    }, 300);
                 }
                 else {
-                    $("#menu").css("right", -210);
-                    $(this).css("right", 0);
+                    $("#menu").animate({
+                        right: "-250px"
+                    }, 300);
+
+                    $("#menu-trigger").animate({
+                        right: "0px"
+                    }, 300);
                 }
 
                 menu_toggle = !menu_toggle;
@@ -137,7 +150,10 @@
             });
 
             $("#delete-current-slide").click(function() {
-
+                if ($(".slide").length > 1) {
+                    $(".deck-current").remove();
+                    $.deck('.slide');
+                }
             });
 
             $("#save-pres").click(function() {

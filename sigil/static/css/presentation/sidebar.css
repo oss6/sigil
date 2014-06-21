@@ -1,0 +1,87 @@
+#menu-trigger {
+	position:fixed;
+	z-index: 9999;
+	width: 30px;
+	height: 50px;
+	top: calc(50% - 25px);
+	right: 0px;
+	background: #323244;
+	border-radius: 10px 0px 0px 10px;
+	cursor: pointer;
+}
+
+#menu {
+	font-family: 'Lato';
+	position: fixed;
+	z-index: 9999;
+	width: 200px;
+	height: 100%;
+	right: -250px;
+	padding: 20px;
+	background: #323244;
+	color: #121212;
+	overflow: scroll;
+
+	background: #a7cfdf;
+	background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a));
+	background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+	background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+	background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%);
+	background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 );
+
+}
+
+#menu h4 {
+	margin-top: 20px;
+	margin-bottom: 5px;
+	padding: 5px 0px;
+	font-weight: 100;
+}
+
+#menu button, input[type="button"] {
+	font-family: 'Lato';
+	border: none;
+	padding: 5px 8px;
+	background: #65ac55;
+	color: rgba(255,255,255,1);
+	text-decoration: none;
+	background-color: rgba(64, 139, 189, 1);
+	font-weight: 700;
+	font-size: 12px;
+	display: block;
+	padding: 4px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: 0px 9px 0px rgba(57, 86, 124, 1), 0px 9px 25px rgba(0,0,0,.7);
+	-moz-box-shadow: 0px 9px 0px rgba(57, 86, 124, 1), 0px 9px 25px rgba(0,0,0,.7);
+	box-shadow: 0px 9px 0px rgba(57, 86, 124, 1), 0px 9px 25px rgba(0,0,0,.7);
+	margin: 30px auto;
+	width: 100px;
+	text-align: center;
+	-webkit-transition: all .1s ease;
+	-moz-transition: all .1s ease;
+	-ms-transition: all .1s ease;
+	-o-transition: all .1s ease;
+	transition: all .1s ease;
+}
+
+button:active {
+	-webkit-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	-moz-box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+	position: relative;
+	top: 6px;
+}
+
+#menu input[type="text"] {
+	font-family: 'Lato';
+	display: block;
+	border: none;
+	padding: 5px;
+	width: 160px;
+	border-radius: 3px;
+	margin: 10px 10px 5px 0px;
+}

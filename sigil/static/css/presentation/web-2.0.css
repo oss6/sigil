@@ -292,7 +292,7 @@ li > ol, li > ul {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: "Lato", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
 }
 
 h1 {
@@ -359,7 +359,7 @@ code {
 }
 
 blockquote {
-  font-family: "Hoefler Text", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-family: "Lato", Constantia, Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
   font-size: 2em;
   padding: 1em 2em .5em 2em;
   color: #000;
@@ -430,7 +430,7 @@ a:hover, a:focus {
 }
 
 .deck-container {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+  font-family: "Lato", "Gill Sans MT", Calibri, sans-serif;
   font-size: 1.75em;
   background: #f4fafe;
   /* Old browsers */
