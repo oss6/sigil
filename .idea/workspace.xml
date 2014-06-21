@@ -59,8 +59,18 @@
       <file leaf-file-name="doc-users.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33391005" vertical-offset="4991" max-vertical-offset="7650">
-              <caret line="288" column="64" selection-start-line="288" selection-start-column="64" selection-end-line="288" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.70761245" vertical-offset="5315" max-vertical-offset="7686">
+              <caret line="318" column="36" selection-start-line="318" selection-start-column="36" selection-end-line="318" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="presentation-create.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="22.25926" vertical-offset="1825" max-vertical-offset="3366">
+              <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -1098,7 +1108,11 @@
       <created>1403355851781</created>
       <updated>1403355851781</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Finishing documentation">
+      <created>1403359442180</created>
+      <updated>1403359442180</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1160,7 +1174,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixing pres feature" />
     <MESSAGE value="Adding papers feature" />
     <MESSAGE value="Finished papers feature" />
     <MESSAGE value="Fixing pdf reports" />
@@ -1185,7 +1198,8 @@
     <MESSAGE value="Fixing pres tool" />
     <MESSAGE value="Some mods (comments, little changes etc...)" />
     <MESSAGE value="Finished presentation-create.html" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished presentation-create.html" />
+    <MESSAGE value="Finishing documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1517,14 +1531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34256056" vertical-offset="324" max-vertical-offset="3366">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.34256056" vertical-offset="0" max-vertical-offset="6066">
@@ -1549,10 +1555,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/presentation-create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="22.25926" vertical-offset="1825" max-vertical-offset="3366">
+          <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/doc-users.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33391005" vertical-offset="4991" max-vertical-offset="7650">
-          <caret line="288" column="64" selection-start-line="288" selection-start-column="64" selection-end-line="288" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.70761245" vertical-offset="5315" max-vertical-offset="7686">
+          <caret line="318" column="36" selection-start-line="318" selection-start-column="36" selection-end-line="318" selection-end-column="36" />
           <folding />
         </state>
       </provider>
