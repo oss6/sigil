@@ -240,6 +240,8 @@
                         trovare nella barra laterale sinistra.
                     </p>
 
+                    <blockquote id="day-quote"></blockquote>
+
                     <hr>
                     <div class="row">
                         <div class="col-xs-18 col-sm-6 col-md-2" data-toggle="tooltip" data-placement="top" title="Gestione classi">
@@ -326,7 +328,24 @@
         <script src="/static/js/utils.js" type="text/javascript"></script>
         <script src="/static/js/app.js" type="text/javascript"></script>
         <script src="/static/js/base.js" type="text/javascript"></script>
-        {% block add-scripts %}{% endblock %}
+        {% block add-scripts %}
+        <script>
+                        var quotation = [], choose;
+
+                        quotation[0] = "<p>Un insegnante ha effetto sull'eternità; non può mai dire dove termina la sua influenza. </p><footer>Henry Adams</footer>";
+                        quotation[1] = "<p>L'insegnamento deve fondarsi sulla curiosità e non sul comando e il docente è chiamato a stimolare questa curiosità e non a fondarsi su un metodo fisso. La spontaneità regna suprema, nel pensiero (percezione) oltre che nell'azione.</p><footer>Paul Feyerabend</footer>";
+                        quotation[2] = "<p>Ottimo è quel maestro che, poco insegnando, fa nascere nell'alunno una voglia grande d'imparare.</p><footer>Arturo Graf</footer>";
+                        quotation[3] = "<p>Insegnare è imparare due volte.</p><footer>Joseph Joubert</footer>";
+                        quotation[4] = "<p>Il compito dell'insegnante è semplice: scoprire qual è l'interesse di un fanciullo e aiutarlo a esaurirlo.</p><footer>Alexander Neill</footer>";
+                        quotation[5] = "<p>Insegnando s'impara.</p><footer>Lucio Anneo Seneca</footer>";
+                        quotation[6] = "<p>L'arte di insegnare consiste tutta e soltanto nell'arte di destare la naturale curiosità delle giovani menti, con l'intento di soddisfarla in seguito. Per digerire il sapere, bisogna averlo divorato con appetito.</p><footer>Anatole France</footer>";
+                        quotation[7] = "<p>Non si insegna quello che si vuole; dirò addirittura che non s'insegna quello che si sa o quello che si crede di sapere: si insegna e si può insegnare solo quello che si è.</p><footer>Jean Jaurès</footer>";
+
+                        choose = Math.round(Math.random()*(quotation.length - 1));
+                        $("#day-quote").html(quotation[choose]);
+
+        </script>
+        {% endblock %}
         {% block extra_script %}{% endblock %}
     </body>
 </html>
