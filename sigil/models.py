@@ -26,8 +26,8 @@ class Students(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     email = models.EmailField(blank=True, null=True)
-    parent = models.CharField(max_length=100)
-    parent_email = models.EmailField()
+    parent = models.CharField(max_length=100, blank=True, null=True)
+    parent_email = models.EmailField(blank=True, null=True)
     photo = models.ImageField(upload_to=get_student_path, blank=True, null=True)
     s_class = models.ForeignKey(Classes)
 

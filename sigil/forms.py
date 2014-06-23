@@ -34,8 +34,8 @@ class AddStudentForm(forms.Form):
     first_name = forms.CharField()
     last_name = forms.CharField()
     email = forms.EmailField(required=False)
-    parent = forms.CharField()
-    parent_email = forms.EmailField()
+    parent = forms.CharField(required=False)
+    parent_email = forms.EmailField(required=False)
     photo = forms.ImageField(required=False)
 
 
