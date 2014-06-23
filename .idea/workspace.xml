@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29dd6213-6c69-446f-8cb3-2c4e323b8961" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/assignments.html" afterPath="$PROJECT_DIR$/sigil/templates/assignments.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/attendance.html" afterPath="$PROJECT_DIR$/sigil/templates/attendance.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/class-report.html" afterPath="$PROJECT_DIR$/sigil/templates/class-report.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/grade-book.html" afterPath="$PROJECT_DIR$/sigil/templates/grade-book.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/lessons.html" afterPath="$PROJECT_DIR$/sigil/templates/lessons.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/mindmap.html" afterPath="$PROJECT_DIR$/sigil/templates/mindmap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sigil/templates/presentation.html" afterPath="$PROJECT_DIR$/sigil/templates/presentation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="tkit.iws" />
@@ -61,11 +56,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="doc-dev.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="doc-dev.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sigil/templates/doc-dev.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5177665" vertical-offset="0" max-vertical-offset="5130">
-              <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+            <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="5130">
+              <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editor.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sigil/templates/editor.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2106">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -107,7 +112,6 @@
         <option value="$PROJECT_DIR$/sigil/templates/calendar.html" />
         <option value="$PROJECT_DIR$/sigil/static/js/calendar.js" />
         <option value="$PROJECT_DIR$/sigil/static/js/utils.js" />
-        <option value="$PROJECT_DIR$/sigil/templates/presentation.html" />
         <option value="$PROJECT_DIR$/sigil/templatetags/set_var.py" />
         <option value="$PROJECT_DIR$/sigil/templates/todolist.html" />
         <option value="$PROJECT_DIR$/sigil/urls.py" />
@@ -135,6 +139,7 @@
         <option value="$PROJECT_DIR$/sigil/templates/class-report.html" />
         <option value="$PROJECT_DIR$/sigil/templates/lessons.html" />
         <option value="$PROJECT_DIR$/sigil/templates/mindmap.html" />
+        <option value="$PROJECT_DIR$/sigil/templates/presentation.html" />
       </list>
     </option>
   </component>
@@ -1109,7 +1114,11 @@
       <created>1403547195932</created>
       <updated>1403547195932</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Finishing documentation and mods.">
+      <created>1403551299241</created>
+      <updated>1403551299241</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1171,7 +1180,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Adding papers feature" />
     <MESSAGE value="Finished papers feature" />
     <MESSAGE value="Fixing pdf reports" />
     <MESSAGE value="Finished pdf reports" />
@@ -1196,7 +1204,8 @@
     <MESSAGE value="Some mods (comments, little changes etc...)" />
     <MESSAGE value="Finished presentation-create.html" />
     <MESSAGE value="Finishing documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing documentation" />
+    <MESSAGE value="Finishing documentation and mods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finishing documentation and mods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1204,20 +1213,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sigil/context_processors.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27931035" vertical-offset="324" max-vertical-offset="1134">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sigil/templates/student-report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8685122" vertical-offset="0" max-vertical-offset="3312">
-          <caret line="60" column="47" selection-start-line="60" selection-start-column="47" selection-end-line="60" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sigil/static/js/modernizr.custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="605">
@@ -1569,8 +1564,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sigil/templates/doc-dev.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5177665" vertical-offset="0" max-vertical-offset="5130">
-          <caret line="17" column="31" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
+        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="5130">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/presentation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0" vertical-offset="0" max-vertical-offset="972">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sigil/templates/editor.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2106">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
