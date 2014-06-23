@@ -13,7 +13,29 @@
         <script>
             (function ($) {
                 $(document).ready(function () {
-                    $("#editor").jqte();
+                    $("#editor").jqte({titletext:[
+		                {title:"Formato testo"},
+                        {title:"Dimensione font"},
+                        {title:"Selezione colore"},
+                        {title:"Grassetto",hotkey:"B"},
+                        {title:"Corsivo",hotkey:"I"},
+                        {title:"Sottolineato",hotkey:"U"},
+                        {title:"Lista numerata",hotkey:"."},
+                        {title:"Lista non ordinata",hotkey:","},
+                        {title:"Pedice",hotkey:"down arrow"},
+                        {title:"Apice",hotkey:"up arrow"},
+                        {title:"Rientra",hotkey:"left arrow"},
+                        {title:"Indenta",hotkey:"right arrow"},
+                        {title:"Sinistra"},
+                        {title:"Centro"},
+                        {title:"Destra"},
+                        {title:"Testo barrato",hotkey:"K"},
+                        {title:"Aggiungi link",hotkey:"L"},
+                        {title:"Rimuovi link",hotkey:""},
+                        {title:"Cancella stili",hotkey:"Delete"},
+                        {title:"Riga orizzontale",hotkey:"H"},
+                        {title:"Codice sorgente (HTML)",hotkey:""}
+                    ]});
 
                     $("#export-html").click(function() {
                         utils.postData("/editor/save/", {
