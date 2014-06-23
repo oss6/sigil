@@ -7,24 +7,6 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="page-header">
-                    <blockquote>
-                        <p>
-                            In the class management section you can add a class.
-                            A class is an entity with the following properties:
-                            name, school and a small description.
-                            You can also remove a class by clicking on the white
-                            cross on the top right of the class header.
-                        </p>
-                        <p>
-                            By clicking on the name of the class a new page will be visualized.
-                            This page contains the students of the class. In addition you can
-                            also update the properties of each class.
-                        </p>
-                    </blockquote>
-                    <a href="/classes/{{ class.pk }}/students/" class="btn btn-sm btn-primary">
-                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
-                    </a>
-
                     <div class="row">
                         <div class="col-lg-4">
                             <div class="input-group">
@@ -33,6 +15,9 @@
                                 <span class="input-group-btn">
                                     <a id="change-att-date" onclick="mattendance.changeDateAtt('{{ class.pk }}', $('#attendance-date').val());" class="btn btn-primary" href="javascript:;">
                                         Cambia data
+                                    </a>
+                                    <a href="/classes/{{ class.pk }}/students/" class="btn btn-primary">
+                                        <span class="glyphicon glyphicon glyphicon-arrow-left"></span> {{ class.name }}
                                     </a>
                                 </span>
                             </div>
